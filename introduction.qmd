@@ -86,7 +86,8 @@ In a randomized controlled trial (RCT), @farndon2013 investigated the effectiven
 
 ```{r}
 #| echo: false
-DT::datatable(dat_corn, extensions = 'Scroller', options = list(deferRender = TRUE, scrollY = 202, scroller = TRUE))
+DT::datatable(dat_corn, extensions = 'Scroller', 
+              options = list(deferRender = F, dom = 't', columnDefs = list(list(className = 'dt-center', targets = 5)), scrollY = 202, scroller = TRUE, scrollX = T, pageLength = 5))
 
 ```
 
