@@ -304,7 +304,7 @@ In addition to tabulating each variable separately, we might be interested in wh
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 |                                                                                     |                                                                                              |
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| Avoid starting a sentence with numbers.                                             | **Thirty-four** non-smokers patients recorded in the cord plaster group.                     |
+| Use words to express any number that begins a sentence, title or heading.           | **Thirty-four** non-smokers patients recorded in the cord plaster group.                     |
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 |                                                                                     |                                                                                              |
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
@@ -633,7 +633,7 @@ Therefore, the sample mean of *n* observations is:
 
 **2nd case: Odd observations**
 
-> Let's say we select an additional 17th subject with corn size of 10 mm, so the data are as following:
+> Suppose we select an additional 17th subject with corn size of 10 mm, so the data are as following:
 >
 > **original data:** 2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 10, 3, 10
 >
@@ -654,7 +654,7 @@ The median has the advantage that is not affected by outliers, so for example, t
 
 **C. Mode**
 
-A third measure of location is termed the **mode**. This is the value that occurs **most frequently**, or, if the data are grouped, the grouping with the highest frequency. It is not used much in statistical analysis, since its value depends on the accuracy with which the data are measured and ignores most of the information; although it may be useful for categorical data to describe the most frequent category. Note that some data sets do not have a mode because each value occurs only once.
+A third measure of location is termed the **mode**. This is the value that occurs **most frequently**, or, if the data are grouped, the group with the highest frequency. It is not used much in statistical analysis, since its value depends on the accuracy with which the data are measured and ignores most of the information; although it may be useful for categorical data to describe the most frequent category. Note that some data sets do not have a mode because each value occurs only once.
 
 However, the expression **'bimodal'** distribution is used to describe a distribution with **two peaks** in it. This can be caused by mixing two or more populations together. For example, height might appear to have a bimodal distribution if one had men and women in the population.
 
@@ -670,7 +670,49 @@ However, the expression **'bimodal'** distribution is used to describe a distrib
 In the 16 patients with corns, 5 patients have corn size of 2 mm; thus, the **modal corn size is 2 mm**.
 :::
 
+\vspace{25pt}
+
+### Measures of Dispersion
+
+We also need a numerical way of summarizing the amount of spread or variability in a data set. The tree main approaches to quantifying variability are: the range, the interquartile range (IQR), and the standard deviation.
+
+**A. Range**
+
+The simplest way to describe the spread of a data set is to report the minimum (lowest) and maximum (highest) values. The **range** is defined as the difference between the largest and the smallest observations in a sample. For some data it is very useful, because one would want to know these numbers, for example in a sample the age of the youngest and oldest participant. However, if outliers are present it may give a distorted impression of the variability of the data, since only two of the data points are included in making the estimate. Thus the range is **affected by extreme values** at each end of the data.
+
 \vspace{20pt}
+
+::: {.callout-note icon="false"}
+## Example: Calculation of the Range - Corn size data (mm)
+
+The range for the corn size data is `r min(x)` to `r max(x)` mm or described by a single number `r max(x)`-`r min(x)` = `r max(x) - min(x)` mm.
+:::
+
+**B. Quartiles and Interquartile Range**
+
+The **quartiles**, namely the lower quartile ($Q_{1}$), the median ($Q_{2}$) and the upper quartile ($Q_{3}$), split sorted data into four equal parts. That is there will be approximately equal numbers of observations in the four sections (and exactly equal if the sample size is divisible by four and the measures are all distinct). The quartiles are calculated in a similar way to the median; first order the data and then count the appropriate number from the bottom. The $Q_{1}$ is the value below which 25% of the observations may be found, while the $Q_{3}$ is the value above which the top 25% of the observations may be found (meaning that 75% of the data falls below the $Q_{3}$).
+
+The **interquartile range** (IQR) is a useful measure of variability and is given by the difference of the lower and upper quartiles (IQR=$Q_{3}$-$Q_{1}$). It indicates the spread of the middle 50% (75%-25%) of the data.The IQR is an especially good measure of variability for skewed distributions or distributions with outliers.
+
+The median and the quartiles are examples of **percentiles** - points which split the distribution of data into percentages above or below a certain value. The median is the 50th percentile, the $Q_{1}$ is the 25th percentile, and the the $Q_{3}$ is the 75th percentile.
+
+::: {.callout-note icon="false"}
+## Example: Calculation of the Quartiles and Interquartile Range - Corn size data (mm)
+
+The $Q_{1}$ lies somewhere between the $\color{red}{fourth}$ and $\color{blue}{fifth}$ ordered observations (2+2)/2= 2mm. The median, $Q_{2}$, is the average of the $\color{blue}{eighth}$ and $\color{green}{ninth}$ ordered observations (3+3)/2=3 mm. Similarly, The $Q_{3}$ lies somewhere between the $\color{green}{12th}$ and $\color{orange}{13th}$ ordered observations (4+5)/2= 4.5 mm.
+
+So, the IQR for the corn size data is from 2.0 to 4.5 mm; or a single number 2.5 mm.
+
+|                            |                  |                  |                  |                  |                   |                   |                   |                   |                    |                    |                    |                    |                     |                     |                     |                      |
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| **Ordered corn size (mm)** | $\color{red}{1}$ | $\color{red}{2}$ | $\color{red}{2}$ | $\color{red}{2}$ | $\color{blue}{2}$ | $\color{blue}{2}$ | $\color{blue}{3}$ | $\color{blue}{3}$ | $\color{green}{3}$ | $\color{green}{3}$ | $\color{green}{4}$ | $\color{green}{4}$ | $\color{orange}{5}$ | $\color{orange}{6}$ | $\color{orange}{6}$ | $\color{orange}{10}$ |
+
+: Calculating quartiles for th corn size data {#tbl-quartiles}
+
+The range for the corn size data is `r min(x)` to `r max(x)` mm or described by a single number `r max(x)`-`r min(x)` = `r max(x) - min(x)` mm.
+:::
+
+**C. Standard deviation and Variance**
 
 ## Displaying Numerical Data
 
