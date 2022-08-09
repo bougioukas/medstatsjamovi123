@@ -82,10 +82,11 @@ knitr::include_graphics(here::here("images", "types_data.png"))
 ::: {.callout-note icon="false"}
 ## **Example from the literature - Salicylic acid plasters for treatment of foot corns**
 
-In a randomized controlled trial (RCT), @farndon2013 investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. Corns and calluses are areas of hard, thickened skin that develop when the skin is exposed to excessive pressure or friction. They commonly occur on the feet and can cause pain and discomfort when you walk. The recorded data is as follows:
+In a randomized controlled trial (RCT), @farndon2013 investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. The recorded data is as follows:
 
 ```{r}
 #| echo: false
+
 DT::datatable(dat_corn, extensions = 'Scroller', 
               options = list(deferRender = F, dom = 't', columnDefs = list(list(className = 'dt-center', targets = 5)), scrollY = 202, scroller = TRUE, scrollX = T, pageLength = 5))
 
@@ -540,9 +541,9 @@ $$
 
 This formula is entirely correct, but it's too long, so we make use of the ***summation symbol*** $\scriptstyle\sum$ to shorten it:
 
-$$\bar{x}=\frac{\sum_{i=1}^{n}x_{i}}{n}=\frac{1}{n}\sum_{i=1}^{n}x_{i}$$
+$$\bar{x}=\frac{\sum_{i=1}^{n}x_{i}}{n}=\frac{1}{n}\sum_{i=1}^{n}x_{i}$$ {#eq-mean}
 
-In the above equation, $x_{i}$ represents the individual sample values and ${\sum_{i=1}^{n}x_{i}}$ their sum. The Greek letter ${\Sigma}$ (sigma) is the Greek capital 'S' and stands for 'sum' and simply means 'add up the *n* observations $x_{i}$ from the 1st to the last (nth)'.
+In the above @eq-mean, $x_{i}$ represents the individual sample values and ${\sum_{i=1}^{n}x_{i}}$ their sum. The Greek letter ${\Sigma}$ (sigma) is the Greek capital 'S' and stands for 'sum' and simply means 'add up the *n* observations $x_{i}$ from the 1st to the last (nth)'.
 
 Usually, we cannot measure the population mean ${\mu}$, which is the unknown constant that we want to estimate using the sample mean $\bar{x}$.
 
@@ -703,16 +704,99 @@ The $Q_{1}$ lies somewhere between the $\color{red}{fourth}$ and $\color{blue}{f
 
 So, the IQR for the corn size data is from 2.0 to 4.5 mm; or a single number 2.5 mm.
 
-|                            |                  |                  |                  |                  |                   |                   |                   |                   |                    |                    |                    |                    |                     |                     |                     |                      |
+|                            |                  |                  |                  |                           |                            |                   |                   |                            |                             |                    |                    |                             |                              |                     |                     |                      |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| **Ordered corn size (mm)** | $\color{red}{1}$ | $\color{red}{2}$ | $\color{red}{2}$ | $\color{red}{2}$ | $\color{blue}{2}$ | $\color{blue}{2}$ | $\color{blue}{3}$ | $\color{blue}{3}$ | $\color{green}{3}$ | $\color{green}{3}$ | $\color{green}{4}$ | $\color{green}{4}$ | $\color{orange}{5}$ | $\color{orange}{6}$ | $\color{orange}{6}$ | $\color{orange}{10}$ |
+| **Ordered corn size (mm)** | $\color{red}{1}$ | $\color{red}{2}$ | $\color{red}{2}$ | $\color{red}{\textbf{2}}$ | $\color{blue}{\textbf{2}}$ | $\color{blue}{2}$ | $\color{blue}{3}$ | $\color{blue}{\textbf{3}}$ | $\color{green}{\textbf{3}}$ | $\color{green}{3}$ | $\color{green}{4}$ | $\color{green}{\textbf{4}}$ | $\color{orange}{\textbf{5}}$ | $\color{orange}{6}$ | $\color{orange}{6}$ | $\color{orange}{10}$ |
 
-: Calculating quartiles for th corn size data {#tbl-quartiles}
+: Calculating quartiles for the corn size data {#tbl-quartiles}
 
 The range for the corn size data is `r min(x)` to `r max(x)` mm or described by a single number `r max(x)`-`r min(x)` = `r max(x) - min(x)` mm.
 :::
 
-**C. Standard deviation and Variance**
+**C. Variance and Standard Deviation**
+
+For an individual with an observed value $x_{i}$ the distance from the mean is $x_{i}-\bar{x}$. With *n* such observations we have a set of *n* differences, one for each individual. The sum of the differences, ${\sum_{i=1}^{n}(x_{i}-\bar{x})}$ is always zero. However, if we square the distances before we sum them, we get always a positive quantity.This sum is then divided by **n-1** and thus gives an average measure for the square of the deviation from the sample mean. This quantity is called the sample **variance** and is defined as @eq-var:
+
+$$s^2 = \frac{\sum\limits_{i=1}^n (x -\bar{x})^2}{n-1}$$ {#eq-var}
+
+The variance is expressed in square units, so we can take the square root to return to the original units. This gives us the **standard deviation** (usually abbreviated as sd) defined as @eq-sd:
+
+$$s = \sqrt\frac{\sum_{i=1}^{n}(x_{i}-\bar{x})^2}{n-1}$$ {#eq-sd}
+
+Examining this expression it can be seen that if all the *x's* were the same, then they would equal *x* and so *s* would be zero. If the x's were widely scattered about *x*, then *s* would be large. In this way *s* reflects the variability in the data. Both, variance and standard deviation, are sensitive to outliers and thus they are inappropriate for skewed data.
+
+::: {.callout-note icon="false"}
+## Example: Calculation of the Variance and Standard Deviation - Corn size data (mm)
+
+Consider the 16 observations from the corn data. The calculations to work out the standard deviation are given in the @tbl-sd.
+
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| id        | Corn size (mm) | Mean      | Difference from mean $(x_{i}-\bar{x})$ | Square of difference from mean $(x_{i}-\bar{x})^2$ |
++===========+================+===========+========================================+====================================================+
+| 1         | 2              | 3.625     | -1.625                                 | 2.641                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 2         | 2              | 3.625     | -1.625                                 | 2.641                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 3         | 6              | 3.625     | 2.375                                  | 5.641                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 4         | 3              | 3.625     | -0.625                                 | 0.391                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 5         | 4              | 3.625     | 0.375                                  | 0.141                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 6         | 2              | 3.625     | -1.625                                 | 2.641                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 7         | 2              | 3.625     | -1.625                                 | 2.641                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 8         | 5              | 3.625     | 1.375                                  | 1.891                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 9         | 3              | 3.625     | -0.625                                 | 0.391                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 10        | 4              | 3.625     | 0.375                                  | 0.141                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 11        | 1              | 3.625     | -2.625                                 | 6.891                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 12        | 2              | 3.625     | -1.625                                 | 2.641                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 13        | 6              | 3.625     | 2.375                                  | 5.641                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 14        | 3              | 3.625     | -0.625                                 | 0.391                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 15        | 10             | 3.625     | 6.375                                  | 40.641                                             |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| 16        | 3              | 3.625     | -0.625                                 | 0.391                                              |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+| **Total** | **58**         | **3.625** | **0.000**                              | **75.756**                                         |
++-----------+----------------+-----------+----------------------------------------+----------------------------------------------------+
+
+: Calculating variance and standard deviation for the corn size data {#tbl-sd}
+
+From the @eq-sd we have:
+
+$$s = \sqrt\frac{\sum_{i=1}^{16}(x_{i}-3.625)^2}{16-1} = \sqrt\frac{75.756}{16-1}= \sqrt{5.05}=2.247 \ or \ 2.25 \ mm$$
+
+Note that the majority of this sum is contributed by one observatio, the value of 10 mm from participant 15, which is the observation further from the mean. This shows that much of the value of an sd is derived from the outlying observation.
+
+:::
+
+
+::: callout-tip
+**Mean or median?**
+
+Mean and median convey different impressions of the location of data. If the distribution is **symmetric**, then in general the **mean** is the better summary statistic, and if it is **skewed** then the **median** is less influenced by the tails.
+
+
+\vspace{25pt}
+
+**Why is the standard deviation useful?**
+
+It turns out in many situations that about **95% of observations** will be within **two standard deviations of the mean**. This is known as a reference interval and it is this characteristic of the standard deviation which makes it so useful. It holds for a large number of measurements commonly made in medicine. In particular it holds for data that follow a *Normal distribution*
+(see Chapter XX). 
+For the corn plaster example, we would expect the majority of participants in the corn plaster group to have age between 58.5-2 $\times$ 15.6 and 58.5+2 $\times$ 15.6 or 27.3 and 89.7 years.
+
+:::
+
+
+
 
 ## Displaying Numerical Data
 
