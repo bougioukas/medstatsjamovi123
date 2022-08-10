@@ -938,7 +938,7 @@ gridExtra::grid.arrange(gt, left = "Frequency", bottom = "Age")
 If we have too many bins, then the data distribution will look rough, and it will be difficult to discern the signal from the noise (@fig-histo2 a). On the other hand, with too few bins, the histogram will lack the details needed to discern any useful pattern from the data (@fig-histo2 b).
 :::
 
-We can also create a histogram or density plot by group. @fig-histo3 depicts the probability dencity of age by treatment group.
+We can also create a histogram or density plot by group. @fig-histo3 depicts the probability density of age by treatment group.
 
 ```{r}
 #| echo: false
@@ -980,6 +980,83 @@ dat_corn |>
 
 An important aspect of histograms is that they must be plotted with a zero-valued baseline. Since the frequency of data in each bin is implied by the height of each bar, changing the baseline or introducing a gap in the scale will skew the perception of the distribution of data.
 :::
+
+ 
+
+
+**B. Box Plot**
+
+
+A box plot chart is another graph that can be used for conveying location and variation information for continuous data, particularly for detecting
+changes between different groups of data before any formal analyses are performed.
+
+A box plot (aka box and whisker plot) uses boxes and lines to depict the distributions of one or more groups of numerical data. Box limits indicate the range of the central **50%** of the data, with a central line marking the **median** value. Lines extend from each box to capture the **range** of the remaining data, with **dots** placed past the line edges to indicate outliers.
+
+
+```{r}
+#| label: fig-boxplot1
+#| fig-align: center
+#| out-width: "80%"
+#| echo: false
+#| fig-cap: Broad classification of the different types of data with examples
+
+knitr::include_graphics(here::here("images", "boxplot.png"))
+```
+
+In @fig-boxplot1 the distance between ${Q3}$ and ${Q1}$ is the interquartile range (IQR) and plays a major part in how long the whiskers extending from the box are. Each whisker extends to the furthest data point in each wing that is within 1.5 times the IQR. Any data point further than that distance is considered an outlier, and is marked with a dot. There are other ways of defining the whisker lengths, which are not presented in this textbook.
+
+@fig-boxplot2 illustrates a box plot that presents the age of participants in @farndon2013 study.
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-boxplot2
+#| fig-cap: A box plot of age of the participants in @farndon2013 study.
+#| fig-width: 3.5
+#| fig-height: 4.0
+
+dat_corn |>
+  ggplot(aes(y = age)) +
+  geom_boxplot(fill = "steelblue4", alpha=0.6) +
+  ggtitle("Box Plot") +
+    theme_minimal() +
+   ggsci::scale_fill_jco() +
+    theme(
+      plot.title = element_text(size=15),
+      axis.text.x = element_blank()
+    )
+
+```
+
+
+
+@fig-boxplot3 illustrates a grouped box plot that presents the age by treatment group.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-boxplot3
+#| fig-cap: A box plot of age of the participants in @farndon2013 study.
+#| fig-width: 6.5
+#| fig-height: 5.0
+
+dat_corn |>
+  ggplot(aes(y = age, fill = group)) +
+  geom_boxplot(alpha=0.6) +
+  ggtitle("Box Plot") +
+    theme_minimal() +
+   ggsci::scale_fill_jco() +
+    theme(
+      plot.title = element_text(size=15)
+    )
+
+```
+
+
+ 
+
+
 
 ## Exercises
 
