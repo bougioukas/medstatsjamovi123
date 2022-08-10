@@ -984,3 +984,4 @@ An important aspect of histograms is that they must be plotted with a zero-value
 ## Exercises
 
 - First Exercise
+- Second Exercise
