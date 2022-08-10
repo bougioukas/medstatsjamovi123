@@ -948,7 +948,7 @@ If we have too many bins, then the data distribution will look rough, and it wil
 #| echo: false
 #| warning: false
 #| label: fig-histo3
-#| fig-cap: Histogram of age of the participants by treatment group in @farndon2013 study.
+#| fig-cap: Histogram of age of participants by treatment group in @farndon2013 study.
 #| fig-width: 7.5
 #| fig-height: 5.0
 
@@ -989,3 +989,5 @@ An important aspect of histograms is that they must be plotted with a zero-value
 :::
 
 ## Exercises
+
+
