@@ -938,11 +938,14 @@ gridExtra::grid.arrange(gt, left = "Frequency", bottom = "Age")
 If we have too many bins, then the data distribution will look rough, and it will be difficult to discern the signal from the noise (@fig-histo2 a). On the other hand, with too few bins, the histogram will lack the details needed to discern any useful pattern from the data (@fig-histo2 b).
 :::
 
+
+We can also create a histogram or density plot by group. @fig-histo3 depicts the probability dencity of age by treatment group. 
+
 ```{r}
 #| echo: false
 #| warning: false
 #| label: fig-histo3
-#| fig-cap: Histogram of age of participants by treatment group in @farndon2013 study.
+#| fig-cap: Histogram of age of participants  in @farndon2013 study by treatment group.
 #| fig-width: 7.5
 #| fig-height: 5.0
 
@@ -954,9 +957,9 @@ age_by_group <- dat_corn |>
 
 dat_corn |>
   ggplot(aes(x = age)) +
-  geom_histogram(aes(fill=group), binwidth=10, color="#8fb4d9", alpha=0.6) +
-  ggtitle("Histohram") +
-  labs(y="Frequency") +
+  geom_density(aes(fill=group), binwidth=10, color="#8fb4d9", alpha=0.6) +
+  ggtitle("Density Plot by group") +
+  labs(y="Probability density") +
   facet_grid(~group) +
   theme_minimal() +
   ggsci::scale_fill_jco() +
@@ -964,8 +967,8 @@ dat_corn |>
       plot.title = element_text(size=15),
       strip.text.x = element_text(size=0)
     ) +  
-  annotate('text', x = 50, y = 25, label = 'mean', color = '009e73') +
-  annotate('text', x = 75, y = 25, label = 'median', color = 'grey') +
+  annotate('text', x = 50, y = 0.025, label = 'mean', color = '009e73') +
+  annotate('text', x = 75, y = 0.025, label = 'median', color = 'grey') +
   geom_vline(data = age_by_group, aes(xintercept= age_mean), color="009e73", linetype="dashed", size=0.8) +
   geom_vline(data = age_by_group, aes(xintercept= age_median), color="grey", linetype="dashed", size=0.8)
 
