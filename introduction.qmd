@@ -17,6 +17,7 @@ library(here)
 
 library(scales)
 library(patchwork)
+library(gridExtra)
 
 
 library(readr)
@@ -829,7 +830,7 @@ A histogram (@fig-histo1 a) is a plot that depicts the distribution of a numeric
 #| echo: false
 #| warning: false
 #| label: fig-histo1
-#| fig-cap: Histogram of age of the participants in @farndon2013 study (a) histohram (b) density plot.
+#| fig-cap: Distribution of age of the participants in @farndon2013 study (a) histogram (b) density plot.
 #| fig-width: 7.5
 #| fig-height: 5.0
 
@@ -837,28 +838,28 @@ h1 <- dat_corn |>
   ggplot(aes(x = age)) +
   geom_histogram(binwidth=10, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
   ggtitle("Histohram") +
-  geom_vline(aes(xintercept=mean(age)), color="blue", linetype="dashed", size=0.8) +
+  geom_vline(aes(xintercept=mean(age)), color="009e73", linetype="dashed", size=0.8) +
   geom_vline(aes(xintercept=median(age)), color="grey", linetype="dashed", size=0.8) +
   labs(y="Frequency") +
     theme_minimal() +
     theme(
       plot.title = element_text(size=15)
     ) +
-  annotate('text', x = 52, y = 43, label = 'mean', color = 'blue') +
+  annotate('text', x = 52, y = 43, label = 'mean', color = '009e73') +
   annotate('text', x = 70, y = 43, label = 'median', color = 'grey')
 
 h2 <- dat_corn |>
   ggplot(aes(x = age)) +
   geom_density(fill="steelblue4", color="#8fb4d9", alpha=0.6) +
   ggtitle("Density plot") +
-  geom_vline(aes(xintercept=mean(age)), color="blue", linetype="dashed", size=0.8) +
+  geom_vline(aes(xintercept=mean(age)), color="009e73", linetype="dashed", size=0.8) +
   geom_vline(aes(xintercept=median(age)), color="grey", linetype="dashed", size=0.8) +
   labs(y="Probability density") +
     theme_minimal() +
     theme(
       plot.title = element_text(size=15)
     ) +
-  annotate('text', x = 52, y = 0.025, label = 'mean', color = 'blue') +
+  annotate('text', x = 52, y = 0.025, label = 'mean', color = '009e73') +
   annotate('text', x = 70, y = 0.025, label = 'median', color = 'grey')
 
 h1 + h2 + plot_annotation(tag_levels = 'a')
@@ -882,7 +883,7 @@ A histogram (or density plot) gives information about:
 
 While tools that can generate histograms usually have some default algorithms for selecting bin boundaries, we will likely want to play around with the binning parameters to choose something that is representative of our data.
 
-Choice of bin size has an inverse relationship with the number of bins @fig-histo1. The smaller the bin sizes, the more bins there will be to cover the whole range of data. With a larger bin size, the fewer bins there will need to be. It is worth taking some time to test out different bin sizes to see how the distribution looks in each one, then choose the plot that represents the data best.
+Choice of bin size has an inverse relationship with the number of bins @fig-histo2. The smaller the bin sizes, the more bins there will be to cover the whole range of data. With a larger bin size, the fewer bins there will need to be. It is worth taking some time to test out different bin sizes to see how the distribution looks in each one, then choose the plot that represents the data best.
 
 ```{r}
 #| echo: false
@@ -900,8 +901,10 @@ p1 <- dat_corn |>
   labs(y="Frequency") +
   theme_minimal() +
   theme(
-      plot.title = element_text(size=14)
-    )
+      plot.title = element_text(size=14),
+      axis.title = element_blank()
+    ) +
+  scale_y_continuous(limits=c(0, 65))
 
 p2 <- dat_corn |>
   ggplot(aes(x = age)) +
@@ -910,8 +913,11 @@ p2 <- dat_corn |>
   labs(y="Frequency") +
   theme_minimal() +
   theme(
-      plot.title = element_text(size=14)
-    )
+      plot.title = element_text(size=14),
+      axis.title = element_blank(),
+      axis.text.y = element_blank()
+    ) +
+  scale_y_continuous(limits=c(0, 65))
 
 p3 <- dat_corn |>
   ggplot(aes(x = age)) +
@@ -920,16 +926,59 @@ p3 <- dat_corn |>
   labs(y="Frequency") +
   theme_minimal() +
   theme(
-      plot.title = element_text(size=14)
-    )
+      plot.title = element_text(size=14),
+      axis.title = element_blank(),
+      axis.text.y = element_blank()
+    ) +
+  scale_y_continuous(limits=c(0, 65))
 
 
-p1 + p2 + p3 + plot_annotation(tag_levels = 'a')
+result <- p1 + p2 + p3 + plot_annotation(tag_levels = 'a')
+
+gt <- patchwork::patchworkGrob(result)
+gridExtra::grid.arrange(gt, left = "Frequency", bottom = "Age")
 
 ```
 
-If we have too many bins, then the data distribution will look rough, and it will be difficult to discern the signal from the noise (@fig-histo1 a). On the other hand, with too few bins, the histogram will lack the details needed to discern any useful pattern from the data (@fig-histo1 b).
+If we have too many bins, then the data distribution will look rough, and it will be difficult to discern the signal from the noise (@fig-histo2 a). On the other hand, with too few bins, the histogram will lack the details needed to discern any useful pattern from the data (@fig-histo2 b).
 :::
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-histo3
+#| fig-cap: Histogram of age of the participants by treatment group in @farndon2013 study.
+#| fig-width: 7.5
+#| fig-height: 5.0
+
+age_by_group <- dat_corn |>
+  group_by(group)|>
+  summarize(age_mean = mean(age),
+            age_median = median(age))
+
+
+dat_corn |>
+  ggplot(aes(x = age)) +
+  geom_histogram(aes(fill=group), binwidth=10, color="#8fb4d9", alpha=0.6) +
+  ggtitle("Histohram") +
+  labs(y="Frequency") +
+  theme_minimal() +
+  ggsci::scale_fill_jco() +
+    theme(
+      plot.title = element_text(size=15)
+    ) +  
+  annotate('text', x = 50, y = 25, label = 'mean', color = '009e73') +
+  annotate('text', x = 75, y = 25, label = 'median', color = 'grey') +
+  facet_grid(~group) +
+  geom_vline(data = age_by_group, aes(xintercept= age_mean), color="009e73", linetype="dashed", size=0.8) +
+  geom_vline(data = age_by_group, aes(xintercept= age_median), color="grey", linetype="dashed", size=0.8)
+
+```
+
+
+
+
 
  
 
