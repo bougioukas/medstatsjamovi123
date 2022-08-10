@@ -18,6 +18,7 @@ library(here)
 library(scales)
 library(patchwork)
 library(gridExtra)
+library(ggdist)
 
 
 library(readr)
@@ -996,7 +997,7 @@ A box plot (aka box and whisker plot) uses boxes and lines to depict the distrib
 ```{r}
 #| label: fig-boxplot1
 #| fig-align: center
-#| out-width: "80%"
+#| out-width: "90%"
 #| echo: false
 #| fig-cap: Broad classification of the different types of data with examples
 
@@ -1013,7 +1014,7 @@ In @fig-boxplot1 the distance between ${Q3}$ and ${Q1}$ is the interquartile ran
 #| warning: false
 #| label: fig-boxplot2
 #| fig-cap: A box plot of age of the participants in @farndon2013 study.
-#| fig-width: 3.5
+#| fig-width: 3.0
 #| fig-height: 4.0
 
 dat_corn |>
@@ -1057,7 +1058,36 @@ dat_corn |>
 
  
 
+There are many variations of the boxplot. For example, there is a way to combine raw data (dots), probability density, and key summary statistics such as median, mean, and relevant confidence intervals in an appealing and flexible format with minimal redundancy, using the raincloud plot:
 
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-boxplot4
+#| fig-cap: A rain cloud plot of age of the participants in @farndon2013 study.
+#| fig-width: 7.5
+#| fig-height: 5.0
+
+dat_corn |>
+  ggplot(aes(x = group, y = age, fill = group))+
+  stat_slab(aes(thickness = stat(pdf*n)), 
+                scale = 0.5) +
+  stat_dotsinterval(side = "bottom", 
+                    scale = 0.5, 
+                    slab_size = 0.2) +
+  ggtitle("Rain Cloud Plots") +
+    theme_minimal() +
+   ggsci::scale_fill_jco() +
+    theme(
+      plot.title = element_text(size=15),
+      legend.position = "none"
+    )
+```
+
+
+
+ 
 
 ## Exercises
 
