@@ -570,7 +570,7 @@ In the RCT by @farndon2013, the baseline size of the corn (as its widest diamete
 
  
 
-The sum of the 16 observations is: 
+The sum of the 16 observations is:
 
 $2 + 2 + 6 + 3 + 4 + 2 + 2 + 5 + 3 + 4 + 1 + 2 + 6 + 3 + 10 + 3$ = `r sum(x)`
 
@@ -821,8 +821,7 @@ The best way for examining the distribution of numerical data is to generate an 
 
 The most common way of depicting a frequency distribution of a continuous variable is with a histogram.
 
-A histogram (@fig-histo1 a) is a plot that depicts the distribution of a numeric variable's values as a series of bars without space between them. Each bar typically covers a range of numeric values called a bin or class; a bar's height indicates the frequency of observations with a value within the corresponding bin. A density plot (@fig-histo1 b) is a smoothed, continuous version of a histogram estimated from the data. In a density plot the total area under the curve integrates to one. 
-
+A histogram (@fig-histo1 a) is a plot that depicts the distribution of a numeric variable's values as a series of bars without space between them. Each bar typically covers a range of numeric values called a bin or class; a bar's height indicates the frequency of observations with a value within the corresponding bin. A density plot (@fig-histo1 b) is a smoothed, continuous version of a histogram estimated from the data. In a density plot the total area under the curve integrates to one.
 
 @fig-histo1 shows the distribution of age for the participants in @farndon2013 study. The vertical scale shows (a) frequency (histogram) or (b) probability density (density plot).
 
@@ -866,7 +865,6 @@ h1 + h2 + plot_annotation(tag_levels = 'a')
 
 ```
 
-
 A histogram (or density plot) gives information about:
 
 -   How the data are distributed: (a) left-skewed, (b) symmetric (e.g., normal distribution), (c) right-skewed and if there are any outliers.
@@ -874,9 +872,6 @@ A histogram (or density plot) gives information about:
 -   The amount of variability in the data.
 
 -   Where the peaks of the distribution are.
-
-
-
 
 ::: {.callout-note icon="false"}
 ## Choose an appropriate number of bins
@@ -943,7 +938,6 @@ gridExtra::grid.arrange(gt, left = "Frequency", bottom = "Age")
 If we have too many bins, then the data distribution will look rough, and it will be difficult to discern the signal from the noise (@fig-histo2 a). On the other hand, with too few bins, the histogram will lack the details needed to discern any useful pattern from the data (@fig-histo2 b).
 :::
 
-
 ```{r}
 #| echo: false
 #| warning: false
@@ -963,22 +957,19 @@ dat_corn |>
   geom_histogram(aes(fill=group), binwidth=10, color="#8fb4d9", alpha=0.6) +
   ggtitle("Histohram") +
   labs(y="Frequency") +
+  facet_grid(~group) +
   theme_minimal() +
   ggsci::scale_fill_jco() +
     theme(
-      plot.title = element_text(size=15)
+      plot.title = element_text(size=15),
+      strip.text.x = element_text(size=0)
     ) +  
   annotate('text', x = 50, y = 25, label = 'mean', color = '009e73') +
   annotate('text', x = 75, y = 25, label = 'median', color = 'grey') +
-  facet_grid(~group) +
   geom_vline(data = age_by_group, aes(xintercept= age_mean), color="009e73", linetype="dashed", size=0.8) +
   geom_vline(data = age_by_group, aes(xintercept= age_median), color="grey", linetype="dashed", size=0.8)
 
 ```
-
-
-
-
 
  
 
@@ -989,5 +980,3 @@ An important aspect of histograms is that they must be plotted with a zero-value
 :::
 
 ## Exercises
-
-
