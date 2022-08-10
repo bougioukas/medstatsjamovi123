@@ -1,5 +1,7 @@
 # Preface {.unnumbered}
 
+**This is a working draft.**
+
 This textbook is for medical students, doctors, medical researchers, nurses, members of professions allied to medicine, and all others concerned with medical data.
 
 While statistics books focus on mathematics, this textbook focuses on using a computer to conduct data analysis. That means using a statistical software program, in this case the [Jamovi](https://www.jamovi.org/) software for statistics and graphics. Our aim is to keep a balance between mathematical rigor and readability as well as learning Jamovi and statistics simultaneously.

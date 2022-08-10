@@ -35,7 +35,6 @@ book:
     - lab10.qmd
     - reporting.qmd
     - references.qmd
-    
   
   page-footer: 
     left: "Copyright 2022, Konstantinos I. Bougioukas" 

@@ -820,7 +820,7 @@ The best way for examining the distribution of numerical data is to generate an 
 
 The most common way of depicting a frequency distribution of a continuous variable is with a histogram.
 
-A histogram (@fig-histo1 a) is a plot that depicts the distribution of a numeric variable's values as a series of bars without space between them. Each bar typically covers a range of numeric values called a bin or class; a bar's height indicates the frequency of observations with a value within the corresponding bin. A density plot (@fig-histo1 b) is a smoothed, continuous version of a histogram estimated from the data.In density plot the total area under the curve integrates to one. 
+A histogram (@fig-histo1 a) is a plot that depicts the distribution of a numeric variable's values as a series of bars without space between them. Each bar typically covers a range of numeric values called a bin or class; a bar's height indicates the frequency of observations with a value within the corresponding bin. A density plot (@fig-histo1 b) is a smoothed, continuous version of a histogram estimated from the data. In a density plot the total area under the curve integrates to one. 
 
 
 @fig-histo1 shows the distribution of age for the participants in @farndon2013 study. The vertical scale shows (a) frequency (histogram) or (b) probability density (density plot).
@@ -835,33 +835,40 @@ A histogram (@fig-histo1 a) is a plot that depicts the distribution of a numeric
 
 h1 <- dat_corn |>
   ggplot(aes(x = age)) +
-    geom_histogram(binwidth=10, fill="steelblue4", color="#e9ecef", alpha=0.6) +
+  geom_histogram(binwidth=10, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
   ggtitle("Histohram") +
+  geom_vline(aes(xintercept=mean(age)), color="blue", linetype="dashed", size=0.8) +
+  geom_vline(aes(xintercept=median(age)), color="grey", linetype="dashed", size=0.8) +
   labs(y="Frequency") +
-  
     theme_minimal() +
     theme(
       plot.title = element_text(size=15)
-    )
+    ) +
+  annotate('text', x = 52, y = 43, label = 'mean', color = 'blue') +
+  annotate('text', x = 70, y = 43, label = 'median', color = 'grey')
 
 h2 <- dat_corn |>
   ggplot(aes(x = age)) +
-  geom_density(fill="steelblue4", color="#e9ecef", alpha=0.6) +
+  geom_density(fill="steelblue4", color="#8fb4d9", alpha=0.6) +
   ggtitle("Density plot") +
+  geom_vline(aes(xintercept=mean(age)), color="blue", linetype="dashed", size=0.8) +
+  geom_vline(aes(xintercept=median(age)), color="grey", linetype="dashed", size=0.8) +
   labs(y="Probability density") +
     theme_minimal() +
     theme(
       plot.title = element_text(size=15)
-    )
-
+    ) +
+  annotate('text', x = 52, y = 0.025, label = 'mean', color = 'blue') +
+  annotate('text', x = 70, y = 0.025, label = 'median', color = 'grey')
 
 h1 + h2 + plot_annotation(tag_levels = 'a')
 
 ```
 
+
 A histogram (or density plot) gives information about:
 
--   How the data are distributed (Fig. 2.6): (a) left-skewed, (b) symmetric (e.g., normal distribution), (c) right-skewed and if there are any outliers.
+-   How the data are distributed: (a) left-skewed, (b) symmetric (e.g., normal distribution), (c) right-skewed and if there are any outliers.
 
 -   The amount of variability in the data.
 
@@ -875,44 +882,44 @@ A histogram (or density plot) gives information about:
 
 While tools that can generate histograms usually have some default algorithms for selecting bin boundaries, we will likely want to play around with the binning parameters to choose something that is representative of our data.
 
-Choice of bin size has an inverse relationship with the number of bins @fig-histo1. The larger the bin sizes, the fewer bins there will be to cover the whole range of data. With a smaller bin size, the more bins there will need to be. It is worth taking some time to test out different bin sizes to see how the distribution looks in each one, then choose the plot that represents the data best.
+Choice of bin size has an inverse relationship with the number of bins @fig-histo1. The smaller the bin sizes, the more bins there will be to cover the whole range of data. With a larger bin size, the fewer bins there will need to be. It is worth taking some time to test out different bin sizes to see how the distribution looks in each one, then choose the plot that represents the data best.
 
 ```{r}
 #| echo: false
 #| warning: false
 #| label: fig-histo2
-#| fig-cap: Histogram of age for different bin sizes.
+#| fig-cap: Histogram of age for different bin sizes (a) bin size = 5, (b) bin size = 10, and (c) bin size = 15.
 #| fig-width: 8.5
 #| fig-height: 4.5
 
 
 p1 <- dat_corn |>
   ggplot(aes(x = age)) +
-    geom_histogram(binwidth=5, fill="steelblue4", color="#e9ecef", alpha=0.6) +
+  geom_histogram(binwidth=5, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
+  ggtitle("Bin size = 5") +
   labs(y="Frequency") +
-    ggtitle("Bin size = 5") +
-    theme_minimal() +
-    theme(
+  theme_minimal() +
+  theme(
       plot.title = element_text(size=14)
     )
 
 p2 <- dat_corn |>
   ggplot(aes(x = age)) +
-  geom_histogram(binwidth=10, fill="steelblue4", color="#e9ecef", alpha=0.6) +
+  geom_histogram(binwidth=10, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
+  ggtitle("Bin size = 10") +
   labs(y="Frequency") +
-    ggtitle("Bin size = 10") +
-    theme_minimal() +
-    theme(
+  theme_minimal() +
+  theme(
       plot.title = element_text(size=14)
     )
 
 p3 <- dat_corn |>
   ggplot(aes(x = age)) +
-  geom_histogram(binwidth=15, fill="steelblue4", color="#e9ecef", alpha=0.6) +
+  geom_histogram(binwidth=15, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
+  ggtitle("Bin size = 15") +
   labs(y="Frequency") +
-    ggtitle("Bin size = 15") +
-    theme_minimal() +
-    theme(
+  theme_minimal() +
+  theme(
       plot.title = element_text(size=14)
     )
 
@@ -921,7 +928,7 @@ p1 + p2 + p3 + plot_annotation(tag_levels = 'a')
 
 ```
 
-If we have too many bins, then the data distribution will look rough, and it will be difficult to discern the signal from the noise. On the other hand, with too few bins, the histogram will lack the details needed to discern any useful pattern from the data.
+If we have too many bins, then the data distribution will look rough, and it will be difficult to discern the signal from the noise (@fig-histo1 a). On the other hand, with too few bins, the histogram will lack the details needed to discern any useful pattern from the data (@fig-histo1 b).
 :::
 
  
