@@ -1039,8 +1039,8 @@ dat_corn |>
 #| warning: false
 #| label: fig-boxplot3
 #| fig-cap: A box plot of age of the participants in @farndon2013 study.
-#| fig-width: 6.5
-#| fig-height: 5.0
+#| fig-width: 5.5
+#| fig-height: 4.0
 
 dat_corn |>
   ggplot(aes(x = group, y = age, fill = group)) +
@@ -1066,8 +1066,8 @@ There are many variations of the boxplot. For example, there is a way to combine
 #| warning: false
 #| label: fig-boxplot4
 #| fig-cap: A rain cloud plot of age of the participants in @farndon2013 study.
-#| fig-width: 7.5
-#| fig-height: 5.0
+#| fig-width: 6.5
+#| fig-height: 4.0
 
 dat_corn |>
   ggplot(aes(x = group, y = age, fill = group))+
