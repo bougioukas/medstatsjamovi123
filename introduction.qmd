@@ -938,8 +938,7 @@ gridExtra::grid.arrange(gt, left = "Frequency", bottom = "Age")
 If we have too many bins, then the data distribution will look rough, and it will be difficult to discern the signal from the noise (@fig-histo2 a). On the other hand, with too few bins, the histogram will lack the details needed to discern any useful pattern from the data (@fig-histo2 b).
 :::
 
-
-We can also create a histogram or density plot by group. @fig-histo3 depicts the probability dencity of age by treatment group. 
+We can also create a histogram or density plot by group. @fig-histo3 depicts the probability dencity of age by treatment group.
 
 ```{r}
 #| echo: false
@@ -983,3 +982,5 @@ An important aspect of histograms is that they must be plotted with a zero-value
 :::
 
 ## Exercises
+
+- First Exercise
