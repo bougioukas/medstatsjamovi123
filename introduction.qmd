@@ -1042,13 +1042,14 @@ dat_corn |>
 #| fig-height: 5.0
 
 dat_corn |>
-  ggplot(aes(y = age, fill = group)) +
+  ggplot(aes(x = group, y = age, fill = group)) +
   geom_boxplot(alpha=0.6) +
   ggtitle("Box Plot") +
     theme_minimal() +
    ggsci::scale_fill_jco() +
     theme(
-      plot.title = element_text(size=15)
+      plot.title = element_text(size=15),
+      legend.position = "none"
     )
 
 ```
