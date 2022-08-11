@@ -791,7 +791,24 @@ Note that the majority of this sum is contributed by one observation, the value 
 ::: callout-tip
 **How to report summary statistics for numerical data?**
 
-Mean and median convey different impressions of the location of data. If the distribution is **symmetric**, then in general the **mean** is the better summary statistic, and if it is **skewed** then the **median** is less influenced by the tails. Thus, the following format is recommended:
+Mean and median convey different impressions of the location of data in presence of skewness (or outliers). 
+
+* If the distribution is **symmetric** (mean=md=mode) (@fig-skew b), then in general the **mean** is the better summary statistic. 
+
+* If the distribution is **skewed** to the left (@fig-skew a) or right (@fig-skew c) then the **median** is less influenced by the tails. 
+
+```{r}
+#| label: fig-skew
+#| fig-align: center
+#| out-width: "80%"
+#| echo: false
+#| fig-cap: Broad classification of the different types of data with examples
+
+knitr::include_graphics(here::here("images", "skew.png"))
+```
+
+
+Thus, the following format is recommended for reporting summary statistics:
 
 > **Mean (sd)** for data with **symmetric** distribution. A distribution, or data set, is symmetric if its left and right sides are mirror images.
 
@@ -829,7 +846,7 @@ A histogram (@fig-histo1 a) is a plot that depicts the distribution of a numeric
 #| echo: false
 #| warning: false
 #| label: fig-histo1
-#| fig-cap: Distribution of age of the participants in @farndon2013 study (a) histogram (b) density plot.
+#| fig-cap: Distribution of age of the 202 participants in @farndon2013 study (a) histogram (b) density plot.
 #| fig-width: 7.5
 #| fig-height: 5.0
 
@@ -884,15 +901,15 @@ Choice of bin size has an inverse relationship with the number of bins @fig-hist
 #| echo: false
 #| warning: false
 #| label: fig-histo2
-#| fig-cap: Histogram of age for different bin sizes (a) bin size = 5, (b) bin size = 10, and (c) bin size = 15.
+#| fig-cap: Histogram of age for different bin sizes (a) bin size = 2, (b) bin size = 10, and (c) bin size = 15.
 #| fig-width: 8.5
 #| fig-height: 4.5
 
 
 p1 <- dat_corn |>
   ggplot(aes(x = age)) +
-  geom_histogram(binwidth=5, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
-  ggtitle("Bin size = 5") +
+  geom_histogram(binwidth=2, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
+  ggtitle("Bin size = 2") +
   labs(y="Frequency") +
   theme_minimal() +
   theme(
@@ -944,7 +961,7 @@ We can also create a histogram or density plot by group. @fig-histo3 depicts the
 #| echo: false
 #| warning: false
 #| label: fig-histo3
-#| fig-cap: Histogram of age of participants  in @farndon2013 study by treatment group.
+#| fig-cap: Histogram of age of participants in @farndon2013 study by treatment group.
 #| fig-width: 7.5
 #| fig-height: 5.0
 
@@ -1053,12 +1070,12 @@ dat_corn |>
 **c. Raincloud Plot**
 
 There are many variations of the boxplot. For example, there is a way to combine raw data (dots), probability density, and key summary statistics such as median, and relevant intervals of a range of likely values for the population parameter,
-in an appealing and flexible format with minimal redundancy, using the raincloud plot:
+in an appealing and flexible format with minimal redundancy, using the raincloud plot (@fig-raincloud):
 
 ```{r}
 #| echo: false
 #| warning: false
-#| label: fig-boxplot4
+#| label: fig-raincloud
 #| fig-cap: A raincloud plot of age of the participants in @farndon2013 study.
 #| fig-width: 6.5
 #| fig-height: 4.0
