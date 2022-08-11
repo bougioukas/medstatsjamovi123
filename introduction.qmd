@@ -793,10 +793,9 @@ Note that the majority of this sum is contributed by one observation, the value 
 
 Mean and median convey different impressions of the location of data. If the distribution is **symmetric**, then in general the **mean** is the better summary statistic, and if it is **skewed** then the **median** is less influenced by the tails. Thus, the following format is recommended:
 
-> **Mean (sd)** for data with **symmetric** distribution.
+> **Mean (sd)** for data with **symmetric** distribution. A distribution, or data set, is symmetric if its left and right sides are mirror images.
 
-> **Median (Q1, Q3)** for those with **skewed** distribution.
-
+> **Median (Q1, Q3)** for those with **skewed** (or asymetrical) distribution.
  
 
 @tbl-rules2 presents recommendations for reporting summary statistics for numerical data.
@@ -984,15 +983,11 @@ An important aspect of histograms is that they must be plotted with a zero-value
 
  
 
-
 **B. Box Plot**
 
-
-A box plot chart is another graph that can be used for conveying location and variation information for continuous data, particularly for detecting
-changes between different groups of data before any formal analyses are performed.
+A box plot chart is another graph that can be used for conveying location and variation information for continuous data, particularly for detecting changes between different groups of data before any formal analyses are performed.
 
 A box plot (aka box and whisker plot) uses boxes and lines to depict the distributions of one or more groups of numerical data. Box limits indicate the range of the central **50%** of the data, with a central line marking the **median** value. Lines extend from each box to capture the **range** of the remaining data, with **dots** placed past the line edges to indicate outliers.
-
 
 ```{r}
 #| label: fig-boxplot1
@@ -1007,7 +1002,6 @@ knitr::include_graphics(here::here("images", "boxplot.png"))
 In @fig-boxplot1 the distance between ${Q3}$ and ${Q1}$ is the interquartile range (IQR) and plays a major part in how long the whiskers extending from the box are. Each whisker extends to the furthest data point in each wing that is within 1.5 times the IQR. Any data point further than that distance is considered an outlier, and is marked with a dot. There are other ways of defining the whisker lengths, which are not presented in this textbook.
 
 @fig-boxplot2 illustrates a box plot that presents the age of participants in @farndon2013 study.
-
 
 ```{r}
 #| echo: false
@@ -1030,8 +1024,6 @@ dat_corn |>
 
 ```
 
-
-
 @fig-boxplot3 illustrates a grouped box plot that presents the age by treatment group.
 
 ```{r}
@@ -1045,7 +1037,7 @@ dat_corn |>
 dat_corn |>
   ggplot(aes(x = group, y = age, fill = group)) +
   geom_boxplot(alpha=0.6) +
-  ggtitle("Box Plot") +
+  ggtitle("Grouped Box Plot") +
     theme_minimal() +
    ggsci::scale_fill_jco() +
     theme(
@@ -1055,17 +1047,19 @@ dat_corn |>
 
 ```
 
-
  
 
-There are many variations of the boxplot. For example, there is a way to combine raw data (dots), probability density, and key summary statistics such as median, mean, and relevant confidence intervals in an appealing and flexible format with minimal redundancy, using the raincloud plot:
 
+**c. Raincloud Plot**
+
+There are many variations of the boxplot. For example, there is a way to combine raw data (dots), probability density, and key summary statistics such as median, and relevant intervals of a range of likely values for the population parameter,
+in an appealing and flexible format with minimal redundancy, using the raincloud plot:
 
 ```{r}
 #| echo: false
 #| warning: false
 #| label: fig-boxplot4
-#| fig-cap: A rain cloud plot of age of the participants in @farndon2013 study.
+#| fig-cap: A raincloud plot of age of the participants in @farndon2013 study.
 #| fig-width: 6.5
 #| fig-height: 4.0
 
@@ -1076,7 +1070,7 @@ dat_corn |>
   stat_dotsinterval(side = "bottom", 
                     scale = 0.5, 
                     slab_size = 0.2) +
-  ggtitle("Rain Cloud Plots") +
+  ggtitle("Raincloud Plots") +
     theme_minimal() +
    ggsci::scale_fill_jco() +
     theme(
@@ -1086,10 +1080,9 @@ dat_corn |>
 ```
 
 
-
  
 
 ## Exercises
 
-- First Exercise
-- Second Exercise
+-   First Exercise
+-   Second Exercise
