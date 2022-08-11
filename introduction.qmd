@@ -76,7 +76,7 @@ Data can be either categorical or numerical (otherwise known as qualitative and 
 #| fig-align: center
 #| out-width: "80%"
 #| echo: false
-#| fig-cap: Broad classification of the different types of data with examples
+#| fig-cap: Broad classification of the different types of data with examples.
 
 knitr::include_graphics(here::here("images", "types_data.png"))
 ```
@@ -793,7 +793,7 @@ Note that the majority of this sum is contributed by one observation, the value 
 
 Mean and median convey different impressions of the location of data in presence of skewness (or outliers). 
 
-* If the distribution is **symmetric** (mean=md=mode) (@fig-skew b), then in general the **mean** is the better summary statistic. 
+* If the distribution is **symmetric** (mean=median=mode) (@fig-skew b), then in general the **mean** is the better summary statistic. 
 
 * If the distribution is **skewed** to the left (@fig-skew a) or right (@fig-skew c) then the **median** is less influenced by the tails. 
 
@@ -802,13 +802,13 @@ Mean and median convey different impressions of the location of data in presence
 #| fig-align: center
 #| out-width: "80%"
 #| echo: false
-#| fig-cap: Broad classification of the different types of data with examples
+#| fig-cap: Types of distribution according to the summetry (a) left skewed (b) symmetric, and (c) right skewed distribution.
 
 knitr::include_graphics(here::here("images", "skew.png"))
 ```
 
 
-Thus, the following format is recommended for reporting summary statistics:
+Thus, the following format is recommended for reporting summary statistics for numerical data:
 
 > **Mean (sd)** for data with **symmetric** distribution. A distribution, or data set, is symmetric if its left and right sides are mirror images.
 
