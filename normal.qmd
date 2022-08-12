@@ -182,31 +182,28 @@ $$ E(x)=\int_{1}^{2}f(x)dx $$ {#eq-integral}
 
  
 
-
-### Properties of an aproximately normal distribution
+## Properties of an aproximately normal distribution
 
 In an approximately **bell-shaped (normal)** distribution:
 
 -   the mean, the median and the mode have very close values
+
 -   the histogram is symmetric about the mean
+
 -   "nearly all" values (99.7%) are within -3 and +3 standard deviations of the mean
+
 -   the measure of skewness takes values close to zero (symmetric distribution) (@fig-skew2 b). Particularly, values between −1 and +1 indicate an approximate bell-shaped curve.
 
 -   the measure of excess kurtosis is close to 0 (mesokurtic) (@fig-kurtosis b). A kurtosis value between −1 and +1 indicates normality.
 
-
-
-
 ::: {.callout-note icon="false"}
 ## **Statistical moments and normality**
-
 
 **Skewness**
 
 Skewness values that are negative indicate a tail to the left (@fig-skew2 a), zero value indicate a symmetric distribution (@fig-skew2 b), while values that are positive indicate a tail to the right (@fig-skew2 c).
 
-Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with >1 indicating moderate skewness and >2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.
-
+Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with \>1 indicating moderate skewness and \>2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.
 
 ```{r}
 #| echo: false
@@ -220,7 +217,6 @@ knitr::include_graphics(here("images", "skew2.png"))
 ```
 
  
-
 
 **Kurtosis**
 
