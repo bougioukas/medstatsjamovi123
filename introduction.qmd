@@ -555,6 +555,7 @@ Usually, we cannot measure the population mean ${\mu}$, which is the unknown con
 
 ```{r}
 #| include = F
+
 x <- c(2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 10, 3)
 
 x2 <- c(2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 100, 3)
@@ -960,7 +961,7 @@ We can also create a histogram or density plot by group. @fig-histo3 depicts the
 #| echo: false
 #| warning: false
 #| label: fig-histo3
-#| fig-cap: Histogram of age of participants in @farndon2013 study by treatment group.
+#| fig-cap: Histogram of age of participants  by treatment groupin @farndon2013 study.
 #| fig-width: 7.5
 #| fig-height: 5.0
 
@@ -1046,7 +1047,7 @@ dat_corn |>
 #| echo: false
 #| warning: false
 #| label: fig-boxplot3
-#| fig-cap: A box plot of age of the participants in @farndon2013 study by treatment group.
+#| fig-cap: A box plot of age of the participants  by treatment group in @farndon2013 study.
 #| fig-width: 5.5
 #| fig-height: 4.0
 
@@ -1105,23 +1106,21 @@ dat_corn |>
 
  
 
-**c. Scatterplot**
+**c. Scatter plot**
 
-Scatter plots are two dimensional, showing the association between two continuous variables (@fig-scatterplot a). By coloring the data or using different symbols by a third variable, scatter plots can provide additional dimensions (@fig-scatterplot b).
-
-
+Scatter plots are two dimensional graphs, showing the association between two continuous variables such as age and baseline pain (@fig-scatterplot a). By coloring the data by a third variable (here is gender), scatter plots can provide additional dimensions (@fig-scatterplot b).
 
 ```{r}
 #| echo: false
 #| warning: false
 #| label: fig-scatterplot
-#| fig-cap: Association between age and baseline pain by gender @farndon2013 study.
+#| fig-cap: Association between (a) age and baseline, and (b) taking into acound the gender in @farndon2013 study.
 #| fig-width: 8.5
 #| fig-height: 4.0
 
 s1 <- dat_corn |>
   ggplot(aes(x = age, y = pain_baseline)) +
-  geom_point() +
+  geom_point(size = 2) +
   ggtitle("Scatterplot") +
     theme_minimal() +
     theme(
@@ -1132,7 +1131,7 @@ s1 <- dat_corn |>
 
 s2 <- dat_corn |>
   ggplot(aes(x = age, y = pain_baseline, color = gender)) +
-  geom_point() +
+  geom_point(size = 2) +
   ggtitle("Scatterplot by group") +
     theme_minimal() +
    ggsci::scale_color_jco() +
@@ -1145,6 +1144,10 @@ s2 <- dat_corn |>
 s1 + s2 + plot_annotation(tag_levels = 'a')
 
 ```
+
+
+As the scatter plots suggest, there is not association between age and baseline pain: the points seem to be scattered randomly.
+
 
  
 

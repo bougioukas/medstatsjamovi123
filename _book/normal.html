@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.0.37">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Introduction to Medical Statistics with Jamovi - 7&nbsp; Normal distribution</title>
 <style>
 code{white-space: pre-wrap;}
@@ -16,7 +13,6 @@ div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 </style>
-
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -35,8 +31,7 @@ ul.task-list{list-style: none;}
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -54,43 +49,34 @@ ul.task-list{list-style: none;}
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-
+}</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Normal distribution</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Medical Statistics with Jamovi</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/bougioukas/MedStatsJamovi5" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+<li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
@@ -106,7 +92,7 @@ ul.task-list{list-style: none;}
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
@@ -222,18 +208,26 @@ ul.task-list{list-style: none;}
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+</div>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li>
+<a href="#characteristics-of-normal-distribution" id="toc-characteristics-of-normal-distribution" class="nav-link active" data-scroll-target="#characteristics-of-normal-distribution"> <span class="header-section-number">7.1</span> Characteristics of Normal Distribution</a>
+  <ul class="collapse">
+<li><a href="#historical-background" id="toc-historical-background" class="nav-link" data-scroll-target="#historical-background">Historical background</a></li>
+  <li><a href="#the-mathimatical-type" id="toc-the-mathimatical-type" class="nav-link" data-scroll-target="#the-mathimatical-type">The mathimatical type</a></li>
+  <li><a href="#individual-components-of-a-normal-distribution" id="toc-individual-components-of-a-normal-distribution" class="nav-link" data-scroll-target="#individual-components-of-a-normal-distribution">Individual components of a normal distribution</a></li>
+  <li><a href="#normal-density-plot-with-shaded-regions" id="toc-normal-density-plot-with-shaded-regions" class="nav-link" data-scroll-target="#normal-density-plot-with-shaded-regions">Normal Density Plot with Shaded Regions</a></li>
+  <li><a href="#properties-of-an-aproximately-normal-distribution" id="toc-properties-of-an-aproximately-normal-distribution" class="nav-link" data-scroll-target="#properties-of-an-aproximately-normal-distribution">Properties of an aproximately normal distribution</a></li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Normal distribution</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title"><span id="sec-introduction" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Normal distribution</span></span></h1>
 </div>
 
 
@@ -245,13 +239,104 @@ ul.task-list{list-style: none;}
   </div>
   
 
-</header>
+</header><section id="characteristics-of-normal-distribution" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="characteristics-of-normal-distribution">
+<span class="header-section-number">7.1</span> Characteristics of Normal Distribution</h2>
+<section id="historical-background" class="level3"><h3 class="anchored" data-anchor-id="historical-background">Historical background</h3>
+<p>There are several important probability distributions in statistics. However, the normal distribution might be the most important. A normal distribution is the familiar “bell curve” and it’s a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.</p>
+</section><section id="the-mathimatical-type" class="level3"><h3 class="anchored" data-anchor-id="the-mathimatical-type">The mathimatical type</h3>
+<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean , <span class="math inline">\(\mu\)</span>, is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as follows:</p>
+<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{7.1}\]</span></span></p>
+<p>The ensuing distribution will look like this in a simple case where <span class="math inline">\(\mu\)</span> is 0 and <span class="math inline">\(\sigma^2\)</span> is 1.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-simple_normal" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="normal_files/figure-html/fig-simple_normal-1.png" class="img-fluid figure-img" width="384"></p>
+<p></p><figcaption class="figure-caption">Figure 7.1: A simple normal density function.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="individual-components-of-a-normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="individual-components-of-a-normal-distribution">Individual components of a normal distribution</h3>
+<p>We can break down individual components of a normal distribution and explain them until they seem more accessible.</p>
+<p><strong>First</strong>, the “kernel” is the part inside the exponent of the above equation (i.e.&nbsp;<span class="math inline">\(\ {-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}\)</span>). Observe, for a simple case where <span class="math inline">\(\mu\)</span> is 0 and <span class="math inline">\(\sigma^2\)</span> is 1 that this part becomes <span class="math inline">\(\ -{\frac {1}{2}}x^{2}\)</span> that is a negative parabola (notice the square term). The minus sign just flips the basic parabola <span class="math inline">\(\ {\frac {1}{2}}x^{2}\)</span> downward.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-basic_parabola" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="normal_files/figure-html/fig-basic_parabola-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figure 7.2: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Second</strong>, exponentiating the negative parabola (<span class="math inline">\(\  e^{-{\frac {1}{2}}x^{2}}\)</span>) makes it asymptote to 0.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-neg_parabola" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="normal_files/figure-html/fig-neg_parabola-1.png" class="img-fluid figure-img" width="384"></p>
+<p></p><figcaption class="figure-caption">Figure 7.3: An exponentiated negative parabola.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Notice the tails in the above graph are asymptote to 0. “Asymptote” is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly “unlikely”.</p>
+<p><strong>Third</strong>, and with the above point in mind, it should be clear that <span class="math inline">\(\ {\frac {1}{\sigma {\sqrt {2\pi }}}}\)</span> will scale the height of the distribution. Observe that in our simple case where <span class="math inline">\(\mu\)</span> is 0 and <span class="math inline">\(\sigma^2\)</span> is 1, the height of the exponentiated parabola is at 1. That gets multiplied by <span class="math inline">\(\ {\frac {1}{\sqrt {2\pi }}}\)</span> to equal about 0.398.</p>
+<p><strong>Fourth</strong>, the normal distribution is perfectly symmetrical. The mean, <span class="math inline">\(\mu\)</span> determines the location of the distribution as well as its central tendency. All three measures of central tendency, the mode (most frequently occurring value), the median (the middlemost value), and the mean (the statistical average), will be the same. It also means a given observation of x will be as far from <span class="math inline">\(\mu\)</span> as -x. Additionally, the statistical moments of skewness and excess kurtosis are zero.</p>
+<p><strong>Fifth</strong>, we noted the normal distribution as a function and not a probability because the probability of any one value is effectively zero.</p>
+</section><section id="normal-density-plot-with-shaded-regions" class="level3"><h3 class="anchored" data-anchor-id="normal-density-plot-with-shaded-regions">Normal Density Plot with Shaded Regions</h3>
+<p>Importantly, around 68% of the distribution is between one standard unit of <span class="math inline">\(\mu\)</span>. Around 90% of the distribution is between 1.645 standard units on either side of <span class="math inline">\(\mu\)</span>. Around 95% of the distribution is between about 1.96 standard units on either side of <span class="math inline">\(\mu\)</span>. About 99% of the distribution is between 2.58 standard units on either side of <span class="math inline">\(\mu\)</span>. So, the probability that x is between 1 on either side of the <span class="math inline">\(\mu\)</span> of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation (i.e.&nbsp;the scale parameter) is 1.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-auc" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="normal_files/figure-html/fig-auc-1.png" class="img-fluid figure-img" width="1152"></p>
+<p></p><figcaption class="figure-caption">Figure 7.4: The area underneath a normal distribution</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The normal distribution appears as a foundation assumption for a lot of quantitative approaches to frequentist statistics. It is the foundation for ordinary least squares (OLS) regression and even for some generalized linear models. Importantly, central limit theorem, itself a foundation of a lot of classical statistical testing, states that sampling distributions are effectively normal as well.</p>
+<p>In summary, the normal density function is technically unbounded. It has just the two parameters that define its location and scale and the tails are asymptote to 0 no matter what the values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> are. This makes the distribution continuous since x can range over the entire line from <span class="math inline">\(\ -\infty\)</span> to <span class="math inline">\(\ +\infty\)</span>. Thus, the function does not reveal the probability of x (the probability of any one value is effectively 0). However, the area under the curve is the full domain of the probability space and sums to 1. The probability of selecting a number between two points on the x-axis equals the area under the curve between those two points.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-standard_normal" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="normal_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figure 7.5: Standard normal distribution with a shaded region</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>7.1</span></a> as following:</p>
+<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{7.2}\]</span></span></p>
+<p>&nbsp;</p>
+</section><section id="properties-of-an-aproximately-normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="properties-of-an-aproximately-normal-distribution">Properties of an aproximately normal distribution</h3>
+<p>In an approximately <strong>bell-shaped (normal)</strong> distribution:</p>
+<ul>
+<li>the mean, the median and the mode have very close values</li>
+<li>the histogram is symmetric about the mean</li>
+<li>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean</li>
+<li>the measure of skewness takes values close to zero (symmetric). Values below -3 or above +3 strongly indicate non-normality (<a href="#fig-skew2">Figure&nbsp;<span>7.6</span></a>).</li>
+<li>the measure of excess kurtosis is close to 0 (mesokurtic). Distributions with positive excess kurtosis are called <em>leptokurtic</em> and with negative excess kurtosis <em>platykurtic</em> (<a href="#fig-kurtosis">Figure&nbsp;<span>7.7</span></a>).</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-skew2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="images/skew2.PNG" class="img-fluid figure-img" width="338"></p>
+<p></p><figcaption class="figure-caption">Figure 7.6: Skewness.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-kurtosis" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="images/kurtosis.PNG" class="img-fluid figure-img" width="430"></p>
+<p></p><figcaption class="figure-caption">Figure 7.7: Kurtosis.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 
 
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -361,9 +446,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./lab3.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">LAB III: Probability and distributions</span></span>
       </a>          
@@ -375,12 +458,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
 </footer>
-
 
 
 </body></html>
