@@ -31,7 +31,7 @@ dat_corn <- dat_corn %>%
  )
 ```
 
-
+ 
 
 ## Types of Data
 
@@ -213,6 +213,8 @@ When some calculation is necessary to derive the observation of interest this sh
 
 The degree of measurement accuracy and the type of data are both important in relation to carrying out a proper statistical analysis.
 
+
+ 
 ## Summarizing Categorical Data
 
 Binary data are the simplest type of data. Each individual has a label which takes one of two values such as male or female, corn healed or not healed. A simple summary would be to count the different types of labels and find the **frequencies**. The set of frequencies of all the possible categories is called the **frequency distribution** of the variable.
@@ -291,6 +293,9 @@ In addition to tabulating each variable separately, we might be interested in wh
 
 : Reporting numbers and percentages {#tbl-rules1}
 :::
+
+
+ 
 
 ## Displaying Categorical Data
 
@@ -487,6 +492,8 @@ ggplot(dat_stacked2, aes(x = group, y = pct, fill = center))+
 
 One issue to consider when using stacked bar plots is the number of variable levels: when dealing with many categories, stacked bar plots tend to become rather confusing.
 :::
+
+ 
 
 ## Summarizing Numerical Data
 
@@ -795,6 +802,8 @@ Thus, the following format is recommended for reporting summary statistics for n
 : Recommendations for reporting summary statistics {#tbl-rules2}
 :::
 
+ 
+
 ## Displaying Numerical Data
 
 The best way for examining the distribution of numerical data is to generate an appropriate graph.
@@ -854,6 +863,8 @@ A histogram (or density plot) gives information about:
 -   The amount of variability in the data.
 
 -   Where the peaks of the distribution are.
+
+ 
 
 ::: {.callout-note icon="false"}
 ## Choose an appropriate number of bins
