@@ -198,7 +198,7 @@ In an approximately **bell-shaped (normal)** distribution:
 
 
 ::: {.callout-note icon="false"}
-## Statistical moments and normality
+## **Statistical moments and normality**
 
 
 **Skewness**
