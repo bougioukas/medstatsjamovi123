@@ -224,7 +224,7 @@ In an approximately **bell-shaped (normal)** distribution:
 ```{r}
 #| echo: false
 #| label: fig-skew2
-#| out-width: "120%"
+#| out-width: "110%"
 #| fig-align: "center"
 #| fig-cap: Skewness.
 
@@ -237,7 +237,7 @@ knitr::include_graphics(here("images", "skew2.png"))
 ```{r}
 #| echo: false
 #| label: fig-kurtosis
-#| out-width: "120%"
+#| out-width: "110%"
 #| fig-align: "center"
 #| fig-cap: Kurtosis.
 
