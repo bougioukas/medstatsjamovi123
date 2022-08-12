@@ -38,8 +38,8 @@ The ensuing distribution will look like this in a simple case where $\mu$ is 0 a
 ```{r}
 #| echo: false
 #| label: fig-simple_normal
-#| fig-height: 3.2
-#| fig-width: 4.0
+#| fig-height: 4.2
+#| fig-width: 6.0
 #| fig-align: "center"
 #| fig-cap: A simple normal density function.
 
@@ -61,7 +61,7 @@ ggplot(data.frame(x = c(-4, 4)), aes(x)) +
 We can break down individual components of a normal distribution and explain them until they seem more accessible.
 
 
-**First**, the “kernel” is the part inside the exponent of the above equation (i.e. $\ {-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}$). Observe, for a simple case where $\mu$ is 0 and $\sigma^2$ is 1 that this part becomes $\ -{\frac {1}{2}}x^{2}$ that is a negative parabola (notice the square term). The minus sign just flips the basic parabola $\ {\frac {1}{2}}x^{2}$ downward.
+**First**, the “kernel” is the part inside the exponent of the above equation (i.e. $\ {-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}$). Observe, for a simple case where $\mu$ = 0 and $\sigma^2$ = 1 that this part becomes $\ -{\frac {1}{2}}x^{2}$ that is a negative parabola (notice the square term). The minus sign just flips the basic parabola $\ {\frac {1}{2}}x^{2}$ downward.
 
 ```{r}
 #| echo: false
@@ -107,8 +107,8 @@ p_parab + p_parab2
 ```{r}
 #| echo: false
 #| label: fig-neg_parabola
-#| fig-height: 3.2
-#| fig-width: 4.0
+#| fig-height: 4.2
+#| fig-width: 6.0
 #| fig-align: "center"
 #| fig-cap: An exponentiated negative parabola.
 
@@ -224,6 +224,7 @@ In an approximately **bell-shaped (normal)** distribution:
 ```{r}
 #| echo: false
 #| label: fig-skew2
+#| out-width: "120%"
 #| fig-align: "center"
 #| fig-cap: Skewness.
 
@@ -236,6 +237,7 @@ knitr::include_graphics(here("images", "skew2.png"))
 ```{r}
 #| echo: false
 #| label: fig-kurtosis
+#| out-width: "120%"
 #| fig-align: "center"
 #| fig-cap: Kurtosis.
 
