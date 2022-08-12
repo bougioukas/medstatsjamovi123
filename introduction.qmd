@@ -32,7 +32,8 @@ dat_corn <- dat_corn %>%
                           labels = c('Central', 'Manor', 'Jordanthorpe', 'Limbrick',
                                      'First Park', 'Huddersfield', 'Darnall')),
         gender = factor(gender, levels = c(1, 2), 
-                              labels=c('male', 'female'))
+                              labels=c('male', 'female')),
+        eq5d_baseline = round(eq5d_baseline, 3)
          
  )
 ```
@@ -791,29 +792,27 @@ Note that the majority of this sum is contributed by one observation, the value 
 ::: callout-tip
 **How to report summary statistics for numerical data?**
 
-Mean and median convey different impressions of the location of data in presence of skewness (or outliers). 
+Mean and median convey different impressions of the location of data in presence of skewness (or outliers).
 
-* If the distribution is **symmetric** (mean=median=mode) (@fig-skew b), then in general the **mean** is the better summary statistic. 
+-   If the distribution is **symmetric** (mean=median=mode) (@fig-skew b), then in general the **mean** is the better summary statistic.
 
-* If the distribution is **skewed** to the left (@fig-skew a) or right (@fig-skew c) then the **median** is less influenced by the tails. 
+-   If the distribution is **skewed** to the left (@fig-skew a) or right (@fig-skew c) then the **median** is less influenced by the tails.
 
 ```{r}
 #| label: fig-skew
 #| fig-align: center
 #| out-width: "80%"
 #| echo: false
-#| fig-cap: Types of distribution according to the summetry (a) left skewed (b) symmetric, and (c) right skewed distribution.
+#| fig-cap: Types of distribution according to the summetry (a) left skewed, (b) symmetric, and (c) right skewed distribution.
 
 knitr::include_graphics(here::here("images", "skew.png"))
 ```
-
 
 Thus, the following format is recommended for reporting summary statistics for numerical data:
 
 > **Mean (sd)** for data with **symmetric** distribution. A distribution, or data set, is symmetric if its left and right sides are mirror images.
 
-> **Median (Q1, Q3)** for those with **skewed** (or asymetrical) distribution.
- 
+> **Median (Q1, Q3)** for those with **skewed** (or asymetrical) distribution.  
 
 @tbl-rules2 presents recommendations for reporting summary statistics for numerical data.
 
@@ -1047,7 +1046,7 @@ dat_corn |>
 #| echo: false
 #| warning: false
 #| label: fig-boxplot3
-#| fig-cap: A box plot of age of the participants in @farndon2013 study.
+#| fig-cap: A box plot of age of the participants in @farndon2013 study by treatment group.
 #| fig-width: 5.5
 #| fig-height: 4.0
 
@@ -1066,11 +1065,19 @@ dat_corn |>
 
  
 
+::: {.callout-note icon="false"}
+## Identifying Outliers in the data based on quartiles
+
+An **outlier** is a data value significantly far removed from the main body of a data set. We say any value outside of the following interval is an outlier:
+
+$$(Q_1 - 1.5 \times IQR, \ Q_3 + 1.5 \times IQR)$$
+:::
+
+ 
 
 **c. Raincloud Plot**
 
-There are many variations of the boxplot. For example, there is a way to combine raw data (dots), probability density, and key summary statistics such as median, and relevant intervals of a range of likely values for the population parameter,
-in an appealing and flexible format with minimal redundancy, using the raincloud plot (@fig-raincloud):
+There are many variations of the boxplot. For example, there is a way to combine raw data (dots), probability density, and key summary statistics such as median, and relevant intervals of a range of likely values for the population parameter, in an appealing and flexible format with minimal redundancy, using the raincloud plot (@fig-raincloud):
 
 ```{r}
 #| echo: false
@@ -1081,7 +1088,7 @@ in an appealing and flexible format with minimal redundancy, using the raincloud
 #| fig-height: 4.0
 
 dat_corn |>
-  ggplot(aes(x = group, y = age, fill = group))+
+  ggplot(aes(x = group, y = age, fill = group)) +
   stat_slab(aes(thickness = stat(pdf*n)), 
                 scale = 0.5) +
   stat_dotsinterval(side = "bottom", 
@@ -1096,6 +1103,48 @@ dat_corn |>
     )
 ```
 
+ 
+
+**c. Scatterplot**
+
+Scatter plots are two dimensional, showing the association between two continuous variables (@fig-scatterplot a). By coloring the data or using different symbols by a third variable, scatter plots can provide additional dimensions (@fig-scatterplot b).
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-scatterplot
+#| fig-cap: Association between age and baseline pain by gender @farndon2013 study.
+#| fig-width: 8.5
+#| fig-height: 4.0
+
+s1 <- dat_corn |>
+  ggplot(aes(x = age, y = pain_baseline)) +
+  geom_point() +
+  ggtitle("Scatterplot") +
+    theme_minimal() +
+    theme(
+      plot.title = element_text(size=15)
+
+    )
+
+
+s2 <- dat_corn |>
+  ggplot(aes(x = age, y = pain_baseline, color = gender)) +
+  geom_point() +
+  ggtitle("Scatterplot by group") +
+    theme_minimal() +
+   ggsci::scale_color_jco() +
+    theme(
+      plot.title = element_text(size=15)
+    )
+
+
+
+s1 + s2 + plot_annotation(tag_levels = 'a')
+
+```
 
  
 
