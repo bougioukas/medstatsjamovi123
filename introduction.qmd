@@ -33,6 +33,7 @@ dat_corn <- dat_corn %>%
                                      'First Park', 'Huddersfield', 'Darnall')),
         gender = factor(gender, levels = c(1, 2), 
                               labels=c('male', 'female')),
+        pain_baseline = round(pain_baseline, 3),
         eq5d_baseline = round(eq5d_baseline, 3)
          
  )
@@ -795,9 +796,9 @@ Note that the majority of this sum is contributed by one observation, the value 
 
 Mean and median convey different impressions of the location of data in presence of skewness (or outliers).
 
--   If the distribution is **symmetric** (mean=median=mode) (@fig-skew b), then in general the **mean** is the better summary statistic.
+-   If the distribution is **symmetric** (mean=median=mode) (@fig-skew b), then in general the **mean** is the better summary statistic (see also @sec-normal).
 
--   If the distribution is **skewed** to the left (@fig-skew a) or right (@fig-skew c) then the **median** is less influenced by the tails.
+-   If the distribution is **skewed** to the left (@fig-skew a) or right (@fig-skew c) then the **median** is less influenced by the tails (see also @sec-normal).
 
 ```{r}
 #| label: fig-skew
@@ -1145,9 +1146,7 @@ s1 + s2 + plot_annotation(tag_levels = 'a')
 
 ```
 
-
 As the scatter plots suggest, there is not association between age and baseline pain: the points seem to be scattered randomly.
-
 
  
 

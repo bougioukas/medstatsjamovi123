@@ -227,7 +227,7 @@ ul.task-list{list-style: none;}
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="sec-introduction" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Normal distribution</span></span></h1>
+<h1 class="title"><span id="sec-normal" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Normal distribution</span></span></h1>
 </div>
 
 
@@ -293,7 +293,7 @@ ul.task-list{list-style: none;}
 </div>
 </div>
 </div>
-<p>The normal distribution appears as a foundation assumption for a lot of quantitative approaches to frequentist statistics. It is the foundation for ordinary least squares (OLS) regression and even for some generalized linear models. Importantly, central limit theorem, itself a foundation of a lot of classical statistical testing, states that sampling distributions are effectively normal as well.</p>
+<p>The normal distribution appears as a foundation assumption for a lot of quantitative approaches to frequentist statistics.</p>
 <p>In summary, the normal density function is technically unbounded. It has just the two parameters that define its location and scale and the tails are asymptote to 0 no matter what the values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> are. This makes the distribution continuous since x can range over the entire line from <span class="math inline">\(\ -\infty\)</span> to <span class="math inline">\(\ +\infty\)</span>. Thus, the function does not reveal the probability of x (the probability of any one value is effectively 0). However, the area under the curve is the full domain of the probability space and sums to 1. The probability of selecting a number between two points on the x-axis equals the area under the curve between those two points.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -310,27 +310,46 @@ ul.task-list{list-style: none;}
 </section><section id="properties-of-an-aproximately-normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="properties-of-an-aproximately-normal-distribution">Properties of an aproximately normal distribution</h3>
 <p>In an approximately <strong>bell-shaped (normal)</strong> distribution:</p>
 <ul>
-<li>the mean, the median and the mode have very close values</li>
-<li>the histogram is symmetric about the mean</li>
-<li>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean</li>
-<li>the measure of skewness takes values close to zero (symmetric). Values below -3 or above +3 strongly indicate non-normality (<a href="#fig-skew2">Figure&nbsp;<span>7.6</span></a>).</li>
-<li>the measure of excess kurtosis is close to 0 (mesokurtic). Distributions with positive excess kurtosis are called <em>leptokurtic</em> and with negative excess kurtosis <em>platykurtic</em> (<a href="#fig-kurtosis">Figure&nbsp;<span>7.7</span></a>).</li>
+<li><p>the mean, the median and the mode have very close values</p></li>
+<li><p>the histogram is symmetric about the mean</p></li>
+<li><p>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean</p></li>
+<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>7.6</span></a> b). Particularly, values between −1 and +1 indicate an approximate bell-shaped curve.</p></li>
+<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>7.7</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
 </ul>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Statistical moments and normality
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Skewness</strong></p>
+<p>Skewness values that are negative indicate a tail to the left (<a href="#fig-skew2">Figure&nbsp;<span>7.6</span></a> a), zero value indicate a symmetric distribution (<a href="#fig-skew2">Figure&nbsp;<span>7.6</span></a> b), while values that are positive indicate a tail to the right (<a href="#fig-skew2">Figure&nbsp;<span>7.6</span></a> c).</p>
+<p>Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with &gt;1 indicating moderate skewness and &gt;2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-skew2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/skew2.PNG" class="img-fluid figure-img" style="width:110.0%"></p>
+<figure class="figure"><p><img src="images/skew2.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
 <p></p><figcaption class="figure-caption">Figure 7.6: Skewness.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
+<p>&nbsp;</p>
+<p><strong>Kurtosis</strong></p>
+<p>Distributions with positive excess kurtosis are called <em>leptokurtic</em> (<a href="#fig-kurtosis">Figure&nbsp;<span>7.7</span></a> a). If the measure of excess kurtosis is close to 0 the distribution is mesokurtic (<a href="#fig-kurtosis">Figure&nbsp;<span>7.7</span></a> b). Finally, distributions with negative excess kurtosis are called <em>platykurtic</em> (<a href="#fig-kurtosis">Figure&nbsp;<span>7.7</span></a> c).</p>
+<p>A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-kurtosis" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/kurtosis.PNG" class="img-fluid figure-img" style="width:110.0%"></p>
+<figure class="figure"><p><img src="images/kurtosis.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
 <p></p><figcaption class="figure-caption">Figure 7.7: Kurtosis.</figcaption><p></p>
 </figure>
+</div>
+</div>
 </div>
 </div>
 </div>

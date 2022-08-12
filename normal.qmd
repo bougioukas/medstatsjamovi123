@@ -1,5 +1,4 @@
-# Normal distribution {#sec-introduction}
-
+# Normal distribution {#sec-normal}
 
 ```{r}
 #| include: false
@@ -15,21 +14,15 @@ y <- dnorm(x, mean = 4, sd = 2) # y is a vector of the same size as x, with valu
 
 ```
 
-
-
 ## Characteristics of Normal Distribution
-
 
 ### Historical background
 
-There are several important probability distributions in statistics. However, the normal distribution might be the most important. A normal distribution is the familiar “bell curve” and it’s a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
-
-
+There are several important probability distributions in statistics. However, the normal distribution might be the most important. A normal distribution is the familiar "bell curve" and it's a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
 
 ### The mathimatical type
 
-Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean $\mu$ and variance $\sigma^2$. The mean , $\mu$, is a “location parameter”, which defines the central tendency. The variance, $\sigma^2$ is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as follows:
-
+Gauss' normal distribution, technically a density function, is a distribution defined by two parameters, mean $\mu$ and variance $\sigma^2$. The mean , $\mu$, is a "location parameter", which defines the central tendency. The variance, $\sigma^2$ is the "scale parameter", which defines the width of the distribution and how short the distribution is. It's formally given as follows:
 
 $$ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}} $$ {#eq-gauss}
 
@@ -55,13 +48,11 @@ ggplot(data.frame(x = c(-4, 4)), aes(x)) +
         plot.subtitle = element_text(size= 8))
 ```
 
-
 ### Individual components of a normal distribution
 
 We can break down individual components of a normal distribution and explain them until they seem more accessible.
 
-
-**First**, the “kernel” is the part inside the exponent of the above equation (i.e. $\ {-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}$). Observe, for a simple case where $\mu$ = 0 and $\sigma^2$ = 1 that this part becomes $\ -{\frac {1}{2}}x^{2}$ that is a negative parabola (notice the square term). The minus sign just flips the basic parabola $\ {\frac {1}{2}}x^{2}$ downward.
+**First**, the "kernel" is the part inside the exponent of the above equation (i.e. $\ {-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}$). Observe, for a simple case where $\mu$ = 0 and $\sigma^2$ = 1 that this part becomes $\ -{\frac {1}{2}}x^{2}$ that is a negative parabola (notice the square term). The minus sign just flips the basic parabola $\ {\frac {1}{2}}x^{2}$ downward.
 
 ```{r}
 #| echo: false
@@ -98,10 +89,6 @@ theme(plot.title.position = "plot",
 p_parab + p_parab2
 ```
 
-
-
-
-
 **Second**, exponentiating the negative parabola ($\  e^{-{\frac {1}{2}}x^{2}}$) makes it asymptote to 0.
 
 ```{r}
@@ -130,28 +117,17 @@ theme(plot.title.position = "plot",
 p_expparab
 ```
 
-Notice the tails in the above graph are asymptote to 0. “Asymptote” is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly “unlikely”. 
-
-
+Notice the tails in the above graph are asymptote to 0. "Asymptote" is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly "unlikely".
 
 **Third**, and with the above point in mind, it should be clear that $\ {\frac {1}{\sigma {\sqrt {2\pi }}}}$ will scale the height of the distribution. Observe that in our simple case where $\mu$ is 0 and $\sigma^2$ is 1, the height of the exponentiated parabola is at 1. That gets multiplied by $\ {\frac {1}{\sqrt {2\pi }}}$ to equal about 0.398.
 
+**Fourth**, the normal distribution is perfectly symmetrical. The mean, $\mu$ determines the location of the distribution as well as its central tendency. All three measures of central tendency, the mode (most frequently occurring value), the median (the middlemost value), and the mean (the statistical average), will be the same. It also means a given observation of x will be as far from $\mu$ as -x. Additionally, the statistical moments of skewness and excess kurtosis are zero.
 
-
-**Fourth**, the normal distribution is perfectly symmetrical. The mean, $\mu$ determines the location of the distribution as well as its central tendency. All three measures of central tendency, the mode (most frequently occurring value), the median (the middlemost value), and the mean (the statistical average), will be the same. It also means a given observation of x will be as far from $\mu$ as -x. 
-Additionally, the statistical moments of skewness and excess kurtosis are zero. 
-
-
-
-**Fifth**, we noted the normal distribution as a function and not a probability because the probability of any one value is effectively zero. 
-
-
-
+**Fifth**, we noted the normal distribution as a function and not a probability because the probability of any one value is effectively zero.
 
 ### Normal Density Plot with Shaded Regions
 
-Importantly, around 68\% of the distribution is between one standard unit of $\mu$. Around 90\% of the distribution is between 1.645 standard units on either side of $\mu$. Around 95% of the distribution is between about 1.96 standard units on either side of $\mu$. About 99% of the distribution is between 2.58 standard units on either side of $\mu$. So, the probability that x is between 1 on either side of the $\mu$
-of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation (i.e. the scale parameter) is 1.
+Importantly, around 68% of the distribution is between one standard unit of $\mu$. Around 90% of the distribution is between 1.645 standard units on either side of $\mu$. Around 95% of the distribution is between about 1.96 standard units on either side of $\mu$. About 99% of the distribution is between 2.58 standard units on either side of $\mu$. So, the probability that x is between 1 on either side of the $\mu$ of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation (i.e. the scale parameter) is 1.
 
 ```{r}
 #| echo: false
@@ -170,12 +146,9 @@ normal_dist("#522d80","#F66733") +
        x = "")
 ```
 
-The normal distribution appears as a foundation assumption for a lot of quantitative approaches to frequentist statistics. It is the foundation for ordinary least squares (OLS) regression and even for some generalized linear models. Importantly, central limit theorem, itself a foundation of a lot of classical statistical testing, states that sampling distributions are effectively normal as well.
-
+The normal distribution appears as a foundation assumption for a lot of quantitative approaches to frequentist statistics.
 
 In summary, the normal density function is technically unbounded. It has just the two parameters that define its location and scale and the tails are asymptote to 0 no matter what the values of $\mu$ and $\sigma^2$ are. This makes the distribution continuous since x can range over the entire line from $\ -\infty$ to $\ +\infty$. Thus, the function does not reveal the probability of x (the probability of any one value is effectively 0). However, the area under the curve is the full domain of the probability space and sums to 1. The probability of selecting a number between two points on the x-axis equals the area under the curve between those two points.
-
-
 
 ```{r}
 #| echo: false
@@ -203,28 +176,42 @@ polygon(region.x, region.y, density=-1, col="#F66733")
 
 ```
 
-
-To find the area between x = 1 and x = 2, we must integrate the @eq-gauss as following: 
+To find the area between x = 1 and x = 2, we must integrate the @eq-gauss as following:
 
 $$ E(x)=\int_{1}^{2}f(x)dx $$ {#eq-integral}
 
  
 
+
 ### Properties of an aproximately normal distribution
 
 In an approximately **bell-shaped (normal)** distribution:
 
-* the mean, the median and the mode have very close values
-* the histogram is symmetric about the mean
-* “nearly all” values (99.7\%) are within -3 and +3 standard deviations of the mean
-* the measure of skewness takes values close to zero (symmetric). Values below -3 or above +3 strongly indicate non-normality (@fig-skew2). 
-* the measure of excess kurtosis is close to 0 (mesokurtic). Distributions with positive excess kurtosis are called *leptokurtic* and  with negative excess kurtosis  *platykurtic* (@fig-kurtosis).
+-   the mean, the median and the mode have very close values
+-   the histogram is symmetric about the mean
+-   "nearly all" values (99.7%) are within -3 and +3 standard deviations of the mean
+-   the measure of skewness takes values close to zero (symmetric distribution) (@fig-skew2 b). Particularly, values between −1 and +1 indicate an approximate bell-shaped curve.
+
+-   the measure of excess kurtosis is close to 0 (mesokurtic) (@fig-kurtosis b). A kurtosis value between −1 and +1 indicates normality.
+
+
+
+
+::: {.callout-note icon="false"}
+## Statistical moments and normality
+
+
+**Skewness**
+
+Skewness values that are negative indicate a tail to the left (@fig-skew2 a), zero value indicate a symmetric distribution (@fig-skew2 b), while values that are positive indicate a tail to the right (@fig-skew2 c).
+
+Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with >1 indicating moderate skewness and >2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.
 
 
 ```{r}
 #| echo: false
 #| label: fig-skew2
-#| out-width: "110%"
+#| out-width: "105%"
 #| fig-align: "center"
 #| fig-cap: Skewness.
 
@@ -234,14 +221,21 @@ knitr::include_graphics(here("images", "skew2.png"))
 
  
 
+
+**Kurtosis**
+
+Distributions with positive excess kurtosis are called *leptokurtic* (@fig-kurtosis a). If the measure of excess kurtosis is close to 0 the distribution is mesokurtic (@fig-kurtosis b). Finally, distributions with negative excess kurtosis are called *platykurtic* (@fig-kurtosis c).
+
+A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.
+
 ```{r}
 #| echo: false
 #| label: fig-kurtosis
-#| out-width: "110%"
+#| out-width: "105%"
 #| fig-align: "center"
 #| fig-cap: Kurtosis.
 
 
 knitr::include_graphics(here("images", "kurtosis.png"))
 ```
-
+:::
