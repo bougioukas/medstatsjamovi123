@@ -239,7 +239,12 @@ ul.task-list{list-style: none;}
    
   <ul>
   <li><a href="#statistics-and-medicine" id="toc-statistics-and-medicine" class="nav-link active" data-scroll-target="#statistics-and-medicine"> <span class="header-section-number">1.1</span> Statistics and Medicine</a></li>
-  <li><a href="#why-jamovi" id="toc-why-jamovi" class="nav-link" data-scroll-target="#why-jamovi"> <span class="header-section-number">1.2</span> Why Jamovi?</a></li>
+  <li><a href="#the-discipline-of-statistics" id="toc-the-discipline-of-statistics" class="nav-link" data-scroll-target="#the-discipline-of-statistics"> <span class="header-section-number">1.2</span> The discipline of statistics</a>
+  <ul class="collapse">
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a></li>
+  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics">Inferential Statistics</a></li>
+  </ul></li>
+  <li><a href="#why-jamovi" id="toc-why-jamovi" class="nav-link" data-scroll-target="#why-jamovi"> <span class="header-section-number">1.3</span> Why Jamovi?</a></li>
   </ul>
 </nav>
     </div>
@@ -264,7 +269,8 @@ ul.task-list{list-style: none;}
 
 <div class="cell page-columns page-full" data-fig-width="9">
 <div class="cell-output-display column-screen-inset-right">
-<div>
+<div id="fig-flowchart1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
 <p>
 </p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
 Q[Research<br>Question] --&gt; M[Measurements] --&gt; D[Design] --&gt; Ac[Data<br>Acquisition] --&gt; Des[Description] --&gt; A[Analysis] --&gt; I[Interpretation] &amp; Pred[Prediction]
@@ -275,6 +281,8 @@ I --&gt; K[New Knowledge] &amp; Dec[Decision<br>Making]
 
 </div>
 <p></p>
+<p></p><figcaption class="figure-caption">Figure 1.1: Flowchart of research stages</figcaption><p></p>
+</figure>
 </div>
 </div>
 </div>
@@ -288,13 +296,54 @@ I --&gt; K[New Knowledge] &amp; Dec[Decision<br>Making]
 <p>This variability is also inherent in responses to biological hazards. Most people now accept that cigarette smoking causes lung cancer and heart disease, and yet nearly everyone can point to an apparently healthy 80-year-old who has smoked for many years without apparent ill effect. Although it is now known from the report of Doll et al (2004) that about half of all persistent cigarette smokers are killed by their habit, it is usually forgotten that until the 1950s, the cause of the rise in lung cancer deaths was a mystery and commonly associated with general atmospheric pollution such as the exhaust fumes of cars. It was not until the carefully designed and statistically analysed case–control and cohort studies of Richard Doll and Austin Bradford Hill and others, that smoking was identified as the true cause. Enstrom et al.&nbsp;(2003) moved the debate on to ask whether or not passive smoking causes lung cancer. This is a more difficult question to answer since the association is weaker. However, studies by Cao et al.&nbsp;(2015) have now shown that it is a major health problem and scientists at the International Agency for Rsearch on Cancer (IARC) have concluded that there is sufficient evidence that second-hand smoke causes lung cancer (IARC 2012). Restrictions on smoking in public places have been imposed to smokers.</p>
 <p>With such variability, it follows that in any comparison made in a medical context, such as people on different treatments, differences are almost bound to occur. These differences may be due to real effects, random variation or variation in some other factor that may affect an outcome. It is the job of the analyst to decide how much variation should be ascribed to chance or other factors, so that any remaining variation can be assumed to be due to a real effect. This is the art of statistics.</p>
 </section>
-<section id="why-jamovi" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="why-jamovi"><span class="header-section-number">1.2</span> Why Jamovi?</h2>
-<p>Jamovi is a new fee open “3rd generation” statistical software that is built on top of the programming language R (<a href="#fig-jamovi_0">Figure&nbsp;<span>1.1</span></a>). Designed from the ground up to be easy to use, Jamovi is a compelling alternative to costly statistical products such as SPSS and SAS.</p>
+<section id="the-discipline-of-statistics" class="level2 page-columns page-full" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="the-discipline-of-statistics"><span class="header-section-number">1.2</span> The discipline of statistics</h2>
+<p>The discipline of statistics includes two main branches:</p>
+<ul>
+<li><p>descriptive statistics</p></li>
+<li><p>inferential statistics</p></li>
+</ul>
+<div class="cell page-columns page-full" data-fig-width="9">
+<div class="cell-output-display column-screen-inset-right">
+<div id="fig-branches" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-2">flowchart LR
+  
+    A[Descriptive statistics]--&gt; B[Descriptive statistics]
+    A --&gt; C[Inferential statistics]
+    B --&gt; D[Measures of location: <br> e.g., mean, median, mode.]
+    B --&gt; E[Measures of dispersion: <br> e.g., standard deviation, quartiles]
+    B --&gt; F[Measures of association: <br> e.g., correlation coefficients]
+    C --&gt; G[Estimation]
+    C --&gt; H[Hypothesis Testing]
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">Figure 1.2: The discipline of statistics and its two branches, descriptive statistics and inferential statistics</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="descriptive-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h3>
+<p>The methods and techniques of descriptive statistics aim at summarizing large quantities of data by a few numbers, in a way that highlights the most important numerical features of the data.</p>
+<p>Descriptive statistics include measures of central tendency, measures of dispersion, measures of position, and measures of association. They also include a description of the general shape of the distribution of the data. These terms will be explained in the corresponding chapters.</p>
+</section>
+<section id="inferential-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="inferential-statistics">Inferential Statistics</h3>
+<p>Inferential statistics aim at generalizing a measure taken on a small number of cases that have been observed, to a larger set of cases that have not been observed. Using the terms explained above, we could reformulate this aim, and say that inferential statistics aim at generalizing observations made on a sample to a whole population.</p>
+</section>
+</section>
+<section id="why-jamovi" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="why-jamovi"><span class="header-section-number">1.3</span> Why Jamovi?</h2>
+<p>Jamovi is a new fee open “3rd generation” statistical software that is built on top of the programming language R (<a href="#fig-jamovi_0">Figure&nbsp;<span>1.3</span></a>). Designed from the ground up to be easy to use, Jamovi is a compelling alternative to costly statistical products such as SPSS and SAS.</p>
 <div id="fig-jamovi_0" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/jamovi_0.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 1.1: Jamovi is free and open statistical software</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 1.3: Jamovi is free and open statistical software</figcaption><p></p>
 </figure>
 </div>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">

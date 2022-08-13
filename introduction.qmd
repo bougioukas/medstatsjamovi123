@@ -2,14 +2,14 @@
 
 ```{mermaid}
 %%| column: screen-inset-right
+%%| label: fig-flowchart1
 %%| fig-width: 9
+%%| fig-cap: Flowchart of research stages
 flowchart LR
 Q[Research<br>Question] --> M[Measurements] --> D[Design] --> Ac[Data<br>Acquisition] --> Des[Description] --> A[Analysis] --> I[Interpretation] & Pred[Prediction]
 Pred --> V[Validation]
 I --> K[New Knowledge] & Dec[Decision<br>Making]
 ```
-
-
 
 ## Statistics and Medicine
 
@@ -26,6 +26,51 @@ Measurements on human subjects seldom give exactly the same results from one occ
 This variability is also inherent in responses to biological hazards. Most people now accept that cigarette smoking causes lung cancer and heart disease, and yet nearly everyone can point to an apparently healthy 80-year-old who has smoked for many years without apparent ill effect. Although it is now known from the report of Doll et al (2004) that about half of all persistent cigarette smokers are killed by their habit, it is usually forgotten that until the 1950s, the cause of the rise in lung cancer deaths was a mystery and commonly associated with general atmospheric pollution such as the exhaust fumes of cars. It was not until the carefully designed and statistically analysed case--control and cohort studies of Richard Doll and Austin Bradford Hill and others, that smoking was identified as the true cause. Enstrom et al. (2003) moved the debate on to ask whether or not passive smoking causes lung cancer. This is a more difficult question to answer since the association is weaker. However, studies by Cao et al. (2015) have now shown that it is a major health problem and scientists at the International Agency for Rsearch on Cancer (IARC) have concluded that there is sufficient evidence that second-hand smoke causes lung cancer (IARC 2012). Restrictions on smoking in public places have been imposed to smokers.
 
 With such variability, it follows that in any comparison made in a medical context, such as people on different treatments, differences are almost bound to occur. These differences may be due to real effects, random variation or variation in some other factor that may affect an outcome. It is the job of the analyst to decide how much variation should be ascribed to chance or other factors, so that any remaining variation can be assumed to be due to a real effect. This is the art of statistics.
+
+
+
+
+## The discipline of statistics
+
+The discipline of statistics includes two main branches:
+
+* descriptive statistics
+
+* inferential statistics
+
+
+
+```{mermaid}
+%%| column: screen-inset-right
+%%| label: fig-branches
+%%| fig-width: 9
+%%| fig-cap: The discipline of statistics and its two branches, descriptive statistics and inferential statistics
+
+flowchart LR
+  
+    A[Descriptive statistics]--> B[Descriptive statistics]
+    A --> C[Inferential statistics]
+    B --> D[Measures of location: <br/> e.g., mean, median, mode.]
+    B --> E[Measures of dispersion: <br/> e.g., standard deviation, quartiles]
+    B --> F[Measures of association: <br/> e.g., correlation coefficients]
+    C --> G[Estimation]
+    C --> H[Hypothesis Testing]
+```
+
+
+### Descriptive Statistics
+
+The methods and techniques of descriptive statistics aim at summarizing large quantities of data by a few numbers, in a way that highlights the most important numerical features of the data.
+
+Descriptive statistics include measures of central tendency, measures of dispersion, measures of position, and measures of association. They also include a description of the general shape of the distribution of the data. These terms will be explained in the corresponding chapters.
+
+
+### Inferential Statistics
+
+Inferential statistics aim at generalizing a measure taken on a small number of cases that have been observed, to a larger set of cases that have not been observed. Using the terms explained above, we could reformulate this aim, and say that inferential statistics aim at generalizing observations made on a sample to a whole population.
+
+
+
 
 ## Why Jamovi?
 

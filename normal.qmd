@@ -14,11 +14,29 @@ y <- dnorm(x, mean = 4, sd = 2) # y is a vector of the same size as x, with valu
 
 ```
 
+We have mentioned the normal distribution several times in this textbook with the promise we would provide more detail later. In this section, we will explore the normal distribution, why it matters, and how we can tell if our distribution is normal or not.
+
+
 ## Characteristics of Normal Distribution
 
 ### Historical background
 
 There are several important probability distributions in statistics. However, the normal distribution might be the most important. A normal distribution is the familiar "bell curve" and it's a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
+
+
+```{r}
+#| echo: false
+#| label: fig-dnormal
+#| out-width: "100%"
+#| fig-align: "center"
+#| fig-cap: A distribution can be (a) leptokurtic, (b) mesokurtic, or (c) platykurtic.
+
+
+knitr::include_graphics(here("images", "dnorm.png"))
+```
+
+
+
 
 ### The mathimatical type
 
@@ -182,7 +200,7 @@ $$ E(x)=\int_{1}^{2}f(x)dx $$ {#eq-integral}
 
  
 
-## Properties of an aproximately normal distribution
+## Properties of an approximately normal distribution
 
 In an approximately **bell-shaped (normal)** distribution:
 
@@ -199,9 +217,13 @@ In an approximately **bell-shaped (normal)** distribution:
 ::: {.callout-note icon="false"}
 ## **Statistical moments and normality**
 
+There are two ways in which samples can deviate from normality: **skew** and **kurtosis**.
+
 **Skewness**
 
-Skewness values that are negative indicate a tail to the left (@fig-skew2 a), zero value indicate a symmetric distribution (@fig-skew2 b), while values that are positive indicate a tail to the right (@fig-skew2 c).
+Skewness is usually described as a measure of a dataset\'s symmetry -- or lack of symmetry. 
+
+Skewness values that are **negative** indicate a tail to the **left** (@fig-skew2 a), **zero** value indicate a **symmetric** distribution (@fig-skew2 b), while values that are **positive** indicate a tail to the **right** (@fig-skew2 c).
 
 Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with \>1 indicating moderate skewness and \>2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.
 
@@ -210,7 +232,7 @@ Skewness values between −1 and +1 indicate an approximate bell-shaped curve. V
 #| label: fig-skew2
 #| out-width: "105%"
 #| fig-align: "center"
-#| fig-cap: Skewness.
+#| fig-cap: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.
 
 
 knitr::include_graphics(here("images", "skew2.png"))
@@ -220,7 +242,9 @@ knitr::include_graphics(here("images", "skew2.png"))
 
 **Kurtosis**
 
-Distributions with positive excess kurtosis are called *leptokurtic* (@fig-kurtosis a). If the measure of excess kurtosis is close to 0 the distribution is mesokurtic (@fig-kurtosis b). Finally, distributions with negative excess kurtosis are called *platykurtic* (@fig-kurtosis c).
+The other way that distributions can deviate from normality is **kurtosis**. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).
+
+Distributions with **positive** excess kurtosis are called ***leptokurtic*** (@fig-kurtosis a). If the measure of excess kurtosis is **close to 0** the distribution is **mesokurtic** (@fig-kurtosis b). Finally, distributions with **negative** excess kurtosis are called ***platykurtic*** (@fig-kurtosis c).
 
 A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.
 
@@ -229,7 +253,7 @@ A kurtosis value between −1 and +1 indicates normality and a value between −
 #| label: fig-kurtosis
 #| out-width: "105%"
 #| fig-align: "center"
-#| fig-cap: Kurtosis.
+#| fig-cap: A distribution can be (a) leptokurtic, (b) mesokurtic, or (c) platykurtic.
 
 
 knitr::include_graphics(here("images", "kurtosis.png"))

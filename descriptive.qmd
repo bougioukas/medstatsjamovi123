@@ -1,6 +1,5 @@
 # Descriptive statistics {#sec-descriptive}
 
-
 ```{r}
 #| include: false
 
@@ -31,6 +30,16 @@ dat_corn <- dat_corn %>%
  )
 ```
 
+
+## Variables
+
+A variable is a quantity or property that is free to vary, or take on different values.
+
+
+
+
+
+
  
 
 ## Types of Data
@@ -50,10 +59,13 @@ knitr::include_graphics(here::here("images", "types_data.png"))
 ::: {.callout-note icon="false"}
 ## **Example from the literature - Salicylic acid plasters for treatment of foot corns**
 
-In a randomized controlled trial (RCT), @farndon2013 investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. The recorded data is as follows:
+In a randomized controlled trial (RCT), @farndon2013 investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. The recorded data is as follows (@fig-dat_corn):
 
 ```{r}
 #| echo: false
+#| label: fig-dat_corn
+#| fig-cap: The recorded data in @farndon2013 study.
+
 
 DT::datatable(dat_corn, extensions = 'Scroller', 
               options = list(deferRender = F, dom = 't', columnDefs = list(list(className = 'dt-center', targets = 5)), scrollY = 202, scroller = TRUE, scrollX = T, pageLength = 5))
@@ -209,13 +221,9 @@ It is best to record the actual value of blood pressure, haemoglobin, etc. It is
 When some calculation is necessary to derive the observation of interest this should be done by the computer. Thus it is much better to record date of birth and date of examination for subsequent calculation of age rather than to rely on mental arithmetic.
 :::
 
- 
-
 The degree of measurement accuracy and the type of data are both important in relation to carrying out a proper statistical analysis.
 
-
- 
-## Summarizing Categorical Data
+  \## Summarizing Categorical Data
 
 Binary data are the simplest type of data. Each individual has a label which takes one of two values such as male or female, corn healed or not healed. A simple summary would be to count the different types of labels and find the **frequencies**. The set of frequencies of all the possible categories is called the **frequency distribution** of the variable.
 
@@ -293,7 +301,6 @@ In addition to tabulating each variable separately, we might be interested in wh
 
 : Reporting numbers and percentages {#tbl-rules1}
 :::
-
 
  
 
