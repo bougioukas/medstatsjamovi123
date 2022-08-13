@@ -1,4 +1,4 @@
-# Normal distribution {#sec-normal}
+# Distributions - Normal distribution {#sec-normal}
 
 ```{r}
 #| include: false

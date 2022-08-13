@@ -14,13 +14,12 @@ book:
   chapters:
     - index.qmd
     - introduction.qmd
-    - descriptive.qmd
     - lab1.qmd
-    - study_designs.qmd
+    - descriptive.qmd
     - lab2.qmd
-    - probability.qmd
-    - lab3.qmd
     - normal.qmd
+    - lab3.qmd
+    - estimation.qmd
     - lab4.qmd
     - inference.qmd
     - lab5.qmd
@@ -34,7 +33,6 @@ book:
     - lab9.qmd
     - linear.qmd
     - lab10.qmd
-    - reporting.qmd
     - references.qmd
   
   page-footer: 
