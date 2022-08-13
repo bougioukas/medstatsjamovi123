@@ -1,15 +1,5 @@
 # Introduction {#sec-introduction}
 
-```{mermaid}
-%%| column: screen-inset-right
-%%| label: fig-flowchart1
-%%| fig-width: 9
-%%| fig-cap: Flowchart of research stages
-flowchart LR
-Q[Research<br>Question] --> M[Measurements] --> D[Design] --> Ac[Data<br>Acquisition] --> Des[Description] --> A[Analysis] --> I[Interpretation] & Pred[Prediction]
-Pred --> V[Validation]
-I --> K[New Knowledge] & Dec[Decision<br>Making]
-```
 
 ## Statistics and Medicine
 
@@ -48,7 +38,7 @@ The discipline of statistics includes two main branches:
 
 flowchart LR
   
-    A[Descriptive statistics]--> B[Descriptive statistics]
+    A[Statistics]--> B[Descriptive statistics]
     A --> C[Inferential statistics]
     B --> D[Measures of location: <br/> e.g., mean, median, mode.]
     B --> E[Measures of dispersion: <br/> e.g., standard deviation, quartiles]
