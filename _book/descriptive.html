@@ -68,12 +68,7 @@ div.csl-indent {
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="site_libs/datatables-binding-0.23/datatables.js"></script><script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="site_libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script><link href="site_libs/dt-ext-scroller-1.11.3/css/scroller.dataTables.min.css" rel="stylesheet">
-<script src="site_libs/dt-ext-scroller-1.11.3/js/dataTables.scroller.min.js"></script><link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+}</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
@@ -232,24 +227,17 @@ div.csl-indent {
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#variables" id="toc-variables" class="nav-link active" data-scroll-target="#variables"> <span class="header-section-number">3.1</span> Variables</a></li>
+<li><a href="#summarizing-categorical-data" id="toc-summarizing-categorical-data" class="nav-link active" data-scroll-target="#summarizing-categorical-data"> <span class="header-section-number">3.1</span> Summarizing Categorical Data</a></li>
+  <li><a href="#displaying-categorical-data" id="toc-displaying-categorical-data" class="nav-link" data-scroll-target="#displaying-categorical-data"> <span class="header-section-number">3.2</span> Displaying Categorical Data</a></li>
   <li>
-<a href="#types-of-data" id="toc-types-of-data" class="nav-link" data-scroll-target="#types-of-data"> <span class="header-section-number">3.2</span> Types of Data</a>
-  <ul class="collapse">
-<li><a href="#categorical-data" id="toc-categorical-data" class="nav-link" data-scroll-target="#categorical-data">Categorical Data</a></li>
-  <li><a href="#numerical-data" id="toc-numerical-data" class="nav-link" data-scroll-target="#numerical-data">Numerical Data</a></li>
-  </ul>
-</li>
-  <li><a href="#displaying-categorical-data" id="toc-displaying-categorical-data" class="nav-link" data-scroll-target="#displaying-categorical-data"> <span class="header-section-number">3.3</span> Displaying Categorical Data</a></li>
-  <li>
-<a href="#summarizing-numerical-data" id="toc-summarizing-numerical-data" class="nav-link" data-scroll-target="#summarizing-numerical-data"> <span class="header-section-number">3.4</span> Summarizing Numerical Data</a>
+<a href="#summarizing-numerical-data" id="toc-summarizing-numerical-data" class="nav-link" data-scroll-target="#summarizing-numerical-data"> <span class="header-section-number">3.3</span> Summarizing Numerical Data</a>
   <ul class="collapse">
 <li><a href="#measures-of-location" id="toc-measures-of-location" class="nav-link" data-scroll-target="#measures-of-location">Measures of Location</a></li>
   <li><a href="#measures-of-dispersion" id="toc-measures-of-dispersion" class="nav-link" data-scroll-target="#measures-of-dispersion">Measures of Dispersion</a></li>
   </ul>
 </li>
-  <li><a href="#displaying-numerical-data" id="toc-displaying-numerical-data" class="nav-link" data-scroll-target="#displaying-numerical-data"> <span class="header-section-number">3.5</span> Displaying Numerical Data</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">3.6</span> Exercises</a></li>
+  <li><a href="#displaying-numerical-data" id="toc-displaying-numerical-data" class="nav-link" data-scroll-target="#displaying-numerical-data"> <span class="header-section-number">3.4</span> Displaying Numerical Data</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">3.5</span> Exercises</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -266,314 +254,10 @@ div.csl-indent {
   </div>
   
 
-</header><section id="variables" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="variables">
-<span class="header-section-number">3.1</span> Variables</h2>
-<p>A <strong>variable</strong> is a quantity or property that is free to vary, or take on different values. Researchers design experiments to test if changes to one or more variables are associated with changes to another variable of interest. For example, if a researcher thinks a new treatment reduces the number of depressive symptoms, he could design an experiment to test this hypothesis; participants should randomly assigned to one of two groups: one (the experimental group) receiving the new treatment that is being tested, and the other (the comparison group or control) receiving an alternative (conventional) treatment.</p>
-<p>In this experiment, the type of treatment each participant received (i.e., new treatment vs.&nbsp;no treatment) is the <strong>independent variable</strong> (IV), while the number of depressive symptoms observed in each person is the <strong>dependent variable</strong> (DV) or the <strong>outcome</strong> variable.</p>
-<p>&nbsp;</p>
-</section><section id="types-of-data" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="types-of-data">
-<span class="header-section-number">3.2</span> Types of Data</h2>
-<p>Data in variable can be either categorical or numerical (otherwise known as qualitative and quantitative) in nature (<a href="#fig-types_data">Figure&nbsp;<span>3.1</span></a>).</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-types_data" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/types_data.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.1: Broad classification of the different types of data with examples.</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-<strong>Example from the literature - Salicylic acid plasters for treatment of foot corns</strong>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In a randomized controlled trial (RCT), <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. The recorded data is as follows (<a href="#fig-data_corn">Figure&nbsp;<span>3.2</span></a>):</p>
-<div class="cell">
-<div id="fig-data_corn" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><div id="htmlwidget-535c9c2ad52aa0f6623a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-535c9c2ad52aa0f6623a">{"x":{"filter":"none","vertical":false,"extensions":["Scroller"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202"],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202],["corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","corn plaster","scalpel","scalpel","scalpel","corn plaster","scalpel","scalpel","scalpel","scalpel","scalpel","corn plaster","corn plaster","scalpel","scalpel","scalpel","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","scalpel","scalpel","corn plaster","scalpel","corn plaster","scalpel","corn plaster","scalpel","scalpel","scalpel","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","corn plaster","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","corn plaster","corn plaster","corn plaster","scalpel","scalpel","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","scalpel","scalpel","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","scalpel","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","scalpel","corn plaster","scalpel","corn plaster","scalpel","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","scalpel","corn plaster","scalpel","scalpel","scalpel","corn plaster","scalpel","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","scalpel","scalpel","scalpel","corn plaster","scalpel","corn plaster","corn plaster","scalpel","corn plaster","scalpel","corn plaster","corn plaster","corn plaster","corn plaster","scalpel"],["Central","Huddersfield","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","First Park","First Park","First Park","First Park","First Park","First Park","First Park","First Park","First Park","First Park","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Darnall","Limbrick","Limbrick","Limbrick","Huddersfield","Huddersfield","Huddersfield","Huddersfield","Huddersfield","Huddersfield","Huddersfield","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","First Park","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Manor","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Darnall","Limbrick","Limbrick","Limbrick","Limbrick","Limbrick","Darnall","Huddersfield","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Central","Manor","Manor","Manor","Manor","Manor","Central","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Jordanthorpe","Darnall","Limbrick","Darnall","Darnall"],["female","female","male","female","female","female","female","male","female","male","female","male","male","female","female","male","female","male","female","male","female","male","male","female","male","female","male","female","male","female","male","female","male","female","female","male","male","female","female","female","female","male","male","female","female","male","male","male","female","male","male","male","female","female","female","female","female","female","female","female","female","male","male","female","female","male","female","female","male","male","male","female","female","female","female","female","male","male","female","female","female","male","female","male","female","male","male","female","female","female","male","female","female","male","female","female","male","male","female","female","female","male","female","male","male","female","female","male","male","female","male","female","male","male","female","male","male","male","male","female","male","male","female","male","female","female","male","female","female","female","female","male","male","male","female","male","female","female","female","female","female","female","female","female","male","male","female","female","female","female","female","male","male","male","female","female","male","female","female","female","male","female","female","female","female","female","male","male","female","female","female","male","male","female","female","female","female","female","female","male","female","female","male","male","female","male","female","female","female","male","female","male","female","female","female","female","male","male","male","male","male","male"],[1,null,3,2,1,1,1,1,1,2,1,1,3,1,3,3,3,1,2,null,2,1,3,3,2,3,1,1,2,3,1,1,3,3,3,1,2,3,2,3,2,3,3,1,3,3,1,1,2,2,1,1,3,2,3,1,3,1,3,1,1,3,3,1,3,2,2,1,1,3,1,3,3,1,3,1,2,1,1,3,1,3,1,1,1,null,2,3,1,2,2,1,1,3,1,3,null,3,1,1,2,2,3,1,2,3,3,3,2,1,1,3,1,1,2,3,1,1,3,1,3,1,3,2,1,3,null,2,3,1,1,2,1,3,3,1,3,1,3,3,3,3,1,3,3,3,3,2,1,2,1,3,2,3,1,1,3,1,1,3,2,3,3,3,2,1,3,3,2,1,3,2,3,2,3,3,3,2,3,3,2,3,2,1,1,3,2,3,3,1,3,1,3,3,1,1,1,3,3,3,3,3],[1,null,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],[77,32,39,76,69,79,70,64,73,65,33,67,36,77,30,19,66,43,79,50,44,59,63,76,77,60,55,70,80,40,50,78,43,70,44,83,69,66,65,32,90,40,36,69,37,56,53,49,42,74,76,60,69,34,38,49,57,70,45,65,36,42,64,52,65,70,45,51,41,60,65,55,60,61,57,88,69,67,89,81,76,86,69,45,42,20,88,29,84,73,27,63,64,70,83,52,31,60,58,61,77,50,73,53,84,52,68,63,54,27,64,73,46,76,61,62,63,65,65,35,78,71,55,61,71,44,39,78,73,33,61,79,72,29,61,45,35,45,47,32,46,34,86,31,59,55,52,71,70,78,80,32,69,63,52,80,73,86,65,19,74,70,44,46,85,54,40,69,85,49,49,68,44,71,47,40,68,52,42,60,76,49,84,54,70,45,68,65,33,79,68,82,75,49,76,82,68,45,47,49,62,63],[1.1,null,5.3,7.6,1.4,4.6,9,4.6,2.4,3.3,7,0.7,2,1,4,6,1,7.6,7.8,1.5,3.6,0.1,5.4,8.8,8.5,5,1,8.8,3.3,6.2,5,2.5,1.6,6,9.8,9.5,2,5.4,2,7.5,4.5,2.4,5,3.2,8.5,6,0.4,3.3,1.4,1.5,0,0.1,1,5,3.7,5.4,1.9,5.4,7.4,6.7,9.4,7,1,4,8,7.9,3,6.2,0.5,8.5,0,7.6,2.5,3.4,6.5,2.7,8.6,8.7,4.1,7,0.6,1.2,4.9,10,3.8,2.4,7.4,4.5,0,9.1,10,4.5,6.6,2.4,9.5,5,3.4,5.2,9.6,6,4.7,7.3,7.5,0,4.5,1.2,7.2,3,0,0,3.1,8.9,2.5,0.4,6.2,7.3,4.8,7.5,2.5,4,2.5,2,5.6,6.6,5,8,6.6,5.2,4.6,0,4.9,4.3,4,8.4,8,8.5,9.4,7.8,9.3,10,9.9,8.9,8,9.1,8.2,5,4.6,4.7,6.5,8,6,3.1,5.7,6.7,6.8,1.5,3,7.5,7,5.5,0,4.7,7.2,5,3.3,1,2.5,9.1,4.7,6.6,6.2,3.6,7,6,10,9.2,10,2,10,6.8,2.5,10,7.3,2.8,4.9,9,8.5,6.1,8.6,6.2,8.4,8,10,10,1,10,1,9.4,8.8,9.7,6.8,4.3],[0.796,null,0.62,0.727,0.691,1,0.796,0.796,0.727,1,0.796,1,1,0.656,0.796,0.727,0.195,0.189,0.195,0.796,0.691,1,0.62,0.264,0.727,0.796,1,0.76,0.814,0.727,0.796,0.796,0.796,0.727,0.195,0.088,0.848,0.85,1,0.62,0.727,0.691,-0.066,0.796,0.195,0.691,0.85,0.796,0.727,1,1,0.727,0.796,0.796,0.796,1,1,0.725,1,0.796,0.157,1,0.516,0.691,0.727,0.727,0.62,0.848,0.088,0.03,0.516,0.195,0.159,0.796,0.727,0.364,0.03,0.656,0.727,0.656,0.264,0.727,0.725,-0.041,0.691,0.796,0.62,0.796,0.848,0.725,1,0.796,1,0.727,0.796,0.656,0.796,0.088,1,0.691,0.656,0.088,0.796,1,0.814,0.725,-0.016,0.587,1,1,0.727,0.195,0.796,1,0.796,0.727,0.691,0.796,0.796,null,1,null,0.62,0.691,0.487,0.691,0.796,0.725,0.691,1,0.62,0.796,1,0.159,0.691,0.516,0.159,0.656,0.656,0.76,0.088,1,0.85,0.62,0.691,0.796,0.796,0.796,0.796,0.796,1,0.796,0.796,0.85,0.725,0.796,1,0.71,0.725,0.62,0.796,1,0.656,0.62,1,0.796,0.691,0.159,0.656,0.796,0.743,0.159,0.124,0.727,-0.077,0.159,0.088,1,0.088,0.796,0.796,1,0.088,0.796,1,0.195,0.76,0.691,0.691,0.796,0.088,0.76,-0.074,0.195,0.691,0.727,1,0.264,0.193,-0.077,0.691,0.85],[90,null,51,80,85,45,75,50,98,95,95,85,95,90,88,92,90,55,65,100,65,50,74,95,87,90,100,82,77,60,100,95,95,95,100,79,75,55,99,80,50,100,75,65,85,84,89,75,91,62,98,55,60,90,40,55,100,43,95,86,15,70,61,60,75,50,60,65,75,73,50,45,60,15,65,50,39,40,56,40,null,95,95,0,85,100,90,70,98,88,49,85,98,80,100,85,80,54,99,90,55,60,80,80,80,60,40,75,75,80,71,65,50,85,88,70,76,95,89,95,79,94,80,82,40,80,90,70,96,90,70,95,70,95,89,68,85,50,85,100,50,90,50,61,80,80,90,60,70,80,100,50,90,90,50,85,80,81,92,60,88,75,53,66,79,71,80,90,70,70,85,80,60,83,0,null,85,85,35,80,79,80,51,100,80,65,60,70,95,75,50,70,50,50,60,70,100,100,50,30,44,90],[6,null,6,4,4,2,3,4,1,4,4,3,4,3,2,4,6,4,4,4,4,4,4,6,2,4,4,6,4,4,2,4,6,3,4,6,1,6,4,5,2,4,4,1,4,4,4,3,4,3,4,4,4,3,4,4,2,2,3,2,4,4,4,4,4,1,4,3,4,4,6,4,2,4,4,2,4,6,4,4,6,4,2,4,4,2,4,4,2,4,4,6,5,6,2,2,2,4,3,1,4,2,4,4,1,3,1,4,4,6,6,4,1,4,4,3,3,4,4,4,4,4,4,4,2,4,4,1,4,2,4,4,6,4,4,5,4,4,1,4,4,4,2,4,4,4,4,1,2,4,6,4,2,4,4,4,4,1,4,4,5,4,4,4,4,6,4,4,1,2,4,4,6,4,4,4,4,4,4,4,2,4,4,2,3,2,4,3,4,4,4,5,5,3,4,2,6,4,4,4,4,4],[null,null,5,4,2,3,5,10,5,4,2,2,3,2,5,5,6,4,3,4,3,10,4,1,3,7,6,2,3,2,2,4,2,4,3,3,2,2,4,5,3,3,5,5,4,2,3,4,4,4,3,3,4,2,2,3,2,2,2,2,5,3,4,4,8,3,5,2,3,5,3,5,4,2,5,6,2,5,5,5,2,4,3,4,5,5,4,4,2,3,3,1,2,3,3,8,1,4,2,3,2,5,7,4,6,2,3,2,2,2,4,5,2,3,6,5,6,5,6,3,3,3,5,3,6,2,3,3,3,2,3,2,4,4,4,4,3,3,3,4,2,4,3,5,3,5,5,3,5,1,3,5,8,5,3,5,1,3,4,9,4,4,4,8,10,1,5,4,4,10,4,3,3,5,4,4,5,3,4,2,3,3,3,7,3,5,2,4,5,3,5,5,4,6,2,2,2,4,6,3,5,8],[2,null,5,0,1,2,0,10,0,4,2,0,4,1,4,5,0,4,3,4,1,10,2,1,3,6,0,2,3,2,2,2,0,4,3,2,0,2,0,3,null,1,null,0,4,2,null,2,0,0,0,0,2,null,0,3,0,null,2,1,4,null,3,4,8,1,1,0,0,2,3,3,0,0,4,6,0,4,null,3,2,3,0,4,5,0,2,4,1,2,2,0,1,2,3,4,0,0,0,null,0,2,0,1,3,0,3,1,null,null,4,5,0,null,5,3,2,2,6,0,0,0,4,0,null,2,3,3,2,null,0,0,2,null,2,1,1,2,2,2,2,4,2,3,1,6,null,0,0,2,1,0,4,4,1,5,1,3,2,null,3,2,3,5,0,null,0,3,3,3,4,3,0,3,3,3,0,3,3,0,0,1,2,null,0,null,1,4,5,0,2,0,5,5,1,1,0,4,5,3,4,10],[null,null,0,-4,-1,-1,-5,0,-5,0,0,-2,1,-1,-1,0,-6,0,0,0,-2,0,-2,0,0,-1,-6,0,0,0,0,-2,-2,0,0,-1,-2,0,-4,-2,null,-2,null,-5,0,0,null,-2,-4,-4,-3,-3,-2,null,-2,0,-2,null,0,-1,-1,null,-1,0,0,-2,-4,-2,-3,-3,0,-2,-4,-2,-1,0,-2,-1,null,-2,0,-1,-3,0,0,-5,-2,0,-1,-1,-1,-1,-1,-1,0,-4,-1,-4,-2,null,-2,-3,-7,-3,-3,-2,0,-1,null,null,0,0,-2,null,-1,-2,-4,-3,0,-3,-3,-3,-1,-3,null,0,0,0,-1,null,-3,-2,-2,null,-2,-3,-2,-1,-1,-2,0,0,-1,-2,-2,1,null,-3,-5,1,-2,-5,-4,-1,-2,0,0,0,-2,null,-1,-2,-1,-3,-10,null,-5,-1,-1,-7,0,0,-3,-2,-1,-1,-5,0,-1,-2,-3,-2,-1,null,-3,null,-1,0,0,-3,-3,-5,1,-1,-1,-1,-2,0,-1,0,-1,2],[0,null,0,1,0,0,1,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,1,0,null,0,null,1,0,0,null,0,1,1,1,1,0,null,1,0,1,null,0,0,0,null,0,0,0,0,0,1,1,0,0,0,1,1,0,0,1,0,null,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,1,1,1,null,1,0,1,0,0,1,0,0,null,null,0,0,1,null,0,0,0,0,0,1,1,1,0,1,null,0,0,0,0,null,1,1,0,null,0,0,0,0,0,0,0,0,0,0,0,0,null,1,1,0,0,1,0,0,0,0,0,0,0,null,0,0,0,0,1,null,1,0,0,0,0,0,1,0,0,0,1,0,0,1,1,0,0,null,1,null,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0],[2,null,5,0,1,2,0,10,0,4,2,0,4,1,4,5,0,4,3,4,1,10,2,1,3,6,0,2,3,2,2,2,0,4,3,2,0,2,0,3,null,1,null,0,4,2,2,2,0,0,0,0,2,null,0,3,0,null,2,1,4,null,3,4,8,1,1,0,0,2,3,3,0,0,4,6,0,4,null,3,2,3,0,4,5,0,2,4,1,2,2,0,1,2,3,4,0,0,0,null,0,2,0,1,3,0,3,1,1,3,4,5,0,0,5,3,2,2,6,0,0,0,4,0,0,2,3,3,2,null,0,0,2,null,2,1,1,2,2,2,2,4,2,3,1,6,null,0,0,2,1,0,4,4,1,5,1,3,2,7,3,2,3,5,0,null,0,3,3,3,4,3,0,3,3,3,0,3,3,0,0,1,2,3,0,null,1,4,5,0,2,0,5,5,1,1,0,4,5,3,4,10],[null,null,0,-4,-1,-1,-5,0,-5,0,0,-2,1,-1,-1,0,-6,0,0,0,-2,0,-2,0,0,-1,-6,0,0,0,0,-2,-2,0,0,-1,-2,0,-4,-2,null,-2,null,-5,0,0,-1,-2,-4,-4,-3,-3,-2,null,-2,0,-2,null,0,-1,-1,null,-1,0,0,-2,-4,-2,-3,-3,0,-2,-4,-2,-1,0,-2,-1,null,-2,0,-1,-3,0,0,-5,-2,0,-1,-1,-1,-1,-1,-1,0,-4,-1,-4,-2,null,-2,-3,-7,-3,-3,-2,0,-1,-1,1,0,0,-2,-3,-1,-2,-4,-3,0,-3,-3,-3,-1,-3,-6,0,0,0,-1,null,-3,-2,-2,null,-2,-3,-2,-1,-1,-2,0,0,-1,-2,-2,1,null,-3,-5,1,-2,-5,-4,-1,-2,0,0,0,-2,-2,-1,-2,-1,-3,-10,null,-5,-1,-1,-7,0,0,-3,-2,-1,-1,-5,0,-1,-2,-3,-2,-1,-4,-3,null,-1,0,0,-3,-3,-5,1,-1,-1,-1,-2,0,-1,0,-1,2],[0,null,0,1,1,1,1,0,1,0,0,1,0,1,1,0,1,0,0,0,1,0,1,0,0,1,1,0,0,0,0,1,1,0,0,1,1,0,1,1,null,1,null,1,0,0,1,1,1,1,1,1,1,null,1,0,1,null,0,1,1,null,1,0,0,1,1,1,1,1,0,1,1,1,1,0,1,1,null,1,0,1,1,0,0,1,1,0,1,1,1,1,1,1,0,1,1,1,1,null,1,1,1,1,1,1,0,1,1,0,0,0,1,1,1,1,1,1,0,1,1,1,1,1,1,0,0,0,1,null,1,1,1,null,1,1,1,1,1,1,0,0,1,1,1,0,null,1,1,0,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,null,1,1,1,1,0,0,1,1,1,1,1,0,1,1,1,1,1,1,1,null,1,0,0,1,1,1,0,1,1,1,1,0,1,0,1,0],[1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[0,null,0,1,0,0,1,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,1,0,null,0,null,1,0,0,0,0,1,1,1,1,0,null,1,0,1,null,0,0,0,null,0,0,0,0,0,1,1,0,0,0,1,1,0,0,1,0,null,0,0,0,1,0,0,1,0,0,0,0,0,1,0,0,0,0,1,1,1,null,1,0,1,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,1,1,1,0,1,1,0,0,0,0,null,1,1,0,null,0,0,0,0,0,0,0,0,0,0,0,0,null,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,null,1,0,0,0,0,0,1,0,0,0,1,0,0,1,1,0,0,0,1,null,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>group<\/th>\n      <th>center<\/th>\n      <th>gender<\/th>\n      <th>smoking_history<\/th>\n      <th>no_of_corns<\/th>\n      <th>age<\/th>\n      <th>pain_baseline<\/th>\n      <th>eq5d_baseline<\/th>\n      <th>eq5d_VAS_baseline<\/th>\n      <th>index_corn_site<\/th>\n      <th>cornsize_base<\/th>\n      <th>cornsize_3<\/th>\n      <th>cornsize_change<\/th>\n      <th>cornresolved<\/th>\n      <th>cornsize_imp3<\/th>\n      <th>cornsize_change_imp<\/th>\n      <th>healed<\/th>\n      <th>healedknown<\/th>\n      <th>complete_healed<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"deferRender":false,"dom":"t","columnDefs":[{"className":"dt-center","targets":5},{"className":"dt-right","targets":[1,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]},{"orderable":false,"targets":0}],"scrollY":202,"scroller":true,"scrollX":true,"pageLength":5,"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script><p></p><figcaption class="figure-caption">Figure 3.2: The recorded data in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
-</figure>
-</div>
-</div>
-<p>&nbsp;</p>
-<p><a href="#tbl-corn">Table&nbsp;<span>3.1</span></a> presents a typical table with some of the basic characteristics (variables) of patients entered into <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</p>
-<div id="tbl-corn" class="anchored">
-<table class="table">
-<caption>Table 3.1: Baseline characteristics of patients with foot corns by treatment group. <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>
-</caption>
-<colgroup>
-<col style="width: 27%">
-<col style="width: 21%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead><tr class="header">
-<th></th>
-<th></th>
-<th>
-<p>Corn Plaster, n (%)</p>
-(n=101)</th>
-<th>
-<p>Scalpel, n (%)</p>
-(n=101)</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><strong>Gender</strong></td>
-<td>Male</td>
-<td>42 (42)</td>
-<td>42 (42)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Female</td>
-<td>59 (59)</td>
-<td>59 (58)</td>
-</tr>
-<tr class="odd">
-<td><strong>Center</strong></td>
-<td>Central</td>
-<td>58 (57)</td>
-<td>52 (52)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Manor</td>
-<td>13 (13)</td>
-<td>20 (20)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Jordanthorpe</td>
-<td>10 (10)</td>
-<td>14 (14)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Limbrick</td>
-<td>3 (3)</td>
-<td>6 (6)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Firth Park</td>
-<td>7 (7)</td>
-<td>4 (4)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Huddersfield</td>
-<td>5 (5)</td>
-<td>4 (4)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Darnall</td>
-<td>5 (5)</td>
-<td>1 (1)</td>
-</tr>
-<tr class="even">
-<td>
-<p><strong>Smoking</strong></p>
-<p><strong>History</strong></p>
-</td>
-<td>Non-smoker</td>
-<td>34 (35)</td>
-<td>40 (40)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Previous smoker</td>
-<td>22 (22)</td>
-<td>16 (16)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Current smoker</td>
-<td>42 (43)</td>
-<td>43 (43)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Missing</td>
-<td>3 (3)</td>
-<td>2 (2)</td>
-</tr>
-<tr class="even">
-<td><strong>Numbers of corns</strong></td>
-<td>1</td>
-<td>48 (48)</td>
-<td>66 (65)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>2</td>
-<td>28 (28)</td>
-<td>23 (23)</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>3</td>
-<td>24 (24)</td>
-<td>12 (12)</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Missing</td>
-<td>1 (1)</td>
-<td>0 (0)</td>
-</tr>
-<tr class="even">
-<td>
-<p><strong>Age (yrs),</strong></p>
-<p><strong>mean (sd)</strong></p>
-</td>
-<td></td>
-<td>58.5 (15.6)</td>
-<td>59.7 (17.5)</td>
-</tr>
-<tr class="odd">
-<td>
-<p><strong>Corn size (mm),</strong></p>
-<p><strong>median (IQR)</strong></p>
-</td>
-<td></td>
-<td>4 (3, 5)</td>
-<td>3 (3, 5)</td>
-</tr>
-<tr class="even">
-<td>
-<p><strong>EQ-5D,</strong></p>
-<p><strong>median (IQR)</strong></p>
-</td>
-<td></td>
-<td>0.73 (0.59, 0.80)</td>
-<td>0.73 (0.66, 0.80)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>In this example since we have 101 patients in each randomized group the percentages are almost the same as the raw counts. However, for most studies we are unlikely to have exactly 100 participants in each group!</p>
-</div>
-</div>
-<p>&nbsp;</p>
-<section id="categorical-data" class="level3"><h3 class="anchored" data-anchor-id="categorical-data">Categorical Data</h3>
-<p><strong>A. Nominal Data</strong></p>
-<p><strong>Nominal categorical data</strong> are data that one can name and put into categories. They are not measured but simply <strong>counted</strong>. They often consist of <strong>unordered</strong> ‘either–or’ type observations which have two categories and are often know as <strong>binary</strong>. For example: dead or alive; male or female; cured or not cured; pregnant or not pregnant. In <a href="#tbl-corn">Table&nbsp;<span>3.1</span></a> gender is a binary variable. However, nominal categorical data often can have <strong>more than two categories</strong>, for example, blood group A, B, AB, 0; country of origin; ethnic group; eye color. The <a href="#tbl-corn">Table&nbsp;<span>3.1</span></a> gives the number and percentages of people treated at each of the seven centers in each of the two randomized groups.</p>
-<div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Numerical representation of categories are just codes</strong></p>
-<p>We can denote a male and female as 1 and 2 for gender and denote A, B, AB and 0, as 1, 2, 3, and 4 for blood type. Unlike numerical data, the numbers representing different categories do not have mathematical meanings (they are just codes).</p>
-</div>
-</div>
-<p>&nbsp;</p>
-<p><strong>Β. Ordinal Data</strong></p>
-<p>If there are more than two categories of classification it may be possible to <strong>order</strong> them in some way. For example, after treatment a patient may be either improved, the same or worse. Another example of an ordinal variable is the variable <strong>pain</strong> where a subject is asked to describe their pain verbally as minimal, moderate, severe, or unbearable. In <a href="#tbl-corn">Table&nbsp;<span>3.1</span></a> <strong>smoking history</strong> is given in three categories: non-smoker, previous smoker, and current smoker. Thus, someone who is a current smoker has more recent exposure to tobacco than someone who is an ex-smoker and someone who has never smoked. However, <strong>without further knowledge</strong> (of the current and past levels of tobacco consumption) it would be wrong to ascribe a numerical quantity to the category, for example, non-smoker=0, previous smoker=1, and current smoker=2, as one cannot say that someone who is current smoker has twice the levels of tobacco consumption as someone who is a previous smoker.</p>
-<div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Collapsion of categories leads to a loss of information</strong></p>
-<p>Ordinal data are often reduced to two categories to simplify analysis and presentation, which may result in a considerable loss of information.</p>
-</div>
-</div>
-<p>&nbsp;</p>
-</section><section id="numerical-data" class="level3"><h3 class="anchored" data-anchor-id="numerical-data">Numerical Data</h3>
-<p><strong>A. Count (or discrete) Data</strong></p>
-<p><a href="#tbl-corn">Table&nbsp;<span>3.1</span></a> gives details of the number of corns each participant had at the start of the trial, since this can only be a whole number or integer value, for example, 0, 1, 2, or 3 in this trial, this is termed count data. Other examples are often counts per unit of time such as the number of deaths in a hospital per year, the number of visits to the GP in a year, or the number of attacks of asthma a person has per month. In dentistry, a common measure is the number of decayed, filled or missing teeth (DFM).</p>
-<p>The difference between such data as these and the ordered categorical data described earlier can be seen by considering an example of each:</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-<strong>Illustrative Example: Ordinal Vs Discrete data</strong>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong><em>Ordinal categorical:</em></strong> Stage of breast cancer: I II III IV</p>
-<p><strong><em>Discrete numerical:</em></strong> Number of children: 0 1 2 3 4 5+</p>
-<p>We cannot say that stage IV is twice as bad as stage II nor that the difference between stages I and II is equivalent to that between stages III and IV. In contrast, three children are three times as many as one, and a difference of one means the same throughout the range of values.</p>
-</div>
-</div>
-<p>&nbsp;</p>
-<div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Discrete Vs Ordinal Data</strong></p>
-<p>In practice discrete data are often treated in statistical analyses as if they were ordered categories. This is not wrong, but it may not be getting the most out of the data. Conversely, when ordered categories are numbered, as with stage of disease, the temptation to treat these numbers as statistically meaningful must be resisted. For example, it is not sensible to calculate the average stage of cancer. The only information the numbers contain is in the ordering, which would be conveyed equally by calling them A, B, C, D and so on.</p>
-</div>
-</div>
-<p>&nbsp;</p>
-<p><strong>Β. Continuous (or measured) Data</strong></p>
-<p>Such data are measurements that can, in theory at least, <strong>take any value within a given range</strong> (they are restricted by the accuracy of the measuring instrument). These data contain the most information, and are the ones most commonly used in statistics. Examples of continuous data in <a href="#tbl-corn">Table&nbsp;<span>3.1</span></a> are: age, corn size, and EQ-5D.</p>
-<p>Sometimes it is reasonable to treat discrete data as if they were continuous, at least as far as statistical analysis goes. While age is a continuous measurement, <strong>age at last birthday is discrete</strong>. In studies of adults with ages ranging from, say, 16 to 80, no harm is done in considering age in years as a continuous measurement (and this is standard practice), but for studies of pre-school children it would be better to use age in months. <strong>Heart rate</strong> (in beats per minute) is another discrete measurement that is usually regarded as continuous. Although the essential requirement for this change of status is that there should be a large number of different possible values, in practice we do not worry too much about analysing discrete measurements as if they were continuous.</p>
-<div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Categorization of numerical data leads to a loss of information</strong></p>
-<p>For simplicity, it is often the case in medicine that continuous data are dichotomized to make nominal data. For example, the diastolic blood pressure (DBP), which is continuous, is converted into hypertension (&gt;90 mmHg) and normotension (≤90 mmHg). There are two main reasons for doing this. It is easier to describe a population by the proportion of people affected, for example, the proportion of people in the population with hypertension is 10%. Further, one often has to make a decision: if a person has hypertension, then they will get treatment, and this is easier if high blood pressure has been categorized. However, this dichotomization clearly leads to a loss of information.</p>
-<p>&nbsp;</p>
-<p>One can also divide a continuous variable into more than two groups. For example, we could divide age into age bands of equal lengths of, say 10 years such as: 0-9, 10-19, 20-29, etc. When categorizing continuous data authors should give an indication as to why they chose these cut-off points, and a reader has to be very wary to guard against the fact that the cuts may be chosen to make a particular point.</p>
-<p>Some statisticians have termed the habit of categorizing continuous variables as <strong>“dichotomania”</strong>, which they regard as poor practice since it loses information and assumes a discontinuous relationship that is unlikely in nature.</p>
-</div>
-</div>
-<p>&nbsp;</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Record the actual values</strong></p>
-<p>It is best to record the actual value of blood pressure, haemoglobin, etc. It is easy to convert to categories in the analysis, but the raw data cannot be retrieved later if only categories are recorded. Information is lost with no compensatory gain. Indeed, the statistical analysis of continuous data is more powerful, and often simpler.</p>
-<p>&nbsp;</p>
-<p>When some calculation is necessary to derive the observation of interest this should be done by the computer. Thus it is much better to record date of birth and date of examination for subsequent calculation of age rather than to rely on mental arithmetic.</p>
-</div>
-</div>
-<p>The degree of measurement accuracy and the type of data are both important in relation to carrying out a proper statistical analysis.</p>
-<p>&nbsp; ## Summarizing Categorical Data</p>
+</header><section id="summarizing-categorical-data" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="summarizing-categorical-data">
+<span class="header-section-number">3.1</span> Summarizing Categorical Data</h2>
 <p>Binary data are the simplest type of data. Each individual has a label which takes one of two values such as male or female, corn healed or not healed. A simple summary would be to count the different types of labels and find the <strong>frequencies</strong>. The set of frequencies of all the possible categories is called the <strong>frequency distribution</strong> of the variable.</p>
-<p>However, a raw count is rarely useful. For example, in <a href="#tbl-corn">Table&nbsp;<span>3.1</span></a> there are more non-smokers in the scalpel group (40 out of 99 or 40%) compared to corn plaster group (34 out of 98 or 35%). It is only when this count is expressed as a proportion (relative frequency) that it becomes useful. Hence the first step to analyzing categorical data is to count the number of observations in each category (frequencies) and express them as <strong>proportions</strong> of the total sample size (relative frequencies).</p>
+<p>However, a raw count is rarely useful. For example, in <a href="introduction.html#tbl-corn">Table&nbsp;<span>1.1</span></a> there are more non-smokers in the scalpel group (40 out of 99 or 40%) compared to corn plaster group (34 out of 98 or 35%). It is only when this count is expressed as a proportion (relative frequency) that it becomes useful. Hence the first step to analyzing categorical data is to count the number of observations in each category (frequencies) and express them as <strong>proportions</strong> of the total sample size (relative frequencies).</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -584,10 +268,10 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Farndon et al.&nbsp;(2013) reports a RCT that investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. As we have already mentioned one categorical variable recorded was the center where each trial participant was treated. Trial participants were treated at one of seven centers and the corresponding categories as displayed in <a href="#tbl-centers1">Table&nbsp;<span>3.2</span></a>. The first column shows category (treatment center) names, whilst the second shows the number of individuals in each category together with its percentage contribution to the total. <a href="#tbl-centers1">Table&nbsp;<span>3.2</span></a> clearly shows that the majority (54.5%) of patients were treated at the “Central” treatment center.</p>
+<p>Farndon et al.&nbsp;(2013) reports a RCT that investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. As we have already mentioned one categorical variable recorded was the center where each trial participant was treated. Trial participants were treated at one of seven centers and the corresponding categories as displayed in <a href="#tbl-centers1">Table&nbsp;<span>3.1</span></a>. The first column shows category (treatment center) names, whilst the second shows the number of individuals in each category together with its percentage contribution to the total. <a href="#tbl-centers1">Table&nbsp;<span>3.1</span></a> clearly shows that the majority (54.5%) of patients were treated at the “Central” treatment center.</p>
 <div id="tbl-centers1" class="anchored">
 <table class="table">
-<caption>Table 3.2: Frequency and percentage distributions of treatment center among 202 patients with corns <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>
+<caption>Table 3.1: Frequency and percentage distributions of treatment center among 202 patients with corns <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>
 </caption>
 <thead><tr class="header">
 <th>Treatment center</th>
@@ -638,10 +322,10 @@ Tip
 </tbody>
 </table>
 </div>
-<p>In addition to tabulating each variable separately, we might be interested in whether the distribution of patients across each center is the same for each randomized group. <a href="#tbl-centers2">Table&nbsp;<span>3.3</span></a> shows the distribution of the number of patients treated at center by randomized group; in this case it can be said that the treatment center has been <strong><em>cross-tabulated</em></strong> with randomized group. <a href="#tbl-centers2">Table&nbsp;<span>3.3</span></a> is an example of a <strong><em>contingency</em></strong> table with seven rows (representing treatment center) and two columns (randomized group). Note that we are interested in the distribution of patients across the seven centers in each randomized group (to see whether or not we have similar numbers of patients randomized to each treatment within each center), and so the percentages add to 100 down each column, rather than across the rows.</p>
+<p>In addition to tabulating each variable separately, we might be interested in whether the distribution of patients across each center is the same for each randomized group. <a href="#tbl-centers2">Table&nbsp;<span>3.2</span></a> shows the distribution of the number of patients treated at center by randomized group; in this case it can be said that the treatment center has been <strong><em>cross-tabulated</em></strong> with randomized group. <a href="#tbl-centers2">Table&nbsp;<span>3.2</span></a> is an example of a <strong><em>contingency</em></strong> table with seven rows (representing treatment center) and two columns (randomized group). Note that we are interested in the distribution of patients across the seven centers in each randomized group (to see whether or not we have similar numbers of patients randomized to each treatment within each center), and so the percentages add to 100 down each column, rather than across the rows.</p>
 <div id="tbl-centers2" class="anchored">
 <table class="table">
-<caption>Table 3.3: Cross-tabulation distribution of treatment center by randomized group for 202 patients with corns <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>
+<caption>Table 3.2: Cross-tabulation distribution of treatment center by randomized group for 202 patients with corns <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>
 </caption>
 <thead><tr class="header">
 <th></th>
@@ -723,7 +407,7 @@ Tip
 <p><strong>Recommendations for reporting numbers</strong></p>
 <div id="tbl-rules1" class="anchored">
 <table class="table">
-<caption>Table 3.4: Reporting numbers and percentages</caption>
+<caption>Table 3.3: Reporting numbers and percentages</caption>
 <colgroup>
 <col style="width: 47%">
 <col style="width: 52%">
@@ -792,17 +476,17 @@ Tip
 </div>
 </div>
 <p>&nbsp;</p>
-</section></section><section id="displaying-categorical-data" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="displaying-categorical-data">
-<span class="header-section-number">3.3</span> Displaying Categorical Data</h2>
+</section><section id="displaying-categorical-data" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="displaying-categorical-data">
+<span class="header-section-number">3.2</span> Displaying Categorical Data</h2>
 <p>While frequency tables are extremely useful, the best way to investigate a data set is to plot it. For categorical variables, such as gender and treatment center, it is straightforward to present the number in each category, usually indicating the frequency and percentage of the total number of patients. When shown graphically this is called a <strong>bar plot</strong>.</p>
 <p>&nbsp;</p>
 <p><strong>A. Simple Bar Plot</strong></p>
-<p>A simple bar plot is an easy way to make comparisons across categories. <a href="#fig-barplot1">Figure&nbsp;<span>3.3</span></a> shows the centers where 202 patients with foot corns were treated in the trial of <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span>. Along the horizontal axis (x-axis) are the different treatment centers whilst on the vertical axis (y-axis) is the percentage. The height of each bar represents the percentage of the total patients in that category. For example, it can be seen that the percentage of participants who were treated in the “Central” center was about 55%.</p>
+<p>A simple bar plot is an easy way to make comparisons across categories. <a href="#fig-barplot1">Figure&nbsp;<span>3.1</span></a> shows the centers where 202 patients with foot corns were treated in the trial of <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span>. Along the horizontal axis (x-axis) are the different treatment centers whilst on the vertical axis (y-axis) is the percentage. The height of each bar represents the percentage of the total patients in that category. For example, it can be seen that the percentage of participants who were treated in the “Central” center was about 55%.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-barplot1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="descriptive_files/figure-html/fig-barplot1-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure 3.3: Bar plot showing where 202 patients with corns were treated <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.1: Bar plot showing where 202 patients with corns were treated <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -827,12 +511,12 @@ Tip
 </div>
 <p>&nbsp;</p>
 <p><strong>B. Side-by-side and Grouped Bar Plots</strong></p>
-<p>If the sample is further classified into whether the patient was treated with corn plasters or scalpel then it becomes impossible to present the data as a single bar plot. We could present the data as a side by side bar plot (see <a href="#fig-barplot2">Figure&nbsp;<span>3.4</span></a>) but is preferable to present the data in one graph with the same scales and axes to make the visual comparisons easier (grouped bar plot) (see <a href="#fig-barplot3">Figure&nbsp;<span>3.5</span></a>).</p>
+<p>If the sample is further classified into whether the patient was treated with corn plasters or scalpel then it becomes impossible to present the data as a single bar plot. We could present the data as a side by side bar plot (see <a href="#fig-barplot2">Figure&nbsp;<span>3.2</span></a>) but is preferable to present the data in one graph with the same scales and axes to make the visual comparisons easier (grouped bar plot) (see <a href="#fig-barplot3">Figure&nbsp;<span>3.3</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-barplot2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="descriptive_files/figure-html/fig-barplot2-1.png" class="img-fluid figure-img" width="912"></p>
-<p></p><figcaption class="figure-caption">Figure 3.4: Side-by-side bar plot showing where 202 patients with corns were treated by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.2: Side-by-side bar plot showing where 202 patients with corns were treated by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -841,7 +525,7 @@ Tip
 <div class="cell-output-display">
 <div id="fig-barplot3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="descriptive_files/figure-html/fig-barplot3-1.png" class="img-fluid figure-img" width="864"></p>
-<p></p><figcaption class="figure-caption">Figure 3.5: Grouped bar plot showing where 202 patients with corns were treated by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.3: Grouped bar plot showing where 202 patients with corns were treated by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -862,22 +546,22 @@ Tip
 </div>
 <p>&nbsp;</p>
 <p><strong>C. Stacked Bar Plot</strong></p>
-<p>Unlike a side-by-side or grouped graphs, <strong>Stacked Bar Plots</strong> segment their bars. A <strong>100% Stack Bar Plot</strong> shows the percentage-of-the-whole of each group and are plotted by the percentage of each value to the total amount in each group. This makes it easier to see if relative differences exist between quantities in each group (see <a href="#fig-stacked">Figure&nbsp;<span>3.6</span></a>).</p>
+<p>Unlike a side-by-side or grouped graphs, <strong>Stacked Bar Plots</strong> segment their bars. A <strong>100% Stack Bar Plot</strong> shows the percentage-of-the-whole of each group and are plotted by the percentage of each value to the total amount in each group. This makes it easier to see if relative differences exist between quantities in each group (see <a href="#fig-stacked">Figure&nbsp;<span>3.4</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-stacked" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="descriptive_files/figure-html/fig-stacked-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure 3.6: A horizontal 100% stacked bar plot showing the distribution of gender by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.4: A horizontal 100% stacked bar plot showing the distribution of gender by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>In <a href="#fig-stacked">Figure&nbsp;<span>3.6</span></a> the bars are divided into two segments only (i.e., female and male) so it is easy to read the values of each segment and to compare a specific segment through the entire set of bars (in our case the percentages are equal). This comparison can be easily made because each segment is aligned through the entire set of bars (female to the left and men to the right). If more segments were added, however, the segments in the middle would not be aligned to the left or right, which would make comparisons difficult (see <a href="#fig-stacked2">Figure&nbsp;<span>3.7</span></a>).</p>
+<p>In <a href="#fig-stacked">Figure&nbsp;<span>3.4</span></a> the bars are divided into two segments only (i.e., female and male) so it is easy to read the values of each segment and to compare a specific segment through the entire set of bars (in our case the percentages are equal). This comparison can be easily made because each segment is aligned through the entire set of bars (female to the left and men to the right). If more segments were added, however, the segments in the middle would not be aligned to the left or right, which would make comparisons difficult (see <a href="#fig-stacked2">Figure&nbsp;<span>3.5</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-stacked2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="descriptive_files/figure-html/fig-stacked2-1.png" class="img-fluid figure-img" width="1104"></p>
-<p></p><figcaption class="figure-caption">Figure 3.7: A horizontal 100% stacked bar plot showing the distribution of treatment centers by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.5: A horizontal 100% stacked bar plot showing the distribution of treatment centers by randomized group <span class="citation" data-cites="farndon2013">(<a href="references.html#ref-farndon2013" role="doc-biblioref">Farndon et al. 2013</a>)</span>.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -897,8 +581,8 @@ Warning
 </div>
 </div>
 <p>&nbsp;</p>
-</section><section id="summarizing-numerical-data" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="summarizing-numerical-data">
-<span class="header-section-number">3.4</span> Summarizing Numerical Data</h2>
+</section><section id="summarizing-numerical-data" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="summarizing-numerical-data">
+<span class="header-section-number">3.3</span> Summarizing Numerical Data</h2>
 <p>A quantitative measurement contains more information than a categorical one, and so summarizing these data is more complex. One chooses summary statistics to condense a large amount of information into a few intelligible numbers, the sort that could be communicated verbally. The two most important pieces of information about a quantitative measurement are <strong>‘where is it?’</strong> and <strong>‘how variable is it?’</strong> These are categorized as <strong>measures of location</strong> (or sometimes ‘central tendency’) and <strong>measures of spread</strong> or variability.</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -1069,7 +753,7 @@ Example: Calculation of the Quartiles and Interquartile Range - Corn size data (
 <p>So, the IQR for the corn size data is from 2.0 to 4.5 mm; or a single number 2.5 mm.</p>
 <div id="tbl-quartiles" class="anchored">
 <table class="table">
-<caption>Table 3.5: Calculating quartiles for the corn size data</caption>
+<caption>Table 3.4: Calculating quartiles for the corn size data</caption>
 <colgroup>
 <col style="width: 5%">
 <col style="width: 5%">
@@ -1130,10 +814,10 @@ Example: Calculation of the Variance and Standard Deviation - Corn size data (mm
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Consider the 16 observations from the corn data. The calculations to work out the standard deviation are given in the <a href="#tbl-sd">Table&nbsp;<span>3.6</span></a>.</p>
+<p>Consider the 16 observations from the corn data. The calculations to work out the standard deviation are given in the <a href="#tbl-sd">Table&nbsp;<span>3.5</span></a>.</p>
 <div id="tbl-sd" class="anchored">
 <table class="table">
-<caption>Table 3.6: Calculating variance and standard deviation for the corn size data</caption>
+<caption>Table 3.5: Calculating variance and standard deviation for the corn size data</caption>
 <colgroup>
 <col style="width: 8%">
 <col style="width: 12%">
@@ -1297,14 +981,14 @@ Tip
 <p><strong>How to report summary statistics for numerical data?</strong></p>
 <p>Mean and median convey different impressions of the location of data in presence of skewness (or outliers).</p>
 <ul>
-<li><p>If the distribution is <strong>symmetric</strong> (mean=median=mode) (<a href="#fig-skew">Figure&nbsp;<span>3.8</span></a> b), then in general the <strong>mean</strong> is the better summary statistic (see also <a href="normal.html"><span>Chapter&nbsp;5</span></a>).</p></li>
-<li><p>If the distribution is <strong>skewed</strong> to the left (<a href="#fig-skew">Figure&nbsp;<span>3.8</span></a> a) or right (<a href="#fig-skew">Figure&nbsp;<span>3.8</span></a> c) then the <strong>median</strong> is less influenced by the tails (see also <a href="normal.html"><span>Chapter&nbsp;5</span></a>).</p></li>
+<li><p>If the distribution is <strong>symmetric</strong> (mean=median=mode) (<a href="#fig-skew">Figure&nbsp;<span>3.6</span></a> b), then in general the <strong>mean</strong> is the better summary statistic (see also <a href="normal.html"><span>Chapter&nbsp;5</span></a>).</p></li>
+<li><p>If the distribution is <strong>skewed</strong> to the left (<a href="#fig-skew">Figure&nbsp;<span>3.6</span></a> a) or right (<a href="#fig-skew">Figure&nbsp;<span>3.6</span></a> c) then the <strong>median</strong> is less influenced by the tails (see also <a href="normal.html"><span>Chapter&nbsp;5</span></a>).</p></li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-skew" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/skew.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.8: Types of distribution according to the summetry (a) left skewed, (b) symmetric, and (c) right skewed distribution.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.6: Types of distribution according to the summetry (a) left skewed, (b) symmetric, and (c) right skewed distribution.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1316,10 +1000,10 @@ Tip
 <blockquote class="blockquote">
 <p><strong>Median (Q1, Q3)</strong> for those with <strong>skewed</strong> (or asymetrical) distribution. &nbsp;</p>
 </blockquote>
-<p><a href="#tbl-rules2">Table&nbsp;<span>3.7</span></a> presents recommendations for reporting summary statistics for numerical data.</p>
+<p><a href="#tbl-rules2">Table&nbsp;<span>3.6</span></a> presents recommendations for reporting summary statistics for numerical data.</p>
 <div id="tbl-rules2" class="anchored">
 <table class="table">
-<caption>Table 3.7: Recommendations for reporting summary statistics</caption>
+<caption>Table 3.6: Recommendations for reporting summary statistics</caption>
 <colgroup>
 <col style="width: 37%">
 <col style="width: 62%">
@@ -1346,18 +1030,18 @@ Tip
 </div>
 </div>
 <p>&nbsp;</p>
-</section></section><section id="displaying-numerical-data" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="displaying-numerical-data">
-<span class="header-section-number">3.5</span> Displaying Numerical Data</h2>
+</section></section><section id="displaying-numerical-data" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="displaying-numerical-data">
+<span class="header-section-number">3.4</span> Displaying Numerical Data</h2>
 <p>The best way for examining the distribution of numerical data is to generate an appropriate graph.</p>
 <p><strong>A. Histogram and density plot</strong></p>
 <p>The most common way of depicting a frequency distribution of a continuous variable is with a histogram.</p>
-<p>A histogram (<a href="#fig-histo1">Figure&nbsp;<span>3.9</span></a> a) is a plot that depicts the distribution of a numeric variable’s values as a series of bars without space between them. Each bar typically covers a range of numeric values called a bin or class; a bar’s height indicates the frequency of observations with a value within the corresponding bin. A density plot (<a href="#fig-histo1">Figure&nbsp;<span>3.9</span></a> b) is a smoothed, continuous version of a histogram estimated from the data. In a density plot the total area under the curve integrates to one.</p>
-<p><a href="#fig-histo1">Figure&nbsp;<span>3.9</span></a> shows the distribution of age for the participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study. The vertical scale shows (a) frequency (histogram) or (b) probability density (density plot).</p>
+<p>A histogram (<a href="#fig-histo1">Figure&nbsp;<span>3.7</span></a> a) is a plot that depicts the distribution of a numeric variable’s values as a series of bars without space between them. Each bar typically covers a range of numeric values called a bin or class; a bar’s height indicates the frequency of observations with a value within the corresponding bin. A density plot (<a href="#fig-histo1">Figure&nbsp;<span>3.7</span></a> b) is a smoothed, continuous version of a histogram estimated from the data. In a density plot the total area under the curve integrates to one.</p>
+<p><a href="#fig-histo1">Figure&nbsp;<span>3.7</span></a> shows the distribution of age for the participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study. The vertical scale shows (a) frequency (histogram) or (b) probability density (density plot).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-histo1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="descriptive_files/figure-html/fig-histo1-1.png" class="img-fluid figure-img" width="720"></p>
-<p></p><figcaption class="figure-caption">Figure 3.9: Distribution of age of the 202 participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study (a) histogram (b) density plot.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.7: Distribution of age of the 202 participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study (a) histogram (b) density plot.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1380,25 +1064,25 @@ Choose an appropriate number of bins
 </div>
 <div class="callout-body-container callout-body">
 <p>While tools that can generate histograms usually have some default algorithms for selecting bin boundaries, we will likely want to play around with the binning parameters to choose something that is representative of our data.</p>
-<p>Choice of bin size has an inverse relationship with the number of bins <a href="#fig-histo2">Figure&nbsp;<span>3.10</span></a>. The smaller the bin sizes, the more bins there will be to cover the whole range of data. With a larger bin size, the fewer bins there will need to be. It is worth taking some time to test out different bin sizes to see how the distribution looks in each one, then choose the plot that represents the data best.</p>
+<p>Choice of bin size has an inverse relationship with the number of bins <a href="#fig-histo2">Figure&nbsp;<span>3.8</span></a>. The smaller the bin sizes, the more bins there will be to cover the whole range of data. With a larger bin size, the fewer bins there will need to be. It is worth taking some time to test out different bin sizes to see how the distribution looks in each one, then choose the plot that represents the data best.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-histo2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="descriptive_files/figure-html/fig-histo2-1.png" class="img-fluid figure-img" width="816"></p>
-<p></p><figcaption class="figure-caption">Figure 3.10: Histogram of age for different bin sizes (a) bin size = 2, (b) bin size = 10, and (c) bin size = 15.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.8: Histogram of age for different bin sizes (a) bin size = 2, (b) bin size = 10, and (c) bin size = 15.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>If we have too many bins, then the data distribution will look rough, and it will be difficult to discern the signal from the noise (<a href="#fig-histo2">Figure&nbsp;<span>3.10</span></a> a). On the other hand, with too few bins, the histogram will lack the details needed to discern any useful pattern from the data (<a href="#fig-histo2">Figure&nbsp;<span>3.10</span></a> b).</p>
+<p>If we have too many bins, then the data distribution will look rough, and it will be difficult to discern the signal from the noise (<a href="#fig-histo2">Figure&nbsp;<span>3.8</span></a> a). On the other hand, with too few bins, the histogram will lack the details needed to discern any useful pattern from the data (<a href="#fig-histo2">Figure&nbsp;<span>3.8</span></a> b).</p>
 </div>
 </div>
-<p>We can also create a histogram or density plot by group. <a href="#fig-histo3">Figure&nbsp;<span>3.11</span></a> depicts the probability density of age by treatment group.</p>
+<p>We can also create a histogram or density plot by group. <a href="#fig-histo3">Figure&nbsp;<span>3.9</span></a> depicts the probability density of age by treatment group.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-histo3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="descriptive_files/figure-html/fig-histo3-1.png" class="img-fluid figure-img" width="720"></p>
-<p></p><figcaption class="figure-caption">Figure 3.11: Histogram of age of participants by treatment groupin <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.9: Histogram of age of participants by treatment groupin <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1426,28 +1110,28 @@ Tip
 <div class="cell-output-display">
 <div id="fig-boxplot1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/boxplot.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.12: Broad classification of the different types of data with examples</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.10: Broad classification of the different types of data with examples</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>In <a href="#fig-boxplot1">Figure&nbsp;<span>3.12</span></a> the distance between <span class="math inline">\({Q3}\)</span> and <span class="math inline">\({Q1}\)</span> is the interquartile range (IQR) and plays a major part in how long the whiskers extending from the box are. Each whisker extends to the furthest data point in each wing that is within 1.5 times the IQR. Any data point further than that distance is considered an outlier, and is marked with a dot. There are other ways of defining the whisker lengths, which are not presented in this textbook.</p>
-<p><a href="#fig-boxplot2">Figure&nbsp;<span>3.13</span></a> illustrates a box plot that presents the age of participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</p>
+<p>In <a href="#fig-boxplot1">Figure&nbsp;<span>3.10</span></a> the distance between <span class="math inline">\({Q3}\)</span> and <span class="math inline">\({Q1}\)</span> is the interquartile range (IQR) and plays a major part in how long the whiskers extending from the box are. Each whisker extends to the furthest data point in each wing that is within 1.5 times the IQR. Any data point further than that distance is considered an outlier, and is marked with a dot. There are other ways of defining the whisker lengths, which are not presented in this textbook.</p>
+<p><a href="#fig-boxplot2">Figure&nbsp;<span>3.11</span></a> illustrates a box plot that presents the age of participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-boxplot2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="descriptive_files/figure-html/fig-boxplot2-1.png" class="img-fluid figure-img" width="288"></p>
-<p></p><figcaption class="figure-caption">Figure 3.13: A box plot of age of the participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.11: A box plot of age of the participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p><a href="#fig-boxplot3">Figure&nbsp;<span>3.14</span></a> illustrates a grouped box plot that presents the age by treatment group.</p>
+<p><a href="#fig-boxplot3">Figure&nbsp;<span>3.12</span></a> illustrates a grouped box plot that presents the age by treatment group.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-boxplot3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="descriptive_files/figure-html/fig-boxplot3-1.png" class="img-fluid figure-img" width="528"></p>
-<p></p><figcaption class="figure-caption">Figure 3.14: A box plot of age of the participants by treatment group in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.12: A box plot of age of the participants by treatment group in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1469,32 +1153,32 @@ Identifying Outliers in the data based on quartiles
 </div>
 <p>&nbsp;</p>
 <p><strong>c.&nbsp;Raincloud Plot</strong></p>
-<p>There are many variations of the boxplot. For example, there is a way to combine raw data (dots), probability density, and key summary statistics such as median, and relevant intervals of a range of likely values for the population parameter, in an appealing and flexible format with minimal redundancy, using the raincloud plot (<a href="#fig-raincloud">Figure&nbsp;<span>3.15</span></a>):</p>
+<p>There are many variations of the boxplot. For example, there is a way to combine raw data (dots), probability density, and key summary statistics such as median, and relevant intervals of a range of likely values for the population parameter, in an appealing and flexible format with minimal redundancy, using the raincloud plot (<a href="#fig-raincloud">Figure&nbsp;<span>3.13</span></a>):</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-raincloud" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="descriptive_files/figure-html/fig-raincloud-1.png" class="img-fluid figure-img" width="624"></p>
-<p></p><figcaption class="figure-caption">Figure 3.15: A raincloud plot of age of the participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.13: A raincloud plot of age of the participants in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <p>&nbsp;</p>
 <p><strong>c.&nbsp;Scatter plot</strong></p>
-<p>Scatter plots are two dimensional graphs, showing the association between two continuous variables such as age and baseline pain (<a href="#fig-scatterplot">Figure&nbsp;<span>3.16</span></a> a). By coloring the data by a third variable (here is gender), scatter plots can provide additional dimensions (<a href="#fig-scatterplot">Figure&nbsp;<span>3.16</span></a> b).</p>
+<p>Scatter plots are two dimensional graphs, showing the association between two continuous variables such as age and baseline pain (<a href="#fig-scatterplot">Figure&nbsp;<span>3.14</span></a> a). By coloring the data by a third variable (here is gender), scatter plots can provide additional dimensions (<a href="#fig-scatterplot">Figure&nbsp;<span>3.14</span></a> b).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-scatterplot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="descriptive_files/figure-html/fig-scatterplot-1.png" class="img-fluid figure-img" width="816"></p>
-<p></p><figcaption class="figure-caption">Figure 3.16: Association between (a) age and baseline, and (b) taking into acound the gender in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.14: Association between (a) age and baseline, and (b) taking into acound the gender in <span class="citation" data-cites="farndon2013">Farndon et al. (<a href="references.html#ref-farndon2013" role="doc-biblioref">2013</a>)</span> study.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <p>As the scatter plots suggest, there is not association between age and baseline pain: the points seem to be scattered randomly.</p>
 <p>&nbsp;</p>
-</section><section id="exercises" class="level2" data-number="3.6"><h2 data-number="3.6" class="anchored" data-anchor-id="exercises">
-<span class="header-section-number">3.6</span> Exercises</h2>
+</section><section id="exercises" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="exercises">
+<span class="header-section-number">3.5</span> Exercises</h2>
 <ul>
 <li>First Exercise</li>
 <li>Second Exercise</li>

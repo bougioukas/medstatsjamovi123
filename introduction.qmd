@@ -1,5 +1,31 @@
 # Introduction {#sec-introduction}
 
+```{r}
+#| include: false
+
+library(tidyverse)
+library(here)
+
+
+library(readr)
+data_corn <- read_csv(here("data", "data_corn.csv"))
+
+
+data_corn <- data_corn %>% 
+ mutate(group = factor(group, levels = c(1, 2), 
+                              labels=c('scalpel', 'corn plaster')),
+        center = factor(center, levels = c(1, 2, 3, 4, 5,  9,  11 ),
+                          labels = c('Central', 'Manor', 'Jordanthorpe', 'Limbrick',
+                                     'First Park', 'Huddersfield', 'Darnall')),
+        gender = factor(gender, levels = c(1, 2), 
+                              labels=c('male', 'female')),
+        pain_baseline = round(pain_baseline, 3),
+        eq5d_baseline = round(eq5d_baseline, 3)
+         
+ )
+```
+
+
 
 ## Statistics and Medicine
 
@@ -17,18 +43,13 @@ This variability is also inherent in responses to biological hazards. Most peopl
 
 With such variability, it follows that in any comparison made in a medical context, such as people on different treatments, differences are almost bound to occur. These differences may be due to real effects, random variation or variation in some other factor that may affect an outcome. It is the job of the analyst to decide how much variation should be ascribed to chance or other factors, so that any remaining variation can be assumed to be due to a real effect. This is the art of statistics.
 
-
-
-
 ## The discipline of statistics
 
 The discipline of statistics includes two main branches:
 
-* descriptive statistics
+-   descriptive statistics
 
-* inferential statistics
-
-
+-   inferential statistics
 
 ```{mermaid}
 %%| column: screen-inset-right
@@ -47,20 +68,15 @@ flowchart LR
     C --> H[Hypothesis Testing]
 ```
 
-
 ### Descriptive Statistics
 
 The methods and techniques of descriptive statistics aim at summarizing large quantities of data by a few numbers, in a way that highlights the most important numerical features of the data.
 
 Descriptive statistics include measures of central tendency, measures of dispersion, measures of position, and measures of association. They also include a description of the general shape of the distribution of the data. These terms will be explained in the corresponding chapters.
 
-
 ### Inferential Statistics
 
 Inferential statistics aim at generalizing a measure taken on a small number of cases that have been observed, to a larger set of cases that have not been observed. Using the terms explained above, we could reformulate this aim, and say that inferential statistics aim at generalizing observations made on a sample to a whole population.
-
-
-
 
 ## Why Jamovi?
 
@@ -75,3 +91,194 @@ Jamovi is a new fee open "3rd generation" statistical software that is built on 
 2.  It provides informative tables and neat visuals
 3.  Gives access to a user guide and community resources from the Jamovi website
 :::
+
+
+
+## Variables
+
+A **variable** is a quantity or property that is free to vary, or take on different values. Researchers design experiments to test if changes to one or more variables are associated with changes to another variable of interest. For example, if a researcher thinks a new treatment reduces the number of depressive symptoms, he could design an experiment to test this hypothesis; participants should randomly assigned to one of two groups: one (the experimental group) receiving the new treatment that is being tested, and the other (the comparison group or control) receiving an alternative (conventional) treatment.
+
+In this experiment, the type of treatment each participant received (i.e., new treatment vs. no treatment) is the **independent variable** (IV), while the number of depressive symptoms observed in each person is the **dependent variable** (DV) or the **outcome** variable.
+
+ 
+
+## Types of Data
+
+Data in variable can be either categorical or numerical (otherwise known as qualitative and quantitative) in nature (@fig-types_data).
+
+```{r}
+#| label: fig-types_data
+#| fig-align: center
+#| out-width: "80%"
+#| echo: false
+#| fig-cap: Broad classification of the different types of data with examples.
+
+knitr::include_graphics(here::here("images", "types_data.png"))
+```
+
+::: {.callout-note icon="false"}
+## **Example from the literature - Salicylic acid plasters for treatment of foot corns**
+
+In a randomized controlled trial (RCT), @farndon2013 investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. The recorded data is as follows (@fig-data_corn):
+
+```{r}
+#| echo: false
+#| label: fig-data_corn
+#| fig-cap: The recorded data in @farndon2013 study.
+
+
+DT::datatable(data_corn, extensions = 'Scroller', 
+              options = list(deferRender = F, dom = 't', columnDefs = list(list(className = 'dt-center', targets = 5)), scrollY = 202, scroller = TRUE, scrollX = T, pageLength = 5))
+
+```
+
+ 
+
+@tbl-corn presents a typical table with some of the basic characteristics (variables) of patients entered into @farndon2013 study.
+
++----------------------+-----------------+---------------------+-------------------+
+|                      |                 | Corn Plaster, n (%) | Scalpel, n (%)    |
+|                      |                 |                     |                   |
+|                      |                 | (n=101)             | (n=101)           |
++======================+=================+=====================+===================+
+| **Gender**           | Male            | 42 (42)             | 42 (42)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Female          | 59 (59)             | 59 (58)           |
++----------------------+-----------------+---------------------+-------------------+
+| **Center**           | Central         | 58 (57)             | 52 (52)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Manor           | 13 (13)             | 20 (20)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Jordanthorpe    | 10 (10)             | 14 (14)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Limbrick        | 3 (3)               | 6 (6)             |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Firth Park      | 7 (7)               | 4 (4)             |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Huddersfield    | 5 (5)               | 4 (4)             |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Darnall         | 5 (5)               | 1 (1)             |
++----------------------+-----------------+---------------------+-------------------+
+| **Smoking**          | Non-smoker      | 34 (35)             | 40 (40)           |
+|                      |                 |                     |                   |
+| **History**          |                 |                     |                   |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Previous smoker | 22 (22)             | 16 (16)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Current smoker  | 42 (43)             | 43 (43)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Missing         | 3 (3)               | 2 (2)             |
++----------------------+-----------------+---------------------+-------------------+
+| **Numbers of corns** | 1               | 48 (48)             | 66 (65)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | 2               | 28 (28)             | 23 (23)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | 3               | 24 (24)             | 12 (12)           |
++----------------------+-----------------+---------------------+-------------------+
+|                      | Missing         | 1 (1)               | 0 (0)             |
++----------------------+-----------------+---------------------+-------------------+
+| **Age (yrs),**       |                 | 58.5 (15.6)         | 59.7 (17.5)       |
+|                      |                 |                     |                   |
+| **mean (sd)**        |                 |                     |                   |
++----------------------+-----------------+---------------------+-------------------+
+| **Corn size (mm),**  |                 | 4 (3, 5)            | 3 (3, 5)          |
+|                      |                 |                     |                   |
+| **median (IQR)**     |                 |                     |                   |
++----------------------+-----------------+---------------------+-------------------+
+| **EQ-5D,**           |                 | 0.73 (0.59, 0.80)   | 0.73 (0.66, 0.80) |
+|                      |                 |                     |                   |
+| **median (IQR)**     |                 |                     |                   |
++----------------------+-----------------+---------------------+-------------------+
+
+: Baseline characteristics of patients with foot corns by treatment group. [@farndon2013] {#tbl-corn}
+
+In this example since we have 101 patients in each randomized group the percentages are almost the same as the raw counts. However, for most studies we are unlikely to have exactly 100 participants in each group!
+:::
+
+ 
+
+### Categorical Data
+
+**A. Nominal Data**
+
+**Nominal categorical data** are data that one can name and put into categories. They are not measured but simply **counted**. They often consist of **unordered** 'either--or' type observations which have two categories and are often know as **binary**. For example: dead or alive; male or female; cured or not cured; pregnant or not pregnant. In @tbl-corn gender is a binary variable. However, nominal categorical data often can have **more than two categories**, for example, blood group A, B, AB, 0; country of origin; ethnic group; eye color. The @tbl-corn gives the number and percentages of people treated at each of the seven centers in each of the two randomized groups.
+
+::: callout-warning
+**Numerical representation of categories are just codes**
+
+We can denote a male and female as 1 and 2 for gender and denote A, B, AB and 0, as 1, 2, 3, and 4 for blood type. Unlike numerical data, the numbers representing different categories do not have mathematical meanings (they are just codes).
+:::
+
+ 
+
+**Β. Ordinal Data**
+
+If there are more than two categories of classification it may be possible to **order** them in some way. For example, after treatment a patient may be either improved, the same or worse. Another example of an ordinal variable is the variable **pain** where a subject is asked to describe their pain verbally as minimal, moderate, severe, or unbearable. In @tbl-corn **smoking history** is given in three categories: non-smoker, previous smoker, and current smoker. Thus, someone who is a current smoker has more recent exposure to tobacco than someone who is an ex-smoker and someone who has never smoked. However, **without further knowledge** (of the current and past levels of tobacco consumption) it would be wrong to ascribe a numerical quantity to the category, for example, non-smoker=0, previous smoker=1, and current smoker=2, as one cannot say that someone who is current smoker has twice the levels of tobacco consumption as someone who is a previous smoker.
+
+::: callout-warning
+**Collapsion of categories leads to a loss of information**
+
+Ordinal data are often reduced to two categories to simplify analysis and presentation, which may result in a considerable loss of information.
+:::
+
+ 
+
+### Numerical Data
+
+**A. Count (or discrete) Data**
+
+@tbl-corn gives details of the number of corns each participant had at the start of the trial, since this can only be a whole number or integer value, for example, 0, 1, 2, or 3 in this trial, this is termed count data. Other examples are often counts per unit of time such as the number of deaths in a hospital per year, the number of visits to the GP in a year, or the number of attacks of asthma a person has per month. In dentistry, a common measure is the number of decayed, filled or missing teeth (DFM).
+
+The difference between such data as these and the ordered categorical data described earlier can be seen by considering an example of each:
+
+::: {.callout-note icon="false"}
+## **Illustrative Example: Ordinal Vs Discrete data**
+
+***Ordinal categorical:*** Stage of breast cancer: I II III IV
+
+***Discrete numerical:*** Number of children: 0 1 2 3 4 5+
+
+We cannot say that stage IV is twice as bad as stage II nor that the difference between stages I and II is equivalent to that between stages III and IV. In contrast, three children are three times as many as one, and a difference of one means the same throughout the range of values.
+:::
+
+ 
+
+::: callout-warning
+**Discrete Vs Ordinal Data**
+
+In practice discrete data are often treated in statistical analyses as if they were ordered categories. This is not wrong, but it may not be getting the most out of the data. Conversely, when ordered categories are numbered, as with stage of disease, the temptation to treat these numbers as statistically meaningful must be resisted. For example, it is not sensible to calculate the average stage of cancer. The only information the numbers contain is in the ordering, which would be conveyed equally by calling them A, B, C, D and so on.
+:::
+
+ 
+
+**Β. Continuous (or measured) Data**
+
+Such data are measurements that can, in theory at least, **take any value within a given range** (they are restricted by the accuracy of the measuring instrument). These data contain the most information, and are the ones most commonly used in statistics. Examples of continuous data in @tbl-corn are: age, corn size, and EQ-5D.
+
+Sometimes it is reasonable to treat discrete data as if they were continuous, at least as far as statistical analysis goes. While age is a continuous measurement, **age at last birthday is discrete**. In studies of adults with ages ranging from, say, 16 to 80, no harm is done in considering age in years as a continuous measurement (and this is standard practice), but for studies of pre-school children it would be better to use age in months. **Heart rate** (in beats per minute) is another discrete measurement that is usually regarded as continuous. Although the essential requirement for this change of status is that there should be a large number of different possible values, in practice we do not worry too much about analysing discrete measurements as if they were continuous.
+
+::: callout-warning
+**Categorization of numerical data leads to a loss of information**
+
+For simplicity, it is often the case in medicine that continuous data are dichotomized to make nominal data. For example, the diastolic blood pressure (DBP), which is continuous, is converted into hypertension (\>90 mmHg) and normotension (≤90 mmHg). There are two main reasons for doing this. It is easier to describe a population by the proportion of people affected, for example, the proportion of people in the population with hypertension is 10%. Further, one often has to make a decision: if a person has hypertension, then they will get treatment, and this is easier if high blood pressure has been categorized. However, this dichotomization clearly leads to a loss of information.
+
+ 
+
+One can also divide a continuous variable into more than two groups. For example, we could divide age into age bands of equal lengths of, say 10 years such as: 0-9, 10-19, 20-29, etc. When categorizing continuous data authors should give an indication as to why they chose these cut-off points, and a reader has to be very wary to guard against the fact that the cuts may be chosen to make a particular point.
+
+Some statisticians have termed the habit of categorizing continuous variables as **"dichotomania"**, which they regard as poor practice since it loses information and assumes a discontinuous relationship that is unlikely in nature.
+:::
+
+ 
+
+::: callout-tip
+**Record the actual values**
+
+It is best to record the actual value of blood pressure, haemoglobin, etc. It is easy to convert to categories in the analysis, but the raw data cannot be retrieved later if only categories are recorded. Information is lost with no compensatory gain. Indeed, the statistical analysis of continuous data is more powerful, and often simpler.
+
+ 
+
+When some calculation is necessary to derive the observation of interest this should be done by the computer. Thus it is much better to record date of birth and date of examination for subsequent calculation of age rather than to rely on mental arithmetic.
+:::
+
+The degree of measurement accuracy and the type of data are both important in relation to carrying out a proper statistical analysis.
