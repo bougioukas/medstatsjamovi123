@@ -78,20 +78,6 @@ Descriptive statistics include measures of central tendency, measures of dispers
 
 Inferential statistics aim at generalizing a measure taken on a small number of cases that have been observed, to a larger set of cases that have not been observed. Using the terms explained above, we could reformulate this aim, and say that inferential statistics aim at generalizing observations made on a sample to a whole population.
 
-## Why Jamovi?
-
-Jamovi is a new fee open "3rd generation" statistical software that is built on top of the programming language R (@fig-jamovi_0). Designed from the ground up to be easy to use, Jamovi is a compelling alternative to costly statistical products such as SPSS and SAS.
-
-![Jamovi is free and open statistical software](images/jamovi_0.png){#fig-jamovi_0 width="95%"}
-
-::: {.callout-note icon="false"}
-## **Some other advantages are:**
-
-1.  Enables integration with R
-2.  It provides informative tables and neat visuals
-3.  Gives access to a user guide and community resources from the Jamovi website
-:::
-
 
 
 ## Variables

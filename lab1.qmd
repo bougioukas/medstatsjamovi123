@@ -1,6 +1,23 @@
 # LAB I: Introduction to Jamovi
 
-The goal of this lab is to introduce you to jamovi, which we'll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
+The goal of this lab is to introduce you to Jamovi, which we'll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
+
+
+## Why Jamovi?
+
+Jamovi is a new fee open "3rd generation" statistical software that is built on top of the programming language R (@fig-jamovi_0). Designed from the ground up to be easy to use, Jamovi is a compelling alternative to costly statistical products such as SPSS and SAS.
+
+![Jamovi is free and open statistical software](images/jamovi_0.png){#fig-jamovi_0 width="95%"}
+
+::: {.callout-note icon="false"}
+## **Some other advantages are:**
+
+1.  Enables integration with R
+2.  It provides informative tables and neat visuals
+3.  Gives access to a user guide and community resources from the Jamovi website
+:::
+
+
 
 ## Downloading and installing Jamovi
 

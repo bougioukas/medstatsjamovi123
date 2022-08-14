@@ -211,10 +211,11 @@ ul.task-list{list-style: none;}
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#downloading-and-installing-jamovi" id="toc-downloading-and-installing-jamovi" class="nav-link active" data-scroll-target="#downloading-and-installing-jamovi"> <span class="header-section-number">2.1</span> Downloading and installing Jamovi</a></li>
-  <li><a href="#navigating-jamovi" id="toc-navigating-jamovi" class="nav-link" data-scroll-target="#navigating-jamovi"> <span class="header-section-number">2.2</span> Navigating Jamovi</a></li>
-  <li><a href="#variables-types-in-jamovi" id="toc-variables-types-in-jamovi" class="nav-link" data-scroll-target="#variables-types-in-jamovi"> <span class="header-section-number">2.3</span> Variables Types in Jamovi</a></li>
-  <li><a href="#importing-our-data" id="toc-importing-our-data" class="nav-link" data-scroll-target="#importing-our-data"> <span class="header-section-number">2.4</span> Importing our Data</a></li>
+<li><a href="#why-jamovi" id="toc-why-jamovi" class="nav-link active" data-scroll-target="#why-jamovi"> <span class="header-section-number">2.1</span> Why Jamovi?</a></li>
+  <li><a href="#downloading-and-installing-jamovi" id="toc-downloading-and-installing-jamovi" class="nav-link" data-scroll-target="#downloading-and-installing-jamovi"> <span class="header-section-number">2.2</span> Downloading and installing Jamovi</a></li>
+  <li><a href="#navigating-jamovi" id="toc-navigating-jamovi" class="nav-link" data-scroll-target="#navigating-jamovi"> <span class="header-section-number">2.3</span> Navigating Jamovi</a></li>
+  <li><a href="#variables-types-in-jamovi" id="toc-variables-types-in-jamovi" class="nav-link" data-scroll-target="#variables-types-in-jamovi"> <span class="header-section-number">2.4</span> Variables Types in Jamovi</a></li>
+  <li><a href="#importing-our-data" id="toc-importing-our-data" class="nav-link" data-scroll-target="#importing-our-data"> <span class="header-section-number">2.5</span> Importing our Data</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -233,30 +234,55 @@ ul.task-list{list-style: none;}
   </div>
   
 
-</header><p>The goal of this lab is to introduce you to jamovi, which we’ll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.</p>
-<section id="downloading-and-installing-jamovi" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="downloading-and-installing-jamovi">
-<span class="header-section-number">2.1</span> Downloading and installing Jamovi</h2>
+</header><p>The goal of this lab is to introduce you to Jamovi, which we’ll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.</p>
+<section id="why-jamovi" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="why-jamovi">
+<span class="header-section-number">2.1</span> Why Jamovi?</h2>
+<p>Jamovi is a new fee open “3rd generation” statistical software that is built on top of the programming language R (<a href="#fig-jamovi_0">Figure&nbsp;<span>2.1</span></a>). Designed from the ground up to be easy to use, Jamovi is a compelling alternative to costly statistical products such as SPSS and SAS.</p>
+<div id="fig-jamovi_0" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="images/jamovi_0.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 2.1: Jamovi is free and open statistical software</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<strong>Some other advantages are:</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Enables integration with R</li>
+<li>It provides informative tables and neat visuals</li>
+<li>Gives access to a user guide and community resources from the Jamovi website</li>
+</ol>
+</div>
+</div>
+</section><section id="downloading-and-installing-jamovi" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="downloading-and-installing-jamovi">
+<span class="header-section-number">2.2</span> Downloading and installing Jamovi</h2>
 <p><strong>Jamovi</strong> is available for Windows (64-bit), macOS, Linux and ChromeOS. Installation on desktop is quite straight-forward. Just go to the Jamovi download page <a href="https://www.jamovi.org/download.html" class="uri">https://www.jamovi.org/download.html</a>, and download the latest version (current release) for your operating system.</p>
-</section><section id="navigating-jamovi" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="navigating-jamovi">
-<span class="header-section-number">2.2</span> Navigating Jamovi</h2>
-<p>When first starting jamovi, we will be presented with a user interface which looks something like this <a href="#fig-jamovi1">Figure&nbsp;<span>2.1</span></a>.</p>
+</section><section id="navigating-jamovi" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="navigating-jamovi">
+<span class="header-section-number">2.3</span> Navigating Jamovi</h2>
+<p>When first starting jamovi, we will be presented with a user interface which looks something like this <a href="#fig-jamovi1">Figure&nbsp;<span>2.2</span></a>.</p>
 <div class="cell" data-layout-align="left">
 <div class="cell-output-display">
 <div id="fig-jamovi1" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure"><p><img src="images/jamovi1.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 2.1: The menu bar provides access to all functions of the program.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 2.2: The menu bar provides access to all functions of the program.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <p>To the left is the spreadsheet view, and to the right is where the results of statistical tests appear. Down the middle is a bar separating these two regions, and this can be dragged to the left or the right to change their sizes.</p>
 <p>&nbsp;</p>
-<p>Let’s take a quick look at the Jamovi Main Menu, referred to hereafter as the <strong>Menu</strong>, as shown in (<a href="#fig-menu1">Figure&nbsp;<span>2.2</span></a>). This Menu is displayed at the very top of the Jamovi screen:</p>
+<p>Let’s take a quick look at the Jamovi Main Menu, referred to hereafter as the <strong>Menu</strong>, as shown in (<a href="#fig-menu1">Figure&nbsp;<span>2.3</span></a>). This Menu is displayed at the very top of the Jamovi screen:</p>
 <div class="cell" data-layout-align="left">
 <div class="cell-output-display">
 <div id="fig-menu1" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure"><p><img src="images/menu1.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 2.2: The menu bar provides access to all functions of the program.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 2.3: The menu bar provides access to all functions of the program.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -378,8 +404,8 @@ ul.task-list{list-style: none;}
 </table>
 </div>
 <p>&nbsp;</p>
-</section><section id="variables-types-in-jamovi" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="variables-types-in-jamovi">
-<span class="header-section-number">2.3</span> Variables Types in Jamovi</h2>
+</section><section id="variables-types-in-jamovi" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="variables-types-in-jamovi">
+<span class="header-section-number">2.4</span> Variables Types in Jamovi</h2>
 <p>Data variables can be one of four <strong>measure types</strong>:</p>
 <ul>
 <li><p><img src="images/nominal.png" width="24" height="22"><strong>Nominal</strong>: This type is for nominal categorical variables.</p></li>
@@ -439,8 +465,8 @@ ul.task-list{list-style: none;}
 </table>
 </div>
 <p>&nbsp;</p>
-</section><section id="importing-our-data" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="importing-our-data">
-<span class="header-section-number">2.4</span> Importing our Data</h2>
+</section><section id="importing-our-data" class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="importing-our-data">
+<span class="header-section-number">2.5</span> Importing our Data</h2>
 <p>It is possible to simply begin typing values into the Jamovi spreadsheet as we would with any other spreadsheet software. Alternatively, existing data sets in a range of formats (OMV, Excel, CSV, SPSS, R data, Stata, SAS) can be opened in Jamovi.</p>
 <p>To open a file, select the File tab <img src="images/hbars.png" width="28" height="17"> at the top left hand corner, select ‘Open’ and then ‘This PC’, and choose from the files listed on ‘Browse’ that are stored on our computer:</p>
 <div class="cell">
@@ -462,7 +488,7 @@ ul.task-list{list-style: none;}
 <div class="cell-output-display">
 <div id="fig-open2" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure"><p><img src="images/open2.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 2.3: Open an existing file stored on our computer into Jamovi.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 2.4: Open an existing file stored on our computer into Jamovi.</figcaption><p></p>
 </figure>
 </div>
 </div>
