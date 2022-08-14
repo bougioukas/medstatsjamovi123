@@ -1,1 +1,69 @@
 # LAB I: Introduction to Jamovi
+
+The goal of this lab is to introduce you to jamovi, which we'll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
+
+## Downloading and installing
+
+**Jamovi** is available for Windows (64-bit), macOS, Linux and ChromeOS. Installation on desktop is quite straight-forward. Just go to the Jamovi download page <https://www.jamovi.org/download.html>, and download the latest version (current release) for your operating system.
+
+## How Jamovi's screen looks like
+
+When first starting jamovi, we will be presented with a user interface which looks something like this @fig-jamovi1.
+
+```{r}
+#| label: fig-jamovi1
+#| fig-align: center
+#| out-width: "95%"
+#| echo: false
+#| fig-cap: The menu bar provides access to all functions of the program.
+
+knitr::include_graphics(here::here("images", "jamovi1.png"))
+```
+
+
+
+To the left is the spreadsheet view, and to the right is where the results of statistical tests appear. Down the middle is a bar separating these two regions, and this can be dragged to the left or the right to change their sizes.
+
+ 
+
+Let’s take a quick look at the Jamovi Main Menu, referred to hereafter as
+the **Menu**, as shown in (@fig-menu1). This Menu is displayed at the very top of
+the Jamovi screen:
+
+```{r}
+#| label: fig-menu1
+#| fig-align: center
+#| out-width: "105%"
+#| echo: false
+#| fig-cap: The menu bar provides access to all functions of the program.
+
+knitr::include_graphics(here::here("images", "menu1.png"))
+```
+
+
+
+There are six tabs in the Menu (from left to right):
+
+1.  **File tab** (a layer with three horizontal levels): this tab allows us to open/import existing files, save and export our files.
+2.  **Variables tab**: this allows us to view and search our variables in a list view
+3.  **Data tab**: here we will see our raw data. We can also manipulate our data and add new variables when necessary.
+4.  **Analyses tab**:  in this tab we will carry out our data analyses
+5.  **Edit tab**: this tab allows us to add extra information to our results. This will help us keep track of what we have done and why. 
+6.  **Preferences** (the three dots $\vdots$ at the top right of the window)
+
+
+
+
+
+
+It is possible to simply begin typing values into the Jamovi spreadsheet as you would any other spreadsheet software. Alternatively, existing data sets in a range of formats (CSV, Excel, SPSS, R data, Stata, SAS) can be opened in Jamovi.
+
+To open a file, select the File tab at the top left hand corner, select 'Open' and then 'This PC', and choose from the files listed on 'Browse' that are stored on our computer.
+
+| Col1                                                                                           | Col2 |
+|------------------------------------------------------------|------------|
+| ![Jamovi is free and open statistical software](images/tab_file.png){width="35%"} |      |
+|                                                                                                |      |
+|                                                                                                |      |
+
+

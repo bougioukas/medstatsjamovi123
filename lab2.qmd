@@ -1,1 +1,9 @@
 # LAB II: Descriptive Statistics
+
+
+
+
+```{mermaid}
+flowchart LR
+  A[Analyses] -.-> B(Explorations) -.-> C(Descriptives)
+```

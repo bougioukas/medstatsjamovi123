@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.0.37">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Introduction to Medical Statistics with Jamovi - 2&nbsp; LAB I: Introduction to Jamovi</title>
 <style>
 code{white-space: pre-wrap;}
@@ -16,7 +13,6 @@ div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 </style>
-
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -35,8 +31,7 @@ ul.task-list{list-style: none;}
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -54,43 +49,36 @@ ul.task-list{list-style: none;}
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-
+}</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></h1>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">
+<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span>
+</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Medical Statistics with Jamovi</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/bougioukas/MedStatsJamovi5" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+<li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
             <i class="bi bi-bi-twitter pe-1"></i>
           Twitter
           </a>
         </li>
         <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
           </a>
@@ -106,7 +94,7 @@ ul.task-list{list-style: none;}
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
@@ -217,18 +205,20 @@ ul.task-list{list-style: none;}
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+</div>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#downloading-and-installing" id="toc-downloading-and-installing" class="nav-link active" data-scroll-target="#downloading-and-installing"> <span class="header-section-number">2.1</span> Downloading and installing</a></li>
+  <li><a href="#how-jamovis-screen-looks-like" id="toc-how-jamovis-screen-looks-like" class="nav-link" data-scroll-target="#how-jamovis-screen-looks-like"> <span class="header-section-number">2.2</span> How Jamovi’s screen looks like</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title d-none d-lg-block">
+<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span>
+</h1>
 </div>
 
 
@@ -240,13 +230,78 @@ ul.task-list{list-style: none;}
   </div>
   
 
-</header>
+</header><p>The goal of this lab is to introduce you to jamovi, which we’ll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.</p>
+<section id="downloading-and-installing" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="downloading-and-installing">
+<span class="header-section-number">2.1</span> Downloading and installing</h2>
+<p><strong>Jamovi</strong> is available for Windows (64-bit), macOS, Linux and ChromeOS. Installation on desktop is quite straight-forward. Just go to the Jamovi download page <a href="https://www.jamovi.org/download.html" class="uri">https://www.jamovi.org/download.html</a>, and download the latest version (current release) for your operating system.</p>
+</section><section id="how-jamovis-screen-looks-like" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="how-jamovis-screen-looks-like">
+<span class="header-section-number">2.2</span> How Jamovi’s screen looks like</h2>
+<p>When first starting jamovi, we will be presented with a user interface which looks something like this <a href="#fig-jamovi1">Figure&nbsp;<span>2.1</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-jamovi1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="images/jamovi1.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 2.1: The menu bar provides access to all functions of the program.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To the left is the spreadsheet view, and to the right is where the results of statistical tests appear. Down the middle is a bar separating these two regions, and this can be dragged to the left or the right to change their sizes.</p>
+<p>&nbsp;</p>
+<p>Let’s take a quick look at the Jamovi Main Menu, referred to hereafter as the <strong>Menu</strong>, as shown in (<a href="#fig-menu1">Figure&nbsp;<span>2.2</span></a>). This Menu is displayed at the very top of the Jamovi screen:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-menu1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="images/menu1.png" class="img-fluid figure-img" style="width:105.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 2.2: The menu bar provides access to all functions of the program.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>There are six tabs in the Menu (from left to right):</p>
+<ol type="1">
+<li>
+<strong>File tab</strong> (a layer with three horizontal levels): this tab allows us to open/import existing files, save and export our files.</li>
+<li>
+<strong>Variables tab</strong>: this allows us to view and search our variables in a list view</li>
+<li>
+<strong>Data tab</strong>: here we will see our raw data. We can also manipulate our data and add new variables when necessary.</li>
+<li>
+<strong>Analyses tab</strong>: in this tab we will carry out our data analyses</li>
+<li>
+<strong>Edit tab</strong>: this tab allows us to add extra information to our results. This will help us keep track of what we have done and why.</li>
+<li>
+<strong>Preferences</strong> (the three dots <span class="math inline">\(\vdots\)</span> at the top right of the window)</li>
+</ol>
+<p>It is possible to simply begin typing values into the Jamovi spreadsheet as you would any other spreadsheet software. Alternatively, existing data sets in a range of formats (CSV, Excel, SPSS, R data, Stata, SAS) can be opened in Jamovi.</p>
+<p>To open a file, select the File tab at the top left hand corner, select ‘Open’ and then ‘This PC’, and choose from the files listed on ‘Browse’ that are stored on our computer.</p>
+<table class="table">
+<colgroup>
+<col style="width: 83%">
+<col style="width: 16%">
+</colgroup>
+<thead><tr class="header">
+<th>Col1</th>
+<th>Col2</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><img src="images/tab_file.png" class="img-fluid" style="width:35.0%" alt="Jamovi is free and open statistical software"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -356,9 +411,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./introduction.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
@@ -370,12 +423,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Copyright 2022, Konstantinos I. Bougioukas</div>   
   </div>
 </footer>
-
 
 
 </body></html>
