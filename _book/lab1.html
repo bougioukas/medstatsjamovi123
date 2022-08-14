@@ -49,7 +49,8 @@ ul.task-list{list-style: none;}
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+}</script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
 <body class="nav-sidebar floating">
 
@@ -212,6 +213,7 @@ ul.task-list{list-style: none;}
   <ul>
 <li><a href="#downloading-and-installing-jamovi" id="toc-downloading-and-installing-jamovi" class="nav-link active" data-scroll-target="#downloading-and-installing-jamovi"> <span class="header-section-number">2.1</span> Downloading and installing Jamovi</a></li>
   <li><a href="#navigating-jamovi" id="toc-navigating-jamovi" class="nav-link" data-scroll-target="#navigating-jamovi"> <span class="header-section-number">2.2</span> Navigating Jamovi</a></li>
+  <li><a href="#importing-exporting-saving-your-data" id="toc-importing-exporting-saving-your-data" class="nav-link" data-scroll-target="#importing-exporting-saving-your-data"> <span class="header-section-number">2.3</span> Importing, Exporting &amp; Saving your Data</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -263,8 +265,8 @@ ul.task-list{list-style: none;}
 <table class="table">
 <caption>Table 2.1: Menu and toolbars of Jamovi</caption>
 <colgroup>
-<col style="width: 53%">
-<col style="width: 46%">
+<col style="width: 51%">
+<col style="width: 48%">
 </colgroup>
 <thead><tr class="header">
 <th>Menu tab</th>
@@ -275,8 +277,7 @@ ul.task-list{list-style: none;}
 <td><ol type="1">
 <li>
 <p><strong>File tab</strong> (<span class="math inline">\(\equiv\)</span>)</p>
-<p><img src="images/hbars.png" class="img-fluid" width="60"></p>
-<p>This tab allows us to open/import existing files, save and export our files.</p>
+<p>The file tab <img src="images/hbars.png" width="24" height="17"> allows us to open/import existing files, save and export our files.</p>
 </li>
 </ol></td>
 <td><img src="images/tab_file.png" class="img-fluid" style="width:40.0%"></td>
@@ -349,15 +350,15 @@ ul.task-list{list-style: none;}
 </ol></td>
 <td>
 <p><img src="images/tab_edit.png" class="img-fluid"></p>
-<p>We can add extra information to our results using the buttons.</p>
+<p>We can add extra information to our results using the buttons that are very similar to what we would find in Word (though there are fewer options).</p>
 </td>
 </tr>
 <tr class="even">
 <td><ol start="6" type="1">
 <li>
-<p><strong>Settings</strong></p>
+<p><strong>Settings tab</strong></p>
 <p>(the three dots <span class="math inline">\({\vdots}\)</span> at the top right of the window)</p>
-<p><img src="images/dots.png" width="20" height="34"></p>
+<p><img src="images/dots.png" width="14" height="29"></p>
 <p>It includes the application settings that can be manged by the users according to their preferences.</p>
 </li>
 </ol></td>
@@ -375,8 +376,34 @@ ul.task-list{list-style: none;}
 </tbody>
 </table>
 </div>
-<p>It is possible to simply begin typing values into the Jamovi spreadsheet as you would any other spreadsheet software. Alternatively, existing data sets in a range of formats (CSV, Excel, SPSS, R data, Stata, SAS) can be opened in Jamovi.</p>
-<p>To open a file, select the File tab at the top left hand corner, select ‘Open’ and then ‘This PC’, and choose from the files listed on ‘Browse’ that are stored on our computer.</p>
+</section><section id="importing-exporting-saving-your-data" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="importing-exporting-saving-your-data">
+<span class="header-section-number">2.3</span> Importing, Exporting &amp; Saving your Data</h2>
+<p>It is possible to simply begin typing values into the Jamovi spreadsheet as we would with any other spreadsheet software. Alternatively, existing data sets in a range of formats (CSV, Excel, SPSS, R data, Stata, SAS) can be opened in Jamovi.</p>
+<p>To open a file, select the File tab <img src="images/hbars.png" width="28" height="17"> at the top left hand corner, select ‘Open’ and then ‘This PC’, and choose from the files listed on ‘Browse’ that are stored on our computer:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p>
+<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+  A[File tab ] -.-&gt; B(Open) -.-&gt; C(This PC) -.-&gt; D(Browse)
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div id="fig-open2" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure"><p><img src="images/open2.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 2.3: Open an existing file stored on our computer into Jamovi.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">

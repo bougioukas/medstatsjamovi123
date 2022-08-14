@@ -13,10 +13,10 @@ library(ggdist)
 
 
 library(readr)
-dat_corn <- read_csv(here("data", "dat_corn.csv"))
+data_corn <- read_csv(here("data", "data_corn.csv"))
 
 
-dat_corn <- dat_corn %>% 
+data_corn <- data_corn %>% 
  mutate(group = factor(group, levels = c(1, 2), 
                               labels=c('scalpel', 'corn plaster')),
         center = factor(center, levels = c(1, 2, 3, 4, 5,  9,  11 ),
@@ -30,11 +30,9 @@ dat_corn <- dat_corn %>%
  )
 ```
 
-
 ## Variables
 
-
-A **variable** is a quantity or property that is free to vary, or take on different values. Researchers design experiments to test if changes to one or more variables are associated with changes to another variable of interest. For example, if a researcher thinks a new treatment reduces the number of depressive symptoms, he could design an experiment to test this hypothesis; participants should randomly assigned to one of two groups: one (the experimental group) receiving the new treatment that is being tested, and the other (the comparison group or control) receiving an alternative (conventional) treatment. 
+A **variable** is a quantity or property that is free to vary, or take on different values. Researchers design experiments to test if changes to one or more variables are associated with changes to another variable of interest. For example, if a researcher thinks a new treatment reduces the number of depressive symptoms, he could design an experiment to test this hypothesis; participants should randomly assigned to one of two groups: one (the experimental group) receiving the new treatment that is being tested, and the other (the comparison group or control) receiving an alternative (conventional) treatment.
 
 In this experiment, the type of treatment each participant received (i.e., new treatment vs. no treatment) is the **independent variable** (IV), while the number of depressive symptoms observed in each person is the **dependent variable** (DV) or the **outcome** variable.
 
@@ -65,7 +63,7 @@ In a randomized controlled trial (RCT), @farndon2013 investigated the effectiven
 #| fig-cap: The recorded data in @farndon2013 study.
 
 
-DT::datatable(dat_corn, extensions = 'Scroller', 
+DT::datatable(data_corn, extensions = 'Scroller', 
               options = list(deferRender = F, dom = 't', columnDefs = list(list(className = 'dt-center', targets = 5)), scrollY = 202, scroller = TRUE, scrollX = T, pageLength = 5))
 
 ```
@@ -318,12 +316,12 @@ A simple bar plot is an easy way to make comparisons across categories. @fig-bar
 #| fig-cap: Bar plot showing where 202 patients with corns were treated [@farndon2013].
 #| fig-width: 7
 
-dat_centers <- dat_corn %>% 
+data_centers <- data_corn %>% 
   count(center) %>% 
   mutate(pct = n / sum(n))
 
 
-ggplot(dat_centers, aes(x = center, y = pct)) +
+ggplot(data_centers, aes(x = center, y = pct)) +
   geom_col(width=0.65, fill = "steelblue4") +
   geom_text(aes(label=paste0(round(pct*100, 1), "%")),
             vjust=1.6, color = "white", size = 3) +
@@ -362,13 +360,13 @@ If the sample is further classified into whether the patient was treated with co
 #| fig-width: 9.5
 #| fig-height: 5
 
-dat_centers2 <- dat_corn %>% 
+data_centers2 <- data_corn %>% 
   count(center, group) %>% 
   group_by(group) %>% 
   mutate(pct = n / sum(n))
 
 
-ggplot(dat_centers2) + 
+ggplot(data_centers2) + 
   geom_col(aes(center, pct, fill = group), width=0.7, position = "dodge") +
   geom_text(aes(center, pct, label = paste0(round(pct*100, 0), "%"), 
                 group = group), color = "white", size = 3,vjust=1.2,
@@ -396,7 +394,7 @@ labs(x = "Treatment center", y = "Percent",
 #| fig-height: 5
 #| 
 
-ggplot(dat_centers2) + 
+ggplot(data_centers2) + 
   geom_col(aes(center, pct, fill = group), width = 0.8, position = "dodge") +
   geom_text(aes(center, pct, label = paste0(round(pct*100, 0), "%"), 
                 group = group), color = "white", size = 3,vjust=1.2,
@@ -434,13 +432,13 @@ Unlike a side-by-side or grouped graphs, **Stacked Bar Plots** segment their bar
 #| fig-width: 7
 #| fig-height: 1.8
 
-dat_stacked <- dat_corn%>% 
+data_stacked <- data_corn%>% 
   group_by(group) %>% 
   count(gender) %>% 
   mutate(pct = n / sum(n))
 
 
-ggplot(dat_stacked, aes(x = group, y = pct, fill = gender))+
+ggplot(data_stacked, aes(x = group, y = pct, fill = gender))+
   geom_bar(stat = "identity")+
   geom_text(aes(label = paste0(round(pct*100, 0), "%"), y = pct), 
             position = position_stack(vjust = 0.5))+
@@ -468,13 +466,13 @@ In @fig-stacked the bars are divided into two segments only (i.e., female and ma
 #| fig-width: 11.5
 #| fig-height: 2.8
 
-dat_stacked2 <- dat_corn%>% 
+data_stacked2 <- data_corn%>% 
   group_by(group) %>% 
   count(center) %>% 
   mutate(pct = n / sum(n))
 
 
-ggplot(dat_stacked2, aes(x = group, y = pct, fill = center))+
+ggplot(data_stacked2, aes(x = group, y = pct, fill = center))+
   geom_bar(stat = "identity")+
   geom_text(aes(label = paste0(round(pct*100, 0), "%"), y = pct), 
             position = position_stack(vjust = 0.5))+
@@ -563,7 +561,7 @@ $\bar{x}$ = `r sum(x)`/`r length(x)` = `r mean(x)` mm or `r round(mean(x), digit
 
 The major advantage of the mean is that it uses all the data values, while the main disadvantage is its sensitivity to very large or very small values, which might be **outliers** (unusual values). For example, if we entered "100 mm" instead of "10 mm", for the 15th patient, in the calculation of the mean, we would find the mean changed from `r round(mean(x), digits = 1)` to `r round(mean(x2), digits = 1)`. It does not necessarily follow, however, that outliers should be excluded from the final data summary, or that they result from a human error. Outliers can be legitimate anomalies that are vital for capturing information on the subject of interest.
 
-If the data are binary and are coded 0 or 1, then $\bar{x}$ is the proportion of individuals with value 1, and this can also be expressed as a percentage. In @farndon2013 data, the cases in which the corn was healed are coded as '1s' and the cases in which the corn was not healed as '0s'. The corn had healed in 52 out of 189 patients, so the mean of this variable is `r round(mean(dat_corn$complete_healed, na.rm=T), digits = 3)` or `r round(mean(dat_corn$complete_healed, na.rm=T), digits = 2)*100`%.
+If the data are binary and are coded 0 or 1, then $\bar{x}$ is the proportion of individuals with value 1, and this can also be expressed as a percentage. In @farndon2013 data, the cases in which the corn was healed are coded as '1s' and the cases in which the corn was not healed as '0s'. The corn had healed in 52 out of 189 patients, so the mean of this variable is `r round(mean(data_corn$complete_healed, na.rm=T), digits = 3)` or `r round(mean(data_corn$complete_healed, na.rm=T), digits = 2)*100`%.
 
 ::: {.callout-note icon="false"}
 ## **Advantages and Disadvantages of arithmetic mean**
@@ -829,7 +827,7 @@ A histogram (@fig-histo1 a) is a plot that depicts the distribution of a numeric
 #| fig-width: 7.5
 #| fig-height: 5.0
 
-h1 <- dat_corn |>
+h1 <- data_corn |>
   ggplot(aes(x = age)) +
   geom_histogram(binwidth=10, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
   ggtitle("Histohram") +
@@ -843,7 +841,7 @@ h1 <- dat_corn |>
   annotate('text', x = 52, y = 43, label = 'mean', color = '009e73') +
   annotate('text', x = 70, y = 43, label = 'median', color = 'grey')
 
-h2 <- dat_corn |>
+h2 <- data_corn |>
   ggplot(aes(x = age)) +
   geom_density(fill="steelblue4", color="#8fb4d9", alpha=0.6) +
   ggtitle("Density plot") +
@@ -887,7 +885,7 @@ Choice of bin size has an inverse relationship with the number of bins @fig-hist
 #| fig-height: 4.5
 
 
-p1 <- dat_corn |>
+p1 <- data_corn |>
   ggplot(aes(x = age)) +
   geom_histogram(binwidth=2, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
   ggtitle("Bin size = 2") +
@@ -899,7 +897,7 @@ p1 <- dat_corn |>
     ) +
   scale_y_continuous(limits=c(0, 65))
 
-p2 <- dat_corn |>
+p2 <- data_corn |>
   ggplot(aes(x = age)) +
   geom_histogram(binwidth=10, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
   ggtitle("Bin size = 10") +
@@ -912,7 +910,7 @@ p2 <- dat_corn |>
     ) +
   scale_y_continuous(limits=c(0, 65))
 
-p3 <- dat_corn |>
+p3 <- data_corn |>
   ggplot(aes(x = age)) +
   geom_histogram(binwidth=15, fill="steelblue4", color="#8fb4d9", alpha=0.6) +
   ggtitle("Bin size = 15") +
@@ -946,13 +944,13 @@ We can also create a histogram or density plot by group. @fig-histo3 depicts the
 #| fig-width: 7.5
 #| fig-height: 5.0
 
-age_by_group <- dat_corn |>
+age_by_group <- data_corn |>
   group_by(group)|>
   summarize(age_mean = mean(age),
             age_median = median(age))
 
 
-dat_corn |>
+data_corn |>
   ggplot(aes(x = age)) +
   geom_density(aes(fill=group), binwidth=10, color="#8fb4d9", alpha=0.6) +
   ggtitle("Density Plot by group") +
@@ -1009,7 +1007,7 @@ In @fig-boxplot1 the distance between ${Q3}$ and ${Q1}$ is the interquartile ran
 #| fig-width: 3.0
 #| fig-height: 4.0
 
-dat_corn |>
+data_corn |>
   ggplot(aes(y = age)) +
   geom_boxplot(fill = "steelblue4", alpha=0.6) +
   ggtitle("Box Plot") +
@@ -1032,7 +1030,7 @@ dat_corn |>
 #| fig-width: 5.5
 #| fig-height: 4.0
 
-dat_corn |>
+data_corn |>
   ggplot(aes(x = group, y = age, fill = group)) +
   geom_boxplot(alpha=0.6) +
   ggtitle("Grouped Box Plot") +
@@ -1069,7 +1067,7 @@ There are many variations of the boxplot. For example, there is a way to combine
 #| fig-width: 6.5
 #| fig-height: 4.0
 
-dat_corn |>
+data_corn |>
   ggplot(aes(x = group, y = age, fill = group)) +
   stat_slab(aes(thickness = stat(pdf*n)), 
                 scale = 0.5) +
@@ -1099,7 +1097,7 @@ Scatter plots are two dimensional graphs, showing the association between two co
 #| fig-width: 8.5
 #| fig-height: 4.0
 
-s1 <- dat_corn |>
+s1 <- data_corn |>
   ggplot(aes(x = age, y = pain_baseline)) +
   geom_point(size = 2) +
   ggtitle("Scatterplot") +
@@ -1110,7 +1108,7 @@ s1 <- dat_corn |>
     )
 
 
-s2 <- dat_corn |>
+s2 <- data_corn |>
   ggplot(aes(x = age, y = pain_baseline, color = gender)) +
   geom_point(size = 2) +
   ggtitle("Scatterplot by group") +
