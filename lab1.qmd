@@ -2,17 +2,17 @@
 
 The goal of this lab is to introduce you to jamovi, which we'll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
 
-## Downloading and installing
+## Downloading and installing Jamovi
 
 **Jamovi** is available for Windows (64-bit), macOS, Linux and ChromeOS. Installation on desktop is quite straight-forward. Just go to the Jamovi download page <https://www.jamovi.org/download.html>, and download the latest version (current release) for your operating system.
 
-## How Jamovi's screen looks like
+## Navigating Jamovi
 
 When first starting jamovi, we will be presented with a user interface which looks something like this @fig-jamovi1.
 
 ```{r}
 #| label: fig-jamovi1
-#| fig-align: center
+#| fig-align: left
 #| out-width: "95%"
 #| echo: false
 #| fig-cap: The menu bar provides access to all functions of the program.
@@ -20,50 +20,69 @@ When first starting jamovi, we will be presented with a user interface which loo
 knitr::include_graphics(here::here("images", "jamovi1.png"))
 ```
 
-
-
 To the left is the spreadsheet view, and to the right is where the results of statistical tests appear. Down the middle is a bar separating these two regions, and this can be dragged to the left or the right to change their sizes.
 
  
 
-Let’s take a quick look at the Jamovi Main Menu, referred to hereafter as
-the **Menu**, as shown in (@fig-menu1). This Menu is displayed at the very top of
-the Jamovi screen:
+Let's take a quick look at the Jamovi Main Menu, referred to hereafter as the **Menu**, as shown in (@fig-menu1). This Menu is displayed at the very top of the Jamovi screen:
 
 ```{r}
 #| label: fig-menu1
-#| fig-align: center
-#| out-width: "105%"
+#| fig-align: left
+#| out-width: "95%"
 #| echo: false
 #| fig-cap: The menu bar provides access to all functions of the program.
 
 knitr::include_graphics(here::here("images", "menu1.png"))
 ```
 
-
-
 There are six tabs in the Menu (from left to right):
 
-1.  **File tab** (a layer with three horizontal levels): this tab allows us to open/import existing files, save and export our files.
+1.  **File tab** (a layer with three horizontal levels $\equiv$): this tab allows us to open/import existing files, save and export our files.
 2.  **Variables tab**: this allows us to view and search our variables in a list view
 3.  **Data tab**: here we will see our raw data. We can also manipulate our data and add new variables when necessary.
-4.  **Analyses tab**:  in this tab we will carry out our data analyses
-5.  **Edit tab**: this tab allows us to add extra information to our results. This will help us keep track of what we have done and why. 
+4.  **Analyses tab**: in this tab we will carry out our data analyses
+5.  **Edit tab**: this tab allows us to add extra information to our results. This will help us keep track of what we have done and why.
 6.  **Preferences** (the three dots $\vdots$ at the top right of the window)
-
-
-
-
-
 
 It is possible to simply begin typing values into the Jamovi spreadsheet as you would any other spreadsheet software. Alternatively, existing data sets in a range of formats (CSV, Excel, SPSS, R data, Stata, SAS) can be opened in Jamovi.
 
 To open a file, select the File tab at the top left hand corner, select 'Open' and then 'This PC', and choose from the files listed on 'Browse' that are stored on our computer.
 
-| Col1                                                                                           | Col2 |
-|------------------------------------------------------------|------------|
-| ![Jamovi is free and open statistical software](images/tab_file.png){width="35%"} |      |
-|                                                                                                |      |
-|                                                                                                |      |
-
-
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Toolbar for each tab of the Menu                                                  | Functions                                                                                                                                                                                                                               |
++===================================================================================+=========================================================================================================================================================================================================================================+
+| 1.  **File tab**                                                                  | We see six commands appear. With the file tab, you can open, save, or export what you performed in Jamovi.                                                                                                                              |
+|                                                                                   |                                                                                                                                                                                                                                         |
+| ![Jamovi is free and open statistical software](images/tab_file.png){width="35%"} |                                                                                                                                                                                                                                         |
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2.  **Variables tab**                                                             | In the **Variable tab**, we are shown a list view of all the variables in your dataset. This view allows us to easily navigate your variables and do the following:                                                                     |
+|                                                                                   |                                                                                                                                                                                                                                         |
+| ![](images/tab_variable.png){width="287"}                                         | -   Search for a variable by scrolling through the list or search for one by name.                                                                                                                                                      |
+|                                                                                   |                                                                                                                                                                                                                                         |
+|                                                                                   | -   Edit the variable names and descriptions by double-clicking in the relevant field.                                                                                                                                                  |
+|                                                                                   |                                                                                                                                                                                                                                         |
+|                                                                                   | -   Edit our variable details by double-clicking on the data symbol - the screen will appear for us to add all the necessary information.                                                                                               |
+|                                                                                   |                                                                                                                                                                                                                                         |
+|                                                                                   | -   Create a new variable by clicking on the + in the bottom right corner.                                                                                                                                                              |
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 3.  **Data tab**                                                                  | In the **Data tab**, we can explore our raw data, which is organised like Excel in rows and columns. This tab allows us to manipulate our data and get our dataset ready for use. Specifically, this tab allows us to do the following: |
+|                                                                                   |                                                                                                                                                                                                                                         |
+|     ![](images/tab_data.png)                                                      | -   Rename and add details to existing variables. Click on the *Setup* button, or double-click on the variable we want to manage.                                                                                                       |
+|                                                                                   |                                                                                                                                                                                                                                         |
+|                                                                                   | -   Compute and transform variables                                                                                                                                                                                                     |
+|                                                                                   |                                                                                                                                                                                                                                         |
+|                                                                                   | -   Add and/or Delete variables (columns)                                                                                                                                                                                               |
+|                                                                                   |                                                                                                                                                                                                                                         |
+|                                                                                   | -   Add Filters                                                                                                                                                                                                                         |
+|                                                                                   |                                                                                                                                                                                                                                         |
+|                                                                                   | -   Add and/or Delete Rows                                                                                                                                                                                                              |
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                   |                                                                                                                                                                                                                                         |
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                   |                                                                                                                                                                                                                                         |
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                   |                                                                                                                                                                                                                                         |
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                   |                                                                                                                                                                                                                                         |
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
