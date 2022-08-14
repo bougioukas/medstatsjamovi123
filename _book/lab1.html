@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.0.37">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Introduction to Medical Statistics with Jamovi - 2&nbsp; LAB I: Introduction to Jamovi</title>
+<title>Introduction to Medical Statistics with Jamovi - 11&nbsp; LAB I: Introduction to Jamovi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./descriptive.html" rel="next">
-<link href="./introduction.html" rel="prev">
+<link href="./lab2.html" rel="next">
+<link href="./linear.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -57,7 +57,7 @@ ul.task-list{list-style: none;}
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span>
+<span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span>
 </h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
@@ -100,105 +100,125 @@ ul.task-list{list-style: none;}
   <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Medical Statistics with Jamovi</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
+  <a href="./descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></a>
+  <a href="./normal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Distributions - Normal distribution</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></a>
+  <a href="./estimation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Interval</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./normal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distributions - Normal distribution</span></a>
+  <a href="./inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">LAB III: Distributions-Normal Distribution</span></a>
+  <a href="./two_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimation and Confidence Interval</span></a>
+  <a href="./more_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></a>
+  <a href="./categorical.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Inference for categorical data</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></a>
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Correlation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></a>
+  <a href="./linear.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simple linear regression</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">LAB</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./two_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></a>
+  <a href="./lab1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></a>
+  <a href="./lab2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./more_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></a>
+  <a href="./lab3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB III: Distributions-Normal Distribution</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></a>
+  <a href="./lab4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./categorical.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Inference for categorical data</span></a>
+  <a href="./lab5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></a>
+  <a href="./lab6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Correlation</span></a>
+  <a href="./lab7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab9.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></a>
+  <a href="./lab8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./linear.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Simple linear regression</span></a>
+  <a href="./lab9.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></a>
   </div>
+</li>
+      </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -211,17 +231,17 @@ ul.task-list{list-style: none;}
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#why-jamovi" id="toc-why-jamovi" class="nav-link active" data-scroll-target="#why-jamovi"> <span class="header-section-number">2.1</span> Why Jamovi?</a></li>
-  <li><a href="#downloading-and-installing-jamovi" id="toc-downloading-and-installing-jamovi" class="nav-link" data-scroll-target="#downloading-and-installing-jamovi"> <span class="header-section-number">2.2</span> Downloading and installing Jamovi</a></li>
-  <li><a href="#navigating-jamovi" id="toc-navigating-jamovi" class="nav-link" data-scroll-target="#navigating-jamovi"> <span class="header-section-number">2.3</span> Navigating Jamovi</a></li>
-  <li><a href="#variables-types-in-jamovi" id="toc-variables-types-in-jamovi" class="nav-link" data-scroll-target="#variables-types-in-jamovi"> <span class="header-section-number">2.4</span> Variables Types in Jamovi</a></li>
-  <li><a href="#importing-our-data" id="toc-importing-our-data" class="nav-link" data-scroll-target="#importing-our-data"> <span class="header-section-number">2.5</span> Importing our Data</a></li>
+<li><a href="#why-jamovi" id="toc-why-jamovi" class="nav-link active" data-scroll-target="#why-jamovi"> <span class="header-section-number">11.1</span> Why Jamovi?</a></li>
+  <li><a href="#downloading-and-installing-jamovi" id="toc-downloading-and-installing-jamovi" class="nav-link" data-scroll-target="#downloading-and-installing-jamovi"> <span class="header-section-number">11.2</span> Downloading and installing Jamovi</a></li>
+  <li><a href="#navigating-jamovi" id="toc-navigating-jamovi" class="nav-link" data-scroll-target="#navigating-jamovi"> <span class="header-section-number">11.3</span> Navigating Jamovi</a></li>
+  <li><a href="#variables-types-in-jamovi" id="toc-variables-types-in-jamovi" class="nav-link" data-scroll-target="#variables-types-in-jamovi"> <span class="header-section-number">11.4</span> Variables Types in Jamovi</a></li>
+  <li><a href="#importing-our-data" id="toc-importing-our-data" class="nav-link" data-scroll-target="#importing-our-data"> <span class="header-section-number">11.5</span> Importing our Data</a></li>
   </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title d-none d-lg-block">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span>
+<span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span>
 </h1>
 </div>
 
@@ -235,12 +255,12 @@ ul.task-list{list-style: none;}
   
 
 </header><p>The goal of this lab is to introduce you to Jamovi, which we’ll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.</p>
-<section id="why-jamovi" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="why-jamovi">
-<span class="header-section-number">2.1</span> Why Jamovi?</h2>
-<p>Jamovi is a new fee open “3rd generation” statistical software that is built on top of the programming language R (<a href="#fig-jamovi_0">Figure&nbsp;<span>2.1</span></a>). Designed from the ground up to be easy to use, Jamovi is a compelling alternative to costly statistical products such as SPSS and SAS.</p>
+<section id="why-jamovi" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="why-jamovi">
+<span class="header-section-number">11.1</span> Why Jamovi?</h2>
+<p>Jamovi is a new fee open “3rd generation” statistical software that is built on top of the programming language R (<a href="#fig-jamovi_0">Figure&nbsp;<span>11.1</span></a>). Designed from the ground up to be easy to use, Jamovi is a compelling alternative to costly statistical products such as SPSS and SAS.</p>
 <div id="fig-jamovi_0" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/jamovi_0.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 2.1: Jamovi is free and open statistical software</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 11.1: Jamovi is free and open statistical software</figcaption><p></p>
 </figure>
 </div>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
@@ -260,37 +280,37 @@ ul.task-list{list-style: none;}
 </ol>
 </div>
 </div>
-</section><section id="downloading-and-installing-jamovi" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="downloading-and-installing-jamovi">
-<span class="header-section-number">2.2</span> Downloading and installing Jamovi</h2>
+</section><section id="downloading-and-installing-jamovi" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="downloading-and-installing-jamovi">
+<span class="header-section-number">11.2</span> Downloading and installing Jamovi</h2>
 <p><strong>Jamovi</strong> is available for Windows (64-bit), macOS, Linux and ChromeOS. Installation on desktop is quite straight-forward. Just go to the Jamovi download page <a href="https://www.jamovi.org/download.html" class="uri">https://www.jamovi.org/download.html</a>, and download the latest version (current release) for your operating system.</p>
-</section><section id="navigating-jamovi" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="navigating-jamovi">
-<span class="header-section-number">2.3</span> Navigating Jamovi</h2>
-<p>When first starting jamovi, we will be presented with a user interface which looks something like this <a href="#fig-jamovi1">Figure&nbsp;<span>2.2</span></a>.</p>
+</section><section id="navigating-jamovi" class="level2" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="navigating-jamovi">
+<span class="header-section-number">11.3</span> Navigating Jamovi</h2>
+<p>When first starting jamovi, we will be presented with a user interface which looks something like this <a href="#fig-jamovi1">Figure&nbsp;<span>11.2</span></a>.</p>
 <div class="cell" data-layout-align="left">
 <div class="cell-output-display">
 <div id="fig-jamovi1" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure"><p><img src="images/jamovi1.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 2.2: The menu bar provides access to all functions of the program.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 11.2: The menu bar provides access to all functions of the program.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <p>To the left is the spreadsheet view, and to the right is where the results of statistical tests appear. Down the middle is a bar separating these two regions, and this can be dragged to the left or the right to change their sizes.</p>
 <p>&nbsp;</p>
-<p>Let’s take a quick look at the Jamovi Main Menu, referred to hereafter as the <strong>Menu</strong>, as shown in (<a href="#fig-menu1">Figure&nbsp;<span>2.3</span></a>). This Menu is displayed at the very top of the Jamovi screen:</p>
+<p>Let’s take a quick look at the Jamovi Main Menu, referred to hereafter as the <strong>Menu</strong>, as shown in (<a href="#fig-menu1">Figure&nbsp;<span>11.3</span></a>). This Menu is displayed at the very top of the Jamovi screen:</p>
 <div class="cell" data-layout-align="left">
 <div class="cell-output-display">
 <div id="fig-menu1" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure"><p><img src="images/menu1.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 2.3: The menu bar provides access to all functions of the program.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 11.3: The menu bar provides access to all functions of the program.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>There are six tabs in the Menu (from left to right): 1. <strong>File</strong> (a layer with three horizontal levels <span class="math inline">\(\equiv\)</span>), 2. <strong>Variables</strong>, 3. <strong>Data,</strong> 4. <strong>Analyses</strong>, 5. <strong>Edit</strong>, 6. <strong>Settings</strong> (the three dots <span class="math inline">\(\vdots\)</span> at the top right of the window) tabs (<a href="#tbl-menu">Table&nbsp;<span>2.1</span></a>).</p>
+<p>There are six tabs in the Menu (from left to right): 1. <strong>File</strong> (a layer with three horizontal levels <span class="math inline">\(\equiv\)</span>), 2. <strong>Variables</strong>, 3. <strong>Data,</strong> 4. <strong>Analyses</strong>, 5. <strong>Edit</strong>, 6. <strong>Settings</strong> (the three dots <span class="math inline">\(\vdots\)</span> at the top right of the window) tabs (<a href="#tbl-menu">Table&nbsp;<span>11.1</span></a>).</p>
 <div id="tbl-menu" class="anchored">
 <table class="table">
-<caption>Table 2.1: Menu and toolbars of Jamovi</caption>
+<caption>Table 11.1: Menu and toolbars of Jamovi</caption>
 <colgroup>
 <col style="width: 51%">
 <col style="width: 48%">
@@ -404,8 +424,8 @@ ul.task-list{list-style: none;}
 </table>
 </div>
 <p>&nbsp;</p>
-</section><section id="variables-types-in-jamovi" class="level2" data-number="2.4"><h2 data-number="2.4" class="anchored" data-anchor-id="variables-types-in-jamovi">
-<span class="header-section-number">2.4</span> Variables Types in Jamovi</h2>
+</section><section id="variables-types-in-jamovi" class="level2" data-number="11.4"><h2 data-number="11.4" class="anchored" data-anchor-id="variables-types-in-jamovi">
+<span class="header-section-number">11.4</span> Variables Types in Jamovi</h2>
 <p>Data variables can be one of four <strong>measure types</strong>:</p>
 <ul>
 <li><p><img src="images/nominal.png" width="24" height="22"><strong>Nominal</strong>: This type is for nominal categorical variables.</p></li>
@@ -423,7 +443,7 @@ ul.task-list{list-style: none;}
 <p>The measure types are designated by the symbol in the header of the variable’s column. Note that some combinations of data-type and measure-type don’t make sense, and Jamovi won’t let us choose these.</p>
 <div id="tbl-types" class="anchored">
 <table class="table">
-<caption>Table 2.2: Types of data and measures</caption>
+<caption>Table 11.2: Types of data and measures</caption>
 <colgroup>
 <col style="width: 23%">
 <col style="width: 23%">
@@ -465,8 +485,8 @@ ul.task-list{list-style: none;}
 </table>
 </div>
 <p>&nbsp;</p>
-</section><section id="importing-our-data" class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="importing-our-data">
-<span class="header-section-number">2.5</span> Importing our Data</h2>
+</section><section id="importing-our-data" class="level2" data-number="11.5"><h2 data-number="11.5" class="anchored" data-anchor-id="importing-our-data">
+<span class="header-section-number">11.5</span> Importing our Data</h2>
 <p>It is possible to simply begin typing values into the Jamovi spreadsheet as we would with any other spreadsheet software. Alternatively, existing data sets in a range of formats (OMV, Excel, CSV, SPSS, R data, Stata, SAS) can be opened in Jamovi.</p>
 <p>To open a file, select the File tab <img src="images/hbars.png" width="28" height="17"> at the top left hand corner, select ‘Open’ and then ‘This PC’, and choose from the files listed on ‘Browse’ that are stored on our computer:</p>
 <div class="cell">
@@ -488,7 +508,7 @@ ul.task-list{list-style: none;}
 <div class="cell-output-display">
 <div id="fig-open2" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure"><p><img src="images/open2.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 2.4: Open an existing file stored on our computer into Jamovi.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 11.4: Open an existing file stored on our computer into Jamovi.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -606,13 +626,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./introduction.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./linear.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simple linear regression</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./descriptive.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./lab2.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

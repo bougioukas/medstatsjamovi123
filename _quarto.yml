@@ -13,26 +13,30 @@ book:
   sharing: [twitter, facebook]
   chapters:
     - index.qmd
-    - introduction.qmd
-    - lab1.qmd
-    - descriptive.qmd
-    - lab2.qmd
-    - normal.qmd
-    - lab3.qmd
-    - estimation.qmd
-    - lab4.qmd
-    - inference.qmd
-    - lab5.qmd
-    - two_samples.qmd
-    - lab6.qmd
-    - more_samples.qmd
-    - lab7.qmd
-    - categorical.qmd
-    - lab8.qmd
-    - correlation.qmd
-    - lab9.qmd
-    - linear.qmd
-    - lab10.qmd
+    - part: "Medical Statistics with Jamovi"
+      chapters:
+        - introduction.qmd
+        - descriptive.qmd
+        - normal.qmd
+        - estimation.qmd
+        - inference.qmd
+        - two_samples.qmd
+        - more_samples.qmd
+        - categorical.qmd
+        - correlation.qmd
+        - linear.qmd
+    - part: "LAB"
+      chapters:
+        - lab1.qmd
+        - lab2.qmd
+        - lab3.qmd
+        - lab4.qmd
+        - lab5.qmd
+        - lab6.qmd
+        - lab7.qmd
+        - lab8.qmd
+        - lab9.qmd
+        - lab10.qmd
     - references.qmd
   
   page-footer: 

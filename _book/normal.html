@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.0.37">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Introduction to Medical Statistics with Jamovi - 5&nbsp; Distributions - Normal distribution</title>
+<title>Introduction to Medical Statistics with Jamovi - 3&nbsp; Distributions - Normal distribution</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./lab3.html" rel="next">
-<link href="./lab2.html" rel="prev">
+<link href="./estimation.html" rel="next">
+<link href="./descriptive.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -55,7 +55,7 @@ ul.task-list{list-style: none;}
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distributions - Normal distribution</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Distributions - Normal distribution</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -97,105 +97,125 @@ ul.task-list{list-style: none;}
   <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Medical Statistics with Jamovi</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./introduction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
+  <a href="./descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptive.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></a>
+  <a href="./normal.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Distributions - Normal distribution</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></a>
+  <a href="./estimation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Interval</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./normal.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distributions - Normal distribution</span></a>
+  <a href="./inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">LAB III: Distributions-Normal Distribution</span></a>
+  <a href="./two_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Estimation and Confidence Interval</span></a>
+  <a href="./more_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></a>
+  <a href="./categorical.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Inference for categorical data</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Foundations for statistical inference</span></a>
+  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Correlation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></a>
+  <a href="./linear.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Simple linear regression</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">LAB</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./two_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Inference for numerical data: 2 samples</span></a>
+  <a href="./lab1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">LAB I: Introduction to Jamovi</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></a>
+  <a href="./lab2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./more_samples.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Inference for numerical data: &gt;2 samples</span></a>
+  <a href="./lab3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB III: Distributions-Normal Distribution</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></a>
+  <a href="./lab4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">LAB IV: Estimation and Confidence Interval</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./categorical.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Inference for categorical data</span></a>
+  <a href="./lab5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">LAB V: Foundations for Statistical Inference</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></a>
+  <a href="./lab6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">LAB VI: Inference for numerical data (2 samples)</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Correlation</span></a>
+  <a href="./lab7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">LAB VII: Inference for numerical data (&gt;2 samples)</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab9.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></a>
+  <a href="./lab8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">LAB VIII: Inference for categorical data</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./linear.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Simple linear regression</span></a>
+  <a href="./lab9.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">LAB IX: Correlation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">LAB X: Simple linear regression</span></a>
   </div>
+</li>
+      </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -209,7 +229,7 @@ ul.task-list{list-style: none;}
    
   <ul>
 <li>
-<a href="#characteristics-of-normal-distribution" id="toc-characteristics-of-normal-distribution" class="nav-link active" data-scroll-target="#characteristics-of-normal-distribution"> <span class="header-section-number">5.1</span> Characteristics of Normal Distribution</a>
+<a href="#characteristics-of-normal-distribution" id="toc-characteristics-of-normal-distribution" class="nav-link active" data-scroll-target="#characteristics-of-normal-distribution"> <span class="header-section-number">3.1</span> Characteristics of Normal Distribution</a>
   <ul class="collapse">
 <li><a href="#historical-background" id="toc-historical-background" class="nav-link" data-scroll-target="#historical-background">Historical background</a></li>
   <li><a href="#the-mathimatical-type" id="toc-the-mathimatical-type" class="nav-link" data-scroll-target="#the-mathimatical-type">The mathimatical type</a></li>
@@ -217,12 +237,12 @@ ul.task-list{list-style: none;}
   <li><a href="#normal-density-plot-with-shaded-regions" id="toc-normal-density-plot-with-shaded-regions" class="nav-link" data-scroll-target="#normal-density-plot-with-shaded-regions">Normal Density Plot with Shaded Regions</a></li>
   </ul>
 </li>
-  <li><a href="#properties-of-an-approximately-normal-distribution" id="toc-properties-of-an-approximately-normal-distribution" class="nav-link" data-scroll-target="#properties-of-an-approximately-normal-distribution"> <span class="header-section-number">5.2</span> Properties of an approximately normal distribution</a></li>
+  <li><a href="#properties-of-an-approximately-normal-distribution" id="toc-properties-of-an-approximately-normal-distribution" class="nav-link" data-scroll-target="#properties-of-an-approximately-normal-distribution"> <span class="header-section-number">3.2</span> Properties of an approximately normal distribution</a></li>
   </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="sec-normal" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distributions - Normal distribution</span></span></h1>
+<h1 class="title"><span id="sec-normal" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Distributions - Normal distribution</span></span></h1>
 </div>
 
 
@@ -235,28 +255,28 @@ ul.task-list{list-style: none;}
   
 
 </header><p>We have mentioned the normal distribution several times in this textbook with the promise we would provide more detail later. In this section, we will explore the normal distribution, why it matters, and how we can tell if our distribution is normal or not.</p>
-<section id="characteristics-of-normal-distribution" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="characteristics-of-normal-distribution">
-<span class="header-section-number">5.1</span> Characteristics of Normal Distribution</h2>
+<section id="characteristics-of-normal-distribution" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="characteristics-of-normal-distribution">
+<span class="header-section-number">3.1</span> Characteristics of Normal Distribution</h2>
 <section id="historical-background" class="level3"><h3 class="anchored" data-anchor-id="historical-background">Historical background</h3>
 <p>There are several important probability distributions in statistics. However, the normal distribution might be the most important. A normal distribution is the familiar “bell curve” and it’s a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-dnormal" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/dnorm.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 5.1: A distribution can be (a) leptokurtic, (b) mesokurtic, or (c) platykurtic.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.1: A distribution can be (a) leptokurtic, (b) mesokurtic, or (c) platykurtic.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 </section><section id="the-mathimatical-type" class="level3"><h3 class="anchored" data-anchor-id="the-mathimatical-type">The mathimatical type</h3>
 <p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean , <span class="math inline">\(\mu\)</span>, is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as follows:</p>
-<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{5.1}\]</span></span></p>
+<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.1}\]</span></span></p>
 <p>The ensuing distribution will look like this in a simple case where <span class="math inline">\(\mu\)</span> is 0 and <span class="math inline">\(\sigma^2\)</span> is 1.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-simple_normal" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="normal_files/figure-html/fig-simple_normal-1.png" class="img-fluid figure-img" width="576"></p>
-<p></p><figcaption class="figure-caption">Figure 5.2: A simple normal density function.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.2: A simple normal density function.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -268,7 +288,7 @@ ul.task-list{list-style: none;}
 <div class="cell-output-display">
 <div id="fig-basic_parabola" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="normal_files/figure-html/fig-basic_parabola-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 5.3: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.3: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -278,7 +298,7 @@ ul.task-list{list-style: none;}
 <div class="cell-output-display">
 <div id="fig-neg_parabola" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="normal_files/figure-html/fig-neg_parabola-1.png" class="img-fluid figure-img" width="576"></p>
-<p></p><figcaption class="figure-caption">Figure 5.4: An exponentiated negative parabola.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.4: An exponentiated negative parabola.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -293,7 +313,7 @@ ul.task-list{list-style: none;}
 <div class="cell-output-display">
 <div id="fig-auc" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="normal_files/figure-html/fig-auc-1.png" class="img-fluid figure-img" width="1152"></p>
-<p></p><figcaption class="figure-caption">Figure 5.5: The area underneath a normal distribution</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.5: The area underneath a normal distribution</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -304,23 +324,23 @@ ul.task-list{list-style: none;}
 <div class="cell-output-display">
 <div id="fig-standard_normal" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="normal_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 5.6: Standard normal distribution with a shaded region</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.6: Standard normal distribution with a shaded region</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>5.1</span></a> as following:</p>
-<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{5.2}\]</span></span></p>
+<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>3.1</span></a> as following:</p>
+<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{3.2}\]</span></span></p>
 <p>&nbsp;</p>
-</section></section><section id="properties-of-an-approximately-normal-distribution" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="properties-of-an-approximately-normal-distribution">
-<span class="header-section-number">5.2</span> Properties of an approximately normal distribution</h2>
+</section></section><section id="properties-of-an-approximately-normal-distribution" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="properties-of-an-approximately-normal-distribution">
+<span class="header-section-number">3.2</span> Properties of an approximately normal distribution</h2>
 <p>In an approximately <strong>bell-shaped (normal)</strong> distribution:</p>
 <ul>
 <li><p>the mean, the median and the mode have very close values</p></li>
 <li><p>the histogram is symmetric about the mean</p></li>
 <li><p>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean</p></li>
-<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>5.7</span></a> b). Particularly, values between −1 and +1 indicate an approximate bell-shaped curve.</p></li>
-<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>5.8</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
+<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.7</span></a> b). Particularly, values between −1 and +1 indicate an approximate bell-shaped curve.</p></li>
+<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.8</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
 </ul>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -335,13 +355,13 @@ ul.task-list{list-style: none;}
 <p>There are two ways in which samples can deviate from normality: <strong>skew</strong> and <strong>kurtosis</strong>.</p>
 <p><strong>Skewness</strong></p>
 <p>Skewness is usually described as a measure of a dataset's symmetry – or lack of symmetry.&nbsp;</p>
-<p>Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2">Figure&nbsp;<span>5.7</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2">Figure&nbsp;<span>5.7</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2">Figure&nbsp;<span>5.7</span></a> c).</p>
+<p>Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.7</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2">Figure&nbsp;<span>3.7</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.7</span></a> c).</p>
 <p>Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with &gt;1 indicating moderate skewness and &gt;2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-skew2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/skew2.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 5.7: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.7: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -349,13 +369,13 @@ ul.task-list{list-style: none;}
 <p>&nbsp;</p>
 <p><strong>Kurtosis</strong></p>
 <p>The other way that distributions can deviate from normality is <strong>kurtosis</strong>. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).</p>
-<p>Distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>5.8</span></a> a). If the measure of excess kurtosis is <strong>close to 0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>5.8</span></a> b). Finally, distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>5.8</span></a> c).</p>
+<p>Distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.8</span></a> a). If the measure of excess kurtosis is <strong>close to 0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.8</span></a> b). Finally, distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.8</span></a> c).</p>
 <p>A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-kurtosis" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/kurtosis.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 5.8: A distribution can be (a) leptokurtic, (b) mesokurtic, or (c) platykurtic.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.8: A distribution can be (a) leptokurtic, (b) mesokurtic, or (c) platykurtic.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -475,13 +495,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./lab2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">LAB II: Descriptive Statistics</span></span>
+      <a href="./descriptive.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive statistics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./lab3.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">LAB III: Distributions-Normal Distribution</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./estimation.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Estimation and Confidence Interval</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
