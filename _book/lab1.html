@@ -258,27 +258,13 @@ ul.task-list{list-style: none;}
 </div>
 </div>
 </div>
-<p>There are six tabs in the Menu (from left to right):</p>
-<ol type="1">
-<li>
-<strong>File tab</strong> (a layer with three horizontal levels <span class="math inline">\(\equiv\)</span>): this tab allows us to open/import existing files, save and export our files.</li>
-<li>
-<strong>Variables tab</strong>: this allows us to view and search our variables in a list view</li>
-<li>
-<strong>Data tab</strong>: here we will see our raw data. We can also manipulate our data and add new variables when necessary.</li>
-<li>
-<strong>Analyses tab</strong>: in this tab we will carry out our data analyses</li>
-<li>
-<strong>Edit tab</strong>: this tab allows us to add extra information to our results. This will help us keep track of what we have done and why.</li>
-<li>
-<strong>Preferences</strong> (the three dots <span class="math inline">\(\vdots\)</span> at the top right of the window)</li>
-</ol>
-<p>It is possible to simply begin typing values into the Jamovi spreadsheet as you would any other spreadsheet software. Alternatively, existing data sets in a range of formats (CSV, Excel, SPSS, R data, Stata, SAS) can be opened in Jamovi.</p>
-<p>To open a file, select the File tab at the top left hand corner, select ‘Open’ and then ‘This PC’, and choose from the files listed on ‘Browse’ that are stored on our computer.</p>
+<p>There are six tabs in the Menu (from left to right): 1. <strong>File</strong> (a layer with three horizontal levels <span class="math inline">\(\equiv\)</span>), 2. <strong>Variables</strong>, 3. <strong>Data,</strong> 4. <strong>Analyses</strong>, 5. <strong>Edit</strong>, 6. <strong>Settings</strong> (the three dots <span class="math inline">\(\vdots\)</span> at the top right of the window) tabs (<a href="#tbl-menu">Table&nbsp;<span>2.1</span></a>).</p>
+<div id="tbl-menu" class="anchored">
 <table class="table">
+<caption>Table 2.1: Menu and toolbars of Jamovi</caption>
 <colgroup>
-<col style="width: 28%">
-<col style="width: 72%">
+<col style="width: 46%">
+<col style="width: 53%">
 </colgroup>
 <thead><tr class="header">
 <th>Menu tab</th>
@@ -288,20 +274,23 @@ ul.task-list{list-style: none;}
 <tr class="odd">
 <td><ol type="1">
 <li>
-<strong>File tab</strong> (<span class="math inline">\(\equiv\)</span>)</li>
+<p><strong>File tab</strong> (<span class="math inline">\(\equiv\)</span>)</p>
+<p><img src="images/hbars.png" class="img-fluid" width="60"></p>
+<p>This tab allows us to open/import existing files, save and export our files.</p>
+</li>
 </ol></td>
-<td>
-<p><img src="images/tab_file.png" class="img-fluid" style="width:40.0%"></p>
-<p>We see six commands appear. With the file tab, we can open, save, or export what we performed in Jamovi.</p>
-</td>
+<td><img src="images/tab_file.png" class="img-fluid" style="width:40.0%"></td>
 </tr>
 <tr class="even">
 <td><ol start="2" type="1">
-<li><strong>Variables tab</strong></li>
+<li>
+<p><strong>Variables tab</strong></p>
+<p>This allows us to view and search our variables in a list view.</p>
+</li>
 </ol></td>
 <td>
 <p><img src="images/tab_variables.png" class="img-fluid" style="width:100.0%"></p>
-<p>In the <strong>Variable tab</strong>, we are shown a list view of all the variables in your dataset. This view allows us to easily navigate your variables and do the following:</p>
+<p>This view allows us to easily navigate our variables and do the following:</p>
 <ul>
 <li><p>Search for a variable by scrolling through the list or search for one by name.</p></li>
 <li><p>Edit the variable names and descriptions by double-clicking in the relevant field.</p></li>
@@ -312,11 +301,14 @@ ul.task-list{list-style: none;}
 </tr>
 <tr class="odd">
 <td><ol start="3" type="1">
-<li><strong>Data tab</strong></li>
+<li>
+<p><strong>Data tab</strong></p>
+<p>Here we will see our raw data which are organised like Excel in rows and columns. We can also manipulate our data and add new variables when necessary.</p>
+</li>
 </ol></td>
 <td>
 <p><img src="images/tab_data.png" class="img-fluid" style="width:100.0%"></p>
-<p>In the <strong>Data tab</strong>, we can explore our raw data, which is organised like Excel in rows and columns. This tab allows us to manipulate our data and get our dataset ready for use. Specifically, this tab allows us to do the following:</p>
+<p>Specifically, this tab allows us to do the following:</p>
 <ul>
 <li><p>Rename and add details to existing variables. Click on the <em>Setup</em> button, or double-click on the variable we want to manage.</p></li>
 <li><p>Compute and transform variables</p></li>
@@ -328,32 +320,54 @@ ul.task-list{list-style: none;}
 </tr>
 <tr class="even">
 <td><ol start="4" type="1">
-<li><strong>Analyses tab</strong></li>
+<li>
+<p><strong>Analyses tab</strong></p>
+<p>It includes the available statistical analyses that can be performed in Jamovi.</p>
+</li>
 </ol></td>
 <td>
 <p><img src="images/tab_analysis.png" class="img-fluid"></p>
-<p>We can see a toolbar with buttons such as Exploration, T-Tests, ANOVA, and more. For example, if you want to perform regression analysis, we simply click the 'Regression' button.</p>
+<p>We will spend most of our time in the Analyses Tab.</p>
+<p>We can see a toolbar with buttons such as Exploration, T-Tests, ANOVA, and more. For example, if we want to perform regression analysis, we simply click the ‘Regression’ button.</p>
 </td>
 </tr>
 <tr class="odd">
 <td><ol start="5" type="1">
-<li><strong>Edit tab</strong></li>
+<li>
+<p><strong>Edit tab</strong></p>
+<p>It includes a toolbar similar to a word processor.</p>
+</li>
 </ol></td>
 <td>
 <p><img src="images/tab_edit.png" class="img-fluid"></p>
-<p>Edit tab includes a toolbar similar to a word processor. We can add extra information to our results using the buttons.</p>
+<p>We can add extra information to our results using the buttons.</p>
 </td>
 </tr>
 <tr class="even">
 <td><ol start="6" type="1">
 <li>
-<strong>Application settings</strong> (the three dots $\vdots$ at the top right of the window)</li>
+<p><strong>Settings</strong></p>
+<p>(the three dots <span class="math inline">\({\vdots}\)</span> at the top right of the window)</p>
+<p><img src="images/dots.png" width="20" height="34"></p>
+<p>It includes the application settings that can be manged by the users according to their preferences.</p>
+</li>
 </ol></td>
 <td>
-<img src="images/prefrences.png" class="img-fluid"> We can apply our preferences for a number of settings such as the number of decimal places in the results of the analyses, and amendments to the plots etc.</td>
+<p><img src="images/prefrences.png" class="img-fluid" width="170"></p>
+<p>We can apply our preferences for a number of settings such as:</p>
+<ul>
+<li><p>How many decimal numbers we want.</p></li>
+<li><p>If we want to learn R, we can also display the R syntax.</p></li>
+<li><p>Our graph colour scheme</p></li>
+<li><p>Our default missing value.</p></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
+</div>
+<p>It is possible to simply begin typing values into the Jamovi spreadsheet as you would any other spreadsheet software. Alternatively, existing data sets in a range of formats (CSV, Excel, SPSS, R data, Stata, SAS) can be opened in Jamovi.</p>
+<p>To open a file, select the File tab at the top left hand corner, select ‘Open’ and then ‘This PC’, and choose from the files listed on ‘Browse’ that are stored on our computer.</p>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
