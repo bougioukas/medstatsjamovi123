@@ -126,8 +126,8 @@ DT::datatable(data_corn, extensions = 'Scroller',
 
 **A. Nominal Data**
 
-**Nominal categorical data** are data that one can name and put into categories. They are not measured but simply **counted**. They often consist of **unordered** 'either--or' type observations which have two categories and are often know as **binary**. For example: dead or alive; male or female; cured or not cured; pregnant or not pregnant. In @fig-data_corn gender is a binary variable. However, nominal categorical data often can have **more than two categories**, for example, blood group A, B, AB, 0; country of origin; ethnic group; eye color. 
-@farndon2013 study recorded data of the participants treated at each of the seven centers in each of the two randomized groups.
+**Nominal categorical data** are data that one can name and put into categories. They are not measured but simply **counted**. They often consist of **unordered** 'either--or' type observations which have two categories and are often know as **binary**. For example: dead or alive; male or female; cured or not cured; pregnant or not pregnant. In @farndon2013 study gender is a binary variable. However, nominal categorical data often can have **more than two categories**, for example, blood group A, B, AB, 0; country of origin; ethnic group; eye color. 
+@farndon2013 study recorded data of the participants treated at each of the **seven centers** in each of the two randomized groups.
 
 
 ::: callout-warning
@@ -140,7 +140,7 @@ We can denote a male and female as 1 and 2 for gender and denote A, B, AB and 0,
 
 **Β. Ordinal Data**
 
-If there are more than two categories of classification it may be possible to **order** them in some way. For example, after treatment a patient may be either improved, the same or worse. Another example of an ordinal variable is the variable **pain** where a subject is asked to describe their pain verbally as minimal, moderate, severe, or unbearable. In @tbl-corn **smoking history** is given in three categories: non-smoker, previous smoker, and current smoker. Thus, someone who is a current smoker has more recent exposure to tobacco than someone who is an ex-smoker and someone who has never smoked. However, **without further knowledge** (of the current and past levels of tobacco consumption) it would be wrong to ascribe a numerical quantity to the category, for example, non-smoker=0, previous smoker=1, and current smoker=2, as one cannot say that someone who is current smoker has twice the levels of tobacco consumption as someone who is a previous smoker.
+If there are more than two categories of classification it may be possible to **order** them in some way. For example, after treatment a patient may be either improved, the same or worse. Another example of an ordinal variable is the variable **pain** where a subject is asked to describe their pain verbally as minimal, moderate, severe, or unbearable. In @farndon2013 study,  **smoking history** is given in three categories: non-smoker, previous smoker, and current smoker. Thus, someone who is a current smoker has more recent exposure to tobacco than someone who is an ex-smoker and someone who has never smoked. However, **without further knowledge** (of the current and past levels of tobacco consumption) it would be wrong to ascribe a numerical quantity to the category, for example, non-smoker=0, previous smoker=1, and current smoker=2, as one cannot say that someone who is current smoker has twice the levels of tobacco consumption as someone who is a previous smoker.
 
 ::: callout-warning
 **Collapsion of categories leads to a loss of information**
@@ -154,7 +154,7 @@ Ordinal data are often reduced to two categories to simplify analysis and presen
 
 **A. Count (or discrete) Data**
 
-@tbl-corn gives details of the number of corns each participant had at the start of the trial, since this can only be a whole number or integer value, for example, 0, 1, 2, or 3 in this trial, this is termed count data. Other examples are often counts per unit of time such as the number of deaths in a hospital per year, the number of visits to the GP in a year, or the number of attacks of asthma a person has per month. In dentistry, a common measure is the number of decayed, filled or missing teeth (DFM).
+@farndon2013 study recorded the number of corns each participant had at the start of the trial, since this can only be a whole number or integer value, for example, 0, 1, 2, or 3 in this trial, this is termed count data. Other examples are often counts per unit of time such as the number of deaths in a hospital per year, the number of visits to the GP in a year, or the number of attacks of asthma a person has per month. In dentistry, a common measure is the number of decayed, filled or missing teeth (DFM).
 
 The difference between such data as these and the ordered categorical data described earlier can be seen by considering an example of each:
 
@@ -180,7 +180,7 @@ In practice discrete data are often treated in statistical analyses as if they w
 
 **Β. Continuous (or measured) Data**
 
-Such data are measurements that can, in theory at least, **take any value within a given range** (they are restricted by the accuracy of the measuring instrument). These data contain the most information, and are the ones most commonly used in statistics. Examples of continuous data in @tbl-corn are: age, corn size, and EQ-5D.
+Such data are measurements that can, in theory at least, **take any value within a given range** (they are restricted by the accuracy of the measuring instrument). These data contain the most information, and are the ones most commonly used in statistics. Examples of continuous data in @farndon2013 study are: age, corn size, and EQ-5D.
 
 Sometimes it is reasonable to treat discrete data as if they were continuous, at least as far as statistical analysis goes. While age is a continuous measurement, **age at last birthday is discrete**. In studies of adults with ages ranging from, say, 16 to 80, no harm is done in considering age in years as a continuous measurement (and this is standard practice), but for studies of pre-school children it would be better to use age in months. **Heart rate** (in beats per minute) is another discrete measurement that is usually regarded as continuous. Although the essential requirement for this change of status is that there should be a large number of different possible values, in practice we do not worry too much about analysing discrete measurements as if they were continuous.
 
