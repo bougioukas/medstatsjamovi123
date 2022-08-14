@@ -139,7 +139,7 @@ The measure types are designated by the symbol in the header of the variable's c
 +----------------+----------------+----------------+----------------+
 |                |                | Measure        |                |
 +================+================+================+================+
-| **Data**       | Nominal        |     Ordinal    | Continuous     |
+| **Data**       | Nominal        | Ordinal        | Continuous     |
 +----------------+----------------+----------------+----------------+
 | Integer        | ${\checkmark}$ | ${\checkmark}$ | ${\checkmark}$ |
 +----------------+----------------+----------------+----------------+
