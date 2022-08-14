@@ -55,11 +55,11 @@ knitr::include_graphics(here::here("images", "types_data.png"))
 ::: {.callout-note icon="false"}
 ## **Example from the literature - Salicylic acid plasters for treatment of foot corns**
 
-In a randomized controlled trial (RCT), @farndon2013 investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. The recorded data is as follows (@fig-dat_corn):
+In a randomized controlled trial (RCT), @farndon2013 investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. The recorded data is as follows (@fig-data_corn):
 
 ```{r}
 #| echo: false
-#| label: fig-dat_corn
+#| label: fig-data_corn
 #| fig-cap: The recorded data in @farndon2013 study.
 
 
