@@ -103,7 +103,7 @@ Binary data are the simplest type of data. Each individual has a label which tak
 However, a raw count is rarely useful. For example, in @tbl-corn there are more non-smokers in the scalpel group (40 out of 99 or 40%) compared to corn plaster group (34 out of 98 or 35%). It is only when this count is expressed as a proportion (relative frequency) that it becomes useful. Hence the first step to analyzing categorical data is to count the number of observations in each category (frequencies) and express them as **proportions** of the total sample size (relative frequencies).
 
 ::: {.callout-note icon="false"}
-## **Example -  Distribution of 202 patients with foot corns by treatment center and randomized group [@farndon2013]**
+## **Example - Distribution of treatment center and center by randomized group for 202 patients with foot corns [@farndon2013]**
 
 Farndon et al. (2013) reports a RCT that investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. As we have already mentioned one categorical variable recorded was the center where each trial participant was treated. Trial participants were treated at one of seven centers and the corresponding categories as displayed in @tbl-centers1. The first column shows category (treatment center) names, whilst the second shows the number of individuals in each category together with its percentage contribution to the total. @tbl-centers1 clearly shows that the majority (54.5%) of patients were treated at the "Central" treatment center.
 
