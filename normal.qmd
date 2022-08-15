@@ -249,7 +249,7 @@ A kurtosis value between −1 and +1 indicates normality and a value between −
 #| label: fig-kurtosis
 #| out-width: "105%"
 #| fig-align: "center"
-#| fig-cap: A distribution can be (a) leptokurtic, (b) mesokurtic, or (c) platykurtic.
+#| fig-cap: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.
 
 
 knitr::include_graphics(here("images", "kurtosis.png"))

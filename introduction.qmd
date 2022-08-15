@@ -76,15 +76,53 @@ Descriptive statistics include measures of central tendency, measures of dispers
 
 Inferential statistics aim at generalizing a measure taken on a small number of cases that have been observed, to a larger set of cases that have not been observed. Using the terms explained above, we could reformulate this aim, and say that inferential statistics aim at generalizing observations made on a sample to a whole population.
 
-## Variables
 
-A **variable** is a quantity or property that is **free to vary**, or take on different values. Researchers design experiments to test if changes to one or more variables are **associated** with changes to another variable of interest. For example, if researchers think a new therapy is more effective than the usual care for the treatment of foot corns, they could design an experiment to test this hypothesis; participants should randomly assigned to one of two groups: one (the experimental group) receiving the new treatment that is being tested, and the other (the comparison group or control) receiving an alternative (conventional) treatment. In this experiment, the type of treatment each participant received (i.e., new treatment vs. no treatment) is the **independent variable** (IV), while the number of depressive symptoms observed in each person is the **dependent variable** (DV) or the **outcome** variable.
 
+## Data and Variables
+
+### Biomedical Data
+
+**Biomedical data** have unique features compared with data in other domains. The data may include administrative health data, biomarker data, biometric data (for example, from wearable technologies) and imaging, and may originate from many different sources, including EHRs, clinical registries, biobanks, the internet and patient self-reports.
+
+
+Biomedical data can be transformed into **information**. This information can become **knowledge** if the researchers and clinicians understand it (@fig-info).
+
+```{r}
+#| label: fig-info
+#| fig-align: center
+#| out-width: "80%"
+#| echo: false
+#| fig-cap: From data to knowledge.
+
+knitr::include_graphics(here::here("images", "info.png"))
+```
+
+
+There are three main data structures: structured data, unstructured data, and semi-structured data.
+
+**Structured data** is generally tabular data that is represented by columns and rows in a database.
+
+**Semi-Structured data** is a form of structured data that does not obey the tabular structure, yet does have some structural properties. Emails, for example, are semi-structured by sender, recipient,subject, date, time etc. and they are also organized into folders, like Inbox, Sent, Trash, etc.
+
+
+**Unstructured data** usually open text (such as social media posts), images, videos, etc., that have no predetermined organization or design.
+
+
+In this textbook we use data organized in a structured format (spreadsheets). In statistics, tabular data refers to data that are organized in a table with rows and columns.
+
+
+ 
+
+### Variables
+
+A **variable** is a quantity or property that is **free to vary**, or take on different values. To gain information on a variable, it is necessary to design and conduct experiments.
+
+Researchers design experiments to test if changes to one or more variables are **associated** with changes to another variable of interest. For example, if researchers think a new therapy is more effective than the usual care for the treatment of foot corns, they could design an experiment to test this hypothesis; participants should randomly assigned to one of two groups: one (the experimental group) receiving the new treatment that is being tested, and the other (the comparison group or control) receiving an alternative (conventional) treatment. In this experiment, the type of treatment each participant received (i.e., new treatment vs. no treatment) is the **independent variable** (IV), while the number of depressive symptoms observed in each person is the **dependent variable** (DV) or the **outcome** variable.
 
 For example, in a randomized controlled trial (RCT), @farndon2013 investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. They recorded 20 variables for 202 patients; the data are presented in the table of @fig-data_corn:
 
 ::: {.callout-note icon="false"}
-## **Example: Raw data of 20 variables for 202 patients with foot corns treated with salicylic acid plasters or scalpel debridement in  @farndon2013 study**
+## **Example: Raw data of 20 variables for 202 patients with foot corns treated with salicylic acid plasters or scalpel debridement in @farndon2013 study**
 
 ```{r}
 #| echo: false
@@ -96,8 +134,6 @@ DT::datatable(data_corn, extensions = 'Scroller',
 
 ```
 :::
-
-
 
 ## Types of Data
 
@@ -113,16 +149,13 @@ Data in variable can be either **categorical** or **numerical** (otherwise known
 knitr::include_graphics(here::here("images", "types_data.png"))
 ```
 
-
  
 
 ### Categorical Data
 
 **A. Nominal Data**
 
-**Nominal categorical data** are data that one can name and put into categories. They are not measured but simply **counted**. They often consist of **unordered** 'either--or' type observations which have two categories and are often know as **binary**. For example: dead or alive; cured or not cured; pregnant or not pregnant. However, nominal categorical data often can have **more than two categories**, for example, blood group A, B, AB, 0; country of origin; ethnic group; eye color.
-In @farndon2013 study **gender** is a binary variable (male or female), and the **center** where the the participants were treated is a nominal variable with seven level (Central, Manor, Jordanthorpe, Limbrick, Firth Park, Huddersfield, Darnall).
-
+**Nominal categorical data** are data that one can name and put into categories. They are not measured but simply **counted**. They often consist of **unordered** 'either--or' type observations which have two categories and are often know as **binary**. For example: dead or alive; cured or not cured; pregnant or not pregnant. However, nominal categorical data often can have **more than two categories**, for example, blood group A, B, AB, 0; country of origin; ethnic group; eye color. In @farndon2013 study **gender** is a binary variable (male or female), and the **center** where the the participants were treated is a nominal variable with seven level (Central, Manor, Jordanthorpe, Limbrick, Firth Park, Huddersfield, Darnall).
 
 ::: callout-warning
 **Numerical representation of categories are just codes**
@@ -161,10 +194,8 @@ The difference between discrete data and the ordinal data described earlier can 
 
 We cannot say that stage IV is twice as bad as stage II nor that the difference between stages I and II is equivalent to that between stages III and IV. In contrast, three children are three times as many as one, and a difference of one means the same throughout the range of values.
 
-
 In practice discrete data are often treated in statistical analyses as if they were ordered categories. This is not wrong, but it may not be getting the most out of the data. Conversely, when ordered categories are numbered, as with stage of disease, the temptation to treat these numbers as statistically meaningful must be resisted. For example, it is not sensible to calculate the average stage of cancer. The only information the numbers contain is in the ordering, which would be conveyed equally by calling them A, B, C, D and so on.
 :::
-
 
  
 
