@@ -108,8 +108,7 @@ There are three main data structures: structured data, unstructured data, and se
 **Unstructured data** usually open text (such as social media posts), images, videos, etc., that have no predetermined organization or design.
 
 
-In this textbook we use data organized in a structured format (spreadsheets). In statistics, tabular data refers to data that are organized in a table with rows and columns.
-
+In this textbook we use data organized in a structured format (spreadsheets). In statistics, tabular data refers to data that are organized in a table with rows and columns. A row is a record/observation/trial, which corresponds to the statistical unit of the data set, while the columns are the variables/characteristics/features of interest.
 
  
 
