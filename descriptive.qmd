@@ -30,15 +30,11 @@ data_corn <- data_corn %>%
  )
 ```
 
-
-@tbl-corn presents a typical summary table of the basic characteristics (variables) of patients entered into @farndon2013 study. 
-
+@tbl-corn presents a typical summary table of the basic characteristics (variables) of patients entered into @farndon2013 study.
 
 ::: {.callout-note icon="false"}
 ## **Example: Salicylic acid plasters for treatment of foot corns**
 
-
-@tbl-corn presents a typical table with some of the basic characteristics (variables) of patients entered into @farndon2013 study.
 
 +----------------------+-----------------+---------------------+-------------------+
 |                      |                 | Corn Plaster, n (%) | Scalpel, n (%)    |
@@ -100,7 +96,6 @@ In this example since we have 101 patients in each randomized group the percenta
 :::
 
  
-
 
 ## Summarizing Categorical Data
 

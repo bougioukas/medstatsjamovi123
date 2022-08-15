@@ -101,7 +101,7 @@ DT::datatable(data_corn, extensions = 'Scroller',
 
 ## Types of Data
 
-Data in variable can be either categorical or numerical (otherwise known as qualitative and quantitative) in nature (@fig-types_data).
+Data in variable can be either **categorical** or **numerical** (otherwise known as qualitative and quantitative) in nature (@fig-types_data).
 
 ```{r}
 #| label: fig-types_data
