@@ -121,7 +121,7 @@ knitr::include_graphics(here::here("images", "types_data.png"))
 **A. Nominal Data**
 
 **Nominal categorical data** are data that one can name and put into categories. They are not measured but simply **counted**. They often consist of **unordered** 'either--or' type observations which have two categories and are often know as **binary**. For example: dead or alive; cured or not cured; pregnant or not pregnant. However, nominal categorical data often can have **more than two categories**, for example, blood group A, B, AB, 0; country of origin; ethnic group; eye color.
-In @farndon2013 study **gender** is a binary variable (male or female), and the center where the the participants were treated is a nominal variable with seven level(Central, Manor, Jordanthorpe, Limbrick, Firth Park, Huddersfield, Darnall).
+In @farndon2013 study **gender** is a binary variable (male or female), and the **center** where the the participants were treated is a nominal variable with seven level (Central, Manor, Jordanthorpe, Limbrick, Firth Park, Huddersfield, Darnall).
 
 
 ::: callout-warning

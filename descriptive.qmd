@@ -33,7 +33,7 @@ data_corn <- data_corn %>%
 @tbl-corn presents a typical summary table of the basic characteristics (variables) of patients entered into @farndon2013 study.
 
 ::: {.callout-note icon="false"}
-## **Example: Summary table of patients with foot corns treated with salicylic acid plasters or scalpel debridement**
+## **Example: Summary table with characteristics of patients with foot corns treated with salicylic acid plasters or scalpel debridement [@farndon2013]**
 
 
 +----------------------+-----------------+---------------------+-------------------+
@@ -90,7 +90,7 @@ data_corn <- data_corn %>%
 | **median (IQR)**     |                 |                     |                   |
 +----------------------+-----------------+---------------------+-------------------+
 
-: Baseline characteristics of patients with foot corns by treatment group. [@farndon2013] {#tbl-corn}
+: Baseline characteristics of patients with foot corns by treatment group [@farndon2013]. {#tbl-corn}
 
 In this example since we have 101 patients in each randomized group the percentages are almost the same as the raw counts. However, for most studies we are unlikely to have exactly 100 participants in each group!
 :::
@@ -104,9 +104,9 @@ Binary data are the simplest type of data. Each individual has a label which tak
 However, a raw count is rarely useful. For example, in @tbl-corn there are more non-smokers in the scalpel group (40 out of 99 or 40%) compared to corn plaster group (34 out of 98 or 35%). It is only when this count is expressed as a proportion (relative frequency) that it becomes useful. Hence the first step to analyzing categorical data is to count the number of observations in each category (frequencies) and express them as **proportions** of the total sample size (relative frequencies).
 
 ::: {.callout-note icon="false"}
-## **Illustrative Example - Salicylic acid plasters for treatment of foot corns**
+## **Example - Distribution of 202 patients with foot corns by treatment center and randomized group [@farndon2013]**
 
-Farndon et al. (2013) reports a RCT that investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. As we have already mentioned one categorical variable recorded was the center where each trial participant was treated. Trial participants were treated at one of seven centers and the corresponding categories as displayed in @tbl-centers1. The first column shows category (treatment center) names, whilst the second shows the number of individuals in each category together with its percentage contribution to the total. @tbl-centers1 clearly shows that the majority (54.5%) of patients were treated at the "Central" treatment center.
+Farndon et al. (2013) reports a RCT that investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. As we have already mentioned @farndon2013 recorded the **center** where each patient was treated. Particularly, trial participants were treated at one of seven centers and the corresponding categories are displayed in @tbl-centers1. The first column shows category (treatment center) names, whilst the second shows the number of individuals in each category together with its percentage contribution to the total. @tbl-centers1 clearly shows that the majority (54.5%) of patients were treated at the "Central" treatment center.
 
 | Treatment center | Frequency | Percentage |
 |------------------|-----------|------------|
@@ -904,7 +904,7 @@ data_corn |>
 #| echo: false
 #| warning: false
 #| label: fig-boxplot3
-#| fig-cap: A box plot of age of the participants  by treatment group in @farndon2013 study.
+#| fig-cap: A box plot of age of the participants by treatment group in @farndon2013 study.
 #| fig-width: 5.5
 #| fig-height: 4.0
 
@@ -941,7 +941,7 @@ There are many variations of the boxplot. For example, there is a way to combine
 #| echo: false
 #| warning: false
 #| label: fig-raincloud
-#| fig-cap: A raincloud plot of age of the participants in @farndon2013 study.
+#| fig-cap: A raincloud plot of age of the participants by treatment group in @farndon2013 study.
 #| fig-width: 6.5
 #| fig-height: 4.0
 
@@ -971,7 +971,7 @@ Scatter plots are two dimensional graphs, showing the association between two co
 #| echo: false
 #| warning: false
 #| label: fig-scatterplot
-#| fig-cap: Association between (a) age and baseline, and (b) taking into acound the gender in @farndon2013 study.
+#| fig-cap: Association between (a) age and baseline, and (b) taking into acound the gender of the participants in @farndon2013 study.
 #| fig-width: 8.5
 #| fig-height: 4.0
 
