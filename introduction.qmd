@@ -81,10 +81,10 @@ Inferential statistics aim at generalizing a measure taken on a small number of 
 A **variable** is a quantity or property that is **free to vary**, or take on different values. Researchers design experiments to test if changes to one or more variables are **associated** with changes to another variable of interest. For example, if researchers think a new therapy is more effective than the usual care for the treatment of foot corns, they could design an experiment to test this hypothesis; participants should randomly assigned to one of two groups: one (the experimental group) receiving the new treatment that is being tested, and the other (the comparison group or control) receiving an alternative (conventional) treatment. In this experiment, the type of treatment each participant received (i.e., new treatment vs. no treatment) is the **independent variable** (IV), while the number of depressive symptoms observed in each person is the **dependent variable** (DV) or the **outcome** variable.
 
 
-For example, in a randomized controlled trial (RCT), @farndon2013 investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. The recorded data for 20 variables are presented in the table of @fig-data_corn:
+For example, in a randomized controlled trial (RCT), @farndon2013 investigated the effectiveness of salicylic acid plasters compared with usual scalpel debridement for treatment of foot corns. They recorded 20 variables for 202 patients; the data are presented in the table of @fig-data_corn:
 
 ::: {.callout-note icon="false"}
-## **Example: Raw data as recorded in @farndon2013 study that investigated the salicylic acid plasters for treatment of foot corns **
+## **Example: Raw data of 20 variables for 202 patients with foot corns treated with salicylic acid plasters or scalpel debridement in  @farndon2013 study**
 
 ```{r}
 #| echo: false
