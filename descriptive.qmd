@@ -33,7 +33,7 @@ data_corn <- data_corn %>%
 @tbl-corn presents a typical summary table of the basic characteristics (variables) of patients entered into @farndon2013 study.
 
 ::: {.callout-note icon="false"}
-## **Example: Salicylic acid plasters for treatment of foot corns**
+## **Example: Summary table of patients with foot corns treated with salicylic acid plasters or scalpel debridement**
 
 
 +----------------------+-----------------+---------------------+-------------------+
