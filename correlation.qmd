@@ -1,1 +1,214 @@
-# Correlation
+# Correlation {#sec-correlation}
+
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(here)
+
+library(stevemisc)
+library(patchwork)
+```
+
+
+**Correlation** is a statistical method used to assess a possible **association** between two continuous variables. It is measured by a statistic called the **correlation coefficient**, which represents the **direction** and **strength** of the association between the variables in question.
+
+ 
+
+**Range of values**
+
+Correlation coefficient is a **dimensionless** quantity that takes a value in the range **-1** to **+1**.
+
+ 
+
+**Direction of association**
+
+A **negative** correlation coefficient indicates that one variable decreases in value as the other variable increases (and vice versa),
+a **zero** value indicates that no association exists between the two variables, and a **positive** coefficient indicates that both variables increase (or decrease) in value together.
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-correlation1
+#| fig-cap: The direction of association can be (a) negative, (b) no association, or (c) positive.
+#| fig-width: 11.8
+#| fig-height: 4.0
+
+
+# plot 1
+sigma1<-rbind(c(1,-0.8), c(-0.8,1))
+mu1<-c(10, 5) 
+
+set.seed(123)
+dat1 <- data.frame(MASS::mvrnorm(n=500, mu=mu1, Sigma=sigma1))
+
+cor1 <- cor(dat1$X1, dat1$X2)
+
+pcor1 <- dat1|>
+  ggplot(aes(X1, X2)) +
+  geom_point() +
+  ggtitle(paste0("Negative Correlation r=", round(cor1, digits=1))) +
+  theme_steve()
+
+
+# plot2
+sigma2<-rbind(c(1,0.000), c(0.000,1))
+mu2<-c(10, 5) 
+
+set.seed(124)
+dat2 <- data.frame(MASS::mvrnorm(n=500, mu=mu2, Sigma=sigma2))
+
+cor2 <- cor(dat2$X1, dat2$X2)
+
+pcor2 <- dat2|>
+  ggplot(aes(X1, X2)) +
+  geom_point() +
+  ggtitle(paste0("Zero Correlation r=", round(cor2, digits=1))) +
+  theme_steve()
+
+
+# plot3
+sigma3<-rbind(c(1,0.8), c(0.8,1))
+mu3<-c(10, 5)
+
+set.seed(125)
+dat3 <- data.frame(MASS::mvrnorm(n=500, mu=mu3, Sigma=sigma3))
+
+cor3 <- cor(dat3$X1, dat3$X2)
+
+pcor3 <- dat3|>
+  ggplot(aes(X1, X2)) +
+  geom_point() +
+  ggtitle(paste0("Positive Correlation r=", round(cor3, digits=1))) +
+  theme_steve()
+
+
+pcor1 + pcor2 + pcor3 + plot_annotation(tag_levels = 'a')
+```
+
+
+ 
+
+**Strength of association**
+
+The **strength** of association can be anywhere between -1 and +1. The **stronger** the correlation, the **closer** the correlation coefficient comes to ±1 (@fig-correlation2). A correlation coefficient of **-1** or **+1** indicates a **perfect** negative or positive association, respectively (@fig-correlation2 c and f). 
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-correlation2
+#| fig-cap: The **stronger** the correlation, the **closer** the correlation coefficient comes to ±1.
+#| fig-width: 11.8
+#| fig-height: 8.0
+
+
+# plot 4
+sigma4<-rbind(c(1,1), c(1,1))
+mu4<-c(10, 5) 
+
+set.seed(136)
+dat4 <- data.frame(MASS::mvrnorm(n=500, mu=mu4, Sigma=sigma4))
+
+cor4 <- cor(dat4$X1, dat4$X2)
+
+pcor4 <- dat4|>
+  ggplot(aes(X1, X2)) +
+  geom_point() +
+  ggtitle(paste0("Correlation r=", round(cor4, digits=1))) +
+  theme_steve()
+
+
+# plot5
+sigma5<-rbind(c(1,0.8), c(0.8,1))
+mu5<-c(10, 5) 
+set.seed(139)
+dat5 <- data.frame(MASS::mvrnorm(n=500, mu=mu5, Sigma=sigma5))
+
+cor5 <- cor(dat5$X1, dat5$X2)
+
+pcor5 <- dat5|>
+  ggplot(aes(X1, X2)) +
+  geom_point() +
+  ggtitle(paste0("Correlation r=", round(cor5, digits=1))) +
+  theme_steve()
+
+
+
+
+# plot6
+sigma6<-rbind(c(1,0.6), c(0.6,1))
+mu6<-c(10, 5) 
+set.seed(138)
+dat6 <- data.frame(MASS::mvrnorm(n=500, mu=mu6, Sigma=sigma6))
+
+cor6 <- cor(dat6$X1, dat6$X2)
+
+pcor6 <- dat6|>
+  ggplot(aes(X1, X2)) +
+  geom_point() +
+  ggtitle(paste0("Correlation r=", round(cor6, digits=1))) +
+  theme_steve()
+
+
+
+# plot 7
+sigma7<-rbind(c(1,-1), c(-1,1))
+mu7<-c(10, 5) 
+
+set.seed(146)
+dat7 <- data.frame(MASS::mvrnorm(n=500, mu=mu7, Sigma=sigma7))
+
+cor7 <- cor(dat7$X1, dat7$X2)
+
+pcor7 <- dat7|>
+  ggplot(aes(X1, X2)) +
+  geom_point() +
+  ggtitle(paste0("Correlation r=", round(cor7, digits=1))) +
+  theme_steve()
+
+
+# plot8
+sigma8<-rbind(c(1,-0.8), c(-0.8,1))
+mu8<-c(10, 5) 
+set.seed(149)
+dat8 <- data.frame(MASS::mvrnorm(n=500, mu=mu8, Sigma=sigma8))
+
+cor8 <- cor(dat8$X1, dat8$X2)
+
+pcor8 <- dat8|>
+  ggplot(aes(X1, X2)) +
+  geom_point() +
+  ggtitle(paste0("Correlation r=", round(cor8, digits=1))) +
+  theme_steve()
+
+
+# plot9
+sigma9<-rbind(c(1,-0.6), c(-0.6,1))
+mu9<-c(10, 5) 
+set.seed(148)
+dat9 <- data.frame(MASS::mvrnorm(n=500, mu=mu9, Sigma=sigma9))
+
+cor9 <- cor(dat9$X1, dat9$X2)
+
+pcor9 <- dat9|>
+  ggplot(aes(X1, X2)) +
+  geom_point() +
+  ggtitle(paste0("Correlation r=", round(cor9, digits=1))) +
+  theme_steve()
+
+
+(pcor9 + pcor8 + pcor7) / (pcor6 + pcor5 + pcor4)   + plot_annotation(tag_levels = 'a')
+```
+
+
+ 
+
+
+
+
+
+

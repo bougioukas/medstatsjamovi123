@@ -2,7 +2,6 @@
 
 The goal of this lab is to introduce you to Jamovi, which we'll be using throughout the course both to learn the statistical concepts discussed in the course and to analyze real data and come to informed conclusions.
 
-
 ## Why Jamovi?
 
 Jamovi is a new fee open "3rd generation" statistical software that is built on top of the programming language R (@fig-jamovi_0). Designed from the ground up to be easy to use, Jamovi is a compelling alternative to costly statistical products such as SPSS and SAS.
@@ -16,8 +15,6 @@ Jamovi is a new fee open "3rd generation" statistical software that is built on 
 2.  It provides informative tables and neat visuals
 3.  Gives access to a user guide and community resources from the Jamovi website
 :::
-
-
 
 ## Downloading and installing Jamovi
 
@@ -129,7 +126,7 @@ There are six tabs in the Menu (from left to right): 1. **File** (a layer with t
 
  
 
-## Variables Types in Jamovi
+## Types of Variables in Jamovi
 
 Data variables can be one of four **measure types**:
 
@@ -153,17 +150,18 @@ and one of three **data types**:
 
 The measure types are designated by the symbol in the header of the variable's column. Note that some combinations of data-type and measure-type don't make sense, and Jamovi won't let us choose these.
 
-+----------------+----------------+----------------+----------------+
-|                |                | Measure        |                |
-+================+================+================+================+
-| **Data**       | Nominal        | Ordinal        | Continuous     |
-+----------------+----------------+----------------+----------------+
-| Integer        | ${\checkmark}$ | ${\checkmark}$ | ${\checkmark}$ |
-+----------------+----------------+----------------+----------------+
-| Decimal        |                |                | ${\checkmark}$ |
-+----------------+----------------+----------------+----------------+
-| Text           | ${\checkmark}$ | ${\checkmark}$ |                |
-+----------------+----------------+----------------+----------------+
++---------------+----------------+----------------+----------------+
+|               |                | Measure        |                |
++===============+================+================+================+
+| **Data**      | Nominal        | Ordinal        | Continuous     |
++---------------+----------------+----------------+----------------+
+| Integer       | ${\checkmark}$ | ${\checkmark}$ | ${\checkmark}$ |
++---------------+----------------+----------------+----------------+
+| Decimal       |                |                | ${\checkmark}$ |
++---------------+----------------+----------------+----------------+
+| Text          | ${\checkmark}$ | ${\checkmark}$ |                |
++---------------+----------------+----------------+----------------+
+
 : Types of data and measures {#tbl-types}
 
  

@@ -210,9 +210,9 @@ In an approximately **bell-shaped (normal)** distribution:
 -   the measure of excess kurtosis is close to 0 (mesokurtic) (@fig-kurtosis b). A kurtosis value between −1 and +1 indicates normality.
 
 ::: {.callout-note icon="false"}
-## **Statistical moments and normality**
+## **Statistical moments (or shape statistics) and normality**
 
-There are two ways in which samples can deviate from normality: **skew** and **kurtosis**.
+There are two shape statistics that can indicate deviation from normality: **skew** and **kurtosis**.
 
 **Skewness**
 
@@ -238,7 +238,6 @@ knitr::include_graphics(here("images", "skew2.png"))
 **Kurtosis**
 
 The other way that distributions can deviate from normality is **kurtosis**. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).
-
 
 Distributions with **negative** excess kurtosis are called ***platykurtic*** (@fig-kurtosis a). If the measure of excess kurtosis is **close to 0** the distribution is **mesokurtic** (@fig-kurtosis b). Finally, distributions with **positive** excess kurtosis are called ***leptokurtic*** (@fig-kurtosis c).
 

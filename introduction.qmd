@@ -135,7 +135,7 @@ Data in variable can be either **categorical** or **numerical** (otherwise known
 ```{r}
 #| label: fig-types_data
 #| fig-align: center
-#| out-width: "80%"
+#| out-width: "90%"
 #| echo: false
 #| fig-cap: Broad classification of the different types of data with examples.
 

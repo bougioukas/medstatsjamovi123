@@ -30,6 +30,8 @@ data_corn <- data_corn %>%
  )
 ```
 
+**Descriptive statistics** are used to describe and organize the **basic characteristics** of the data in a study. The classical descriptive statistics allow us to have a quick glance of the central tendency and the extent of dispersion of values. They are useful in understanding a **data distribution** and in comparing data distributions and are usually presented in tables and graphs.
+
 @tbl-corn presents a typical summary table of the basic characteristics (variables) of patients entered into @farndon2013 study.
 
 ::: {.callout-note icon="false"}
@@ -96,7 +98,7 @@ In this example since we have 101 patients in each randomized group the percenta
 
  
 
-## Summarizing Categorical Data
+## Summarizing Categorical Data (Frequency Statistics)
 
 Binary data are the simplest type of data. Each individual has a label which takes one of two values such as male or female, corn healed or not healed. A simple summary would be to count the different types of labels and find the **frequencies**. The set of frequencies of all the possible categories is called the **frequency distribution** of the variable.
 
