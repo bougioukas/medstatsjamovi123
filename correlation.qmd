@@ -9,10 +9,61 @@ library(here)
 
 library(stevemisc)
 library(patchwork)
+
+library(readr)
+data_bp <- read_csv(here("data", "data_bp.csv"))
+```
+
+**Correlation** is a statistical method used to assess a possible **association** between two continuous variables. There are several statistics that we can use to quantify correlation depending on the underlying relation of the data. In this tutorial, you’ll learn about two correlation coefficients:
+
+- Pearson’s r
+
+- Spearman’s rho
+
+Pearson’s coefficient measures **linear** correlation, while the Spearman's coefficient compare the **ranks** of data.
+
+
+
+ 
+
+## Linear correlation (Pearson’s coefficient r)
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-correlation0
+#| fig-cap: The direction of association can be (a) negative, (b) no association, or (c) positive.
+#| fig-width: 9.0
+#| fig-height: 6.5
+
+
+# plot 0
+data_bp|>
+  ggplot(aes(dbp, sbp)) +
+  geom_point(color = "deeppink", size = 3 ,alpha = 0.7) +
+  #ggtitle(paste0("Negative Correlation r=", round(cor1, digits=1))) +
+  theme_steve()
 ```
 
 
-**Correlation** is a statistical method used to assess a possible **association** between two continuous variables. It is measured by a statistic called the **correlation coefficient**, which represents the **direction** and **strength** of the association between the variables in question.
+
+
+
+Given paired data $(x_{1},y_{1}),\ldots ,(x_{n},y_{n})$ consisting of ${n}$ pairs, $r_{xy}$ is defined as:
+
+
+
+
+
+$$r_{x, y} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n(y_i - \bar{y})^2}}$$ {#eq-r1}
+
+
+
+
+
+It is measured by a statistic called the **correlation coefficient**, which represents the **direction** and **strength** of the association between the variables in question.
 
  
 
@@ -208,7 +259,7 @@ pcor9 <- dat9|>
  
 
 
-
+## Rank correlation (Spearman’s coefficient rho )
 
 
 

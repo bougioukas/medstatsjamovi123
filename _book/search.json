@@ -109,7 +109,21 @@
     "href": "correlation.html",
     "title": "9  Correlation",
     "section": "",
-    "text": "Range of values\nCorrelation coefficient is a dimensionless quantity that takes a value in the range -1 to +1.\n \nDirection of association\nA negative correlation coefficient indicates that one variable decreases in value as the other variable increases (and vice versa), a zero value indicates that no association exists between the two variables, and a positive coefficient indicates that both variables increase (or decrease) in value together.\n\n\n\n\nFigure 9.1: The direction of association can be (a) negative, (b) no association, or (c) positive.\n\n\n\n\n \nStrength of association\nThe strength of association can be anywhere between -1 and +1. The stronger the correlation, the closer the correlation coefficient comes to ±1 (Figure 9.2). A correlation coefficient of -1 or +1 indicates a perfect negative or positive association, respectively (Figure 9.2 c and f).\n\n\n\n\nFigure 9.2: The stronger the correlation, the closer the correlation coefficient comes to ±1."
+    "text": "Correlation is a statistical method used to assess a possible association between two continuous variables. There are several statistics that we can use to quantify correlation depending on the underlying relation of the data. In this tutorial, you’ll learn about two correlation coefficients:\nPearson’s coefficient measures linear correlation, while the Spearman’s coefficient compare the ranks of data."
+  },
+  {
+    "objectID": "correlation.html#linear-correlation-pearsons-coefficient-r",
+    "href": "correlation.html#linear-correlation-pearsons-coefficient-r",
+    "title": "9  Correlation",
+    "section": "\n9.1 Linear correlation (Pearson’s coefficient r)",
+    "text": "9.1 Linear correlation (Pearson’s coefficient r)\n\n\n\n\nFigure 9.1: The direction of association can be (a) negative, (b) no association, or (c) positive.\n\n\n\n\nGiven paired data \\((x_{1},y_{1}),\\ldots ,(x_{n},y_{n})\\) consisting of \\({n}\\) pairs, \\(r_{xy}\\) is defined as:\n\\[r_{x, y} = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n (x_i - \\bar{x})^2 \\sum_{i=1}^n(y_i - \\bar{y})^2}} \\tag{9.1}\\]\nIt is measured by a statistic called the correlation coefficient, which represents the direction and strength of the association between the variables in question.\n \nRange of values\nCorrelation coefficient is a dimensionless quantity that takes a value in the range -1 to +1.\n \nDirection of association\nA negative correlation coefficient indicates that one variable decreases in value as the other variable increases (and vice versa), a zero value indicates that no association exists between the two variables, and a positive coefficient indicates that both variables increase (or decrease) in value together.\n\n\n\n\nFigure 9.2: The direction of association can be (a) negative, (b) no association, or (c) positive.\n\n\n\n\n \nStrength of association\nThe strength of association can be anywhere between -1 and +1. The stronger the correlation, the closer the correlation coefficient comes to ±1 (Figure 9.3). A correlation coefficient of -1 or +1 indicates a perfect negative or positive association, respectively (Figure 9.3 c and f).\n\n\n\n\nFigure 9.3: The stronger the correlation, the closer the correlation coefficient comes to ±1."
+  },
+  {
+    "objectID": "correlation.html#rank-correlation-spearmans-coefficient-rho",
+    "href": "correlation.html#rank-correlation-spearmans-coefficient-rho",
+    "title": "9  Correlation",
+    "section": "\n9.2 Rank correlation (Spearman’s coefficient rho )",
+    "text": "9.2 Rank correlation (Spearman’s coefficient rho )"
   },
   {
     "objectID": "lab1.html",
