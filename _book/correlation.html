@@ -251,23 +251,45 @@ ul.task-list{list-style: none;}
 <li><p>Pearson’s r</p></li>
 <li><p>Spearman’s rho</p></li>
 </ul>
-<p>Pearson’s coefficient measures <strong>linear</strong> correlation, while the Spearman’s coefficient compare the <strong>ranks</strong> of data.</p>
+<p>Pearson’s coefficient measures <strong>linear</strong> correlation, while the Spearman’s coefficient compare the <strong>ranks</strong> of data and measures <strong>monotonic</strong> associations.</p>
 <p>&nbsp;</p>
 <section id="linear-correlation-pearsons-coefficient-r" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="linear-correlation-pearsons-coefficient-r">
 <span class="header-section-number">9.1</span> Linear correlation (Pearson’s coefficient r)</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-correlation0" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="correlation_files/figure-html/fig-correlation0-1.png" class="img-fluid figure-img" width="864"></p>
-<p></p><figcaption class="figure-caption">Figure 9.1: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
-</figure>
+<p>The <strong>Pearson’s correlation coefficient, <span class="math inline">\({r}\)</span></strong>, can be calculated for any data set with two continuous variables. However, before we calculate the correlation coefficient <span class="math inline">\({r}\)</span> we should make sure that the following <strong>assumptions</strong> are met:</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<strong>Assumptions for Pearson’s coefficient <span class="math inline">\(r_{xy}\)</span></strong>
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>There is a linear association between the two variables</li>
+<li>The variables are observed on a random sample of individuals (each individual should have a pair of values).<br>
+</li>
+<li>For a valid hypothesis testing and calculation of confidence intervals both variables should have an approximately normal distribution.</li>
+<li>Absence of outliers in the data set.</li>
+</ol>
 </div>
-<p>Given paired data <span class="math inline">\((x_{1},y_{1}),\ldots ,(x_{n},y_{n})\)</span> consisting of <span class="math inline">\({n}\)</span> pairs, <span class="math inline">\(r_{xy}\)</span> is defined as:</p>
+</div>
+<p><strong>Formula</strong></p>
+<p>Given a set of <span class="math inline">\({n}\)</span> pairs of observations <span class="math inline">\((x_{1},y_{1}),\ldots ,(x_{n},y_{n})\)</span> with means <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> respectively, <span class="math inline">\(r_{xy}\)</span> is defined as:</p>
 <p><span id="eq-r1"><span class="math display">\[r_{x, y} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n(y_i - \bar{y})^2}} \tag{9.1}\]</span></span></p>
-<p>It is measured by a statistic called the <strong>correlation coefficient</strong>, which represents the <strong>direction</strong> and <strong>strength</strong> of the association between the variables in question.</p>
+<p>The <span class="math inline">\(r_{xy}\)</span> statistic shows the <strong>direction</strong> and measures the <strong>strength</strong> of the linear association between the variables.</p>
 <p>&nbsp;</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Characteristics of Pearson’s coefficient <span class="math inline">\(r_{xy}\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>Range of values</strong></p>
 <p>Correlation coefficient is a <strong>dimensionless</strong> quantity that takes a value in the range <strong>-1</strong> to <strong>+1</strong>.</p>
 <p>&nbsp;</p>
@@ -277,24 +299,35 @@ ul.task-list{list-style: none;}
 <div class="cell-output-display">
 <div id="fig-correlation1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="correlation_files/figure-html/fig-correlation1-1.png" class="img-fluid figure-img" width="1132"></p>
-<p></p><figcaption class="figure-caption">Figure 9.2: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 9.1: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <p>&nbsp;</p>
 <p><strong>Strength of association</strong></p>
-<p>The <strong>strength</strong> of association can be anywhere between -1 and +1. The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1 (<a href="#fig-correlation2">Figure&nbsp;<span>9.3</span></a>). A correlation coefficient of <strong>-1</strong> or <strong>+1</strong> indicates a <strong>perfect</strong> negative or positive association, respectively (<a href="#fig-correlation2">Figure&nbsp;<span>9.3</span></a> c and f).</p>
+<p>The <strong>strength</strong> of association can be anywhere between -1 and +1. The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1 (<a href="#fig-correlation2">Figure&nbsp;<span>9.2</span></a>). A correlation coefficient of <strong>-1</strong> or <strong>+1</strong> indicates a <strong>perfect</strong> negative or positive association, respectively (<a href="#fig-correlation2">Figure&nbsp;<span>9.2</span></a> c and f).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-correlation2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="correlation_files/figure-html/fig-correlation2-1.png" class="img-fluid figure-img" width="1132"></p>
-<p></p><figcaption class="figure-caption">Figure 9.3: The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 9.2: The <strong>stronger</strong> the correlation, the <strong>closer</strong> the correlation coefficient comes to ±1.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
+</div>
+</div>
 <p>&nbsp;</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-correlation0" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="correlation_files/figure-html/fig-correlation0-1.png" class="img-fluid figure-img" width="864"></p>
+<p></p><figcaption class="figure-caption">Figure 9.3: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 </section><section id="rank-correlation-spearmans-coefficient-rho" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="rank-correlation-spearmans-coefficient-rho">
 <span class="header-section-number">9.2</span> Rank correlation (Spearman’s coefficient rho )</h2>
 
