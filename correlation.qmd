@@ -48,7 +48,7 @@ cor1 <- cor(dat1$X1, dat1$X2)
 
 pcor1 <- dat1|>
   ggplot(aes(X1, X2)) +
-  geom_point() +
+  geom_point(color = "chartreuse3", alpha = 0.8) +
   ggtitle(paste0("Negative Correlation r=", round(cor1, digits=1))) +
   theme_steve()
 
@@ -64,7 +64,7 @@ cor2 <- cor(dat2$X1, dat2$X2)
 
 pcor2 <- dat2|>
   ggplot(aes(X1, X2)) +
-  geom_point() +
+  geom_point(color = "grey80") +
   ggtitle(paste0("Zero Correlation r=", round(cor2, digits=1))) +
   theme_steve()
 
@@ -80,7 +80,7 @@ cor3 <- cor(dat3$X1, dat3$X2)
 
 pcor3 <- dat3|>
   ggplot(aes(X1, X2)) +
-  geom_point() +
+  geom_point(color = "deeppink", alpha = 0.8) +
   ggtitle(paste0("Positive Correlation r=", round(cor3, digits=1))) +
   theme_steve()
 
@@ -117,8 +117,8 @@ cor4 <- cor(dat4$X1, dat4$X2)
 
 pcor4 <- dat4|>
   ggplot(aes(X1, X2)) +
-  geom_point() +
-  ggtitle(paste0("Correlation r=", round(cor4, digits=1))) +
+  geom_point(color = "deeppink") +
+  ggtitle(paste0("r=", round(cor4, digits=1))) +
   theme_steve()
 
 
@@ -132,8 +132,8 @@ cor5 <- cor(dat5$X1, dat5$X2)
 
 pcor5 <- dat5|>
   ggplot(aes(X1, X2)) +
-  geom_point() +
-  ggtitle(paste0("Correlation r=", round(cor5, digits=1))) +
+  geom_point(color = "deeppink", alpha = 0.8) +
+  ggtitle(paste0("r=", round(cor5, digits=1))) +
   theme_steve()
 
 
@@ -149,8 +149,8 @@ cor6 <- cor(dat6$X1, dat6$X2)
 
 pcor6 <- dat6|>
   ggplot(aes(X1, X2)) +
-  geom_point() +
-  ggtitle(paste0("Correlation r=", round(cor6, digits=1))) +
+  geom_point(color = "deeppink", alpha = 0.6) +
+  ggtitle(paste0("r=", round(cor6, digits=1))) +
   theme_steve()
 
 
@@ -166,8 +166,8 @@ cor7 <- cor(dat7$X1, dat7$X2)
 
 pcor7 <- dat7|>
   ggplot(aes(X1, X2)) +
-  geom_point() +
-  ggtitle(paste0("Correlation r=", round(cor7, digits=1))) +
+  geom_point(color = "chartreuse3") +
+  ggtitle(paste0("r=", round(cor7, digits=1))) +
   theme_steve()
 
 
@@ -181,8 +181,8 @@ cor8 <- cor(dat8$X1, dat8$X2)
 
 pcor8 <- dat8|>
   ggplot(aes(X1, X2)) +
-  geom_point() +
-  ggtitle(paste0("Correlation r=", round(cor8, digits=1))) +
+  geom_point(color = "chartreuse3", alpha = 0.8) +
+  ggtitle(paste0("r=", round(cor8, digits=1))) +
   theme_steve()
 
 
@@ -196,8 +196,8 @@ cor9 <- cor(dat9$X1, dat9$X2)
 
 pcor9 <- dat9|>
   ggplot(aes(X1, X2)) +
-  geom_point() +
-  ggtitle(paste0("Correlation r=", round(cor9, digits=1))) +
+  geom_point(color = "chartreuse3", alpha = 0.6) +
+  ggtitle(paste0("r=", round(cor9, digits=1))) +
   theme_steve()
 
 
