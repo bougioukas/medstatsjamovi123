@@ -440,7 +440,7 @@ $\bar{x}$ = `r sum(x)`/`r length(x)` = `r mean(x)` mm or `r round(mean(x), digit
 
 The major advantage of the mean is that it uses all the data values, while the main disadvantage is its sensitivity to very large or very small values, which might be **outliers** (unusual values). For example, if we entered "100 mm" instead of "10 mm", for the 15th patient, in the calculation of the mean, we would find the mean changed from `r round(mean(x), digits = 1)` to `r round(mean(x2), digits = 1)`. It does not necessarily follow, however, that outliers should be excluded from the final data summary, or that they result from a human error. Outliers can be legitimate anomalies that are vital for capturing information on the subject of interest.
 
-If the data are binary and are coded 0 or 1, then $\bar{x}$ is the proportion of individuals with value 1, and this can also be expressed as a percentage. In @farndon2013 data, the cases in which the corn was healed are coded as '1s' and the cases in which the corn was not healed as '0s'. The corn had healed in 52 out of 189 patients, so the mean of this variable is `r round(mean(data_corn$complete_healed, na.rm=T), digits = 3)` or `r round(mean(data_corn$complete_healed, na.rm=T), digits = 2)*100`%.
+If the data are binary and are coded 0 or 1, then $\bar{x}$ is the proportion of individuals with value 1, and this can also be expressed as a percentage. In @farndon2013 data, the cases in which the corn was healed are coded as '1s' and the cases in which the corn was not healed as '0s'. The corn had healed in 52 out of 189 patients (0.28 or 28%), which is equal to the "mean" of this variable `r round(mean(data_corn$complete_healed, na.rm=T), digits = 2)`.
 
 ::: {.callout-note icon="false"}
 ## **Advantages and Disadvantages of arithmetic mean**
@@ -559,7 +559,7 @@ The median and the quartiles are examples of **percentiles** - points which spli
 
 The $Q_{1}$ lies somewhere between the $\color{red}{fourth}$ and $\color{blue}{fifth}$ ordered observations (2+2)/2= 2mm. The median, $Q_{2}$, is the average of the $\color{blue}{eighth}$ and $\color{green}{ninth}$ ordered observations (3+3)/2=3 mm. Similarly, The $Q_{3}$ lies somewhere between the $\color{green}{12th}$ and $\color{orange}{13th}$ ordered observations (4+5)/2= 4.5 mm.
 
-So, the IQR for the corn size data is from 2.0 to 4.5 mm; or a single number 2.5 mm.
+So, the IQR for the corn size data is 2.0 to 4.5 mm or described by a single number 2.5 mm.
 
 |                            |                  |                  |                  |                           |                            |                   |                   |                            |                             |                    |                    |                             |                              |                     |                     |                      |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
@@ -567,7 +567,7 @@ So, the IQR for the corn size data is from 2.0 to 4.5 mm; or a single number 2.5
 
 : Calculating quartiles for the corn size data {#tbl-quartiles}
 
-The range for the corn size data is `r min(x)` to `r max(x)` mm or described by a single number `r max(x)`-`r min(x)` = `r max(x) - min(x)` mm.
+
 :::
 
  
@@ -934,7 +934,7 @@ $$(Q_1 - 1.5 \times IQR, \ Q_3 + 1.5 \times IQR)$$
 
  
 
-**c. Raincloud Plot**
+**C. Raincloud Plot**
 
 There are many variations of the boxplot. For example, there is a way to combine raw data (dots), probability density, and key summary statistics such as median, and relevant intervals of a range of likely values for the population parameter, in an appealing and flexible format with minimal redundancy, using the raincloud plot (@fig-raincloud):
 
@@ -964,9 +964,9 @@ data_corn |>
 
  
 
-**c. Scatter plot**
+**D. Scatter plot**
 
-Scatter plots are two dimensional graphs, showing the association between two continuous variables such as age and baseline pain (@fig-scatterplot a). By coloring the data by a third variable (here is gender), scatter plots can provide additional dimensions (@fig-scatterplot b).
+Scatter plots are two dimensional graphs, showing the association between two continuous variables such as age and baseline pain (@fig-scatterplot a). By coloring the data by a third categorical variable (here is gender), scatter plots can provide additional dimensions (@fig-scatterplot b).
 
 ```{r}
 #| echo: false

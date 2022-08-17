@@ -14,32 +14,132 @@ y <- dnorm(x, mean = 4, sd = 2) # y is a vector of the same size as x, with valu
 
 ```
 
+
+
+
+## Probability
+
+
+## Probability distributions for Discrete Outcomes
+
+
+
+
+
+
+
+## Probability distributions for Continuous Outcomes
+
+
+
+
+
+
+### **Normal Distribution**
+
+
 We have mentioned the normal distribution several times in this textbook with the promise we would provide more detail later. In this section, we will explore the normal distribution, why it matters, and how we can tell if our distribution is normal or not.
 
-## Characteristics of Normal Distribution
 
-### Historical background
+#### Historical background and main properties
 
 There are several important probability distributions in statistics. However, the normal distribution might be the most important. A normal distribution is the familiar "bell curve" and it's a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
+
+
 
 ```{r}
 #| echo: false
 #| label: fig-dnormal
 #| out-width: "100%"
 #| fig-align: "center"
-#| fig-cap: A distribution can be (a) leptokurtic, (b) mesokurtic, or (c) platykurtic.
+#| fig-cap: The Normal probability distribution (often called Gaussian or bell-shaped distribution).
 
 
-knitr::include_graphics(here("images", "dnorm.png"))
+x <- seq(-4, 4, length=100)
+y <- dnorm(x)
+
+plot(x,y, main="Normal Distribution", type = "l", lwd = 2,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
+axis(1, at = -3:3, lab=expression(-3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma))
+
 ```
+
+ 
+
+The Normal distribution has the properties summarized as follows:
+
+::: {.callout-note icon="false"}
+## Properties of Normal Distribution
+
+- Bell shaped and symmetrical around the mean. Shape statistics, skewness and excess kurtosis are zero.
+
+- The peak of the curve lies above the mean
+
+- Any position along the horizontal axis (x-axis) can be expressed as a number of standard deviations from the mean
+
+- All three measures of central tendency, the mode (most frequently occurring value), the median (the middlemost value), and the mean (the statistical average), will be the same. 
+
+- The total area under the curve equals to 1 (or 100%)
+
+:::
+
+ 
+
+
+
 
 ### The mathimatical type
 
-Gauss' normal distribution, technically a density function, is a distribution defined by two parameters, mean $\mu$ and variance $\sigma^2$. The mean , $\mu$, is a "location parameter", which defines the central tendency. The variance, $\sigma^2$ is the "scale parameter", which defines the width of the distribution and how short the distribution is. It's formally given as follows:
+Gauss' normal distribution, technically a density function, is a distribution defined by two parameters, mean $\mu$ and variance $\sigma^2$. The mean, $\mu$, represents the population mean and is a "location parameter", which defines the central tendency. The variance, $\sigma^2$ is the "scale parameter", which defines the width of the distribution and how short the distribution is. It's formally given as @eq-gauss:
 
 $$ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}} $$ {#eq-gauss}
 
-The ensuing distribution will look like this in a simple case where $\mu$ is 0 and $\sigma^2$ is 1.
+
+Populations with small values of the standard deviation, $\sigma$, have a distribution concentrated close to the centre, $\mu$; those with large standard deviation, $\sigma$, have a distribution widely spread along the measurement axis @fig-compare_normal.
+
+```{r}
+#| echo: false
+#| label: fig-compare_normal
+#| fig-cap: Probability distribution functions of the Normal distributions with different means and standard deviations.
+#| fig-subcap: 
+#|   - "Effect of changing mean (mean1 < mean2)"
+#|   - "Effect of changing standard deviation (sd1 < sd2)"
+#| layout-ncol: 2
+
+x <- seq(-6, 6, length=200)
+y1 <- dnorm(x)
+y2 <- dnorm(x, mean= 2)
+y3 <- dnorm(x, sd= 2)
+
+plot(x,y1, main="Normal Distribution", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
+axis(1, at = c(0, 2), lab = expression(mu[1], mu[2]))
+lines(x,y2,col="deeppink", lwd = 3)
+
+
+plot(x,y1, main="Normal Distribution", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
+axis(1, at = -4:4, lab=expression(-4*sigma, -3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma, 4*sigma))
+lines(x,y3,col="deeppink", lwd = 3)
+text(1.5, 0.3, expression(sigma[1]))
+text(2.9, 0.10, expression(sigma[2]), col="deeppink")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ensuing distribution will look like this in a simple case where $\mu$ is 0 and $\sigma^2$ is 1 (Standard Normal distribution).
 
 ```{r}
 #| echo: false
@@ -53,8 +153,8 @@ ggplot(data.frame(x = c(-4, 4)), aes(x)) +
   theme_steve() + 
   post_bg() +
   stat_function(fun = dnorm, color="#522D80", size=1.5) +
-  labs(title = "A Simple Normal Density Function",
-       subtitle = "The mu parameter determines the central tendency and sigma-squared \nparameter determines the width.",
+  labs(title = "Standard Normal Distribution",
+       subtitle = "The mu=0 parameter determines the central tendency and sigma-squared=1 parameter determines the width.",
        x = "", y="") +
   theme(plot.title.position = "plot",
         plot.title = element_text(size= 10),
@@ -140,7 +240,7 @@ Notice the tails in the above graph are asymptote to 0. "Asymptote" is a fancier
 
 ### Normal Density Plot with Shaded Regions
 
-Importantly, around 68% of the distribution is between one standard unit of $\mu$. Around 90% of the distribution is between 1.645 standard units on either side of $\mu$. Around 95% of the distribution is between about 1.96 standard units on either side of $\mu$. About 99% of the distribution is between 2.58 standard units on either side of $\mu$. So, the probability that x is between 1 on either side of the $\mu$ of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation (i.e. the scale parameter) is 1.
+Importantly, much of the area (68%) of the distribution is between -sd and sd, the large majority (95%) between -2 sd and +2 sd, and almost all (99%) between -3 sd and + 3 sd. So, the probability that x is between 1 on either side of the $\mu$ of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation (i.e. the scale parameter) is 1.
 
 ```{r}
 #| echo: false
@@ -195,7 +295,7 @@ $$ E(x)=\int_{1}^{2}f(x)dx $$ {#eq-integral}
 
  
 
-## Properties of an approximately normal distribution
+#### Properties of an approximately bell-shaped histogram
 
 In an approximately **bell-shaped (normal)** distribution:
 
@@ -209,14 +309,32 @@ In an approximately **bell-shaped (normal)** distribution:
 
 -   the measure of excess kurtosis is close to 0 (mesokurtic) (@fig-kurtosis b). A kurtosis value between −1 and +1 indicates normality.
 
-::: {.callout-note icon="false"}
-## **Statistical moments (or shape statistics) and normality**
+
+
+
+#### **t-distribution**
+
+
+
+
+#### **Chi-squared distribution**
+
+
+
+
+#### **F-distribution**
+
+
+
+
+::: {.callout-tip}
+**Statistical moments (or shape statistics) and normality**
 
 There are two shape statistics that can indicate deviation from normality: **skew** and **kurtosis**.
 
 **Skewness**
 
-Skewness is usually described as a measure of a dataset's symmetry -- or lack of symmetry. 
+Skewness is usually described as a measure of a dataset's symmetry -- or lack of symmetry.
 
 Skewness values that are **negative** indicate a tail to the **left** (@fig-skew2 a), **zero** value indicate a **symmetric** distribution (@fig-skew2 b), while values that are **positive** indicate a tail to the **right** (@fig-skew2 c).
 
@@ -239,7 +357,7 @@ knitr::include_graphics(here("images", "skew2.png"))
 
 The other way that distributions can deviate from normality is **kurtosis**. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).
 
-Distributions with **negative** excess kurtosis are called ***platykurtic*** (@fig-kurtosis a). If the measure of excess kurtosis is **close to 0** the distribution is **mesokurtic** (@fig-kurtosis b). Finally, distributions with **positive** excess kurtosis are called ***leptokurtic*** (@fig-kurtosis c).
+Distributions with **negative** excess kurtosis are called ***platykurtic*** (@fig-kurtosis a). If the measure of excess kurtosis is **0** the distribution is **mesokurtic** (@fig-kurtosis b). Finally, distributions with **positive** excess kurtosis are called ***leptokurtic*** (@fig-kurtosis c).
 
 A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.
 
@@ -254,3 +372,8 @@ A kurtosis value between −1 and +1 indicates normality and a value between −
 knitr::include_graphics(here("images", "kurtosis.png"))
 ```
 :::
+
+
+
+
+
