@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.0.37">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Introduction to Medical Statistics with Jamovi - 3&nbsp; Distributions - Normal distribution</title>
+<title>Introduction to Medical Statistics with Jamovi - 3&nbsp; Probability Distributions - Normal distribution</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,7 @@ ul.task-list{list-style: none;}
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Distributions - Normal distribution</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -117,7 +117,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./normal.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Distributions - Normal distribution</span></a>
+  <a href="./distributions.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -177,7 +177,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB III: Distributions-Normal Distribution</span></a>
+  <a href="./lab3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">LAB III: Probability Distributions-Normal Distribution</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -228,10 +228,11 @@ ul.task-list{list-style: none;}
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#probability" id="toc-probability" class="nav-link active" data-scroll-target="#probability"> <span class="header-section-number">3.1</span> Probability</a></li>
-  <li><a href="#probability-distributions-for-discrete-outcomes" id="toc-probability-distributions-for-discrete-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-discrete-outcomes"> <span class="header-section-number">3.2</span> Probability distributions for Discrete Outcomes</a></li>
+<li><a href="#sample-space-and-random-events" id="toc-sample-space-and-random-events" class="nav-link active" data-scroll-target="#sample-space-and-random-events"> <span class="header-section-number">3.1</span> Sample Space and Random Events</a></li>
+  <li><a href="#probability" id="toc-probability" class="nav-link" data-scroll-target="#probability"> <span class="header-section-number">3.2</span> Probability</a></li>
+  <li><a href="#probability-distributions-for-discrete-outcomes" id="toc-probability-distributions-for-discrete-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-discrete-outcomes"> <span class="header-section-number">3.3</span> Probability distributions for Discrete Outcomes</a></li>
   <li>
-<a href="#probability-distributions-for-continuous-outcomes" id="toc-probability-distributions-for-continuous-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-continuous-outcomes"> <span class="header-section-number">3.3</span> Probability distributions for Continuous Outcomes</a>
+<a href="#probability-distributions-for-continuous-outcomes" id="toc-probability-distributions-for-continuous-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-continuous-outcomes"> <span class="header-section-number">3.4</span> Probability distributions for Continuous Outcomes</a>
   <ul class="collapse">
 <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution"><strong>Normal Distribution</strong></a></li>
   <li><a href="#the-mathimatical-type" id="toc-the-mathimatical-type" class="nav-link" data-scroll-target="#the-mathimatical-type">The mathimatical type</a></li>
@@ -243,7 +244,7 @@ ul.task-list{list-style: none;}
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="sec-normal" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Distributions - Normal distribution</span></span></h1>
+<h1 class="title"><span id="sec-distributions" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability Distributions - Normal distribution</span></span></h1>
 </div>
 
 
@@ -255,12 +256,66 @@ ul.task-list{list-style: none;}
   </div>
   
 
-</header><section id="probability" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="probability">
-<span class="header-section-number">3.1</span> Probability</h2>
-</section><section id="probability-distributions-for-discrete-outcomes" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="probability-distributions-for-discrete-outcomes">
-<span class="header-section-number">3.2</span> Probability distributions for Discrete Outcomes</h2>
-</section><section id="probability-distributions-for-continuous-outcomes" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="probability-distributions-for-continuous-outcomes">
-<span class="header-section-number">3.3</span> Probability distributions for Continuous Outcomes</h2>
+</header><section id="sample-space-and-random-events" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="sample-space-and-random-events">
+<span class="header-section-number">3.1</span> Sample Space and Random Events</h2>
+<p>In nature, people often encounter two types of phenomena:</p>
+<ul>
+<li><p>One is the <strong>deterministic phenomenon</strong>, which is characterized by conditions under which the result is completely predictable, that is, the same result is observed each time the experiment is conducted. For example, water at 100°C under standard atmospheric pressure inevitably boils.</p></li>
+<li><p>The other is the <strong>random phenomenon</strong>, which is characterized by conditions under which the result cannot be determined with certainty before it occurs, that is, one of several possible outcomes is observed each time the experiment is conducted. For example, when a coin is tossed, the outcome is either heads H or tails T, but unknown before the coin is tossed. Die rolling is also a random phenomenon, whose outcome is an integer from 1 to 6, unknown before the die is rolled. Likewise, for a bi-allelic gene A, the possible alleles are A and a, and the possible corresponding genotypes are AA, Aa, and aa.</p></li>
+</ul>
+<p>The process of obtaining an observation or making a measurement for a random phenomenon/process is called a <strong>random experiment</strong> (briefly, an experiment), and is denoted by E.</p>
+<p>The <strong>sample space Ω</strong> is defined as the set of <strong>all</strong> possible outcomes of the experiment. In the case of the roll of a die, the sample space can be written as the set of the six possible outcomes, Ω = {1, 2, 3, 4, 5, 6}.</p>
+<p>Different experiments will have different sample spaces that can be written in an equivalent way (flipping a coin: Ω ={H, T}, flipping two coins: Ω ={HH, HT, TH, TT}, testing for possible genotypes of a bi-allelic gene A: Ω ={AA, Aa, aa}).</p>
+<p>A <strong>random event A</strong>, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it represents <strong>a number</strong> of possible outcomes for the experiment. In the case of the roll of a die, the event “even number” may be represented by A = {2, 4, 6}, and the event “odd number” as B = {1, 3, 5}. In the case of flipping two coins, an event could be that exactly one of the coins lands Heads, A = {HT, TH}.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For each experiment, two events always exist: the sample space itself which comprises all possible outcomes and the empty set that contains no outcomes represented as A = ∅ and called the impossible event.</p>
+</div>
+</div>
+</section><section id="probability" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="probability">
+<span class="header-section-number">3.2</span> Probability</h2>
+<p>The concept of probability is used in day-to-day life which stands for the probability of occurring or non-occurring of events.</p>
+<p>There are a number of ways of looking at probability and we describe two as the “Frequentist” and “Bayesian” approach.</p>
+<p><strong>A. Frequentist approach</strong></p>
+<p>Consider performing an experiment a large number N of times, under the same experimental conditions. The occurrence of the event A is indicated as the number N(A). The probability of event A is given by:</p>
+<p><span id="eq-probability"><span class="math display">\[ P(A) = \lim_{N\to\infty} \frac{N(A)}{N} \tag{3.1}\]</span></span></p>
+<p>that is, the probability is the relative frequency of occurrence of a given event from many repetitions of the same experiment.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The obvious limitation of this definition is the need to perform the experiment a large number of times. This requirement is not only time consuming but also requires that the experiment be repeatable in the first place, which may or may not be possible. The limitation of this method is evident by considering a coin toss: no matter the number of tosses, the occurrence of heads up will never be exactly 50%, which is what one would expect based on an empirical knowledge of the experiment at hand.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-run" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-run-1.gif" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 3.1: Coin Flips Simulation showing long-term probability close to 0.5.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>B. Bayesian approach</strong></p>
+<p>In this textbook, we’ll focus on “Frequentist” method.</p>
+</section><section id="probability-distributions-for-discrete-outcomes" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="probability-distributions-for-discrete-outcomes">
+<span class="header-section-number">3.3</span> Probability distributions for Discrete Outcomes</h2>
+</section><section id="probability-distributions-for-continuous-outcomes" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="probability-distributions-for-continuous-outcomes">
+<span class="header-section-number">3.4</span> Probability distributions for Continuous Outcomes</h2>
 <section id="normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="normal-distribution"><strong>Normal Distribution</strong></h3>
 <p>We have mentioned the normal distribution several times in this textbook with the promise we would provide more detail later. In this section, we will explore the normal distribution, why it matters, and how we can tell if our distribution is normal or not.</p>
 <section id="historical-background-and-main-properties" class="level4"><h4 class="anchored" data-anchor-id="historical-background-and-main-properties">Historical background and main properties</h4>
@@ -268,8 +323,8 @@ ul.task-list{list-style: none;}
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-dnormal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="normal_files/figure-html/fig-dnormal-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.1: The Normal probability distribution (often called Gaussian or bell-shaped distribution).</figcaption><p></p>
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-dnormal-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 3.2: The Normal probability distribution (often called Gaussian or bell-shaped distribution).</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -297,35 +352,35 @@ Properties of Normal Distribution
 </div>
 <p>&nbsp;</p>
 </section></section><section id="the-mathimatical-type" class="level3"><h3 class="anchored" data-anchor-id="the-mathimatical-type">The mathimatical type</h3>
-<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss">Equation&nbsp;<span>3.1</span></a>:</p>
-<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.1}\]</span></span></p>
-<p>Populations with small values of the standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution concentrated close to the centre, <span class="math inline">\(\mu\)</span>; those with large standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution widely spread along the measurement axis <a href="#fig-compare_normal">Figure&nbsp;<span>3.2</span></a>.</p>
+<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss">Equation&nbsp;<span>3.2</span></a>:</p>
+<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.2}\]</span></span></p>
+<p>Populations with small values of the standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution concentrated close to the centre, <span class="math inline">\(\mu\)</span>; those with large standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution widely spread along the measurement axis <a href="#fig-compare_normal">Figure&nbsp;<span>3.3</span></a>.</p>
 <div id="fig-compare_normal" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-compare_normal-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="normal_files/figure-html/fig-compare_normal-1.png" class="img-fluid figure-img" data-ref-parent="fig-compare_normal" width="672"></p>
-<p></p><figcaption class="figure-caption">(a) Effect of changing mean (mean1 &lt; mean2)</figcaption><p></p>
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-compare_normal-1.png" class="img-fluid figure-img" data-ref-parent="fig-compare_normal" width="672"></p>
+<p></p><figcaption class="figure-caption">(a) Effect of changing mean.</figcaption><p></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-compare_normal-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="normal_files/figure-html/fig-compare_normal-2.png" class="img-fluid figure-img" data-ref-parent="fig-compare_normal" width="672"></p>
-<p></p><figcaption class="figure-caption">(b) Effect of changing standard deviation (sd1 &lt; sd2)</figcaption><p></p>
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-compare_normal-2.png" class="img-fluid figure-img" data-ref-parent="fig-compare_normal" width="672"></p>
+<p></p><figcaption class="figure-caption">(b) Effect of changing standard deviation.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure 3.2: Probability distribution functions of the Normal distributions with different means and standard deviations.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.3: Probability distribution functions of the Normal distributions with different means and standard deviations.</figcaption><p></p>
 </figure>
 </div>
 <p>The ensuing distribution will look like this in a simple case where <span class="math inline">\(\mu\)</span> is 0 and <span class="math inline">\(\sigma^2\)</span> is 1 (Standard Normal distribution).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-simple_normal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="normal_files/figure-html/fig-simple_normal-1.png" class="img-fluid figure-img" width="576"></p>
-<p></p><figcaption class="figure-caption">Figure 3.3: A simple normal density function.</figcaption><p></p>
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-simple_normal-1.png" class="img-fluid figure-img" width="576"></p>
+<p></p><figcaption class="figure-caption">Figure 3.4: A simple normal density function.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -336,8 +391,8 @@ Properties of Normal Distribution
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-basic_parabola" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="normal_files/figure-html/fig-basic_parabola-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 3.4: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-basic_parabola-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figure 3.5: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -346,8 +401,8 @@ Properties of Normal Distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-neg_parabola" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="normal_files/figure-html/fig-neg_parabola-1.png" class="img-fluid figure-img" width="576"></p>
-<p></p><figcaption class="figure-caption">Figure 3.5: An exponentiated negative parabola.</figcaption><p></p>
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-neg_parabola-1.png" class="img-fluid figure-img" width="576"></p>
+<p></p><figcaption class="figure-caption">Figure 3.6: An exponentiated negative parabola.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -361,8 +416,8 @@ Properties of Normal Distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-auc" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="normal_files/figure-html/fig-auc-1.png" class="img-fluid figure-img" width="1152"></p>
-<p></p><figcaption class="figure-caption">Figure 3.6: The area underneath a normal distribution</figcaption><p></p>
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-auc-1.png" class="img-fluid figure-img" width="1152"></p>
+<p></p><figcaption class="figure-caption">Figure 3.7: The area underneath a normal distribution</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -372,14 +427,14 @@ Properties of Normal Distribution
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-standard_normal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="normal_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 3.7: Standard normal distribution with a shaded region</figcaption><p></p>
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figure 3.8: Standard normal distribution with a shaded region</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>3.1</span></a> as following:</p>
-<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{3.2}\]</span></span></p>
+<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>3.2</span></a> as following:</p>
+<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{3.3}\]</span></span></p>
 <p>&nbsp;</p>
 <section id="properties-of-an-approximately-bell-shaped-histogram" class="level4"><h4 class="anchored" data-anchor-id="properties-of-an-approximately-bell-shaped-histogram">Properties of an approximately bell-shaped histogram</h4>
 <p>In an approximately <strong>bell-shaped (normal)</strong> distribution:</p>
@@ -387,8 +442,8 @@ Properties of Normal Distribution
 <li><p>the mean, the median and the mode have very close values</p></li>
 <li><p>the histogram is symmetric about the mean</p></li>
 <li><p>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean</p></li>
-<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.8</span></a> b). Particularly, values between −1 and +1 indicate an approximate bell-shaped curve.</p></li>
-<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.9</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
+<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.9</span></a> b). Particularly, values between −1 and +1 indicate an approximate bell-shaped curve.</p></li>
+<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.10</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
 </ul></section><section id="t-distribution" class="level4"><h4 class="anchored" data-anchor-id="t-distribution"><strong>t-distribution</strong></h4>
 </section><section id="chi-squared-distribution" class="level4"><h4 class="anchored" data-anchor-id="chi-squared-distribution"><strong>Chi-squared distribution</strong></h4>
 </section><section id="f-distribution" class="level4"><h4 class="anchored" data-anchor-id="f-distribution"><strong>F-distribution</strong></h4>
@@ -406,13 +461,13 @@ Tip
 <p>There are two shape statistics that can indicate deviation from normality: <strong>skew</strong> and <strong>kurtosis</strong>.</p>
 <p><strong>Skewness</strong></p>
 <p>Skewness is usually described as a measure of a dataset’s symmetry – or lack of symmetry.</p>
-<p>Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.8</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2">Figure&nbsp;<span>3.8</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.8</span></a> c).</p>
+<p>Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.9</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2">Figure&nbsp;<span>3.9</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.9</span></a> c).</p>
 <p>Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with &gt;1 indicating moderate skewness and &gt;2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-skew2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/skew2.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.8: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.9: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -420,13 +475,13 @@ Tip
 <p>&nbsp;</p>
 <p><strong>Kurtosis</strong></p>
 <p>The other way that distributions can deviate from normality is <strong>kurtosis</strong>. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).</p>
-<p>Distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.9</span></a> a). If the measure of excess kurtosis is <strong>0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.9</span></a> b). Finally, distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.9</span></a> c).</p>
+<p>Distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.10</span></a> a). If the measure of excess kurtosis is <strong>0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.10</span></a> b). Finally, distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.10</span></a> c).</p>
 <p>A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-kurtosis" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/kurtosis.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.9: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.10: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.</figcaption><p></p>
 </figure>
 </div>
 </div>

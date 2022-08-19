@@ -17,7 +17,7 @@ book:
       chapters:
         - introduction.qmd
         - descriptive.qmd
-        - normal.qmd
+        - distributions.qmd
         - estimation.qmd
         - inference.qmd
         - two_samples.qmd

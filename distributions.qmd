@@ -1,4 +1,4 @@
-# Distributions - Normal distribution {#sec-normal}
+# Probability Distributions - Normal distribution {#sec-distributions}
 
 ```{r}
 #| include: false
@@ -9,43 +9,123 @@ library(here)
 library(stevemisc)
 library(patchwork)
 
+library(gganimate)
+
+
 x <- seq(from=4-3*2, to= 4+3*2, length.out=400) # a vector of size 200 with numbers in [-4,4]
 y <- dnorm(x, mean = 4, sd = 2) # y is a vector of the same size as x, with values from the PDF
 
 ```
+
+## Sample Space and Random Events
+
+In nature, people often encounter two types of phenomena:
+
+-   One is the **deterministic phenomenon**, which is characterized by conditions under which the result is completely predictable, that is, the same result is observed each time the experiment is conducted. For example, water at 100°C under standard atmospheric pressure inevitably boils.
+
+-   The other is the **random phenomenon**, which is characterized by conditions under which the result cannot be determined with certainty before it occurs, that is, one of several possible outcomes is observed each time the experiment is conducted. For example, when a coin is tossed, the outcome is either heads H or tails T, but unknown before the coin is tossed. Die rolling is also a random phenomenon, whose outcome is an integer from 1 to 6, unknown before the die is rolled. Likewise, for a bi-allelic gene A, the possible alleles are A and a, and the possible corresponding genotypes are AA, Aa, and aa.
+
+
+The process of obtaining an observation or making a measurement for a random
+phenomenon/process is called a **random experiment** (briefly, an experiment), and is denoted by E.
+
+
+
+The **sample space Ω** is defined as the set of **all** possible outcomes of the experiment. In the case of the roll of a die, the sample space can be written as the set of the six possible outcomes, Ω = {1, 2, 3, 4, 5, 6}. 
+
+Different experiments will have different sample spaces that can be written in an equivalent way (flipping a coin: Ω ={H, T}, flipping two coins: Ω ={HH, HT, TH, TT}, testing for possible genotypes of a bi-allelic gene A: Ω ={AA, Aa, aa}).
+
+
+A **random event A**, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it represents **a number** of possible outcomes for the experiment. In the case of the roll of a die, the event “even number” may be represented by A = {2, 4, 6}, and the event “odd number” as B = {1, 3, 5}.
+In the case of flipping two coins, an event could be that exactly one of the coins lands Heads, A = {HT, TH}.
+
+
+
+:::{.callout-note}
+
+For each experiment, two events always exist: the sample space itself which comprises all possible outcomes and the empty set that contains no outcomes represented as A = ∅ and called the impossible event.
+:::
+
 
 
 
 
 ## Probability
 
+The concept of probability is used in day-to-day life which stands for the probability of occurring or non-occurring of events.
+
+There are a number of ways of looking at probability and we describe two as the "Frequentist" and "Bayesian" approach.
+
+**A. Frequentist approach**
+
+
+Consider performing an experiment a large number N of times, under the same
+experimental conditions. The occurrence of the event A is indicated as the number N(A). The probability of event A is given by:
+
+
+
+$$ P(A) = \lim_{N\to\infty} \frac{N(A)}{N}$$ {#eq-probability}
+
+that is, the probability is the relative frequency of occurrence of a given event from many repetitions of the same experiment. 
+
+
+:::{.callout-important}
+
+The obvious limitation of this definition is the need to perform the experiment a large number of times. This requirement is not only time consuming but also requires that the experiment be repeatable in the first place, which may or may not be possible.
+The limitation of this method is evident by considering a coin toss: no matter the number of tosses, the occurrence of heads up will never be exactly 50%, which is what one would expect based on an empirical knowledge of the experiment at hand.
+
+```{r}
+#| echo: false
+#| label: fig-run
+#| out-width: "100%"
+#| fig-align: "center"
+#| fig-cap: Coin Flips Simulation showing long-term probability close to 0.5.
+
+set.seed(123)
+flips <- sample(c(0, 1), 500, replace = TRUE)
+Trial <- seq(1, 500, 1)
+Trial2 <- seq(1, 500, 1)
+flipsim <- data.frame(flips, Trial, Trial2/10)
+colnames(flipsim) <- c("Heads", "Trial", "time")
+library(transformr)
+flipsim[,"Cum_Heads"] <- cumsum(flipsim$Heads)
+flipsim <- flipsim %>% mutate(Pct_Heads = Cum_Heads/Trial)
+
+
+flipsim %>% ggplot(aes(x = Trial, y = Pct_Heads)) + 
+  geom_point(color = 'red', size = 4) +
+  geom_hline(yintercept = 0.5) +
+  ylim(0, 1) + 
+  transition_time(time) +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+:::
+
+
+
+
+
+
+**B. Bayesian approach**
+ 
+In this textbook, we'll focus on "Frequentist" method.
+
+
+
 
 ## Probability distributions for Discrete Outcomes
 
-
-
-
-
-
-
 ## Probability distributions for Continuous Outcomes
-
-
-
-
-
 
 ### **Normal Distribution**
 
-
 We have mentioned the normal distribution several times in this textbook with the promise we would provide more detail later. In this section, we will explore the normal distribution, why it matters, and how we can tell if our distribution is normal or not.
-
 
 #### Historical background and main properties
 
 There are several important probability distributions in statistics. However, the normal distribution might be the most important. A normal distribution is the familiar "bell curve" and it's a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
-
-
 
 ```{r}
 #| echo: false
@@ -70,29 +150,24 @@ The Normal distribution has the properties summarized as follows:
 ::: {.callout-note icon="false"}
 ## Properties of Normal Distribution
 
-- Bell shaped and symmetrical around the mean. Shape statistics, skewness and excess kurtosis are zero.
+-   Bell shaped and symmetrical around the mean. Shape statistics, skewness and excess kurtosis are zero.
 
-- The peak of the curve lies above the mean
+-   The peak of the curve lies above the mean
 
-- Any position along the horizontal axis (x-axis) can be expressed as a number of standard deviations from the mean
+-   Any position along the horizontal axis (x-axis) can be expressed as a number of standard deviations from the mean
 
-- All three measures of central tendency, the mode (most frequently occurring value), the median (the middlemost value), and the mean (the statistical average), will be the same. 
+-   All three measures of central tendency, the mode (most frequently occurring value), the median (the middlemost value), and the mean (the statistical average), will be the same.
 
-- The total area under the curve equals to 1 (or 100%)
-
+-   The total area under the curve equals to 1 (or 100%)
 :::
 
  
-
-
-
 
 ### The mathimatical type
 
 Gauss' normal distribution, technically a density function, is a distribution defined by two parameters, mean $\mu$ and variance $\sigma^2$. The mean, $\mu$, represents the population mean and is a "location parameter", which defines the central tendency. The variance, $\sigma^2$ is the "scale parameter", which defines the width of the distribution and how short the distribution is. It's formally given as @eq-gauss:
 
 $$ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}} $$ {#eq-gauss}
-
 
 Populations with small values of the standard deviation, $\sigma$, have a distribution concentrated close to the centre, $\mu$; those with large standard deviation, $\sigma$, have a distribution widely spread along the measurement axis @fig-compare_normal.
 
@@ -101,8 +176,8 @@ Populations with small values of the standard deviation, $\sigma$, have a distri
 #| label: fig-compare_normal
 #| fig-cap: Probability distribution functions of the Normal distributions with different means and standard deviations.
 #| fig-subcap: 
-#|   - "Effect of changing mean (mean1 < mean2)"
-#|   - "Effect of changing standard deviation (sd1 < sd2)"
+#|   - "Effect of changing mean."
+#|   - "Effect of changing standard deviation."
 #| layout-ncol: 2
 
 x <- seq(-6, 6, length=200)
@@ -113,31 +188,15 @@ y3 <- dnorm(x, sd= 2)
 plot(x,y1, main="Normal Distribution", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
 axis(1, at = c(0, 2), lab = expression(mu[1], mu[2]))
 lines(x,y2,col="deeppink", lwd = 3)
+text(1.0, 0.4, expression(mu[1] < mu[2]), col="gray30")
 
-
-plot(x,y1, main="Normal Distribution", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
+plot(x,y1, main="Normal Distributions", type = "l", lwd = 3,  xlab = "", ylab = "Probability Density", xaxt='n', frame.plot = FALSE)
 axis(1, at = -4:4, lab=expression(-4*sigma, -3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma, 4*sigma))
 lines(x,y3,col="deeppink", lwd = 3)
 text(1.5, 0.3, expression(sigma[1]))
 text(2.9, 0.10, expression(sigma[2]), col="deeppink")
-
+text(2.5, 0.20, expression(sigma[1] < sigma[2]), col="gray30")
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 The ensuing distribution will look like this in a simple case where $\mu$ is 0 and $\sigma^2$ is 1 (Standard Normal distribution).
 
@@ -309,25 +368,13 @@ In an approximately **bell-shaped (normal)** distribution:
 
 -   the measure of excess kurtosis is close to 0 (mesokurtic) (@fig-kurtosis b). A kurtosis value between −1 and +1 indicates normality.
 
-
-
-
 #### **t-distribution**
-
-
-
 
 #### **Chi-squared distribution**
 
-
-
-
 #### **F-distribution**
 
-
-
-
-::: {.callout-tip}
+::: callout-tip
 **Statistical moments (or shape statistics) and normality**
 
 There are two shape statistics that can indicate deviation from normality: **skew** and **kurtosis**.
@@ -372,8 +419,3 @@ A kurtosis value between −1 and +1 indicates normality and a value between −
 knitr::include_graphics(here("images", "kurtosis.png"))
 ```
 :::
-
-
-
-
-
