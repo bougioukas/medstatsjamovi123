@@ -235,6 +235,8 @@ ul.task-list{list-style: none;}
 <li><a href="#definition-of-probability" id="toc-definition-of-probability" class="nav-link" data-scroll-target="#definition-of-probability">Definition of Probability</a></li>
   <li><a href="#fundamental-properties-of-probability" id="toc-fundamental-properties-of-probability" class="nav-link" data-scroll-target="#fundamental-properties-of-probability">Fundamental Properties of Probability</a></li>
   <li><a href="#the-conditional-probability" id="toc-the-conditional-probability" class="nav-link" data-scroll-target="#the-conditional-probability">The Conditional Probability</a></li>
+  <li><a href="#statistical-independence" id="toc-statistical-independence" class="nav-link" data-scroll-target="#statistical-independence">Statistical Independence</a></li>
+  <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">Bayes’ theorem</a></li>
   </ul>
 </li>
   <li><a href="#probability-distributions-for-discrete-outcomes" id="toc-probability-distributions-for-discrete-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-discrete-outcomes"> <span class="header-section-number">3.3</span> Probability distributions for Discrete Outcomes</a></li>
@@ -265,7 +267,7 @@ ul.task-list{list-style: none;}
 
 </header><section id="sample-space-and-random-events" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="sample-space-and-random-events">
 <span class="header-section-number">3.1</span> Sample Space and Random Events</h2>
-<p>In nature, people often encounter two types of phenomena:</p>
+<p>In nature, people often encounter two types of <strong>phenomena</strong>:</p>
 <ul>
 <li><p>One is the <strong>deterministic phenomenon</strong>, which is characterized by conditions under which the result is completely predictable, that is, the same result is observed each time the experiment is conducted. For example, water at 100°C under standard atmospheric pressure inevitably boils.</p></li>
 <li><p>The other is the <strong>random phenomenon</strong>, which is characterized by conditions under which the result cannot be determined with certainty before it occurs, that is, one of several possible outcomes is observed each time the experiment is conducted. For example, when a coin is tossed, the outcome is either heads H or tails T, but unknown before the coin is tossed. Die rolling is also a random phenomenon, whose outcome is an integer from 1 to 6, unknown before the die is rolled. Likewise, for a bi-allelic gene A, the possible alleles are A and a, and the possible corresponding genotypes are AA, Aa, and aa.</p></li>
@@ -284,13 +286,13 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For each experiment, two events always exist: the sample space itself which comprises all possible outcomes and the empty set that contains no outcomes represented as A = ∅ and called the impossible event.</p>
+<p>For each experiment, two events always exist: the <strong>sample space</strong> itself which comprises all possible outcomes and the <strong>empty set</strong> that contains no outcomes represented as <strong>A = ∅</strong> and called the impossible event.</p>
 </div>
 </div>
 </section><section id="probability" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="probability">
 <span class="header-section-number">3.2</span> Probability</h2>
 <p>The concept of probability is used in day-to-day life which stands for the probability of occurring or non-occurring of events.</p>
-<p>The first step towards determining the probability of an event is to establish a number of basic rules that capture the meaning of probability. The probability of an event is required to satisfy three <strong>axioms</strong> defined by <strong>Kolmogorov</strong>:</p>
+<p>The first step towards determining the probability of an event is to establish a number of <strong>basic rules</strong> that capture the meaning of probability. The probability of an event is required to satisfy three <strong>axioms</strong> defined by <strong>Kolmogorov</strong>:</p>
 <div class="callout-warning callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -311,25 +313,23 @@ Note
 </ol>
 </div>
 </div>
-<p>These axioms should be regarded as the basic “ground rules” of the theory of probability, but they provide no guidance on how event probabilities should be assigned. For this purpose, there are two major avenues available. One is based on the repetition of the experiments a large number of times under the same conditions, and goes under the name of the <strong>frequentist approach</strong>. The other is based on a more theoretical knowledge of the experiment, but without the experimental requirement of a large number of repetitions, and is referred to as the <strong>Bayesian approach</strong>.</p>
+<p>These axioms should be regarded as the basic “ground rules” of the theory of probability, but they provide no guidance on how event probabilities should be assigned. For this purpose, there are <strong>two</strong> major avenues available. One is based on the repetition of the experiments a large number of times under the same conditions, and goes under the name of the <strong>frequentist approach</strong>. The other is based on a more theoretical knowledge of the experiment, but without the experimental requirement of a large number of repetitions, and is referred to as the <strong>Bayesian approach</strong>.</p>
 <section id="definition-of-probability" class="level3"><h3 class="anchored" data-anchor-id="definition-of-probability">Definition of Probability</h3>
 <p><strong>A. Frequentist approach</strong></p>
-<p>Consider performing an experiment a large number N of times, under the same experimental conditions. The occurrence of the event A is indicated as the number N(A). The probability of event A is given by:</p>
+<p>Consider performing an experiment a <strong>large number</strong> N of times, under the same experimental conditions. The occurrence of the event A is indicated as the number N(A). The probability of event A is given by:</p>
 <p><span id="eq-probability"><span class="math display">\[ P(A) = \lim_{N\to\infty} \frac{N(A)}{N} \tag{3.1}\]</span></span></p>
 <p>that is, the probability is the relative frequency of occurrence of a given event from many repetitions of the same experiment.</p>
-<div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<p>The obvious <strong>limitation</strong> of this definition is the need to perform the experiment a <strong>large number of times</strong>. This requirement is not only time consuming but also requires that the experiment be repeatable in the first place, which may or may not be possible. The limitation of this method is evident by considering a <strong>coin toss</strong>: no matter the number of tosses, the occurrence of heads up <strong>will never be exactly</strong> 50%, which is what one would expect based on an empirical knowledge of the experiment at hand <a href="#fig-run">Figure&nbsp;<span>3.1</span></a>.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Coin Flips Simulation
+Important
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The obvious limitation of this definition is the need to perform the experiment a large number of times. This requirement is not only time consuming but also requires that the experiment be repeatable in the first place, which may or may not be possible. The limitation of this method is evident by considering a coin toss: no matter the number of tosses, the occurrence of heads up will never be exactly 50%, which is what one would expect based on an empirical knowledge of the experiment at hand.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-run" class="quarto-figure quarto-figure-center anchored">
@@ -341,8 +341,7 @@ Coin Flips Simulation
 </div>
 </div>
 </div>
-</div>
-<p>Therefore, we may say that the probability of an event is the relative frequency of this set of outcomes over an indefinitely large number of experiments.</p>
+<p>Therefore, we may say that the probability of an event is the <strong>relative frequency</strong> of this set of outcomes over an indefinitely large number of experiments.</p>
 <p><span id="eq-probability2"><span class="math display">\[ P(A) \approx  \frac{number\ of\ times \ A\ occured}{total\ number\ of\  experiments} \tag{3.2}\]</span></span></p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -355,15 +354,13 @@ Examples
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Prevalense of blood type</strong></p>
-<p>Sampling many (say, 100,000) people in the Greece, finding that roughly 45,000 of them had blood type O.</p>
-<p><span class="math display">\[ P(0) \approx  \frac{number\ of\ people \ with\ blood\ type\ O}{total\ number\ of\  sample}= \frac{45,000}{100,000}=0.45\]</span></p>
-<p>is the estimate for the probability for the event “having blood type 0.”</p>
+<p>Sampling many (say, 100,000) people in the Greece, finding that roughly 45,000 of them had blood type O. <span class="math display">\[ P(O) \approx  \frac{number\ of\ people \ with\ blood\ type\ O}{total\ number\ of\  sample}= \frac{45,000}{100,000}=0.45\]</span> is the estimate for the probability for the event “having blood type O.”</p>
 <p><strong>Prevalence of a disease</strong></p>
-<p>Suppose the prevalence of diabetes in the population is 1%. The prevalence of a disease is the number of people in a population with the disease at a certain time divided by the number of people in the population. If a trial was then conducted by randomly selecting one person from the population and testing him or her for diabetes, the individual would be expected to be diabetic with probability 0.01. If this type of sampling of individuals from the population were repeated, then the proportion of diabetics in the total sample taken would be expected to be approximately 1%.</p>
+<p>Suppose the <strong>prevalence of diabetes</strong> in the population is <strong>1%</strong>. The prevalence of a disease is the number of people in a population with the disease at a certain time divided by the number of people in the population. If a trial was then conducted by <strong>randomly selecting one person</strong> from the population and testing him or her for diabetes, the individual would be <strong>expected to be diabetic with probability 0.01</strong>. If this type of sampling of individuals from the population were repeated, then the proportion of diabetics in the total sample taken would be expected to be approximately 1%.</p>
 </div>
 </div>
 <p><strong>B. Bayesian approach</strong></p>
-<p>Another method to assign probabilities is to use knowledge of the experiment, both theoretical and experimental, but without the need for extensive experimental data. The probability assigned to an event represents the degree of belief that the event will occur in a given try of the experiment, and it implies an element of subjectivity which will become more evident with Bayes’ theorem.</p>
+<p>Another method to assign probabilities is to use <strong>knowledge</strong> of the experiment, both theoretical and experimental, but without the need for extensive experimental data. The probability assigned to an event represents the <strong>degree of belief</strong> that the event will occur in a given try of the experiment, and it implies an element of subjectivity which will become more evident with Bayes’ theorem.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -379,7 +376,7 @@ Example - Coin toss experiment
 </div>
 <p>In this textbook, we’ll focus on “Frequentist” approach of probability.</p>
 </section><section id="fundamental-properties-of-probability" class="level3"><h3 class="anchored" data-anchor-id="fundamental-properties-of-probability">Fundamental Properties of Probability</h3>
-<p>The following properties are useful to assign and manipulate event probabilities.</p>
+<p>The following <strong>properties</strong> are useful to assign and manipulate event probabilities.</p>
 <div class="callout-warning callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -402,7 +399,7 @@ Fundamental Properties of Probability
 </div>
 </div>
 </section><section id="the-conditional-probability" class="level3"><h3 class="anchored" data-anchor-id="the-conditional-probability">The Conditional Probability</h3>
-<p>The conditional probability is indicated as P(A/B) or A given B. The following relationship defines the conditional probability:</p>
+<p>The conditional probability is indicated as <strong>P(A|B)</strong> or A <strong>given</strong> B. The following relationship defines the conditional probability:</p>
 <p><span id="eq-conditional"><span class="math display">\[P(A ∩ B) = P(A|B) · P(B) \tag{3.5}\]</span></span></p>
 <div class="callout-caution callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -416,21 +413,82 @@ Example - Conditional probability with dice
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Calculate the probability of obtaining 8 as the sum of two rolls of a die, given that the first roll was a 3.</p>
-<p>To this end, it is useful to define the following two events:</p>
+<p>Calculate the probability of obtaining <strong>8 as the sum of two rolls</strong> of a die, <strong>given that the first roll was a 3</strong>.</p>
+<p>It is useful to define the following two events:</p>
 <ul>
-<li><p>A = {The sum of two rolls is 8}</p></li>
-<li><p>B = {The first roll shows 3}</p></li>
+<li><p><strong>A</strong> = {The sum of two rolls is 8}. The sample space consists of all ordered pairs of numbers from 1 to 6. That is, S = {(1, 1), (1, 2),… , (1, 6), (2, 1),… , (6, 6)}.</p></li>
+<li><p><strong>B</strong> = {The first roll shows 3}. The sample space consists of S = {1, 2, 3, 4, 5, 6}</p></li>
 </ul>
-<p>Event A is given by A = {(2,6), (3,5), (4,4), (5,3), (6,2)}, and since each combination has a probability of 1/36, P(A) = 5/36.</p>
-<p>The probability of event B is P(B) = 1/6 since it relates to the outcomes of just one roll of the die.</p>
-<p>Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of (3,5) takes place, thus with probability P(A ∩ B) =1/36.</p>
+<p><strong>Event A</strong> is given by outcomes A={(2,6), (3,5), (4,4), (5,3), (6,2)} :</p>
+<table class="table"><tbody>
+<tr class="odd">
+<td><strong>1st roll</strong></td>
+<td>2</td>
+<td><strong>3</strong></td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td><strong>2nd roll</strong></td>
+<td>6</td>
+<td><strong>5</strong></td>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td><strong>Sum</strong></td>
+<td>8</td>
+<td><strong>8</strong></td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+</tr>
+</tbody></table>
+<p>and since each combination has a probability of 1/36, <strong>P(A) = 5/36</strong>.</p>
+<p>The probability of event B is <strong>P(B) = 1/6</strong> since it relates to the outcomes of just one roll of the die.</p>
+<p>Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of (3,5) takes place, thus with probability <strong>P(A ∩ B) =1/36</strong>.</p>
 <p>According to the definition of conditional probability <a href="#eq-conditional">Equation&nbsp;<span>3.5</span></a>, the probability of interest is:</p>
 <p><span class="math inline">\(P(A|B) = \frac{P(A ∩ B)}{P(B)} = \frac{1/36}{1/6} = \frac{1}{6}\)</span></p>
-<p>The occurrence of 3 in the first roll has therefore increased the probability of A from P(A) = 5/36 to P(A|B) = 1/6, since not all outcomes of the first roll would be equally conducive to a sum of 8 in two rolls.</p>
+<p>The occurrence of 3 in the first roll has therefore <strong>increased</strong> the probability of A from P(A) = 5/36 to P(A|B) = 1/6.</p>
 </div>
 </div>
 </div>
+</section><section id="statistical-independence" class="level3"><h3 class="anchored" data-anchor-id="statistical-independence">Statistical Independence</h3>
+<p>The concept of statistical independence among events means that the occurrence of one event has <strong>no influence</strong> on the occurrence of other events. Consider, for example, rolling two dice, one after the other: the outcome of one die is independent of the other and the two tosses are said to be statistically independent.</p>
+<p>On the other hand, consider rolling two dice, and being interested in the following pair of events: the first is the outcome of the roll of die 1 and the second is the sum the rolls of die 1 and die 2. It is clear that the outcome of the second event—e.g., the sum of both dice—depends on the first toss and the two events are not independent.</p>
+<p>Two events A and B are said to be <strong>statistically independent</strong> if:</p>
+<p><span id="eq-independent"><span class="math display">\[P(A ∩ B) = P(A) · P(B) \tag{3.6}\]</span></span></p>
+<p>This definition follows directly from <a href="#eq-conditional">Equation&nbsp;<span>3.5</span></a>. In fact, if A and B are statistically independent, then the conditional probability is P(A|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A. A few examples illustrate the meaning of this definition.</p>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example - Statistical independence with dice
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Determine the probability of obtaining two 3s when rolling two dice. This event can be decomposed in two events:</p>
+<ul>
+<li><p><strong>A</strong> = {die 1 shows 3, and die 2 shows any number},</p></li>
+<li><p><strong>B</strong> = {die 2 shows 3, and die 1 shows any number}.</p></li>
+</ul>
+<p>It is natural to assume that P(A) = 1/6, P(B) = 1/6, and state that the two events A and B are independent by nature, since each event involves a different die, which has no knowledge of the outcome of the other one; the same would be true also of the same die tossed two times. The event of interest is C = A ∩ B, and the definition of probability of two statistically independent events leads to <span class="math inline">\(P(C) = P(A ∩ B) = P(A) · P(B) = 1/36\)</span>.</p>
+<p>This result can be confirmed by a direct count of all possible outcomes in the toss of two dice, and the fact that there is only one combination out of 36 that gives rise to two consecutive 3s.</p>
+</div>
+</div>
+</div>
+</section><section id="bayes-theorem" class="level3"><h3 class="anchored" data-anchor-id="bayes-theorem">Bayes’ theorem</h3>
+<p>The theorem can be written as:</p>
+<p><span id="eq-bayes"><span class="math display">\[P(A|B) = \frac{P(B|A)P(A)}{P(B)} \tag{3.7}\]</span></span></p>
+<p>where A and B are events and <span class="math inline">\(P(B)\neq 0\)</span>.</p>
+<p>The experiment B can be considered as the data collected in a given experiment. The event A is a model that is used to describe the data.</p>
+<p>Accordingly, the probabilities involved in Bayes’ theorem can be interpreted as follows: (a) P(B|A) is the probability, or likelihood L, of the data given the specified model. Notice how P(B|A) means that the model A is given, or known. (b) P(A) is the probability of the model A, without any knowledge of the data.This term is interpreted as a prior probability, or the degree of belief that the model is true before the measurements are made. (c) P(B) is the probability of collecting the dataset B. (d) Finally, P(A/B) is the posterior probability of the model after the data have been collected.The posterior probability is the ultimate goal of the analysis since it describes the probability of the model based on the collection of data.</p>
 </section></section><section id="probability-distributions-for-discrete-outcomes" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="probability-distributions-for-discrete-outcomes">
 <span class="header-section-number">3.3</span> Probability distributions for Discrete Outcomes</h2>
 </section><section id="probability-distributions-for-continuous-outcomes" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="probability-distributions-for-continuous-outcomes">
@@ -471,8 +529,8 @@ Properties of Normal Distribution
 </div>
 <p>&nbsp;</p>
 </section></section><section id="the-mathimatical-type" class="level3"><h3 class="anchored" data-anchor-id="the-mathimatical-type">The mathimatical type</h3>
-<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss">Equation&nbsp;<span>3.6</span></a>:</p>
-<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.6}\]</span></span></p>
+<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss">Equation&nbsp;<span>3.8</span></a>:</p>
+<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.8}\]</span></span></p>
 <p>Populations with small values of the standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution concentrated close to the centre, <span class="math inline">\(\mu\)</span>; those with large standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution widely spread along the measurement axis <a href="#fig-compare_normal">Figure&nbsp;<span>3.3</span></a>.</p>
 <div id="fig-compare_normal" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
@@ -552,8 +610,8 @@ Properties of Normal Distribution
 </div>
 </div>
 </div>
-<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>3.6</span></a> as following:</p>
-<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{3.7}\]</span></span></p>
+<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>3.8</span></a> as following:</p>
+<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{3.9}\]</span></span></p>
 <p>&nbsp;</p>
 <section id="properties-of-an-approximately-bell-shaped-histogram" class="level4"><h4 class="anchored" data-anchor-id="properties-of-an-approximately-bell-shaped-histogram">Properties of an approximately bell-shaped histogram</h4>
 <p>In an approximately <strong>bell-shaped (normal)</strong> distribution:</p>
