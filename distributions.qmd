@@ -54,10 +54,27 @@ For each experiment, two events always exist: the sample space itself which comp
 
 The concept of probability is used in day-to-day life which stands for the probability of occurring or non-occurring of events.
 
-There are a number of ways of looking at probability and we describe two as the "Frequentist" and "Bayesian" approach.
+
+The first step towards determining the probability of an event is to establish a number of basic rules that capture the meaning of probability. The probability of an event is required to satisfy three **axioms** defined by **Kolmogorov**:
+
+::: {.callout-warning icon="false"}
+## **The Kolmogorov Axioms**
+
+1. The probability of an event A is a non-negative number, **P(A) ≥ 0**
+1. The probability of all possible outcomes, or sample space, is **P(Ω) = 1**
+1. If A and B are two mutually exclusive events, then **P(A ∪ B) = P(A) + P(B)**
+
+:::
+
+
+These axioms should be regarded as the basic “ground rules” of the theory of probability, but they provide no guidance on how event probabilities should be assigned. For this purpose, there are two major avenues available. One is based on the repetition of the experiments a large number of times under the same conditions, and goes under the name of the **frequentist approach**.
+The other is based on a more theoretical knowledge of the experiment, but without the experimental requirement of a large number of repetitions, and is referred to as the **Bayesian approach**.
+
+
+
+### Definition of Probability
 
 **A. Frequentist approach**
-
 
 Consider performing an experiment a large number N of times, under the same
 experimental conditions. The occurrence of the event A is indicated as the number N(A). The probability of event A is given by:
@@ -69,7 +86,8 @@ $$ P(A) = \lim_{N\to\infty} \frac{N(A)}{N}$$ {#eq-probability}
 that is, the probability is the relative frequency of occurrence of a given event from many repetitions of the same experiment. 
 
 
-:::{.callout-important}
+:::{.callout-caution collapse="true"}
+## Coin Flips Simulation
 
 The obvious limitation of this definition is the need to perform the experiment a large number of times. This requirement is not only time consuming but also requires that the experiment be repeatable in the first place, which may or may not be possible.
 The limitation of this method is evident by considering a coin toss: no matter the number of tosses, the occurrence of heads up will never be exactly 50%, which is what one would expect based on an empirical knowledge of the experiment at hand.
@@ -83,34 +101,127 @@ The limitation of this method is evident by considering a coin toss: no matter t
 
 set.seed(123)
 flips <- sample(c(0, 1), 500, replace = TRUE)
-Trial <- seq(1, 500, 1)
-Trial2 <- seq(1, 500, 1)
-flipsim <- data.frame(flips, Trial, Trial2/10)
-colnames(flipsim) <- c("Heads", "Trial", "time")
-library(transformr)
+N <- seq(1, 500, 1)
+flipsim <- data.frame(flips, N)
+colnames(flipsim) <- c("Heads", "N")
 flipsim[,"Cum_Heads"] <- cumsum(flipsim$Heads)
-flipsim <- flipsim %>% mutate(Pct_Heads = Cum_Heads/Trial)
+
+flipsim <- flipsim %>% 
+  mutate(Pct_Heads = Cum_Heads/N)
 
 
-flipsim %>% ggplot(aes(x = Trial, y = Pct_Heads)) + 
+flipsim %>% ggplot(aes(x = N, y = Pct_Heads)) + 
   geom_point(color = 'red', size = 4) +
   geom_hline(yintercept = 0.5) +
   ylim(0, 1) + 
-  transition_time(time) +
+  transition_time(N) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
+:::
+
+
+Therefore, we may say that the probability of an event is the relative frequency of this set of outcomes over an indefinitely large number of experiments.
+
+$$ P(A) \approx  \frac{number\ of\ times \ A\ occured}{total\ number\ of\  experiments}$$ {#eq-probability2}
+
+
+
+:::{.callout-note}
+## Examples
+
+**Prevalense of blood type**
+
+Sampling many (say, 100,000) people in the Greece, finding that roughly 45,000 of them had blood type O. 
+$$ P(0) \approx  \frac{number\ of\ people \ with\ blood\ type\ O}{total\ number\ of\  sample}= \frac{45,000}{100,000}=0.45$$
+is the estimate for the probability for the event “having blood type 0.”
+
+
+
+**Prevalence of a disease**
+
+Suppose the prevalence of diabetes in the population is 1%. The prevalence of a disease is the number of people in a population with the disease at a certain time divided by the number of people in the population. If a trial was then conducted by randomly selecting one person from the population and testing
+him or her for diabetes, the individual would be expected to be diabetic with
+probability 0.01. If this type of sampling of individuals from the population
+were repeated, then the proportion of diabetics in the total sample taken
+would be expected to be approximately 1%.
 
 :::
 
 
 
-
-
-
 **B. Bayesian approach**
  
-In this textbook, we'll focus on "Frequentist" method.
+Another method to assign probabilities is to use knowledge of the experiment, both theoretical and experimental, but without the need for extensive experimental data.
+The probability assigned to an event represents the degree of belief that the event will occur in a given try of the experiment, and it implies an element of subjectivity which will become more evident with Bayes’ theorem.
+ 
+ 
+:::{.callout-note}
+## Example - Coin toss experiment
+In the coin toss experiment, the determination of the subjective probability for events “Heads up” or “Tails up” relies on the knowledge that the coin is **unbiased**, and therefore it must be true that P(T) = P(H). With this information, we can then simply use the Kolmogorov axioms to state that P(T) + P(H) = 1, and therefore obtain the intuitive result that P(T) = P(H) = 1/2.
+:::
+ 
+ 
+In this textbook, we'll focus on "Frequentist" approach of probability.
+
+
+
+### Fundamental Properties of Probability
+
+The following properties are useful to assign and manipulate event probabilities.
+
+::: {.callout-warning icon="false"}
+## Fundamental Properties of Probability
+
+1. The probability of the null event is zero, **P(∅) = 0**.
+
+1. The probability of the complementary event A satisfies the property:
+
+$$P(A) = 1 − P(A)$$ {#eq-complementary}
+
+1. The probability of the union of two events satisfies the general property that:
+
+$$P(A ∪ B) = P(A) + P(B) − P(A ∩ B)$$ {#eq-union}
+
+:::
+
+
+
+### The Conditional Probability
+
+The conditional probability is indicated as P(A/B) or A given B. The following relationship defines the conditional probability:
+
+ $$P(A ∩ B) = P(A|B) · P(B)$$ {#eq-conditional}
+ 
+ 
+:::{.callout-caution collapse="true"}
+## Example - Conditional probability with dice
+
+Calculate the probability of obtaining 8 as the sum of two rolls of a die, given that the first roll was a 3.
+
+To this end, it is useful to define the following two events:
+
+- A = {The sum of two rolls is 8}
+
+- B = {The first roll shows 3}
+ 
+ 
+Event A is given by A = {(2,6), (3,5), (4,4), (5,3), (6,2)}, and since each combination has a probability of 1/36, P(A) = 5/36. 
+ 
+The probability of event B is P(B) = 1/6 since it relates to the outcomes of just one roll of the die.
+
+Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of (3,5) takes place, thus with probability P(A ∩ B) =1/36.
+
+According to the definition of conditional probability @eq-conditional, the probability of interest is:
+
+$P(A|B) = \frac{P(A ∩ B)}{P(B)} = \frac{1/36}{1/6} = \frac{1}{6}$
+
+
+The occurrence of 3 in the first roll has therefore increased the probability of A from P(A) = 5/36 to P(A|B) = 1/6, since not all outcomes of the first roll would be equally conducive to a sum of 8 in two rolls.
+
+::: 
+ 
+ 
 
 
 

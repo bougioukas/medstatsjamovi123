@@ -229,7 +229,14 @@ ul.task-list{list-style: none;}
    
   <ul>
 <li><a href="#sample-space-and-random-events" id="toc-sample-space-and-random-events" class="nav-link active" data-scroll-target="#sample-space-and-random-events"> <span class="header-section-number">3.1</span> Sample Space and Random Events</a></li>
-  <li><a href="#probability" id="toc-probability" class="nav-link" data-scroll-target="#probability"> <span class="header-section-number">3.2</span> Probability</a></li>
+  <li>
+<a href="#probability" id="toc-probability" class="nav-link" data-scroll-target="#probability"> <span class="header-section-number">3.2</span> Probability</a>
+  <ul class="collapse">
+<li><a href="#definition-of-probability" id="toc-definition-of-probability" class="nav-link" data-scroll-target="#definition-of-probability">Definition of Probability</a></li>
+  <li><a href="#fundamental-properties-of-probability" id="toc-fundamental-properties-of-probability" class="nav-link" data-scroll-target="#fundamental-properties-of-probability">Fundamental Properties of Probability</a></li>
+  <li><a href="#the-conditional-probability" id="toc-the-conditional-probability" class="nav-link" data-scroll-target="#the-conditional-probability">The Conditional Probability</a></li>
+  </ul>
+</li>
   <li><a href="#probability-distributions-for-discrete-outcomes" id="toc-probability-distributions-for-discrete-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-discrete-outcomes"> <span class="header-section-number">3.3</span> Probability distributions for Discrete Outcomes</a></li>
   <li>
 <a href="#probability-distributions-for-continuous-outcomes" id="toc-probability-distributions-for-continuous-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-continuous-outcomes"> <span class="header-section-number">3.4</span> Probability distributions for Continuous Outcomes</a>
@@ -283,20 +290,44 @@ Note
 </section><section id="probability" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="probability">
 <span class="header-section-number">3.2</span> Probability</h2>
 <p>The concept of probability is used in day-to-day life which stands for the probability of occurring or non-occurring of events.</p>
-<p>There are a number of ways of looking at probability and we describe two as the “Frequentist” and “Bayesian” approach.</p>
+<p>The first step towards determining the probability of an event is to establish a number of basic rules that capture the meaning of probability. The probability of an event is required to satisfy three <strong>axioms</strong> defined by <strong>Kolmogorov</strong>:</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<strong>The Kolmogorov Axioms</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>The probability of an event A is a non-negative number, <strong>P(A) ≥ 0</strong>
+</li>
+<li>The probability of all possible outcomes, or sample space, is <strong>P(Ω) = 1</strong>
+</li>
+<li>If A and B are two mutually exclusive events, then <strong>P(A ∪ B) = P(A) + P(B)</strong>
+</li>
+</ol>
+</div>
+</div>
+<p>These axioms should be regarded as the basic “ground rules” of the theory of probability, but they provide no guidance on how event probabilities should be assigned. For this purpose, there are two major avenues available. One is based on the repetition of the experiments a large number of times under the same conditions, and goes under the name of the <strong>frequentist approach</strong>. The other is based on a more theoretical knowledge of the experiment, but without the experimental requirement of a large number of repetitions, and is referred to as the <strong>Bayesian approach</strong>.</p>
+<section id="definition-of-probability" class="level3"><h3 class="anchored" data-anchor-id="definition-of-probability">Definition of Probability</h3>
 <p><strong>A. Frequentist approach</strong></p>
 <p>Consider performing an experiment a large number N of times, under the same experimental conditions. The occurrence of the event A is indicated as the number N(A). The probability of event A is given by:</p>
 <p><span id="eq-probability"><span class="math display">\[ P(A) = \lim_{N\to\infty} \frac{N(A)}{N} \tag{3.1}\]</span></span></p>
 <p>that is, the probability is the relative frequency of occurrence of a given event from many repetitions of the same experiment.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Important
+Coin Flips Simulation
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The obvious limitation of this definition is the need to perform the experiment a large number of times. This requirement is not only time consuming but also requires that the experiment be repeatable in the first place, which may or may not be possible. The limitation of this method is evident by considering a coin toss: no matter the number of tosses, the occurrence of heads up will never be exactly 50%, which is what one would expect based on an empirical knowledge of the experiment at hand.</p>
 <div class="cell" data-layout-align="center">
@@ -310,9 +341,97 @@ Important
 </div>
 </div>
 </div>
+</div>
+<p>Therefore, we may say that the probability of an event is the relative frequency of this set of outcomes over an indefinitely large number of experiments.</p>
+<p><span id="eq-probability2"><span class="math display">\[ P(A) \approx  \frac{number\ of\ times \ A\ occured}{total\ number\ of\  experiments} \tag{3.2}\]</span></span></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Examples
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Prevalense of blood type</strong></p>
+<p>Sampling many (say, 100,000) people in the Greece, finding that roughly 45,000 of them had blood type O.</p>
+<p><span class="math display">\[ P(0) \approx  \frac{number\ of\ people \ with\ blood\ type\ O}{total\ number\ of\  sample}= \frac{45,000}{100,000}=0.45\]</span></p>
+<p>is the estimate for the probability for the event “having blood type 0.”</p>
+<p><strong>Prevalence of a disease</strong></p>
+<p>Suppose the prevalence of diabetes in the population is 1%. The prevalence of a disease is the number of people in a population with the disease at a certain time divided by the number of people in the population. If a trial was then conducted by randomly selecting one person from the population and testing him or her for diabetes, the individual would be expected to be diabetic with probability 0.01. If this type of sampling of individuals from the population were repeated, then the proportion of diabetics in the total sample taken would be expected to be approximately 1%.</p>
+</div>
+</div>
 <p><strong>B. Bayesian approach</strong></p>
-<p>In this textbook, we’ll focus on “Frequentist” method.</p>
-</section><section id="probability-distributions-for-discrete-outcomes" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="probability-distributions-for-discrete-outcomes">
+<p>Another method to assign probabilities is to use knowledge of the experiment, both theoretical and experimental, but without the need for extensive experimental data. The probability assigned to an event represents the degree of belief that the event will occur in a given try of the experiment, and it implies an element of subjectivity which will become more evident with Bayes’ theorem.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example - Coin toss experiment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the coin toss experiment, the determination of the subjective probability for events “Heads up” or “Tails up” relies on the knowledge that the coin is <strong>unbiased</strong>, and therefore it must be true that P(T) = P(H). With this information, we can then simply use the Kolmogorov axioms to state that P(T) + P(H) = 1, and therefore obtain the intuitive result that P(T) = P(H) = 1/2.</p>
+</div>
+</div>
+<p>In this textbook, we’ll focus on “Frequentist” approach of probability.</p>
+</section><section id="fundamental-properties-of-probability" class="level3"><h3 class="anchored" data-anchor-id="fundamental-properties-of-probability">Fundamental Properties of Probability</h3>
+<p>The following properties are useful to assign and manipulate event probabilities.</p>
+<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Fundamental Properties of Probability
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>The probability of the null event is zero, <strong>P(∅) = 0</strong>.</p></li>
+<li><p>The probability of the complementary event A satisfies the property:</p></li>
+</ol>
+<p><span id="eq-complementary"><span class="math display">\[P(A) = 1 − P(A) \tag{3.3}\]</span></span></p>
+<ol type="1">
+<li>The probability of the union of two events satisfies the general property that:</li>
+</ol>
+<p><span id="eq-union"><span class="math display">\[P(A ∪ B) = P(A) + P(B) − P(A ∩ B) \tag{3.4}\]</span></span></p>
+</div>
+</div>
+</section><section id="the-conditional-probability" class="level3"><h3 class="anchored" data-anchor-id="the-conditional-probability">The Conditional Probability</h3>
+<p>The conditional probability is indicated as P(A/B) or A given B. The following relationship defines the conditional probability:</p>
+<p><span id="eq-conditional"><span class="math display">\[P(A ∩ B) = P(A|B) · P(B) \tag{3.5}\]</span></span></p>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example - Conditional probability with dice
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Calculate the probability of obtaining 8 as the sum of two rolls of a die, given that the first roll was a 3.</p>
+<p>To this end, it is useful to define the following two events:</p>
+<ul>
+<li><p>A = {The sum of two rolls is 8}</p></li>
+<li><p>B = {The first roll shows 3}</p></li>
+</ul>
+<p>Event A is given by A = {(2,6), (3,5), (4,4), (5,3), (6,2)}, and since each combination has a probability of 1/36, P(A) = 5/36.</p>
+<p>The probability of event B is P(B) = 1/6 since it relates to the outcomes of just one roll of the die.</p>
+<p>Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of (3,5) takes place, thus with probability P(A ∩ B) =1/36.</p>
+<p>According to the definition of conditional probability <a href="#eq-conditional">Equation&nbsp;<span>3.5</span></a>, the probability of interest is:</p>
+<p><span class="math inline">\(P(A|B) = \frac{P(A ∩ B)}{P(B)} = \frac{1/36}{1/6} = \frac{1}{6}\)</span></p>
+<p>The occurrence of 3 in the first roll has therefore increased the probability of A from P(A) = 5/36 to P(A|B) = 1/6, since not all outcomes of the first roll would be equally conducive to a sum of 8 in two rolls.</p>
+</div>
+</div>
+</div>
+</section></section><section id="probability-distributions-for-discrete-outcomes" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="probability-distributions-for-discrete-outcomes">
 <span class="header-section-number">3.3</span> Probability distributions for Discrete Outcomes</h2>
 </section><section id="probability-distributions-for-continuous-outcomes" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="probability-distributions-for-continuous-outcomes">
 <span class="header-section-number">3.4</span> Probability distributions for Continuous Outcomes</h2>
@@ -352,8 +471,8 @@ Properties of Normal Distribution
 </div>
 <p>&nbsp;</p>
 </section></section><section id="the-mathimatical-type" class="level3"><h3 class="anchored" data-anchor-id="the-mathimatical-type">The mathimatical type</h3>
-<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss">Equation&nbsp;<span>3.2</span></a>:</p>
-<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.2}\]</span></span></p>
+<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss">Equation&nbsp;<span>3.6</span></a>:</p>
+<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.6}\]</span></span></p>
 <p>Populations with small values of the standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution concentrated close to the centre, <span class="math inline">\(\mu\)</span>; those with large standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution widely spread along the measurement axis <a href="#fig-compare_normal">Figure&nbsp;<span>3.3</span></a>.</p>
 <div id="fig-compare_normal" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
@@ -433,8 +552,8 @@ Properties of Normal Distribution
 </div>
 </div>
 </div>
-<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>3.2</span></a> as following:</p>
-<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{3.3}\]</span></span></p>
+<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>3.6</span></a> as following:</p>
+<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{3.7}\]</span></span></p>
 <p>&nbsp;</p>
 <section id="properties-of-an-approximately-bell-shaped-histogram" class="level4"><h4 class="anchored" data-anchor-id="properties-of-an-approximately-bell-shaped-histogram">Properties of an approximately bell-shaped histogram</h4>
 <p>In an approximately <strong>bell-shaped (normal)</strong> distribution:</p>
