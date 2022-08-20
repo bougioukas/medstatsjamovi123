@@ -313,6 +313,24 @@ Note
 </ol>
 </div>
 </div>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example - Mutually exclusive with dice
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Suppose we throw a six-die what is the probability of rolling either 5 or 6?</p>
+<p>The probability of rolling a 6 is 1/6 and the probability of a 5 is also 1/6. We cannot take a 5 and 6 at the same time (these events are mutually exclusive) so:</p>
+<p>P(rolling a 5 or 6) = P(rolling a 5) + P(rolling a 6) = 1/6 + 1/6 = 1/3</p>
+</div>
+</div>
+</div>
 <p>These axioms should be regarded as the basic “ground rules” of the theory of probability, but they provide no guidance on how event probabilities should be assigned. For this purpose, there are <strong>two</strong> major avenues available. One is based on the repetition of the experiments a large number of times under the same conditions, and goes under the name of the <strong>frequentist approach</strong>. The other is based on a more theoretical knowledge of the experiment, but without the experimental requirement of a large number of repetitions, and is referred to as the <strong>Bayesian approach</strong>.</p>
 <section id="definition-of-probability" class="level3"><h3 class="anchored" data-anchor-id="definition-of-probability">Definition of Probability</h3>
 <p><strong>A. Frequentist approach</strong></p>
@@ -401,8 +419,10 @@ Fundamental Properties of Probability
 </section><section id="the-conditional-probability" class="level3"><h3 class="anchored" data-anchor-id="the-conditional-probability">The Conditional Probability</h3>
 <p>The conditional probability is indicated as <strong>P(A|B)</strong> or A <strong>given</strong> B. The following relationship defines the conditional probability:</p>
 <p><span id="eq-conditional"><span class="math display">\[P(A ∩ B) = P(A|B) · P(B) \tag{3.5}\]</span></span></p>
+<p>or</p>
+<p><span id="eq-conditional2"><span class="math display">\[ P(A|B)=  \frac{P(A ∩ B)}{P(B)} \tag{3.6}\]</span></span></p>
 <div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -411,7 +431,7 @@ Example - Conditional probability with dice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Calculate the probability of obtaining <strong>8 as the sum of two rolls</strong> of a die, <strong>given that the first roll was a 3</strong>.</p>
 <p>It is useful to define the following two events:</p>
@@ -449,7 +469,7 @@ Example - Conditional probability with dice
 <p>and since each combination has a probability of 1/36, <strong>P(A) = 5/36</strong>.</p>
 <p>The probability of event B is <strong>P(B) = 1/6</strong> since it relates to the outcomes of just one roll of the die.</p>
 <p>Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of (3,5) takes place, thus with probability <strong>P(A ∩ B) =1/36</strong>.</p>
-<p>According to the definition of conditional probability <a href="#eq-conditional">Equation&nbsp;<span>3.5</span></a>, the probability of interest is:</p>
+<p>According to the definition of conditional probability <a href="#eq-conditional2">Equation&nbsp;<span>3.6</span></a>, the probability of interest is:</p>
 <p><span class="math inline">\(P(A|B) = \frac{P(A ∩ B)}{P(B)} = \frac{1/36}{1/6} = \frac{1}{6}\)</span></p>
 <p>The occurrence of 3 in the first roll has therefore <strong>increased</strong> the probability of A from P(A) = 5/36 to P(A|B) = 1/6.</p>
 </div>
@@ -459,10 +479,10 @@ Example - Conditional probability with dice
 <p>The concept of statistical independence among events means that the occurrence of one event has <strong>no influence</strong> on the occurrence of other events. Consider, for example, rolling two dice, one after the other: the outcome of one die is independent of the other and the two tosses are said to be statistically independent.</p>
 <p>On the other hand, consider rolling two dice, and being interested in the following pair of events: the first is the outcome of the roll of die 1 and the second is the sum the rolls of die 1 and die 2. It is clear that the outcome of the second event—e.g., the sum of both dice—depends on the first toss and the two events are not independent.</p>
 <p>Two events A and B are said to be <strong>statistically independent</strong> if:</p>
-<p><span id="eq-independent"><span class="math display">\[P(A ∩ B) = P(A) · P(B) \tag{3.6}\]</span></span></p>
+<p><span id="eq-independent"><span class="math display">\[P(A ∩ B) = P(A) · P(B) \tag{3.7}\]</span></span></p>
 <p>This definition follows directly from <a href="#eq-conditional">Equation&nbsp;<span>3.5</span></a>. In fact, if A and B are statistically independent, then the conditional probability is P(A|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A. A few examples illustrate the meaning of this definition.</p>
 <div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -471,7 +491,7 @@ Example - Statistical independence with dice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Determine the probability of obtaining two 3s when rolling two dice. This event can be decomposed in two events:</p>
 <ul>
@@ -484,11 +504,40 @@ Example - Statistical independence with dice
 </div>
 </div>
 </section><section id="bayes-theorem" class="level3"><h3 class="anchored" data-anchor-id="bayes-theorem">Bayes’ theorem</h3>
-<p>The theorem can be written as:</p>
-<p><span id="eq-bayes"><span class="math display">\[P(A|B) = \frac{P(B|A)P(A)}{P(B)} \tag{3.7}\]</span></span></p>
+<p>The Bayes’ theorem can be written as:</p>
+<p><span id="eq-bayes"><span class="math display">\[P(A|B) = \frac{P(B|A)· P(A)}{P(B)} \tag{3.8}\]</span></span></p>
 <p>where A and B are events and <span class="math inline">\(P(B)\neq 0\)</span>.</p>
 <p>The experiment B can be considered as the data collected in a given experiment. The event A is a model that is used to describe the data.</p>
-<p>Accordingly, the probabilities involved in Bayes’ theorem can be interpreted as follows: (a) P(B|A) is the probability, or likelihood L, of the data given the specified model. Notice how P(B|A) means that the model A is given, or known. (b) P(A) is the probability of the model A, without any knowledge of the data.This term is interpreted as a prior probability, or the degree of belief that the model is true before the measurements are made. (c) P(B) is the probability of collecting the dataset B. (d) Finally, P(A/B) is the posterior probability of the model after the data have been collected.The posterior probability is the ultimate goal of the analysis since it describes the probability of the model based on the collection of data.</p>
+<p>Accordingly, the probabilities involved in Bayes’ theorem can be interpreted as follows:</p>
+<ol type="a">
+<li><p><strong>P(B|A)</strong> is the probability, or <strong>likelihood</strong> L, of the data given the specified model. Notice how P(B|A) means that the model A is given, or known.</p></li>
+<li><p><strong>P(A)</strong> is the probability of the model A, without any knowledge of the data.This term is interpreted as a <strong>prior probability</strong>, or the degree of belief that the model is true before the measurements are made.</p></li>
+<li><p><strong>P(B)</strong> is the probability of collecting the dataset B.</p></li>
+<li><p>Finally, <strong>P(A|B)</strong> is the <strong>posterior</strong> <strong>probability</strong> of the model after the data have been collected.The posterior probability is the ultimate goal of the analysis since it describes the probability of the model based on the collection of data.</p></li>
+</ol>
+<p>This interpretation of Bayes’ theorem is the foundation of Bayesian statistics, and it can be summarized as:</p>
+<p><strong>Posterior probability ∝ Likelihood × Prior probability</strong></p>
+<p>Bayes’ theorem provides a way to <strong>update</strong> the prior knowledge of model parameters given the measurements, leading to posterior estimates of parameters. One key feature of Bayesian statistics is that the calculation of probabilities is based on a <strong>prior probability</strong>, which may rely on a subjective interpretation of what is known about the experiment before any measurements are made. Therefore, great attention must be paid to the assignment of prior probabilities and the effect of priors on the final results of the analysis.</p>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example - Probability of developing lung cancer for smokers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Suppose that the probability of having lung cancer is P(C) = 0.001 and that the probability of being a smoker is P(SM) = 0.25</p>
+<p>Further, suppose we know that if a person has lung cancer, the probability of being a smoker increases to P(SM|C) = 0.4. We are, however, interested in the probability of developing lung cancer if a person is a smoker, P(C|SM).</p>
+<p>From <a href="#eq-bayes">Equation&nbsp;<span>3.8</span></a>:</p>
+<p><span class="math display">\[P(C|SM) = \frac{P(SM|C)· P(C)}{P(SM)} = \frac{0.4· 0.001}{0.25}= 0.0016\]</span></p>
+<p>Therefore, the probability of lung cancer increases from 0.001 to 0.0016 for smokers. That is, the probability becomes 60% higher than the overall probability of lung cancer.</p>
+</div>
+</div>
+</div>
 </section></section><section id="probability-distributions-for-discrete-outcomes" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="probability-distributions-for-discrete-outcomes">
 <span class="header-section-number">3.3</span> Probability distributions for Discrete Outcomes</h2>
 </section><section id="probability-distributions-for-continuous-outcomes" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="probability-distributions-for-continuous-outcomes">
@@ -529,8 +578,8 @@ Properties of Normal Distribution
 </div>
 <p>&nbsp;</p>
 </section></section><section id="the-mathimatical-type" class="level3"><h3 class="anchored" data-anchor-id="the-mathimatical-type">The mathimatical type</h3>
-<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss">Equation&nbsp;<span>3.8</span></a>:</p>
-<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.8}\]</span></span></p>
+<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss">Equation&nbsp;<span>3.9</span></a>:</p>
+<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.9}\]</span></span></p>
 <p>Populations with small values of the standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution concentrated close to the centre, <span class="math inline">\(\mu\)</span>; those with large standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution widely spread along the measurement axis <a href="#fig-compare_normal">Figure&nbsp;<span>3.3</span></a>.</p>
 <div id="fig-compare_normal" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
@@ -610,8 +659,8 @@ Properties of Normal Distribution
 </div>
 </div>
 </div>
-<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>3.8</span></a> as following:</p>
-<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{3.9}\]</span></span></p>
+<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>3.9</span></a> as following:</p>
+<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{3.10}\]</span></span></p>
 <p>&nbsp;</p>
 <section id="properties-of-an-approximately-bell-shaped-histogram" class="level4"><h4 class="anchored" data-anchor-id="properties-of-an-approximately-bell-shaped-histogram">Properties of an approximately bell-shaped histogram</h4>
 <p>In an approximately <strong>bell-shaped (normal)</strong> distribution:</p>

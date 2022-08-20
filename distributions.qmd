@@ -51,6 +51,16 @@ The first step towards determining the probability of an event is to establish a
 3.  If A and B are two mutually exclusive events, then **P(A ∪ B) = P(A) + P(B)**
 :::
 
+::: {.callout-caution collapse="true"}
+## Example - Mutually exclusive with dice
+
+Suppose we throw a six-die what is the probability of rolling either 5 or 6?
+
+The probability of rolling a 6 is 1/6 and the probability of a 5 is also 1/6. We cannot take a 5 and 6 at the same time (these events are mutually exclusive) so:
+
+P(rolling a 5 or 6) = P(rolling a 5) + P(rolling a 6) = 1/6 + 1/6 = 1/3
+:::
+
 These axioms should be regarded as the basic "ground rules" of the theory of probability, but they provide no guidance on how event probabilities should be assigned. For this purpose, there are **two** major avenues available. One is based on the repetition of the experiments a large number of times under the same conditions, and goes under the name of the **frequentist approach**. The other is based on a more theoretical knowledge of the experiment, but without the experimental requirement of a large number of repetitions, and is referred to as the **Bayesian approach**.
 
 ### Definition of Probability
@@ -145,6 +155,10 @@ The conditional probability is indicated as **P(A\|B)** or A **given** B. The fo
 
 $$P(A ∩ B) = P(A|B) · P(B)$$ {#eq-conditional}
 
+or
+
+$$ P(A|B)=  \frac{P(A ∩ B)}{P(B)}$$ {#eq-conditional2}
+
 ::: {.callout-caution collapse="true"}
 ## Example - Conditional probability with dice
 
@@ -152,11 +166,9 @@ Calculate the probability of obtaining **8 as the sum of two rolls** of a die, *
 
 It is useful to define the following two events:
 
--   **A** = {The sum of two rolls is 8}. The sample space consists of all ordered pairs of numbers from 1 to 6. That is, S = {(1, 1), (1, 2),… , (1, 6), (2, 1),… , (6, 6)}.
-
+-   **A** = {The sum of two rolls is 8}. The sample space consists of all ordered pairs of numbers from 1 to 6. That is, S = {(1, 1), (1, 2),... , (1, 6), (2, 1),... , (6, 6)}.
 
 -   **B** = {The first roll shows 3}. The sample space consists of S = {1, 2, 3, 4, 5, 6}
-
 
 **Event A** is given by outcomes A={(2,6), (3,5), (4,4), (5,3), (6,2)} :
 
@@ -172,7 +184,7 @@ The probability of event B is **P(B) = 1/6** since it relates to the outcomes of
 
 Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of (3,5) takes place, thus with probability **P(A ∩ B) =1/36**.
 
-According to the definition of conditional probability @eq-conditional, the probability of interest is:
+According to the definition of conditional probability @eq-conditional2, the probability of interest is:
 
 $P(A|B) = \frac{P(A ∩ B)}{P(B)} = \frac{1/36}{1/6} = \frac{1}{6}$
 
@@ -181,54 +193,77 @@ The occurrence of 3 in the first roll has therefore **increased** the probabilit
 
 ### Statistical Independence
 
-The concept of statistical independence among events means that the occurrence of one event has **no influence** on the occurrence of other events. Consider, for example, rolling two dice, one after the other: the outcome of one die is independent of the other and the two tosses are said to be statistically independent. 
+The concept of statistical independence among events means that the occurrence of one event has **no influence** on the occurrence of other events. Consider, for example, rolling two dice, one after the other: the outcome of one die is independent of the other and the two tosses are said to be statistically independent.
 
-On the other hand, consider rolling two dice, and being interested in the following pair of events: the first is the outcome of the roll of die 1 and the second is the sum the rolls of die 1 and die 2. It is clear that the outcome of the second event—e.g., the sum of both dice—depends on the first toss and the two events are not independent.
+On the other hand, consider rolling two dice, and being interested in the following pair of events: the first is the outcome of the roll of die 1 and the second is the sum the rolls of die 1 and die 2. It is clear that the outcome of the second event---e.g., the sum of both dice---depends on the first toss and the two events are not independent.
 
 Two events A and B are said to be **statistically independent** if:
 
 $$P(A ∩ B) = P(A) · P(B)$$ {#eq-independent}
 
-
-This definition follows directly from @eq-conditional. In fact, if A and B are statistically independent, then the conditional probability is P(A|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A. A few examples illustrate the meaning of this definition.
-
+This definition follows directly from @eq-conditional. In fact, if A and B are statistically independent, then the conditional probability is P(A\|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A. A few examples illustrate the meaning of this definition.
 
 ::: {.callout-caution collapse="true"}
 ## Example - Statistical independence with dice
 
 Determine the probability of obtaining two 3s when rolling two dice. This event can be decomposed in two events:
 
-- **A** = {die 1 shows 3, and die 2 shows any number},
+-   **A** = {die 1 shows 3, and die 2 shows any number},
 
-- **B** = {die 2 shows 3, and die 1 shows any number}.
+-   **B** = {die 2 shows 3, and die 1 shows any number}.
 
-
-It is natural to assume that P(A) = 1/6, P(B) = 1/6, and state that the two events A and B are independent by nature, since each event involves a different die, which has no knowledge of the outcome of the other one; the same would be true also of the same die tossed two times. The event of interest is C = A ∩ B, and the definition of probability of two statistically independent events leads to
-$P(C) = P(A ∩ B) = P(A) · P(B) = 1/36$.
+It is natural to assume that P(A) = 1/6, P(B) = 1/6, and state that the two events A and B are independent by nature, since each event involves a different die, which has no knowledge of the outcome of the other one; the same would be true also of the same die tossed two times. The event of interest is C = A ∩ B, and the definition of probability of two statistically independent events leads to $P(C) = P(A ∩ B) = P(A) · P(B) = 1/36$.
 
 This result can be confirmed by a direct count of all possible outcomes in the toss of two dice, and the fact that there is only one combination out of 36 that gives rise to two consecutive 3s.
+:::
+
+### Bayes' theorem
+
+The Bayes' theorem can be written as:
+
+$$P(A|B) = \frac{P(B|A)· P(A)}{P(B)}$$ {#eq-bayes}
+
+where A and B are events and $P(B)\neq 0$.
+
+The experiment B can be considered as the data collected in a given experiment. The event A is a model that is used to describe the data.
+
+Accordingly, the probabilities involved in Bayes' theorem can be interpreted as follows:
+
+(a) **P(B\|A)** is the probability, or **likelihood** L, of the data given the specified model. Notice how P(B\|A) means that the model A is given, or known.
+
+(b) **P(A)** is the probability of the model A, without any knowledge of the data.This term is interpreted as a **prior probability**, or the degree of belief that the model is true before the measurements are made.
+
+(c) **P(B)** is the probability of collecting the dataset B.
+
+(d) Finally, **P(A\|B)** is the **posterior** **probability** of the model after the data have been collected.The posterior probability is the ultimate goal of the analysis since it describes the probability of the model based on the collection of data.
+
+This interpretation of Bayes' theorem is the foundation of Bayesian statistics, and it can be summarized as:
+
+**Posterior probability ∝ Likelihood × Prior probability**
+
+Bayes’ theorem provides a way to **update** the prior knowledge of model parameters given the measurements, leading to posterior estimates of parameters. One key feature of Bayesian statistics is that the calculation of probabilities is based on a **prior probability**, which may rely on a subjective interpretation of what is known about the experiment before any measurements are made. Therefore, great attention must be paid to the assignment of prior probabilities and the effect of priors on the final results of the analysis.
+
+
+::: {.callout-caution collapse="true"}
+## Example - Probability of developing lung cancer for smokers
+
+Suppose that the probability of having lung cancer is P(C) = 0.001 and that the probability of being a smoker is P(SM) = 0.25
+
+Further, suppose we know that if a person has lung cancer, the probability of being a smoker increases to P(SM|C) = 0.4. We are, however, interested in the probability of developing lung cancer if a person is a smoker, P(C|SM).
+
+
+From @eq-bayes:
+
+$$P(C|SM) = \frac{P(SM|C)· P(C)}{P(SM)} = \frac{0.4· 0.001}{0.25}= 0.0016$$
+Therefore, the probability of lung cancer increases from 0.001 to
+0.0016 for smokers. That is, the probability becomes 60% higher than the overall probability of lung cancer.
 
 :::
 
 
 
-### Bayes’ theorem
-
-The theorem can be written as:
-
-$$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$ {#eq-bayes}
-
-where A and B are events and $P(B)\neq 0$.
 
 
-The experiment B can be considered as the data collected in a given experiment. The event A is a model that is used to describe the data.
-
-Accordingly, the probabilities involved in Bayes’ theorem can be interpreted as follows:
-(a) P(B|A) is the probability, or likelihood L, of the data given the specified
-model. Notice how P(B|A) means that the model A is given, or known.
-(b) P(A) is the probability of the model A, without any knowledge of the data.This term is interpreted as a prior probability, or the degree of belief that the model is true before the measurements are made.
-(c) P(B) is the probability of collecting the dataset B.
-(d) Finally, P(A/B) is the posterior probability of the model after the data have been collected.The posterior probability is the ultimate goal of the analysis since it describes the probability of the model based on the collection of data.
 
 
 
