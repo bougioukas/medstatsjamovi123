@@ -37,6 +37,47 @@ A **random event A**, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it
 For each experiment, two events always exist: the **sample space** itself which comprises all possible outcomes and the **empty set** that contains no outcomes represented as **A = ∅** and called the impossible event.
 :::
 
+::: {.callout-caution collapse="true"}
+## Basic types and operations of events using set theory
+
+**Simple and Compound Events**
+
+> If an event consists of a single outcome from the sample space, it is termed a **simple event**. The event of getting less than 2 on rolling a fair die, denoted as A = {1}, is an example of a simple event.
+>
+> If an event consists of more than a single outcome from the sample space, it is called a compound event. An example of a **compound event** in probability is rolling a fair die and getting an odd number, A = {1, 3, 5}.
+
+
+**Union of Events** The union symbol (∪) is used to denote the OR event.
+
+> For any two events A and B, "at least one of A and B occurs" is also an event. This event is called the union of A and B, and is denoted by **A∪ B**, which includes only A occurring, only B occurring, and A and B occurring simultaneously.
+>
+>In the experiment of rolling a single die, find the union of the events  A : “the number rolled is even” and  B : “the number rolled is greater than two.” 
+Since the outcomes that are in either  A={2,4,6}  or  B={3,4,5,6}  (or both) are  2,3,4,5, and  6, that means  A ∪ B={2,3,4,5,6} .
+
+
+
+**Intersection of Events** The intersection symbol (∩) is used to denote the AND event.
+
+> For any two events A and B, “A and B occur simultaneously” is also an event. This event is called the intersection of A and B, and is denoted by A ∩ B.
+>
+> For example, A = {1, 2, 3, 4}, B = {2, 3, 5, 6} then A ∩ B = {2, 3}.
+
+
+
+
+**Inverse Events**
+
+> For any event A, “event A does not occur” is also an event. This event is called the inverse of event A or the complement of A, and is denoted by $\bar{A}$.
+
+
+**Mutually Exclusive Events**
+
+> For any two events A and B, if events A and B cannot occur simultaneously, that is, A ∩ B =∅, then A and B are called mutually exclusive events.
+
+
+
+:::
+
 ## Probability
 
 The concept of probability is used in day-to-day life which stands for the probability of occurring or non-occurring of events.
@@ -48,7 +89,8 @@ The first step towards determining the probability of an event is to establish a
 
 1.  The probability of an event A is a non-negative number, **P(A) ≥ 0**
 2.  The probability of all possible outcomes, or sample space, is **P(Ω) = 1**
-3.  If A and B are two mutually exclusive events, then **P(A ∪ B) = P(A) + P(B)**
+3.  If A and B are two mutually exclusive events, then **P(A ∪ B) = P(A) + P(B)** and **P(A ∩ B) = 0**. 
+
 :::
 
 ::: {.callout-caution collapse="true"}
@@ -144,7 +186,7 @@ The following **properties** are useful to assign and manipulate event probabili
 
 $$P(A) = 1 − P(A)$$ {#eq-complementary}
 
-1.  The probability of the union of two events satisfies the general property that:
+3.  The probability of the union of two events satisfies the general property that (**Addition Rule of Probability**) :
 
 $$P(A ∪ B) = P(A) + P(B) − P(A ∩ B)$$ {#eq-union}
 :::
@@ -201,7 +243,8 @@ Two events A and B are said to be **statistically independent** if:
 
 $$P(A ∩ B) = P(A) · P(B)$$ {#eq-independent}
 
-This definition follows directly from @eq-conditional. In fact, if A and B are statistically independent, then the conditional probability is P(A\|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A. A few examples illustrate the meaning of this definition.
+@eq-independent, known as **Multiplication Rule of Probability**, follows directly from @eq-conditional. In fact, if A and B are statistically independent, then the conditional probability is P(A\|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A.
+
 
 ::: {.callout-caution collapse="true"}
 ## Example - Statistical independence with dice
@@ -212,7 +255,7 @@ Determine the probability of obtaining two 3s when rolling two dice. This event 
 
 -   **B** = {die 2 shows 3, and die 1 shows any number}.
 
-It is natural to assume that P(A) = 1/6, P(B) = 1/6, and state that the two events A and B are independent by nature, since each event involves a different die, which has no knowledge of the outcome of the other one; the same would be true also of the same die tossed two times. The event of interest is C = A ∩ B, and the definition of probability of two statistically independent events leads to $P(C) = P(A ∩ B) = P(A) · P(B) = 1/36$.
+It is natural to assume that P(A) = 1/6, P(B) = 1/6, and state that the two events A and B are independent by nature, since each event involves a different die, which has no knowledge of the outcome of the other one; the same would be true also of the same die tossed two times. The event of interest is A ∩ B, and the definition of probability of two statistically independent events leads to $P(A ∩ B) = P(A) · P(B) = 1/36$.
 
 This result can be confirmed by a direct count of all possible outcomes in the toss of two dice, and the fact that there is only one combination out of 36 that gives rise to two consecutive 3s.
 :::
@@ -241,31 +284,19 @@ This interpretation of Bayes' theorem is the foundation of Bayesian statistics, 
 
 **Posterior probability ∝ Likelihood × Prior probability**
 
-Bayes’ theorem provides a way to **update** the prior knowledge of model parameters given the measurements, leading to posterior estimates of parameters. One key feature of Bayesian statistics is that the calculation of probabilities is based on a **prior probability**, which may rely on a subjective interpretation of what is known about the experiment before any measurements are made. Therefore, great attention must be paid to the assignment of prior probabilities and the effect of priors on the final results of the analysis.
-
+Bayes' theorem provides a way to **update** the prior knowledge of model parameters given the measurements, leading to posterior estimates of parameters. One key feature of Bayesian statistics is that the calculation of probabilities is based on a **prior probability**, which may rely on a subjective interpretation of what is known about the experiment before any measurements are made. Therefore, great attention must be paid to the assignment of prior probabilities and the effect of priors on the final results of the analysis.
 
 ::: {.callout-caution collapse="true"}
 ## Example - Probability of developing lung cancer for smokers
 
 Suppose that the probability of having lung cancer is P(C) = 0.001 and that the probability of being a smoker is P(SM) = 0.25
 
-Further, suppose we know that if a person has lung cancer, the probability of being a smoker increases to P(SM|C) = 0.4. We are, however, interested in the probability of developing lung cancer if a person is a smoker, P(C|SM).
-
+Further, suppose we know that if a person has lung cancer, the probability of being a smoker increases to P(SM\|C) = 0.4. We are, however, interested in the probability of developing lung cancer if a person is a smoker, P(C\|SM).
 
 From @eq-bayes:
 
-$$P(C|SM) = \frac{P(SM|C)· P(C)}{P(SM)} = \frac{0.4· 0.001}{0.25}= 0.0016$$
-Therefore, the probability of lung cancer increases from 0.001 to
-0.0016 for smokers. That is, the probability becomes 60% higher than the overall probability of lung cancer.
-
+$$P(C|SM) = \frac{P(SM|C)· P(C)}{P(SM)} = \frac{0.4· 0.001}{0.25}= 0.0016$$ Therefore, the probability of lung cancer increases from 0.001 to 0.0016 for smokers. That is, the probability becomes 60% higher than the overall probability of lung cancer.
 :::
-
-
-
-
-
-
-
 
 ## Probability distributions for Discrete Outcomes
 

@@ -289,6 +289,44 @@ Note
 <p>For each experiment, two events always exist: the <strong>sample space</strong> itself which comprises all possible outcomes and the <strong>empty set</strong> that contains no outcomes represented as <strong>A = ∅</strong> and called the impossible event.</p>
 </div>
 </div>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Basic types and operations of events using set theory
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Simple and Compound Events</strong></p>
+<blockquote class="blockquote">
+<p>If an event consists of a single outcome from the sample space, it is termed a <strong>simple event</strong>. The event of getting less than 2 on rolling a fair die, denoted as A = {1}, is an example of a simple event.</p>
+<p>If an event consists of more than a single outcome from the sample space, it is called a compound event. An example of a <strong>compound event</strong> in probability is rolling a fair die and getting an odd number, A = {1, 3, 5}.</p>
+</blockquote>
+<p><strong>Union of Events</strong> The union symbol (∪) is used to denote the OR event.</p>
+<blockquote class="blockquote">
+<p>For any two events A and B, “at least one of A and B occurs” is also an event. This event is called the union of A and B, and is denoted by <strong>A∪ B</strong>, which includes only A occurring, only B occurring, and A and B occurring simultaneously.</p>
+<p>In the experiment of rolling a single die, find the union of the events A : “the number rolled is even” and B : “the number rolled is greater than two.” Since the outcomes that are in either A={2,4,6} or B={3,4,5,6} (or both) are 2,3,4,5, and 6, that means A ∪ B={2,3,4,5,6} .</p>
+</blockquote>
+<p><strong>Intersection of Events</strong> The intersection symbol (∩) is used to denote the AND event.</p>
+<blockquote class="blockquote">
+<p>For any two events A and B, “A and B occur simultaneously” is also an event. This event is called the intersection of A and B, and is denoted by A ∩ B.</p>
+<p>For example, A = {1, 2, 3, 4}, B = {2, 3, 5, 6} then A ∩ B = {2, 3}.</p>
+</blockquote>
+<p><strong>Inverse Events</strong></p>
+<blockquote class="blockquote">
+<p>For any event A, “event A does not occur” is also an event. This event is called the inverse of event A or the complement of A, and is denoted by <span class="math inline">\(\bar{A}\)</span>.</p>
+</blockquote>
+<p><strong>Mutually Exclusive Events</strong></p>
+<blockquote class="blockquote">
+<p>For any two events A and B, if events A and B cannot occur simultaneously, that is, A ∩ B =∅, then A and B are called mutually exclusive events.</p>
+</blockquote>
+</div>
+</div>
+</div>
 </section><section id="probability" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="probability">
 <span class="header-section-number">3.2</span> Probability</h2>
 <p>The concept of probability is used in day-to-day life which stands for the probability of occurring or non-occurring of events.</p>
@@ -308,13 +346,12 @@ Note
 </li>
 <li>The probability of all possible outcomes, or sample space, is <strong>P(Ω) = 1</strong>
 </li>
-<li>If A and B are two mutually exclusive events, then <strong>P(A ∪ B) = P(A) + P(B)</strong>
-</li>
+<li>If A and B are two mutually exclusive events, then <strong>P(A ∪ B) = P(A) + P(B)</strong> and <strong>P(A ∩ B) = 0</strong>.</li>
 </ol>
 </div>
 </div>
 <div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -323,7 +360,7 @@ Example - Mutually exclusive with dice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Suppose we throw a six-die what is the probability of rolling either 5 or 6?</p>
 <p>The probability of rolling a 6 is 1/6 and the probability of a 5 is also 1/6. We cannot take a 5 and 6 at the same time (these events are mutually exclusive) so:</p>
@@ -410,8 +447,8 @@ Fundamental Properties of Probability
 <li><p>The probability of the complementary event A satisfies the property:</p></li>
 </ol>
 <p><span id="eq-complementary"><span class="math display">\[P(A) = 1 − P(A) \tag{3.3}\]</span></span></p>
-<ol type="1">
-<li>The probability of the union of two events satisfies the general property that:</li>
+<ol start="3" type="1">
+<li>The probability of the union of two events satisfies the general property that (<strong>Addition Rule of Probability</strong>) :</li>
 </ol>
 <p><span id="eq-union"><span class="math display">\[P(A ∪ B) = P(A) + P(B) − P(A ∩ B) \tag{3.4}\]</span></span></p>
 </div>
@@ -422,7 +459,7 @@ Fundamental Properties of Probability
 <p>or</p>
 <p><span id="eq-conditional2"><span class="math display">\[ P(A|B)=  \frac{P(A ∩ B)}{P(B)} \tag{3.6}\]</span></span></p>
 <div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -431,7 +468,7 @@ Example - Conditional probability with dice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Calculate the probability of obtaining <strong>8 as the sum of two rolls</strong> of a die, <strong>given that the first roll was a 3</strong>.</p>
 <p>It is useful to define the following two events:</p>
@@ -480,9 +517,9 @@ Example - Conditional probability with dice
 <p>On the other hand, consider rolling two dice, and being interested in the following pair of events: the first is the outcome of the roll of die 1 and the second is the sum the rolls of die 1 and die 2. It is clear that the outcome of the second event—e.g., the sum of both dice—depends on the first toss and the two events are not independent.</p>
 <p>Two events A and B are said to be <strong>statistically independent</strong> if:</p>
 <p><span id="eq-independent"><span class="math display">\[P(A ∩ B) = P(A) · P(B) \tag{3.7}\]</span></span></p>
-<p>This definition follows directly from <a href="#eq-conditional">Equation&nbsp;<span>3.5</span></a>. In fact, if A and B are statistically independent, then the conditional probability is P(A|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A. A few examples illustrate the meaning of this definition.</p>
+<p><a href="#eq-independent">Equation&nbsp;<span>3.7</span></a>, known as <strong>Multiplication Rule of Probability</strong>, follows directly from <a href="#eq-conditional">Equation&nbsp;<span>3.5</span></a>. In fact, if A and B are statistically independent, then the conditional probability is P(A|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A.</p>
 <div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -491,14 +528,14 @@ Example - Statistical independence with dice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Determine the probability of obtaining two 3s when rolling two dice. This event can be decomposed in two events:</p>
 <ul>
 <li><p><strong>A</strong> = {die 1 shows 3, and die 2 shows any number},</p></li>
 <li><p><strong>B</strong> = {die 2 shows 3, and die 1 shows any number}.</p></li>
 </ul>
-<p>It is natural to assume that P(A) = 1/6, P(B) = 1/6, and state that the two events A and B are independent by nature, since each event involves a different die, which has no knowledge of the outcome of the other one; the same would be true also of the same die tossed two times. The event of interest is C = A ∩ B, and the definition of probability of two statistically independent events leads to <span class="math inline">\(P(C) = P(A ∩ B) = P(A) · P(B) = 1/36\)</span>.</p>
+<p>It is natural to assume that P(A) = 1/6, P(B) = 1/6, and state that the two events A and B are independent by nature, since each event involves a different die, which has no knowledge of the outcome of the other one; the same would be true also of the same die tossed two times. The event of interest is A ∩ B, and the definition of probability of two statistically independent events leads to <span class="math inline">\(P(A ∩ B) = P(A) · P(B) = 1/36\)</span>.</p>
 <p>This result can be confirmed by a direct count of all possible outcomes in the toss of two dice, and the fact that there is only one combination out of 36 that gives rise to two consecutive 3s.</p>
 </div>
 </div>
@@ -519,7 +556,7 @@ Example - Statistical independence with dice
 <p><strong>Posterior probability ∝ Likelihood × Prior probability</strong></p>
 <p>Bayes’ theorem provides a way to <strong>update</strong> the prior knowledge of model parameters given the measurements, leading to posterior estimates of parameters. One key feature of Bayesian statistics is that the calculation of probabilities is based on a <strong>prior probability</strong>, which may rely on a subjective interpretation of what is known about the experiment before any measurements are made. Therefore, great attention must be paid to the assignment of prior probabilities and the effect of priors on the final results of the analysis.</p>
 <div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -528,13 +565,12 @@ Example - Probability of developing lung cancer for smokers
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Suppose that the probability of having lung cancer is P(C) = 0.001 and that the probability of being a smoker is P(SM) = 0.25</p>
 <p>Further, suppose we know that if a person has lung cancer, the probability of being a smoker increases to P(SM|C) = 0.4. We are, however, interested in the probability of developing lung cancer if a person is a smoker, P(C|SM).</p>
 <p>From <a href="#eq-bayes">Equation&nbsp;<span>3.8</span></a>:</p>
-<p><span class="math display">\[P(C|SM) = \frac{P(SM|C)· P(C)}{P(SM)} = \frac{0.4· 0.001}{0.25}= 0.0016\]</span></p>
-<p>Therefore, the probability of lung cancer increases from 0.001 to 0.0016 for smokers. That is, the probability becomes 60% higher than the overall probability of lung cancer.</p>
+<p><span class="math display">\[P(C|SM) = \frac{P(SM|C)· P(C)}{P(SM)} = \frac{0.4· 0.001}{0.25}= 0.0016\]</span> Therefore, the probability of lung cancer increases from 0.001 to 0.0016 for smokers. That is, the probability becomes 60% higher than the overall probability of lung cancer.</p>
 </div>
 </div>
 </div>
