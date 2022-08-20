@@ -281,6 +281,11 @@ $$P(A|B) = \frac{P(B|A)· P(A)}{P(B)}$$ {#eq-bayes}
 
 where A and B are events and $P(B)\neq 0$.
 
+
+
+::: {.callout-caution collapse="true"}
+## (Advanced) Probabilities involved in Bayes' theorem
+
 The experiment B can be considered as the data collected in a given experiment. The event A is a model that is used to describe the data.
 
 Accordingly, the probabilities involved in Bayes' theorem can be interpreted as follows:
@@ -299,7 +304,10 @@ This interpretation of Bayes' theorem is the foundation of Bayesian statistics, 
 
 Bayes' theorem provides a way to **update** the prior knowledge of model parameters given the measurements, leading to posterior estimates of parameters. One key feature of Bayesian statistics is that the calculation of probabilities is based on a **prior probability**, which may rely on a subjective interpretation of what is known about the experiment before any measurements are made. Therefore, great attention must be paid to the assignment of prior probabilities and the effect of priors on the final results of the analysis.
 
-::: {.callout-caution collapse="true"}
+:::
+
+
+::: {.callout-note}
 ## Example - Probability of developing lung cancer for smokers
 
 Suppose that the probability of having lung cancer is P(C) = 0.001 and that the probability of being a smoker is P(SM) = 0.25
@@ -338,6 +346,8 @@ Specifically, concepts such as independence and conditional probability are defi
 
 A random variable is also expected to have a theoretical distribution, e.g., Normal, Poisson, etc., according to the nature of the variable itself and the method of measurement.
 
+Each distribution is entirely defined by several specific parameters. The parameter values determine the location and shape of the curve on the plot of distribution, and each unique combination of parameter values produces a unique distribution curve.
+
 
 
 ::: callout-note
@@ -354,10 +364,94 @@ For the random variable X defined based on genotypes, the **probability distribu
 
 $$P(X=x)={\begin{cases}0.49,&for\ x=0\\0.42,&for\ x=1\\0.09,&for\ x=2\end{cases}}$$
 Here, x denotes a specific value (i.e., 0, 1, or 2) of the random variable.
-Probability distributions are specified differently for different types of random variables. In the following, we divide the random variables into two major groups: discrete and continuous. Then, we provide several examples for each group.
+Probability distributions are specified differently for different types of random variables. In the following, we divide the random variables into two major groups: **discrete** and **continuous**. Then, we provide several examples for each group.
 
 
-## Probability distribution for Discrete Outcomes
+
+
+
+## Probability distributions for Discrete Outcomes
+
+For discrete random variables, the probability distribution is fully defined by the **probability mass function** (pmf). This is a function that specifies the probability of each possible value within range of random variable.
+
+ 
+
+### Bernoulli distribution
+
+Binary random variables are abundant in scientific studies. Examples include disease status (healthy and diseased), gender (male and female), survival status (dead, survived), and a gene with two possible alleles (A and a). We usually regard one of the values as the outcome of interest and denote it as X = 1. The other outcome is denoted as X = 0. 
+As before, the probabilities for all possible values sum to one: P(X = 0) + P(X = 1) = 1.
+
+
+::: callout-tip
+
+## **Definition-Bernoulli distribution**
+
+The binary random variable X with possible values 0 and 1 has a Bernoulli
+distribution with parameter θ , where P(X = 1) = θ and P(X = 0) = 1 − θ .
+We denote this as X ∼ Bernoulli(θ), where 0 ≤ θ ≤ 1.
+
+Here, θ is the unknown parameter. If θ were known, we could fully specify the probability mass function:
+
+$$P(X=x)={\begin{cases}1-θ,&for\ x=0\\θ,&for\ x=1\end{cases}}$$
+
+
+The mean of a binary random variable, X, with Bernoulli(θ) distribution
+is θ. We show this as 
+
+$$μ = θ$$ {#eq-bernouli1}
+In this case, the mean can be interpreted as the proportion of the population who have the outcome of interest. 
+
+Furthermore, the variance of a random variable with Bernoulli(θ) distribution is
+
+$$ \sigma^2= θ(1-θ)= μ(μ-1)$$ {#eq-bernouli2}
+
+$$ \sigma= \sqrt{θ(1-θ)}= \sqrt{μ(μ-1)}$$ {#eq-bernouli3}
+
+:::
+
+
+
+
+
+::: callout-note
+
+## **Example-Bernoulli distribution: breast cancer**
+
+For example, let X be a random variable representing the five-year survival status of breast cancer patient, where X = 1 if the patient survived and X = 0 otherwise.
+Suppose that the probability of survival is θ = 0.8: P(X = 1) = 0.8. Therefore, the probability of not surviving is P(X = 0) = 1 − θ = 0.2. Then X has a Bernoulli distribution with parameter θ = 0.8, and we denote this as
+
+$$X ∼ Bernoulli(0.8)$$
+The pmf for this distribution is:
+
+$$P(X=x)={\begin{cases}0.2,&for\ x=0\\0.8,&for\ x=1\end{cases}}$$
+Additionally, we can plot pmf for visualizing the distribution. 
+
+
+```{r}
+#| echo: false
+#| label: fig-bern1
+#| out-width: "100%"
+#| fig-align: "center"
+#| fig-cap: Plot of the pmf for Bernoulli(0.8) distribution.
+
+ber_q <- c(0, 1)
+ber_pmf <- dbinom(ber_q, 1, 0.8)
+
+plot(ber_q , ber_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nBernoulli(0.8)", ylim = c(0, 1), xaxt='n', lwd = 2,frame.plot = FALSE)
+ points(ber_q , ber_pmf,  pch = 20, cex = 2)
+ axis(1, at = c(0, 1), lab=expression(0, 1))
+
+```
+
+
+The height of each bar is the probability of the corresponding value on the horizontal axis. The height of the bar is 0.2 at X = 0 and 0.8 at X = 1. Since the probabilities for all possible values of the random variable add to 1, the bar heights also add up to 1.
+
+In the above example, from @eq-bernouli1 we take μ = 0.8. Therefore, we expect 80% of patients survive.
+
+From @eq-bernouli2 the variance of the random variable is $σ^2 = 0.8 × 0.2 = 0.16$, and its standard deviation is $σ = 0.4$. This reflects the extent of variability in survival status from one person to another. For this example, the amount of variation is rather small. Therefore, we expect to see many survivals (X = 1) with occasional death (X = 0). 
+For
+comparison, suppose that the probability of survival for bladder cancer is θ = 0.6. Then, the variance becomes $σ^2 = 0.6×(1−0.6) = 0.24$. This reflects a higher variability in the survival status for bladder cancer patients compared to that of breast cancer patients.
+:::
 
 
 
