@@ -239,9 +239,10 @@ ul.task-list{list-style: none;}
   <li><a href="#bayes-theorem" id="toc-bayes-theorem" class="nav-link" data-scroll-target="#bayes-theorem">Bayes’ theorem</a></li>
   </ul>
 </li>
-  <li><a href="#probability-distributions-for-discrete-outcomes" id="toc-probability-distributions-for-discrete-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-discrete-outcomes"> <span class="header-section-number">3.3</span> Probability distributions for Discrete Outcomes</a></li>
+  <li><a href="#random-variables" id="toc-random-variables" class="nav-link" data-scroll-target="#random-variables"> <span class="header-section-number">3.3</span> Random Variables</a></li>
+  <li><a href="#probability-distribution-for-discrete-outcomes" id="toc-probability-distribution-for-discrete-outcomes" class="nav-link" data-scroll-target="#probability-distribution-for-discrete-outcomes"> <span class="header-section-number">3.4</span> Probability distribution for Discrete Outcomes</a></li>
   <li>
-<a href="#probability-distributions-for-continuous-outcomes" id="toc-probability-distributions-for-continuous-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-continuous-outcomes"> <span class="header-section-number">3.4</span> Probability distributions for Continuous Outcomes</a>
+<a href="#probability-distributions-for-continuous-outcomes" id="toc-probability-distributions-for-continuous-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-continuous-outcomes"> <span class="header-section-number">3.5</span> Probability distributions for Continuous Outcomes</a>
   <ul class="collapse">
 <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution"><strong>Normal Distribution</strong></a></li>
   <li><a href="#the-mathimatical-type" id="toc-the-mathimatical-type" class="nav-link" data-scroll-target="#the-mathimatical-type">The mathimatical type</a></li>
@@ -369,6 +370,7 @@ Example - Mutually exclusive with dice
 </div>
 </div>
 <p>These axioms should be regarded as the basic “ground rules” of the theory of probability, but they provide no guidance on how event probabilities should be assigned. For this purpose, there are <strong>two</strong> major avenues available. One is based on the repetition of the experiments a large number of times under the same conditions, and goes under the name of the <strong>frequentist approach</strong>. The other is based on a more theoretical knowledge of the experiment, but without the experimental requirement of a large number of repetitions, and is referred to as the <strong>Bayesian approach</strong>.</p>
+<p>&nbsp;</p>
 <section id="definition-of-probability" class="level3"><h3 class="anchored" data-anchor-id="definition-of-probability">Definition of Probability</h3>
 <p><strong>A. Frequentist approach</strong></p>
 <p>Consider performing an experiment a <strong>large number</strong> N of times, under the same experimental conditions. The occurrence of the event A is indicated as the number N(A). The probability of event A is given by:</p>
@@ -430,6 +432,7 @@ Example - Coin toss experiment
 </div>
 </div>
 <p>In this textbook, we’ll focus on “Frequentist” approach of probability.</p>
+<p>&nbsp;</p>
 </section><section id="fundamental-properties-of-probability" class="level3"><h3 class="anchored" data-anchor-id="fundamental-properties-of-probability">Fundamental Properties of Probability</h3>
 <p>The following <strong>properties</strong> are useful to assign and manipulate event probabilities.</p>
 <div class="callout-warning callout callout-style-default no-icon callout-captioned">
@@ -453,6 +456,7 @@ Fundamental Properties of Probability
 <p><span id="eq-union"><span class="math display">\[P(A ∪ B) = P(A) + P(B) − P(A ∩ B) \tag{3.4}\]</span></span></p>
 </div>
 </div>
+<p>&nbsp;</p>
 </section><section id="the-conditional-probability" class="level3"><h3 class="anchored" data-anchor-id="the-conditional-probability">The Conditional Probability</h3>
 <p>The conditional probability is indicated as <strong>P(A|B)</strong> or A <strong>given</strong> B. The following relationship defines the conditional probability:</p>
 <p><span id="eq-conditional"><span class="math display">\[P(A ∩ B) = P(A|B) · P(B) \tag{3.5}\]</span></span></p>
@@ -471,10 +475,11 @@ Example - Conditional probability with dice
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Calculate the probability of obtaining <strong>8 as the sum of two rolls</strong> of a die, <strong>given that the first roll was a 3</strong>.</p>
+<p>The sample space of the experement consists of all ordered pairs of numbers from 1 to 6. That is, S = {(1, 1), (1, 2),… , (1, 6), (2, 1),… , (6, 6)}.</p>
 <p>It is useful to define the following two events:</p>
 <ul>
-<li><p><strong>A</strong> = {The sum of two rolls is 8}. The sample space consists of all ordered pairs of numbers from 1 to 6. That is, S = {(1, 1), (1, 2),… , (1, 6), (2, 1),… , (6, 6)}.</p></li>
-<li><p><strong>B</strong> = {The first roll shows 3}. The sample space consists of S = {1, 2, 3, 4, 5, 6}</p></li>
+<li><p><strong>A</strong> = {The sum of two rolls is 8}.</p></li>
+<li><p><strong>B</strong> = {The first roll shows 3, and the second any number}.</p></li>
 </ul>
 <p><strong>Event A</strong> is given by outcomes A={(2,6), (3,5), (4,4), (5,3), (6,2)} :</p>
 <table class="table"><tbody>
@@ -504,14 +509,15 @@ Example - Conditional probability with dice
 </tr>
 </tbody></table>
 <p>and since each combination has a probability of 1/36, <strong>P(A) = 5/36</strong>.</p>
-<p>The probability of event B is <strong>P(B) = 1/6</strong> since it relates to the outcomes of just one roll of the die.</p>
-<p>Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of (3,5) takes place, thus with probability <strong>P(A ∩ B) =1/36</strong>.</p>
+<p><strong>Event B</strong> is given by outcomes B={(3,1), (3,2), (3,3), (3,4), (3,5), (3, 6)}. The probability of event B is <strong>P(B) = 6/36 = 1/6</strong>.</p>
+<p>Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of <strong>(3,5)</strong> takes place, thus with probability <strong>P(A ∩ B) = 1/36</strong>.</p>
 <p>According to the definition of conditional probability <a href="#eq-conditional2">Equation&nbsp;<span>3.6</span></a>, the probability of interest is:</p>
 <p><span class="math inline">\(P(A|B) = \frac{P(A ∩ B)}{P(B)} = \frac{1/36}{1/6} = \frac{1}{6}\)</span></p>
-<p>The occurrence of 3 in the first roll has therefore <strong>increased</strong> the probability of A from P(A) = 5/36 to P(A|B) = 1/6.</p>
+<p>Therefore, the occurrence of 3 in the first roll has <strong>increased</strong> the probability of A from P(A) = 5/36 to P(A|B) = 1/6.</p>
 </div>
 </div>
 </div>
+<p>&nbsp;</p>
 </section><section id="statistical-independence" class="level3"><h3 class="anchored" data-anchor-id="statistical-independence">Statistical Independence</h3>
 <p>The concept of statistical independence among events means that the occurrence of one event has <strong>no influence</strong> on the occurrence of other events. Consider, for example, rolling two dice, one after the other: the outcome of one die is independent of the other and the two tosses are said to be statistically independent.</p>
 <p>On the other hand, consider rolling two dice, and being interested in the following pair of events: the first is the outcome of the roll of die 1 and the second is the sum the rolls of die 1 and die 2. It is clear that the outcome of the second event—e.g., the sum of both dice—depends on the first toss and the two events are not independent.</p>
@@ -540,6 +546,7 @@ Example - Statistical independence with dice
 </div>
 </div>
 </div>
+<p>&nbsp;</p>
 </section><section id="bayes-theorem" class="level3"><h3 class="anchored" data-anchor-id="bayes-theorem">Bayes’ theorem</h3>
 <p>The Bayes’ theorem can be written as:</p>
 <p><span id="eq-bayes"><span class="math display">\[P(A|B) = \frac{P(B|A)· P(A)}{P(B)} \tag{3.8}\]</span></span></p>
@@ -574,10 +581,42 @@ Example - Probability of developing lung cancer for smokers
 </div>
 </div>
 </div>
-</section></section><section id="probability-distributions-for-discrete-outcomes" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="probability-distributions-for-discrete-outcomes">
-<span class="header-section-number">3.3</span> Probability distributions for Discrete Outcomes</h2>
-</section><section id="probability-distributions-for-continuous-outcomes" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="probability-distributions-for-continuous-outcomes">
-<span class="header-section-number">3.4</span> Probability distributions for Continuous Outcomes</h2>
+<p>&nbsp;</p>
+</section></section><section id="random-variables" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="random-variables">
+<span class="header-section-number">3.3</span> Random Variables</h2>
+<p>Formally, a random variable X assigns a numerical value to each possible outcome of a random phenomenon. For instance, we can define X based on possible genotypes of a bi-allelic gene A as follows:</p>
+<p><span class="math display">\[X={\begin{cases}0,&amp;for\ genotype\ AA\\1,&amp;for\ genotype\ Aa\\2,&amp;for\ genotype\ aa\end{cases}}\]</span></p>
+<p>In this case, the random variable assigns 0 to the outcome AA, 1 to the outcome Aa, and 2 to the outcome aa.</p>
+<p>The set of values that a random variable can assume is called its range. For the above example, the range of X is {0, 1, 2}.</p>
+<p>After we define a random variable, we can find the probabilities for its possible values based on the probabilities for its underlying random phenomenon. This way, instead of talking about the probabilities for different outcomes and events, we can talk about <strong>the probability of different values for a random variable</strong>.</p>
+<p>Assume that the probabilities for different genotypes are P(AA) = 0.49, P(Aa) = 0.42, and P(aa) = 0.09. Then, instead of saying P(AA) = 0.49, i.e., the genotype is AA with probability 0.49, we can say that P(X = 0) = 0.49, i.e., X is equal to 0 with probability of 0.49. Likewise, P(X = 1) = 0.42 and P(X = 2) = 0.09.</p>
+<p>Note that the total probability for the random variable is still 1. In what follows, we write P(X) to denote the probability of a random variable X in general without specifying any value or range of values. <strong>The probability rules we discussed earlier also apply to random variables</strong>. Specifically, concepts such as independence and conditional probability are defined similarly for random variables as they are defined for random events. For example, when two random variables do not affect each other’s probabilities, we say that they are independent.</p>
+<p>A random variable is also expected to have a theoretical distribution, e.g., Normal, Poisson, etc., according to the nature of the variable itself and the method of measurement.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Therefore, to fully understand a random variable, we need to know:</p>
+<ol type="1">
+<li>
+<strong>every possible value</strong>, or the interval of values of the random variable.</li>
+<li>the <strong>probabilities</strong> corresponding to the values or value ranges (<strong>probability distribution</strong>).</li>
+</ol>
+</div>
+</div>
+<p>For the random variable X defined based on genotypes, the <strong>probability distribution</strong> can be simply specified as follows:</p>
+<p><span class="math display">\[P(X=x)={\begin{cases}0.49,&amp;for\ x=0\\0.42,&amp;for\ x=1\\0.09,&amp;for\ x=2\end{cases}}\]</span></p>
+<p>Here, x denotes a specific value (i.e., 0, 1, or 2) of the random variable. Probability distributions are specified differently for different types of random variables. In the following, we divide the random variables into two major groups: discrete and continuous. Then, we provide several examples for each group.</p>
+</section><section id="probability-distribution-for-discrete-outcomes" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="probability-distribution-for-discrete-outcomes">
+<span class="header-section-number">3.4</span> Probability distribution for Discrete Outcomes</h2>
+</section><section id="probability-distributions-for-continuous-outcomes" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="probability-distributions-for-continuous-outcomes">
+<span class="header-section-number">3.5</span> Probability distributions for Continuous Outcomes</h2>
 <section id="normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="normal-distribution"><strong>Normal Distribution</strong></h3>
 <p>We have mentioned the normal distribution several times in this textbook with the promise we would provide more detail later. In this section, we will explore the normal distribution, why it matters, and how we can tell if our distribution is normal or not.</p>
 <section id="historical-background-and-main-properties" class="level4"><h4 class="anchored" data-anchor-id="historical-background-and-main-properties">Historical background and main properties</h4>

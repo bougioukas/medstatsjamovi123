@@ -105,6 +105,8 @@ P(rolling a 5 or 6) = P(rolling a 5) + P(rolling a 6) = 1/6 + 1/6 = 1/3
 
 These axioms should be regarded as the basic "ground rules" of the theory of probability, but they provide no guidance on how event probabilities should be assigned. For this purpose, there are **two** major avenues available. One is based on the repetition of the experiments a large number of times under the same conditions, and goes under the name of the **frequentist approach**. The other is based on a more theoretical knowledge of the experiment, but without the experimental requirement of a large number of repetitions, and is referred to as the **Bayesian approach**.
 
+ 
+
 ### Definition of Probability
 
 **A. Frequentist approach**
@@ -173,6 +175,8 @@ In the coin toss experiment, the determination of the subjective probability for
 
 In this textbook, we'll focus on "Frequentist" approach of probability.
 
+ 
+
 ### Fundamental Properties of Probability
 
 The following **properties** are useful to assign and manipulate event probabilities.
@@ -191,6 +195,8 @@ $$P(A) = 1 − P(A)$$ {#eq-complementary}
 $$P(A ∪ B) = P(A) + P(B) − P(A ∩ B)$$ {#eq-union}
 :::
 
+ 
+
 ### The Conditional Probability
 
 The conditional probability is indicated as **P(A\|B)** or A **given** B. The following relationship defines the conditional probability:
@@ -206,11 +212,13 @@ $$ P(A|B)=  \frac{P(A ∩ B)}{P(B)}$$ {#eq-conditional2}
 
 Calculate the probability of obtaining **8 as the sum of two rolls** of a die, **given that the first roll was a 3**.
 
+The sample space of the experement consists of all ordered pairs of numbers from 1 to 6. That is, S = {(1, 1), (1, 2),... , (1, 6), (2, 1),... , (6, 6)}.
+
 It is useful to define the following two events:
 
--   **A** = {The sum of two rolls is 8}. The sample space consists of all ordered pairs of numbers from 1 to 6. That is, S = {(1, 1), (1, 2),... , (1, 6), (2, 1),... , (6, 6)}.
+-   **A** = {The sum of two rolls is 8}. 
 
--   **B** = {The first roll shows 3}. The sample space consists of S = {1, 2, 3, 4, 5, 6}
+-   **B** = {The first roll shows 3, and the second any number}.
 
 **Event A** is given by outcomes A={(2,6), (3,5), (4,4), (5,3), (6,2)} :
 
@@ -222,16 +230,19 @@ It is useful to define the following two events:
 
 and since each combination has a probability of 1/36, **P(A) = 5/36**.
 
-The probability of event B is **P(B) = 1/6** since it relates to the outcomes of just one roll of the die.
 
-Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of (3,5) takes place, thus with probability **P(A ∩ B) =1/36**.
+**Event B** is given by outcomes B={(3,1), (3,2), (3,3), (3,4), (3,5), (3, 6)}. The probability of event B is **P(B) = 6/36 = 1/6**.
+
+Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of **(3,5)** takes place, thus with probability **P(A ∩ B) = 1/36**.
 
 According to the definition of conditional probability @eq-conditional2, the probability of interest is:
 
 $P(A|B) = \frac{P(A ∩ B)}{P(B)} = \frac{1/36}{1/6} = \frac{1}{6}$
 
-The occurrence of 3 in the first roll has therefore **increased** the probability of A from P(A) = 5/36 to P(A\|B) = 1/6.
+Therefore, the occurrence of 3 in the first roll has  **increased** the probability of A from P(A) = 5/36 to P(A\|B) = 1/6.
 :::
+
+ 
 
 ### Statistical Independence
 
@@ -259,6 +270,8 @@ It is natural to assume that P(A) = 1/6, P(B) = 1/6, and state that the two even
 
 This result can be confirmed by a direct count of all possible outcomes in the toss of two dice, and the fact that there is only one combination out of 36 that gives rise to two consecutive 3s.
 :::
+
+ 
 
 ### Bayes' theorem
 
@@ -298,7 +311,59 @@ From @eq-bayes:
 $$P(C|SM) = \frac{P(SM|C)· P(C)}{P(SM)} = \frac{0.4· 0.001}{0.25}= 0.0016$$ Therefore, the probability of lung cancer increases from 0.001 to 0.0016 for smokers. That is, the probability becomes 60% higher than the overall probability of lung cancer.
 :::
 
-## Probability distributions for Discrete Outcomes
+
+ 
+
+## Random Variables
+
+Formally, a random variable X assigns a numerical value to each possible outcome of a random phenomenon. For instance, we can define X based on
+possible genotypes of a bi-allelic gene A as follows:
+
+$$X={\begin{cases}0,&for\ genotype\ AA\\1,&for\ genotype\ Aa\\2,&for\ genotype\ aa\end{cases}}$$
+
+
+In this case, the random variable assigns 0 to the outcome AA, 1 to the outcome Aa, and 2 to the outcome aa.
+
+The set of values that a random variable can assume is called its range. For the above example, the range of X is {0, 1, 2}.
+
+After we define a random variable, we can find the probabilities for its possible values based on the probabilities for its underlying random phenomenon. This way, instead of talking about the probabilities for different outcomes and events, we can talk about **the probability of different values for a random variable**.
+
+Assume that the probabilities for different genotypes are P(AA) = 0.49, P(Aa) = 0.42, and P(aa) = 0.09. Then, instead of saying P(AA) = 0.49, i.e., the genotype is AA with probability 0.49, we can say that P(X = 0) = 0.49, i.e., X is equal to 0 with probability of 0.49. Likewise, P(X = 1) = 0.42 and P(X = 2) = 0.09. 
+
+
+Note that the total probability for the random variable is still 1.
+In what follows, we write P(X) to denote the probability of a random variable X in general without specifying any value or range of values.
+**The probability rules we discussed earlier also apply to random variables**.
+Specifically, concepts such as independence and conditional probability are defined similarly for random variables as they are defined for random events. For example, when two random variables do not affect each other’s probabilities, we say that they are independent.
+
+A random variable is also expected to have a theoretical distribution, e.g., Normal, Poisson, etc., according to the nature of the variable itself and the method of measurement.
+
+
+
+::: callout-note
+
+Therefore, to fully understand a random variable, we need to know:
+
+(1) **every possible value**, or the interval of values of the random variable.
+(2) the **probabilities** corresponding to the values or value ranges (**probability distribution**).
+
+:::
+
+
+For the random variable X defined based on genotypes, the **probability distribution** can be simply specified as follows:
+
+$$P(X=x)={\begin{cases}0.49,&for\ x=0\\0.42,&for\ x=1\\0.09,&for\ x=2\end{cases}}$$
+Here, x denotes a specific value (i.e., 0, 1, or 2) of the random variable.
+Probability distributions are specified differently for different types of random variables. In the following, we divide the random variables into two major groups: discrete and continuous. Then, we provide several examples for each group.
+
+
+## Probability distribution for Discrete Outcomes
+
+
+
+
+
+
 
 ## Probability distributions for Continuous Outcomes
 
