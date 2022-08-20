@@ -214,7 +214,7 @@ ggplot(data_centers, aes(x = center, y = pct)) +
   )
 ```
 
-::: {.callout-note icon="false"}
+::: {.callout-tip icon="false"}
 ## **Basic Properties of Simple Bar plot**
 
 -   All rectangular bars should have equal width and should have equal space between them.
@@ -381,7 +381,7 @@ One issue to consider when using stacked bar plots is the number of variable lev
 
 A quantitative measurement contains more information than a categorical one, and so summarizing these data is more complex. One chooses summary statistics to condense a large amount of information into a few intelligible numbers, the sort that could be communicated verbally. The two most important pieces of information about a quantitative measurement are **'where is it?'** and **'how variable is it?'** These are categorized as **measures of location** (or sometimes 'central tendency') and **measures of spread** or variability.
 
-::: {.callout-note icon="false"}
+::: {.callout-tip icon="false"}
 ## **Two summary measures should be reported for a numerical variable**
 
 A measure of **location** (where the center of the distribution of the values is located) and **variability** (how widely the values are spread above and below the central value) provides an informative but brief summary of a set of observations.
@@ -442,7 +442,7 @@ The major advantage of the mean is that it uses all the data values, while the m
 
 If the data are binary and are coded 0 or 1, then $\bar{x}$ is the proportion of individuals with value 1, and this can also be expressed as a percentage. In @farndon2013 data, the cases in which the corn was healed are coded as '1s' and the cases in which the corn was not healed as '0s'. The corn had healed in 52 out of 189 patients (0.28 or 28%), which is equal to the "mean" of this variable `r round(mean(data_corn$complete_healed, na.rm=T), digits = 2)`.
 
-::: {.callout-note icon="false"}
+::: {.callout-tip icon="false"}
 ## **Advantages and Disadvantages of arithmetic mean**
 
 **Advantages of mean**
@@ -746,7 +746,7 @@ A histogram (or density plot) gives information about:
 
  
 
-::: {.callout-note icon="false"}
+::: {.callout-tip icon="false"}
 ## Choose an appropriate number of bins
 
 While tools that can generate histograms usually have some default algorithms for selecting bin boundaries, we will likely want to play around with the binning parameters to choose something that is representative of our data.
@@ -922,7 +922,7 @@ data_corn |>
 
  
 
-::: {.callout-note icon="false"}
+::: {.callout-tip icon="false"}
 ## Identifying Outliers in the data based on quartiles
 
 An **outlier** is a data value significantly far removed from the main body of a data set. We say any value outside of the following interval is an outlier:

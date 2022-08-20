@@ -33,7 +33,9 @@ Different experiments will have different sample spaces that can be written in a
 
 A **random event A**, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it represents **a number** of possible outcomes for the experiment. In the case of the roll of a die, the event "even number" may be represented by A = {2, 4, 6}, and the event "odd number" as B = {1, 3, 5}. In the case of flipping two coins, an event could be that exactly one of the coins lands Heads, A = {HT, TH}.
 
-::: callout-note
+::: {.callout-tip icon="false"}
+## Note
+
 For each experiment, two events always exist: the **sample space** itself which comprises all possible outcomes and the **empty set** that contains no outcomes represented as **A = ∅** and called the impossible event.
 :::
 
@@ -84,7 +86,7 @@ The concept of probability is used in day-to-day life which stands for the proba
 
 The first step towards determining the probability of an event is to establish a number of **basic rules** that capture the meaning of probability. The probability of an event is required to satisfy three **axioms** defined by **Kolmogorov**:
 
-::: {.callout-warning icon="false"}
+::: {.callout-tip icon="false"}
 ## **The Kolmogorov Axioms**
 
 1.  The probability of an event A is a non-negative number, **P(A) ≥ 0**
@@ -119,7 +121,7 @@ that is, the probability is the relative frequency of occurrence of a given even
 
 The obvious **limitation** of this definition is the need to perform the experiment a **large number of times**. This requirement is not only time consuming but also requires that the experiment be repeatable in the first place, which may or may not be possible. The limitation of this method is evident by considering a **coin toss**: no matter the number of tosses, the occurrence of heads up **will never be exactly** 50%, which is what one would expect based on an empirical knowledge of the experiment at hand @fig-run.
 
-::: callout-important
+
 ```{r}
 #| echo: false
 #| label: fig-run
@@ -145,14 +147,14 @@ flipsim %>% ggplot(aes(x = N, y = Pct_Heads)) +
   transition_time(N) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
-:::
+
 
 Therefore, we may say that the probability of an event is the **relative frequency** of this set of outcomes over an indefinitely large number of experiments.
 
 $$ P(A) \approx  \frac{number\ of\ times \ A\ occured}{total\ number\ of\  experiments}$$ {#eq-probability2}
 
-::: callout-note
-## Examples
+::: {.callout-note icon="false"}
+## Examples: Probability based on on Frequentist approach
 
 **Prevalense of blood type**
 
@@ -167,7 +169,7 @@ Suppose the **prevalence of diabetes** in the population is **1%**. The prevalen
 
 Another method to assign probabilities is to use **knowledge** of the experiment, both theoretical and experimental, but without the need for extensive experimental data. The probability assigned to an event represents the **degree of belief** that the event will occur in a given try of the experiment, and it implies an element of subjectivity which will become more evident with Bayes' theorem.
 
-::: callout-note
+::: {.callout-note icon="false"}
 ## Example - Coin toss experiment
 
 In the coin toss experiment, the determination of the subjective probability for events "Heads up" or "Tails up" relies on the knowledge that the coin is **unbiased**, and therefore it must be true that P(T) = P(H). With this information, we can then simply use the Kolmogorov axioms to state that P(T) + P(H) = 1, and therefore obtain the intuitive result that P(T) = P(H) = 1/2.
@@ -181,7 +183,7 @@ In this textbook, we'll focus on "Frequentist" approach of probability.
 
 The following **properties** are useful to assign and manipulate event probabilities.
 
-::: {.callout-warning icon="false"}
+::: {.callout-tip icon="false"}
 ## Fundamental Properties of Probability
 
 1.  The probability of the null event is zero, **P(∅) = 0**.
@@ -284,7 +286,7 @@ where A and B are events and $P(B)\neq 0$.
 
 
 ::: {.callout-caution collapse="true"}
-## (Advanced) Probabilities involved in Bayes' theorem
+## Probabilities involved in Bayes' theorem (Advanced) 
 
 The experiment B can be considered as the data collected in a given experiment. The event A is a model that is used to describe the data.
 
@@ -307,7 +309,7 @@ Bayes' theorem provides a way to **update** the prior knowledge of model paramet
 :::
 
 
-::: {.callout-note}
+::: {.callout-note icon="false"}
 ## Example - Probability of developing lung cancer for smokers
 
 Suppose that the probability of having lung cancer is P(C) = 0.001 and that the probability of being a smoker is P(SM) = 0.25
@@ -350,7 +352,7 @@ Each distribution is entirely defined by several specific parameters. The parame
 
 
 
-::: callout-note
+::: {.callout-tip icon="false"}
 
 Therefore, to fully understand a random variable, we need to know:
 
@@ -382,7 +384,7 @@ Binary random variables are abundant in scientific studies. Examples include dis
 As before, the probabilities for all possible values sum to one: P(X = 0) + P(X = 1) = 1.
 
 
-::: callout-tip
+::: {.callout-tip icon="false"}
 
 ## **Definition-Bernoulli distribution**
 
@@ -413,7 +415,7 @@ $$ \sigma= \sqrt{θ(1-θ)}= \sqrt{μ(μ-1)}$$ {#eq-bernouli3}
 
 
 
-::: callout-note
+::: {.callout-note icon="false"}
 
 ## **Example-Bernoulli distribution: breast cancer**
 
@@ -424,13 +426,13 @@ $$X ∼ Bernoulli(0.8)$$
 The pmf for this distribution is:
 
 $$P(X=x)={\begin{cases}0.2,&for\ x=0\\0.8,&for\ x=1\end{cases}}$$
-Additionally, we can plot pmf for visualizing the distribution. 
+Additionally, we can plot pmf for visualizing the distribution @fig-bern1. 
 
 
 ```{r}
 #| echo: false
 #| label: fig-bern1
-#| out-width: "100%"
+#| out-width: "80%"
 #| fig-align: "center"
 #| fig-cap: Plot of the pmf for Bernoulli(0.8) distribution.
 

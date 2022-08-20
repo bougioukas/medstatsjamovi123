@@ -282,10 +282,10 @@ ul.task-list{list-style: none;}
 <p>The <strong>sample space Ω</strong> is defined as the set of <strong>all</strong> possible outcomes of the experiment. In the case of the roll of a die, the sample space can be written as the set of the six possible outcomes, Ω = {1, 2, 3, 4, 5, 6}.</p>
 <p>Different experiments will have different sample spaces that can be written in an equivalent way (flipping a coin: Ω ={H, T}, flipping two coins: Ω ={HH, HT, TH, TT}, testing for possible genotypes of a bi-allelic gene A: Ω ={AA, Aa, aa}).</p>
 <p>A <strong>random event A</strong>, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it represents <strong>a number</strong> of possible outcomes for the experiment. In the case of the roll of a die, the event “even number” may be represented by A = {2, 4, 6}, and the event “odd number” as B = {1, 3, 5}. In the case of flipping two coins, an event could be that exactly one of the coins lands Heads, A = {HT, TH}.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
 Note
@@ -337,7 +337,7 @@ Basic types and operations of events using set theory
 <span class="header-section-number">3.2</span> Probability</h2>
 <p>The concept of probability is used in day-to-day life which stands for the probability of occurring or non-occurring of events.</p>
 <p>The first step towards determining the probability of an event is to establish a number of <strong>basic rules</strong> that capture the meaning of probability. The probability of an event is required to satisfy three <strong>axioms</strong> defined by <strong>Kolmogorov</strong>:</p>
-<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -382,16 +382,6 @@ Example - Mutually exclusive with dice
 <p><span id="eq-probability"><span class="math display">\[ P(A) = \lim_{N\to\infty} \frac{N(A)}{N} \tag{3.1}\]</span></span></p>
 <p>that is, the probability is the relative frequency of occurrence of a given event from many repetitions of the same experiment.</p>
 <p>The obvious <strong>limitation</strong> of this definition is the need to perform the experiment a <strong>large number of times</strong>. This requirement is not only time consuming but also requires that the experiment be repeatable in the first place, which may or may not be possible. The limitation of this method is evident by considering a <strong>coin toss</strong>: no matter the number of tosses, the occurrence of heads up <strong>will never be exactly</strong> 50%, which is what one would expect based on an empirical knowledge of the experiment at hand <a href="#fig-run">Figure&nbsp;<span>3.1</span></a>.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-run" class="quarto-figure quarto-figure-center anchored">
@@ -401,17 +391,15 @@ Important
 </div>
 </div>
 </div>
-</div>
-</div>
 <p>Therefore, we may say that the probability of an event is the <strong>relative frequency</strong> of this set of outcomes over an indefinitely large number of experiments.</p>
 <p><span id="eq-probability2"><span class="math display">\[ P(A) \approx  \frac{number\ of\ times \ A\ occured}{total\ number\ of\  experiments} \tag{3.2}\]</span></span></p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Examples
+Examples: Probability based on on Frequentist approach
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -423,10 +411,10 @@ Examples
 </div>
 <p><strong>B. Bayesian approach</strong></p>
 <p>Another method to assign probabilities is to use <strong>knowledge</strong> of the experiment, both theoretical and experimental, but without the need for extensive experimental data. The probability assigned to an event represents the <strong>degree of belief</strong> that the event will occur in a given try of the experiment, and it implies an element of subjectivity which will become more evident with Bayes’ theorem.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
 Example - Coin toss experiment
@@ -440,7 +428,7 @@ Example - Coin toss experiment
 <p>&nbsp;</p>
 </section><section id="fundamental-properties-of-probability" class="level3"><h3 class="anchored" data-anchor-id="fundamental-properties-of-probability">Fundamental Properties of Probability</h3>
 <p>The following <strong>properties</strong> are useful to assign and manipulate event probabilities.</p>
-<div class="callout-warning callout callout-style-default no-icon callout-captioned">
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -468,7 +456,7 @@ Fundamental Properties of Probability
 <p>or</p>
 <p><span id="eq-conditional2"><span class="math display">\[ P(A|B)=  \frac{P(A ∩ B)}{P(B)} \tag{3.6}\]</span></span></p>
 <div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -477,7 +465,7 @@ Example - Conditional probability with dice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Calculate the probability of obtaining <strong>8 as the sum of two rolls</strong> of a die, <strong>given that the first roll was a 3</strong>.</p>
 <p>The sample space of the experement consists of all ordered pairs of numbers from 1 to 6. That is, S = {(1, 1), (1, 2),… , (1, 6), (2, 1),… , (6, 6)}.</p>
@@ -530,7 +518,7 @@ Example - Conditional probability with dice
 <p><span id="eq-independent"><span class="math display">\[P(A ∩ B) = P(A) · P(B) \tag{3.7}\]</span></span></p>
 <p><a href="#eq-independent">Equation&nbsp;<span>3.7</span></a>, known as <strong>Multiplication Rule of Probability</strong>, follows directly from <a href="#eq-conditional">Equation&nbsp;<span>3.5</span></a>. In fact, if A and B are statistically independent, then the conditional probability is P(A|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A.</p>
 <div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -539,7 +527,7 @@ Example - Statistical independence with dice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Determine the probability of obtaining two 3s when rolling two dice. This event can be decomposed in two events:</p>
 <ul>
@@ -557,16 +545,16 @@ Example - Statistical independence with dice
 <p><span id="eq-bayes"><span class="math display">\[P(A|B) = \frac{P(B|A)· P(A)}{P(B)} \tag{3.8}\]</span></span></p>
 <p>where A and B are events and <span class="math inline">\(P(B)\neq 0\)</span>.</p>
 <div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-(Advanced) Probabilities involved in Bayes’ theorem
+Probabilities involved in Bayes’ theorem (Advanced)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The experiment B can be considered as the data collected in a given experiment. The event A is a model that is used to describe the data.</p>
 <p>Accordingly, the probabilities involved in Bayes’ theorem can be interpreted as follows:</p>
@@ -582,10 +570,10 @@ Example - Statistical independence with dice
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
 Example - Probability of developing lung cancer for smokers
@@ -610,13 +598,13 @@ Example - Probability of developing lung cancer for smokers
 <p>Note that the total probability for the random variable is still 1. In what follows, we write P(X) to denote the probability of a random variable X in general without specifying any value or range of values. <strong>The probability rules we discussed earlier also apply to random variables</strong>. Specifically, concepts such as independence and conditional probability are defined similarly for random variables as they are defined for random events. For example, when two random variables do not affect each other’s probabilities, we say that they are independent.</p>
 <p>A random variable is also expected to have a theoretical distribution, e.g., Normal, Poisson, etc., according to the nature of the variable itself and the method of measurement.</p>
 <p>Each distribution is entirely defined by several specific parameters. The parameter values determine the location and shape of the curve on the plot of distribution, and each unique combination of parameter values produces a unique distribution curve.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Note
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -637,10 +625,10 @@ Note
 <p>&nbsp;</p>
 <section id="bernoulli-distribution" class="level3"><h3 class="anchored" data-anchor-id="bernoulli-distribution">Bernoulli distribution</h3>
 <p>Binary random variables are abundant in scientific studies. Examples include disease status (healthy and diseased), gender (male and female), survival status (dead, survived), and a gene with two possible alleles (A and a). We usually regard one of the values as the outcome of interest and denote it as X = 1. The other outcome is denoted as X = 0. As before, the probabilities for all possible values sum to one: P(X = 0) + P(X = 1) = 1.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
 <strong>Definition-Bernoulli distribution</strong>
@@ -658,10 +646,10 @@ Note
 <p><span id="eq-bernouli3"><span class="math display">\[ \sigma= \sqrt{θ(1-θ)}= \sqrt{μ(μ-1)} \tag{3.11}\]</span></span></p>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
 <strong>Example-Bernoulli distribution: breast cancer</strong>
@@ -672,11 +660,11 @@ Note
 <p><span class="math display">\[X ∼ Bernoulli(0.8)\]</span></p>
 <p>The pmf for this distribution is:</p>
 <p><span class="math display">\[P(X=x)={\begin{cases}0.2,&amp;for\ x=0\\0.8,&amp;for\ x=1\end{cases}}\]</span></p>
-<p>Additionally, we can plot pmf for visualizing the distribution.</p>
+<p>Additionally, we can plot pmf for visualizing the distribution <a href="#fig-bern1">Figure&nbsp;<span>3.2</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-bern1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="distributions_files/figure-html/fig-bern1-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-bern1-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p><figcaption class="figure-caption">Figure 3.2: Plot of the pmf for Bernoulli(0.8) distribution.</figcaption><p></p>
 </figure>
 </div>
