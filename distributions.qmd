@@ -380,8 +380,11 @@ For discrete random variables, the probability distribution is fully defined by 
 
 ### Bernoulli distribution
 
-Binary random variables are abundant in scientific studies. Examples include disease status (healthy and diseased), gender (male and female), survival status (dead, survived), and a gene with two possible alleles (A and a). We usually regard one of the values as the outcome of interest and denote it as X = 1. The other outcome is denoted as X = 0. 
-As before, the probabilities for all possible values sum to one: P(X = 0) + P(X = 1) = 1.
+Binary random variables are abundant in scientific studies. Bernoulli distribution applies to events that have one trial and two possible outcomes.
+
+A **Bernoulli event** is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p. As before, the probabilities for all possible values sum to one: P(X = 0) + P(X = 1) = 1.
+
+A **Bernoulli trial** is an instantiation of a Bernoulli event. So long as the probability of success or failure remains the same from trial to trial (i.e., each trial is independent of the others), a sequence of Bernoulli trials is called a **Bernoulli process**.
 
 
 ::: {.callout-tip icon="false"}
@@ -389,29 +392,29 @@ As before, the probabilities for all possible values sum to one: P(X = 0) + P(X 
 ## **Definition-Bernoulli distribution**
 
 The binary random variable X with possible values 0 and 1 has a Bernoulli
-distribution with parameter θ , where P(X = 1) = θ and P(X = 0) = 1 − θ .
-We denote this as X ∼ Bernoulli(θ), where 0 ≤ θ ≤ 1.
+distribution with parameter p , where P(X = 1) = p and P(X = 0) = 1 − p .
+We denote this as X ∼ Bernoulli(p), where 0 ≤ p ≤ 1.
 
-Here, θ is the unknown parameter. If θ were known, we could fully specify the probability mass function:
+Here, p is the unknown parameter. If p were known, we could fully specify the probability mass function:
 
-$$P(X=x)={\begin{cases}1-θ,&for\ x=0\\θ,&for\ x=1\end{cases}}$$
+$$P(X=x)={\begin{cases}q=1-p,&for\ x=0\\p,&for\ x=1\end{cases}}$$
 
+where ${0\leq p\leq 1}$.
 
-The mean of a binary random variable, X, with Bernoulli(θ) distribution
-is θ. We show this as 
+The mean of a binary random variable, X, with Bernoulli(p) distribution
+is p. We show this as:
 
-$$μ = θ$$ {#eq-bernouli1}
+$$μ = p$$ {#eq-bernouli1}
+
 In this case, the mean can be interpreted as the proportion of the population who have the outcome of interest. 
 
-Furthermore, the variance of a random variable with Bernoulli(θ) distribution is
+Furthermore, the variance of a random variable with Bernoulli(p) distribution is:
 
-$$ \sigma^2= θ(1-θ)= μ(μ-1)$$ {#eq-bernouli2}
+$$ \sigma^2= pq=p(1-p)= μ(μ-1)$$ {#eq-bernouli2}
 
-$$ \sigma= \sqrt{θ(1-θ)}= \sqrt{μ(μ-1)}$$ {#eq-bernouli3}
+$$ \sigma= \sqrt{p(1-p)}= \sqrt{μ(μ-1)}$$ {#eq-bernouli3}
 
 :::
-
-
 
 
 
@@ -420,7 +423,7 @@ $$ \sigma= \sqrt{θ(1-θ)}= \sqrt{μ(μ-1)}$$ {#eq-bernouli3}
 ## **Example-Bernoulli distribution: breast cancer**
 
 For example, let X be a random variable representing the five-year survival status of breast cancer patient, where X = 1 if the patient survived and X = 0 otherwise.
-Suppose that the probability of survival is θ = 0.8: P(X = 1) = 0.8. Therefore, the probability of not surviving is P(X = 0) = 1 − θ = 0.2. Then X has a Bernoulli distribution with parameter θ = 0.8, and we denote this as
+Suppose that the probability of survival is p = 0.8: P(X = 1) = 0.8. Therefore, the probability of not surviving is P(X = 0) = 1 − p = 0.2. Then X has a Bernoulli distribution with parameter p = 0.8, and we denote this as
 
 $$X ∼ Bernoulli(0.8)$$
 The pmf for this distribution is:
@@ -455,10 +458,90 @@ For
 comparison, suppose that the probability of survival for bladder cancer is θ = 0.6. Then, the variance becomes $σ^2 = 0.6×(1−0.6) = 0.24$. This reflects a higher variability in the survival status for bladder cancer patients compared to that of breast cancer patients.
 :::
 
+ 
+
+### Binomial distribution
+
+The binomial distribution is an important theoretical distribution with wide applications in biomedicine. Many biological phenomena can be described using a binomial distribution.
+
+The Bernoulli distribution represents the success or failure of a single Bernoulli trial. The Binomial Distribution represents the number of
+successes and failures in $n$ **independent** Bernoulli trials for some given value of n.
+
+::: {.callout-tip icon="false"}
+
+## **Definition-Bernoulli distribution**
+
+The random variable X representing the **number of times** the outcome of interest occurs in $n$ Bernoulli trials has a $Binomial(n, p)$ distribution, where p is the probability of the outcome of interest (success). A binomial distribution is defined by the number of Bernoulli trials $n$ and the probability of the outcome of interest p for the underlying Bernoulli trials.
+
+
+$$ P(X=x) = {{n}\choose{x}} \cdot p^xq^{n-x}$$ {#eq-binom0}
+
+where x = 0, 1, ... , n, ${0\leq p\leq 1}$, q = 1 − p
+
+
+If is a binomial random variable with parameters and n and p, then
+
+$$μ = np$$ {#eq-binom1}
+
+$$σ^2 = npq$$ {#eq-binom2}
+
+$$σ = \sqrt{npq}$$    {#eq-binom3}
+
+
+:::
 
 
 
+::: {.callout-note icon="false"}
 
+## **Example-Binomial distribution: breast cancer**
+
+Suppose that we plan to recruit a group of 50 patients with breast cancer and study their survival within five years from diagnosis. We represent the survival status for these patient by a set of Bernoulli random variables $X_1, . . . , X_{50}$. (For each patient, the outcome is either 0 or 1). Assuming that all patients have the same survival probability, p = 0.8, and the survival status of one patient does not affect the probability of survival for another patient, $X_1, . . . , X_{50}$ form a set of 50 Bernoulli trials.
+
+Now we can create a new random variable X representing the number of patients
+out of 50 who survive for five years. The number of survivals is the number of 1s in the set of Bernoulli trials. This is the same as the sum of Bernoulli trials, whose values are either 0 or 1:
+
+$$X=\sum_{i=1}^{50}X_{i}$$ {#eq-X}
+
+where $X_i = 1$ if the ith patient survive and $X_i = 0$ otherwise.
+
+Since X can be any integer number from 0 (no one survives) through 50 (everyone
+survives), its range is {0, 1, . . . , 50}. The range is a countable set. Therefore, the random variable X is discrete. The distribution of X is a binomial distribution, shown as
+
+$$X ∼ Binomial(50, 0.8)$$
+
+The pmf of Binomial(50, 0.8) distribution specifies the probability of 0 through 50 survivals. 
+
+
+
+```{r}
+#| echo: false
+#| label: fig-binom1
+#| out-width: "80%"
+#| fig-align: "center"
+#| fig-cap: Plot of the pmf for Binomial(50, 0.8) distribution.
+
+binom_q <- 0:50
+binom_pmf <- dbinom(binom_q, size = 50, prob = 0.8)
+
+plot(binom_q , binom_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nBinomial(50, 0.8)", ylim = c(0, 0.15),  lwd = 1, frame.plot = FALSE)
+ points(binom_q , binom_pmf,  pch = 20, cex = 1)
+
+```
+
+
+As before, the height of each bar is the probability of the corresponding value on the x-axis. For example, the probability of 40 survivals (out of 50) is P(X=40)=0.14. Also, since the probabilities for all possible values of the random variable add to 1, the bar heights add up to 1. Note that for numbers below 30 and above 48, the probability is almost zero.
+
+
+Now suppose that we are interested in the probability that either 34 or 35 or 36 patients survive. Since the underlying event include three possible outcomes, 34, 35, and 36, we obtain the probability by adding the individual probabilities for these outcomes:
+
+$$P(33<X ≤ 36) = P(X = 34)+ P(X = 35)+P(X = 36) = 0.02 + 0.03 + 0.05 = 0.1$$
+
+
+For the breast cancer example and @eq-binom1, the mean of the random variable is 50×0.8 = 40. If we recruit 50 patients, we expect 40 people survive over five years. Of course, the actual number of survivals can change from one group to another (e.g., if we take another group of 50 patients).
+According to @eq-binom2, the variance of X in the above example is 50 × 0.8 × 0.2 = 8, which shows the extent of the variation of the random variable around its mean.
+
+:::
 
 
 ## Probability distributions for Continuous Outcomes

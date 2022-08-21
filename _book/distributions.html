@@ -244,6 +244,7 @@ ul.task-list{list-style: none;}
 <a href="#probability-distributions-for-discrete-outcomes" id="toc-probability-distributions-for-discrete-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-discrete-outcomes"> <span class="header-section-number">3.4</span> Probability distributions for Discrete Outcomes</a>
   <ul class="collapse">
 <li><a href="#bernoulli-distribution" id="toc-bernoulli-distribution" class="nav-link" data-scroll-target="#bernoulli-distribution">Bernoulli distribution</a></li>
+  <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution">Binomial distribution</a></li>
   </ul>
 </li>
   <li>
@@ -624,7 +625,9 @@ Tip
 <p>For discrete random variables, the probability distribution is fully defined by the <strong>probability mass function</strong> (pmf). This is a function that specifies the probability of each possible value within range of random variable.</p>
 <p>&nbsp;</p>
 <section id="bernoulli-distribution" class="level3"><h3 class="anchored" data-anchor-id="bernoulli-distribution">Bernoulli distribution</h3>
-<p>Binary random variables are abundant in scientific studies. Examples include disease status (healthy and diseased), gender (male and female), survival status (dead, survived), and a gene with two possible alleles (A and a). We usually regard one of the values as the outcome of interest and denote it as X = 1. The other outcome is denoted as X = 0. As before, the probabilities for all possible values sum to one: P(X = 0) + P(X = 1) = 1.</p>
+<p>Binary random variables are abundant in scientific studies. Bernoulli distribution applies to events that have one trial and two possible outcomes.</p>
+<p>A <strong>Bernoulli event</strong> is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p.&nbsp;As before, the probabilities for all possible values sum to one: P(X = 0) + P(X = 1) = 1.</p>
+<p>A <strong>Bernoulli trial</strong> is an instantiation of a Bernoulli event. So long as the probability of success or failure remains the same from trial to trial (i.e., each trial is independent of the others), a sequence of Bernoulli trials is called a <strong>Bernoulli process</strong>.</p>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -635,15 +638,16 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The binary random variable X with possible values 0 and 1 has a Bernoulli distribution with parameter θ , where P(X = 1) = θ and P(X = 0) = 1 − θ . We denote this as X ∼ Bernoulli(θ), where 0 ≤ θ ≤ 1.</p>
-<p>Here, θ is the unknown parameter. If θ were known, we could fully specify the probability mass function:</p>
-<p><span class="math display">\[P(X=x)={\begin{cases}1-θ,&amp;for\ x=0\\θ,&amp;for\ x=1\end{cases}}\]</span></p>
-<p>The mean of a binary random variable, X, with Bernoulli(θ) distribution is θ. We show this as</p>
-<p><span id="eq-bernouli1"><span class="math display">\[μ = θ \tag{3.9}\]</span></span></p>
+<p>The binary random variable X with possible values 0 and 1 has a Bernoulli distribution with parameter p , where P(X = 1) = p and P(X = 0) = 1 − p . We denote this as X ∼ Bernoulli(p), where 0 ≤ p ≤ 1.</p>
+<p>Here, p is the unknown parameter. If p were known, we could fully specify the probability mass function:</p>
+<p><span class="math display">\[P(X=x)={\begin{cases}q=1-p,&amp;for\ x=0\\p,&amp;for\ x=1\end{cases}}\]</span></p>
+<p>where <span class="math inline">\({0\leq p\leq 1}\)</span>.</p>
+<p>The mean of a binary random variable, X, with Bernoulli(p) distribution is p.&nbsp;We show this as:</p>
+<p><span id="eq-bernouli1"><span class="math display">\[μ = p \tag{3.9}\]</span></span></p>
 <p>In this case, the mean can be interpreted as the proportion of the population who have the outcome of interest.</p>
-<p>Furthermore, the variance of a random variable with Bernoulli(θ) distribution is</p>
-<p><span id="eq-bernouli2"><span class="math display">\[ \sigma^2= θ(1-θ)= μ(μ-1) \tag{3.10}\]</span></span></p>
-<p><span id="eq-bernouli3"><span class="math display">\[ \sigma= \sqrt{θ(1-θ)}= \sqrt{μ(μ-1)} \tag{3.11}\]</span></span></p>
+<p>Furthermore, the variance of a random variable with Bernoulli(p) distribution is:</p>
+<p><span id="eq-bernouli2"><span class="math display">\[ \sigma^2= pq=p(1-p)= μ(μ-1) \tag{3.10}\]</span></span></p>
+<p><span id="eq-bernouli3"><span class="math display">\[ \sigma= \sqrt{p(1-p)}= \sqrt{μ(μ-1)} \tag{3.11}\]</span></span></p>
 </div>
 </div>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
@@ -656,7 +660,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For example, let X be a random variable representing the five-year survival status of breast cancer patient, where X = 1 if the patient survived and X = 0 otherwise. Suppose that the probability of survival is θ = 0.8: P(X = 1) = 0.8. Therefore, the probability of not surviving is P(X = 0) = 1 − θ = 0.2. Then X has a Bernoulli distribution with parameter θ = 0.8, and we denote this as</p>
+<p>For example, let X be a random variable representing the five-year survival status of breast cancer patient, where X = 1 if the patient survived and X = 0 otherwise. Suppose that the probability of survival is p = 0.8: P(X = 1) = 0.8. Therefore, the probability of not surviving is P(X = 0) = 1 − p = 0.2. Then X has a Bernoulli distribution with parameter p = 0.8, and we denote this as</p>
 <p><span class="math display">\[X ∼ Bernoulli(0.8)\]</span></p>
 <p>The pmf for this distribution is:</p>
 <p><span class="math display">\[P(X=x)={\begin{cases}0.2,&amp;for\ x=0\\0.8,&amp;for\ x=1\end{cases}}\]</span></p>
@@ -675,6 +679,61 @@ Tip
 <p>From <a href="#eq-bernouli2">Equation&nbsp;<span>3.10</span></a> the variance of the random variable is <span class="math inline">\(σ^2 = 0.8 × 0.2 = 0.16\)</span>, and its standard deviation is <span class="math inline">\(σ = 0.4\)</span>. This reflects the extent of variability in survival status from one person to another. For this example, the amount of variation is rather small. Therefore, we expect to see many survivals (X = 1) with occasional death (X = 0). For comparison, suppose that the probability of survival for bladder cancer is θ = 0.6. Then, the variance becomes <span class="math inline">\(σ^2 = 0.6×(1−0.6) = 0.24\)</span>. This reflects a higher variability in the survival status for bladder cancer patients compared to that of breast cancer patients.</p>
 </div>
 </div>
+<p>&nbsp;</p>
+</section><section id="binomial-distribution" class="level3"><h3 class="anchored" data-anchor-id="binomial-distribution">Binomial distribution</h3>
+<p>The binomial distribution is an important theoretical distribution with wide applications in biomedicine. Many biological phenomena can be described using a binomial distribution.</p>
+<p>The Bernoulli distribution represents the success or failure of a single Bernoulli trial. The Binomial Distribution represents the number of successes and failures in <span class="math inline">\(n\)</span> <strong>independent</strong> Bernoulli trials for some given value of n.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<strong>Definition-Bernoulli distribution</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The random variable X representing the <strong>number of times</strong> the outcome of interest occurs in <span class="math inline">\(n\)</span> Bernoulli trials has a <span class="math inline">\(Binomial(n, p)\)</span> distribution, where p is the probability of the outcome of interest (success). A binomial distribution is defined by the number of Bernoulli trials <span class="math inline">\(n\)</span> and the probability of the outcome of interest p for the underlying Bernoulli trials.</p>
+<p><span id="eq-binom0"><span class="math display">\[ P(X=x) = {{n}\choose{x}} \cdot p^xq^{n-x} \tag{3.12}\]</span></span></p>
+<p>where x = 0, 1, … , n, <span class="math inline">\({0\leq p\leq 1}\)</span>, q = 1 − p</p>
+<p>If is a binomial random variable with parameters and n and p, then</p>
+<p><span id="eq-binom1"><span class="math display">\[μ = np \tag{3.13}\]</span></span></p>
+<p><span id="eq-binom2"><span class="math display">\[σ^2 = npq \tag{3.14}\]</span></span></p>
+<p><span id="eq-binom3"><span class="math display">\[σ = \sqrt{npq} \tag{3.15}\]</span></span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<strong>Example-Binomial distribution: breast cancer</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that we plan to recruit a group of 50 patients with breast cancer and study their survival within five years from diagnosis. We represent the survival status for these patient by a set of Bernoulli random variables <span class="math inline">\(X_1, . . . , X_{50}\)</span>. (For each patient, the outcome is either 0 or 1). Assuming that all patients have the same survival probability, p = 0.8, and the survival status of one patient does not affect the probability of survival for another patient, <span class="math inline">\(X_1, . . . , X_{50}\)</span> form a set of 50 Bernoulli trials.</p>
+<p>Now we can create a new random variable X representing the number of patients out of 50 who survive for five years. The number of survivals is the number of 1s in the set of Bernoulli trials. This is the same as the sum of Bernoulli trials, whose values are either 0 or 1:</p>
+<p><span id="eq-X"><span class="math display">\[X=\sum_{i=1}^{50}X_{i} \tag{3.16}\]</span></span></p>
+<p>where <span class="math inline">\(X_i = 1\)</span> if the ith patient survive and <span class="math inline">\(X_i = 0\)</span> otherwise.</p>
+<p>Since X can be any integer number from 0 (no one survives) through 50 (everyone survives), its range is {0, 1, . . . , 50}. The range is a countable set. Therefore, the random variable X is discrete. The distribution of X is a binomial distribution, shown as</p>
+<p><span class="math display">\[X ∼ Binomial(50, 0.8)\]</span></p>
+<p>The pmf of Binomial(50, 0.8) distribution specifies the probability of 0 through 50 survivals.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-binom1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-binom1-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 3.3: Plot of the pmf for Binomial(50, 0.8) distribution.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As before, the height of each bar is the probability of the corresponding value on the x-axis. For example, the probability of 40 survivals (out of 50) is P(X=40)=0.14. Also, since the probabilities for all possible values of the random variable add to 1, the bar heights add up to 1. Note that for numbers below 30 and above 48, the probability is almost zero.</p>
+<p>Now suppose that we are interested in the probability that either 34 or 35 or 36 patients survive. Since the underlying event include three possible outcomes, 34, 35, and 36, we obtain the probability by adding the individual probabilities for these outcomes:</p>
+<p><span class="math display">\[P(33&lt;X ≤ 36) = P(X = 34)+ P(X = 35)+P(X = 36) = 0.02 + 0.03 + 0.05 = 0.1\]</span></p>
+<p>For the breast cancer example and <a href="#eq-binom1">Equation&nbsp;<span>3.13</span></a>, the mean of the random variable is 50×0.8 = 40. If we recruit 50 patients, we expect 40 people survive over five years. Of course, the actual number of survivals can change from one group to another (e.g., if we take another group of 50 patients). According to <a href="#eq-binom2">Equation&nbsp;<span>3.14</span></a>, the variance of X in the above example is 50 × 0.8 × 0.2 = 8, which shows the extent of the variation of the random variable around its mean.</p>
+</div>
+</div>
 </section></section><section id="probability-distributions-for-continuous-outcomes" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="probability-distributions-for-continuous-outcomes">
 <span class="header-section-number">3.5</span> Probability distributions for Continuous Outcomes</h2>
 <section id="normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="normal-distribution"><strong>Normal Distribution</strong></h3>
@@ -685,7 +744,7 @@ Tip
 <div class="cell-output-display">
 <div id="fig-dnormal" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-dnormal-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.3: The Normal probability distribution (often called Gaussian or bell-shaped distribution).</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.4: The Normal probability distribution (often called Gaussian or bell-shaped distribution).</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -713,9 +772,9 @@ Properties of Normal Distribution
 </div>
 <p>&nbsp;</p>
 </section></section><section id="the-mathimatical-type" class="level3"><h3 class="anchored" data-anchor-id="the-mathimatical-type">The mathimatical type</h3>
-<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss">Equation&nbsp;<span>3.12</span></a>:</p>
-<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.12}\]</span></span></p>
-<p>Populations with small values of the standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution concentrated close to the centre, <span class="math inline">\(\mu\)</span>; those with large standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution widely spread along the measurement axis <a href="#fig-compare_normal">Figure&nbsp;<span>3.4</span></a>.</p>
+<p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss">Equation&nbsp;<span>3.17</span></a>:</p>
+<p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.17}\]</span></span></p>
+<p>Populations with small values of the standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution concentrated close to the centre, <span class="math inline">\(\mu\)</span>; those with large standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution widely spread along the measurement axis <a href="#fig-compare_normal">Figure&nbsp;<span>3.5</span></a>.</p>
 <div id="fig-compare_normal" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
@@ -733,7 +792,7 @@ Properties of Normal Distribution
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure 3.4: Probability distribution functions of the Normal distributions with different means and standard deviations.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.5: Probability distribution functions of the Normal distributions with different means and standard deviations.</figcaption><p></p>
 </figure>
 </div>
 <p>The ensuing distribution will look like this in a simple case where <span class="math inline">\(\mu\)</span> is 0 and <span class="math inline">\(\sigma^2\)</span> is 1 (Standard Normal distribution).</p>
@@ -741,7 +800,7 @@ Properties of Normal Distribution
 <div class="cell-output-display">
 <div id="fig-simple_normal" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-simple_normal-1.png" class="img-fluid figure-img" width="576"></p>
-<p></p><figcaption class="figure-caption">Figure 3.5: A simple normal density function.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.6: A simple normal density function.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -753,7 +812,7 @@ Properties of Normal Distribution
 <div class="cell-output-display">
 <div id="fig-basic_parabola" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-basic_parabola-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 3.6: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.7: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -763,7 +822,7 @@ Properties of Normal Distribution
 <div class="cell-output-display">
 <div id="fig-neg_parabola" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-neg_parabola-1.png" class="img-fluid figure-img" width="576"></p>
-<p></p><figcaption class="figure-caption">Figure 3.7: An exponentiated negative parabola.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.8: An exponentiated negative parabola.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -778,7 +837,7 @@ Properties of Normal Distribution
 <div class="cell-output-display">
 <div id="fig-auc" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-auc-1.png" class="img-fluid figure-img" width="1152"></p>
-<p></p><figcaption class="figure-caption">Figure 3.8: The area underneath a normal distribution</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.9: The area underneath a normal distribution</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -789,13 +848,13 @@ Properties of Normal Distribution
 <div class="cell-output-display">
 <div id="fig-standard_normal" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 3.9: Standard normal distribution with a shaded region</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.10: Standard normal distribution with a shaded region</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>3.12</span></a> as following:</p>
-<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{3.13}\]</span></span></p>
+<p>To find the area between x = 1 and x = 2, we must integrate the <a href="#eq-gauss">Equation&nbsp;<span>3.17</span></a> as following:</p>
+<p><span id="eq-integral"><span class="math display">\[ E(x)=\int_{1}^{2}f(x)dx  \tag{3.18}\]</span></span></p>
 <p>&nbsp;</p>
 <section id="properties-of-an-approximately-bell-shaped-histogram" class="level4"><h4 class="anchored" data-anchor-id="properties-of-an-approximately-bell-shaped-histogram">Properties of an approximately bell-shaped histogram</h4>
 <p>In an approximately <strong>bell-shaped (normal)</strong> distribution:</p>
@@ -803,8 +862,8 @@ Properties of Normal Distribution
 <li><p>the mean, the median and the mode have very close values</p></li>
 <li><p>the histogram is symmetric about the mean</p></li>
 <li><p>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean</p></li>
-<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.10</span></a> b). Particularly, values between −1 and +1 indicate an approximate bell-shaped curve.</p></li>
-<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.11</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
+<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.11</span></a> b). Particularly, values between −1 and +1 indicate an approximate bell-shaped curve.</p></li>
+<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.12</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
 </ul></section><section id="t-distribution" class="level4"><h4 class="anchored" data-anchor-id="t-distribution"><strong>t-distribution</strong></h4>
 </section><section id="chi-squared-distribution" class="level4"><h4 class="anchored" data-anchor-id="chi-squared-distribution"><strong>Chi-squared distribution</strong></h4>
 </section><section id="f-distribution" class="level4"><h4 class="anchored" data-anchor-id="f-distribution"><strong>F-distribution</strong></h4>
@@ -822,13 +881,13 @@ Tip
 <p>There are two shape statistics that can indicate deviation from normality: <strong>skew</strong> and <strong>kurtosis</strong>.</p>
 <p><strong>Skewness</strong></p>
 <p>Skewness is usually described as a measure of a dataset’s symmetry – or lack of symmetry.</p>
-<p>Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.10</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2">Figure&nbsp;<span>3.10</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.10</span></a> c).</p>
+<p>Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.11</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2">Figure&nbsp;<span>3.11</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.11</span></a> c).</p>
 <p>Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with &gt;1 indicating moderate skewness and &gt;2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-skew2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/skew2.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.10: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.11: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -836,13 +895,13 @@ Tip
 <p>&nbsp;</p>
 <p><strong>Kurtosis</strong></p>
 <p>The other way that distributions can deviate from normality is <strong>kurtosis</strong>. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).</p>
-<p>Distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.11</span></a> a). If the measure of excess kurtosis is <strong>0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.11</span></a> b). Finally, distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.11</span></a> c).</p>
+<p>Distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.12</span></a> a). If the measure of excess kurtosis is <strong>0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.12</span></a> b). Finally, distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.12</span></a> c).</p>
 <p>A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-kurtosis" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="images/kurtosis.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.11: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.12: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.</figcaption><p></p>
 </figure>
 </div>
 </div>
