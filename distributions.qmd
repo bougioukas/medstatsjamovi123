@@ -48,36 +48,25 @@ For each experiment, two events always exist: the **sample space** itself which 
 >
 > If an event consists of more than a single outcome from the sample space, it is called a compound event. An example of a **compound event** in probability is rolling a fair die and getting an odd number, A = {1, 3, 5}.
 
-
 **Union of Events** The union symbol (∪) is used to denote the OR event.
 
 > For any two events A and B, "at least one of A and B occurs" is also an event. This event is called the union of A and B, and is denoted by **A∪ B**, which includes only A occurring, only B occurring, and A and B occurring simultaneously.
 >
->In the experiment of rolling a single die, find the union of the events  A : “the number rolled is even” and  B : “the number rolled is greater than two.” 
-Since the outcomes that are in either  A={2,4,6}  or  B={3,4,5,6}  (or both) are  2,3,4,5, and  6, that means  A ∪ B={2,3,4,5,6} .
-
-
+> In the experiment of rolling a single die, find the union of the events A : "the number rolled is even" and B : "the number rolled is greater than two." Since the outcomes that are in either A={2,4,6} or B={3,4,5,6} (or both) are 2,3,4,5, and 6, that means A ∪ B={2,3,4,5,6} .
 
 **Intersection of Events** The intersection symbol (∩) is used to denote the AND event.
 
-> For any two events A and B, “A and B occur simultaneously” is also an event. This event is called the intersection of A and B, and is denoted by A ∩ B.
+> For any two events A and B, "A and B occur simultaneously" is also an event. This event is called the intersection of A and B, and is denoted by A ∩ B.
 >
 > For example, A = {1, 2, 3, 4}, B = {2, 3, 5, 6} then A ∩ B = {2, 3}.
 
-
-
-
 **Inverse Events**
 
-> For any event A, “event A does not occur” is also an event. This event is called the inverse of event A or the complement of A, and is denoted by $\bar{A}$.
-
+> For any event A, "event A does not occur" is also an event. This event is called the inverse of event A or the complement of A, and is denoted by $\bar{A}$.
 
 **Mutually Exclusive Events**
 
 > For any two events A and B, if events A and B cannot occur simultaneously, that is, A ∩ B =∅, then A and B are called mutually exclusive events.
-
-
-
 :::
 
 ## Probability
@@ -91,8 +80,7 @@ The first step towards determining the probability of an event is to establish a
 
 1.  The probability of an event A is a non-negative number, **P(A) ≥ 0**
 2.  The probability of all possible outcomes, or sample space, is **P(Ω) = 1**
-3.  If A and B are two mutually exclusive events, then **P(A ∪ B) = P(A) + P(B)** and **P(A ∩ B) = 0**. 
-
+3.  If A and B are two mutually exclusive events, then **P(A ∪ B) = P(A) + P(B)** and **P(A ∩ B) = 0**.
 :::
 
 ::: {.callout-caution collapse="true"}
@@ -121,7 +109,6 @@ that is, the probability is the relative frequency of occurrence of a given even
 
 The obvious **limitation** of this definition is the need to perform the experiment a **large number of times**. This requirement is not only time consuming but also requires that the experiment be repeatable in the first place, which may or may not be possible. The limitation of this method is evident by considering a **coin toss**: no matter the number of tosses, the occurrence of heads up **will never be exactly** 50%, which is what one would expect based on an empirical knowledge of the experiment at hand @fig-run.
 
-
 ```{r}
 #| echo: false
 #| label: fig-run
@@ -147,7 +134,6 @@ flipsim %>% ggplot(aes(x = N, y = Pct_Heads)) +
   transition_time(N) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
-
 
 Therefore, we may say that the probability of an event is the **relative frequency** of this set of outcomes over an indefinitely large number of experiments.
 
@@ -218,7 +204,7 @@ The sample space of the experement consists of all ordered pairs of numbers from
 
 It is useful to define the following two events:
 
--   **A** = {The sum of two rolls is 8}. 
+-   **A** = {The sum of two rolls is 8}.
 
 -   **B** = {The first roll shows 3, and the second any number}.
 
@@ -232,7 +218,6 @@ It is useful to define the following two events:
 
 and since each combination has a probability of 1/36, **P(A) = 5/36**.
 
-
 **Event B** is given by outcomes B={(3,1), (3,2), (3,3), (3,4), (3,5), (3, 6)}. The probability of event B is **P(B) = 6/36 = 1/6**.
 
 Also, the event A ∩ B occurs if the first roll is a 3 and the sum is 8, which can clearly occur only if a sequence of **(3,5)** takes place, thus with probability **P(A ∩ B) = 1/36**.
@@ -241,7 +226,7 @@ According to the definition of conditional probability @eq-conditional2, the pro
 
 $P(A|B) = \frac{P(A ∩ B)}{P(B)} = \frac{1/36}{1/6} = \frac{1}{6}$
 
-Therefore, the occurrence of 3 in the first roll has  **increased** the probability of A from P(A) = 5/36 to P(A\|B) = 1/6.
+Therefore, the occurrence of 3 in the first roll has **increased** the probability of A from P(A) = 5/36 to P(A\|B) = 1/6.
 :::
 
  
@@ -257,7 +242,6 @@ Two events A and B are said to be **statistically independent** if:
 $$P(A ∩ B) = P(A) · P(B)$$ {#eq-independent}
 
 @eq-independent, known as **Multiplication Rule of Probability**, follows directly from @eq-conditional. In fact, if A and B are statistically independent, then the conditional probability is P(A\|B) = P(A), i.e., the occurrence of B has no influence on the occurrence of A.
-
 
 ::: {.callout-caution collapse="true"}
 ## Example - Statistical independence with dice
@@ -283,10 +267,8 @@ $$P(A|B) = \frac{P(B|A)· P(A)}{P(B)}$$ {#eq-bayes}
 
 where A and B are events and $P(B)\neq 0$.
 
-
-
 ::: {.callout-caution collapse="true"}
-## Probabilities involved in Bayes' theorem (Advanced) 
+## Probabilities involved in Bayes' theorem (Advanced)
 
 The experiment B can be considered as the data collected in a given experiment. The event A is a model that is used to describe the data.
 
@@ -305,9 +287,7 @@ This interpretation of Bayes' theorem is the foundation of Bayesian statistics, 
 **Posterior probability ∝ Likelihood × Prior probability**
 
 Bayes' theorem provides a way to **update** the prior knowledge of model parameters given the measurements, leading to posterior estimates of parameters. One key feature of Bayesian statistics is that the calculation of probabilities is based on a **prior probability**, which may rely on a subjective interpretation of what is known about the experiment before any measurements are made. Therefore, great attention must be paid to the assignment of prior probabilities and the effect of priors on the final results of the analysis.
-
 :::
-
 
 ::: {.callout-note icon="false"}
 ## Example - Probability of developing lung cancer for smokers
@@ -321,16 +301,13 @@ From @eq-bayes:
 $$P(C|SM) = \frac{P(SM|C)· P(C)}{P(SM)} = \frac{0.4· 0.001}{0.25}= 0.0016$$ Therefore, the probability of lung cancer increases from 0.001 to 0.0016 for smokers. That is, the probability becomes 60% higher than the overall probability of lung cancer.
 :::
 
-
  
 
 ## Random Variables
 
-Formally, a random variable X assigns a numerical value to each possible outcome of a random phenomenon. For instance, we can define X based on
-possible genotypes of a bi-allelic gene A as follows:
+Formally, a random variable X assigns a numerical value to each possible outcome of a random phenomenon. For instance, we can define X based on possible genotypes of a bi-allelic gene A as follows:
 
 $$X={\begin{cases}0,&for\ genotype\ AA\\1,&for\ genotype\ Aa\\2,&for\ genotype\ aa\end{cases}}$$
-
 
 In this case, the random variable assigns 0 to the outcome AA, 1 to the outcome Aa, and 2 to the outcome aa.
 
@@ -338,39 +315,24 @@ The set of values that a random variable can assume is called its range. For the
 
 After we define a random variable, we can find the probabilities for its possible values based on the probabilities for its underlying random phenomenon. This way, instead of talking about the probabilities for different outcomes and events, we can talk about **the probability of different values for a random variable**.
 
-Assume that the probabilities for different genotypes are P(AA) = 0.49, P(Aa) = 0.42, and P(aa) = 0.09. Then, instead of saying P(AA) = 0.49, i.e., the genotype is AA with probability 0.49, we can say that P(X = 0) = 0.49, i.e., X is equal to 0 with probability of 0.49. Likewise, P(X = 1) = 0.42 and P(X = 2) = 0.09. 
+Assume that the probabilities for different genotypes are P(AA) = 0.49, P(Aa) = 0.42, and P(aa) = 0.09. Then, instead of saying P(AA) = 0.49, i.e., the genotype is AA with probability 0.49, we can say that P(X = 0) = 0.49, i.e., X is equal to 0 with probability of 0.49. Likewise, P(X = 1) = 0.42 and P(X = 2) = 0.09.
 
-
-Note that the total probability for the random variable is still 1.
-In what follows, we write P(X) to denote the probability of a random variable X in general without specifying any value or range of values.
-**The probability rules we discussed earlier also apply to random variables**.
-Specifically, concepts such as independence and conditional probability are defined similarly for random variables as they are defined for random events. For example, when two random variables do not affect each other’s probabilities, we say that they are independent.
+Note that the total probability for the random variable is still 1. In what follows, we write P(X) to denote the probability of a random variable X in general without specifying any value or range of values. **The probability rules we discussed earlier also apply to random variables**. Specifically, concepts such as independence and conditional probability are defined similarly for random variables as they are defined for random events. For example, when two random variables do not affect each other's probabilities, we say that they are independent.
 
 A random variable is also expected to have a theoretical distribution, e.g., Normal, Poisson, etc., according to the nature of the variable itself and the method of measurement.
 
 Each distribution is entirely defined by several specific parameters. The parameter values determine the location and shape of the curve on the plot of distribution, and each unique combination of parameter values produces a unique distribution curve.
 
-
-
 ::: {.callout-tip icon="false"}
-
 Therefore, to fully understand a random variable, we need to know:
 
 (1) **every possible value**, or the interval of values of the random variable.
 (2) the **probabilities** corresponding to the values or value ranges (**probability distribution**).
-
 :::
-
 
 For the random variable X defined based on genotypes, the **probability distribution** can be simply specified as follows:
 
-$$P(X=x)={\begin{cases}0.49,&for\ x=0\\0.42,&for\ x=1\\0.09,&for\ x=2\end{cases}}$$
-Here, x denotes a specific value (i.e., 0, 1, or 2) of the random variable.
-Probability distributions are specified differently for different types of random variables. In the following, we divide the random variables into two major groups: **discrete** and **continuous**. Then, we provide several examples for each group.
-
-
-
-
+$$P(X=x)={\begin{cases}0.49,&for\ x=0\\0.42,&for\ x=1\\0.09,&for\ x=2\end{cases}}$$ Here, x denotes a specific value (i.e., 0, 1, or 2) of the random variable. Probability distributions are specified differently for different types of random variables. In the following, we divide the random variables into two major groups: **discrete** and **continuous**. Then, we provide several examples for each group.
 
 ## Probability distributions for Discrete Outcomes
 
@@ -386,14 +348,10 @@ A **Bernoulli event** is one for which the probability the event occurs (success
 
 A **Bernoulli trial** is an instantiation of a Bernoulli event. So long as the probability of success or failure remains the same from trial to trial (i.e., each trial is independent of the others), a sequence of Bernoulli trials is called a **Bernoulli process**.
 
-
 ::: {.callout-tip icon="false"}
-
 ## **Definition-Bernoulli distribution**
 
-The binary random variable X with possible values 0 and 1 has a Bernoulli
-distribution with parameter p , where P(X = 1) = p and P(X = 0) = 1 − p .
-We denote this as X ∼ Bernoulli(p), where 0 ≤ p ≤ 1.
+The binary random variable X with possible values 0 and 1 has a Bernoulli distribution with parameter p , where P(X = 1) = p and P(X = 0) = 1 − p . We denote this as X ∼ Bernoulli(p), where 0 ≤ p ≤ 1.
 
 Here, p is the unknown parameter. If p were known, we could fully specify the probability mass function:
 
@@ -401,36 +359,27 @@ $$P(X=x)={\begin{cases}q=1-p,&for\ x=0\\p,&for\ x=1\end{cases}}$$
 
 where ${0\leq p\leq 1}$.
 
-The mean of a binary random variable, X, with Bernoulli(p) distribution
-is p. We show this as:
+The mean of a binary random variable, X, with Bernoulli(p) distribution is p. We show this as:
 
 $$μ = p$$ {#eq-bernouli1}
 
-In this case, the mean can be interpreted as the proportion of the population who have the outcome of interest. 
+In this case, the mean can be interpreted as the proportion of the population who have the outcome of interest.
 
 Furthermore, the variance of a random variable with Bernoulli(p) distribution is:
 
 $$ \sigma^2= pq=p(1-p)= μ(μ-1)$$ {#eq-bernouli2}
 
 $$ \sigma= \sqrt{p(1-p)}= \sqrt{μ(μ-1)}$$ {#eq-bernouli3}
-
 :::
 
-
-
 ::: {.callout-note icon="false"}
-
 ## **Example-Bernoulli distribution: breast cancer**
 
-For example, let X be a random variable representing the five-year survival status of breast cancer patient, where X = 1 if the patient survived and X = 0 otherwise.
-Suppose that the probability of survival is p = 0.8: P(X = 1) = 0.8. Therefore, the probability of not surviving is P(X = 0) = 1 − p = 0.2. Then X has a Bernoulli distribution with parameter p = 0.8, and we denote this as
+For example, let X be a random variable representing the five-year survival status of breast cancer patient, where X = 1 if the patient survived and X = 0 otherwise. Suppose that the probability of survival is p = 0.8: P(X = 1) = 0.8. Therefore, the probability of not surviving is P(X = 0) = 1 − p = 0.2. Then X has a Bernoulli distribution with parameter p = 0.8, and we denote this as
 
-$$X ∼ Bernoulli(0.8)$$
-The pmf for this distribution is:
+$$X ∼ Bernoulli(0.8)$$ The pmf for this distribution is:
 
-$$P(X=x)={\begin{cases}0.2,&for\ x=0\\0.8,&for\ x=1\end{cases}}$$
-Additionally, we can plot pmf for visualizing the distribution @fig-bern1. 
-
+$$P(X=x)={\begin{cases}0.2,&for\ x=0\\0.8,&for\ x=1\end{cases}}$$ Additionally, we can plot pmf for visualizing the distribution @fig-bern1.
 
 ```{r}
 #| echo: false
@@ -448,14 +397,11 @@ plot(ber_q , ber_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf 
 
 ```
 
-
 The height of each bar is the probability of the corresponding value on the horizontal axis. The height of the bar is 0.2 at X = 0 and 0.8 at X = 1. Since the probabilities for all possible values of the random variable add to 1, the bar heights also add up to 1.
 
 In the above example, from @eq-bernouli1 we take μ = 0.8. Therefore, we expect 80% of patients survive.
 
-From @eq-bernouli2 the variance of the random variable is $σ^2 = 0.8 × 0.2 = 0.16$, and its standard deviation is $σ = 0.4$. This reflects the extent of variability in survival status from one person to another. For this example, the amount of variation is rather small. Therefore, we expect to see many survivals (X = 1) with occasional death (X = 0). 
-For
-comparison, suppose that the probability of survival for bladder cancer is θ = 0.6. Then, the variance becomes $σ^2 = 0.6×(1−0.6) = 0.24$. This reflects a higher variability in the survival status for bladder cancer patients compared to that of breast cancer patients.
+From @eq-bernouli2 the variance of the random variable is $σ^2 = 0.8 × 0.2 = 0.16$, and its standard deviation is $σ = 0.4$. This reflects the extent of variability in survival status from one person to another. For this example, the amount of variation is rather small. Therefore, we expect to see many survivals (X = 1) with occasional death (X = 0). For comparison, suppose that the probability of survival for bladder cancer is θ = 0.6. Then, the variance becomes $σ^2 = 0.6×(1−0.6) = 0.24$. This reflects a higher variability in the survival status for bladder cancer patients compared to that of breast cancer patients.
 :::
 
  
@@ -464,20 +410,16 @@ comparison, suppose that the probability of survival for bladder cancer is θ = 
 
 The binomial distribution is an important theoretical distribution with wide applications in biomedicine. Many biological phenomena can be described using a binomial distribution.
 
-The Bernoulli distribution represents the success or failure of a single Bernoulli trial. The Binomial Distribution represents the number of
-successes and failures in $n$ **independent** Bernoulli trials for some given value of n.
+The Bernoulli distribution represents the success or failure of a single Bernoulli trial. The Binomial Distribution represents the number of successes and failures in $n$ **independent** Bernoulli trials for some given value of n.
 
 ::: {.callout-tip icon="false"}
-
-## **Definition-Bernoulli distribution**
+## **Definition-Binomial distribution**
 
 The random variable X representing the **number of times** the outcome of interest occurs in $n$ Bernoulli trials has a $Binomial(n, p)$ distribution, where p is the probability of the outcome of interest (success). A binomial distribution is defined by the number of Bernoulli trials $n$ and the probability of the outcome of interest p for the underlying Bernoulli trials.
-
 
 $$ P(X=x) = {{n}\choose{x}} \cdot p^xq^{n-x}$$ {#eq-binom0}
 
 where x = 0, 1, ... , n, ${0\leq p\leq 1}$, q = 1 − p
-
 
 If is a binomial random variable with parameters and n and p, then
 
@@ -485,39 +427,37 @@ $$μ = np$$ {#eq-binom1}
 
 $$σ^2 = npq$$ {#eq-binom2}
 
-$$σ = \sqrt{npq}$$    {#eq-binom3}
-
-
+$$σ = \sqrt{npq}$$ {#eq-binom3}
 :::
 
-
-
 ::: {.callout-note icon="false"}
-
 ## **Example-Binomial distribution: breast cancer**
 
 Suppose that we plan to recruit a group of 50 patients with breast cancer and study their survival within five years from diagnosis. We represent the survival status for these patient by a set of Bernoulli random variables $X_1, . . . , X_{50}$. (For each patient, the outcome is either 0 or 1). Assuming that all patients have the same survival probability, p = 0.8, and the survival status of one patient does not affect the probability of survival for another patient, $X_1, . . . , X_{50}$ form a set of 50 Bernoulli trials.
 
-Now we can create a new random variable X representing the number of patients
-out of 50 who survive for five years. The number of survivals is the number of 1s in the set of Bernoulli trials. This is the same as the sum of Bernoulli trials, whose values are either 0 or 1:
+Now we can create a new random variable X representing the number of patients out of 50 who survive for five years. The number of survivals is the number of 1s in the set of Bernoulli trials. This is the same as the sum of Bernoulli trials, whose values are either 0 or 1:
 
 $$X=\sum_{i=1}^{50}X_{i}$$ {#eq-X}
 
 where $X_i = 1$ if the ith patient survive and $X_i = 0$ otherwise.
 
-Since X can be any integer number from 0 (no one survives) through 50 (everyone
-survives), its range is {0, 1, . . . , 50}. The range is a countable set. Therefore, the random variable X is discrete. The distribution of X is a binomial distribution, shown as
+Since X can be any integer number from 0 (no one survives) through 50 (everyone survives), its range is {0, 1, . . . , 50}. The range is a countable set. Therefore, the random variable X is discrete. The probability distribution of X is a binomial distribution, shown as:
 
 $$X ∼ Binomial(50, 0.8)$$
 
-The pmf of Binomial(50, 0.8) distribution specifies the probability of 0 through 50 survivals. 
+The pmf of Binomial(50, 0.8) distribution specifies the probability of 0 through 50 survivals.
 
+According to @eq-binom0 we have:
 
+|          |     |     |     |      |      |      |     |      |     |
+|----------|-----|-----|-----|------|------|------|-----|------|-----|
+| **X**    | 0   | 1   | ... | 34   | 35   | 36   | ... | 40   | ... |
+| **P(X)** | 0   | 0   | ... | 0.02 | 0.03 | 0.05 | ... | 0.14 | ... |
 
 ```{r}
 #| echo: false
 #| label: fig-binom1
-#| out-width: "80%"
+#| out-width: "100%"
 #| fig-align: "center"
 #| fig-cap: Plot of the pmf for Binomial(50, 0.8) distribution.
 
@@ -529,19 +469,85 @@ plot(binom_q , binom_pmf, type = "h", xlab = "X", ylab = "Probability", main = "
 
 ```
 
-
 As before, the height of each bar is the probability of the corresponding value on the x-axis. For example, the probability of 40 survivals (out of 50) is P(X=40)=0.14. Also, since the probabilities for all possible values of the random variable add to 1, the bar heights add up to 1. Note that for numbers below 30 and above 48, the probability is almost zero.
-
 
 Now suppose that we are interested in the probability that either 34 or 35 or 36 patients survive. Since the underlying event include three possible outcomes, 34, 35, and 36, we obtain the probability by adding the individual probabilities for these outcomes:
 
 $$P(33<X ≤ 36) = P(X = 34)+ P(X = 35)+P(X = 36) = 0.02 + 0.03 + 0.05 = 0.1$$
 
+For the breast cancer example and @eq-binom1, the mean of the random variable is 50×0.8 = 40. If we recruit 50 patients, we expect 40 people survive over five years. Of course, the actual number of survivals can change from one group to another (e.g., if we take another group of 50 patients). According to @eq-binom2, the variance of X in the above example is 50 × 0.8 × 0.2 = 8, which shows the extent of the variation of the random variable around its mean.
+:::
 
-For the breast cancer example and @eq-binom1, the mean of the random variable is 50×0.8 = 40. If we recruit 50 patients, we expect 40 people survive over five years. Of course, the actual number of survivals can change from one group to another (e.g., if we take another group of 50 patients).
-According to @eq-binom2, the variance of X in the above example is 50 × 0.8 × 0.2 = 8, which shows the extent of the variation of the random variable around its mean.
+### Poisson distribution
+
+So far, we have discussed the Bernoulli distribution for binary variables, and the binomial distribution for the number of times the outcome of interest (one of the two possible categories of the binary variable) occur within a set of n Bernoulli trials.
+
+While a random variable with a Binomial distribution is a count variable (e.g., number of people survived), its range is restricted to include integers from 0 through n only. For example, the number of survivals in a group of n = 50 cancer patients cannot exceed 50.
+
+Now, suppose that we are investigating the **number of physician visits for each person in one year**. Although very large numbers such as 100 are quite unlikely, there is no theoretical and prespecified upper limit to this random variable. Theoretically, its range is the set of all nonnegative integers.
+
+::: {.callout-tip icon="false"}
+## **Definition-Poisson distribution**
+
+Random variables representing counts within temporal and/or spacial limits but without prespecified upper limits are often assumed to have Poisson distributions. The range of these variables is the set of all non negative integers (i.e., the lower limit is zero, but there is no upper limit). A Poisson distribution is specified by a parameter λ, which is interpreted as the **rate of occurrence within a time period or space limit**. We show this as X ∼ Poisson(λ), where λ is a positive real number (λ\>0).
+
+$$ Pr(X=x)={\frac {\lambda ^{x}e^{-\lambda }}{x!}} $$ {#eq-poisson1}
+
+where x = 0, 1, ... +∞, λ \> 0.
+
+The mean and variance of a random variable with Poisson(λ) distribution are the same and equal to λ. That is, μ = λ and $σ^2 = λ$.
+:::
+
+
+
+
+::: {.callout-note icon="false"}
+## **Example-Poisson distribution: physician visits**
+
+As an example, assume that the rate of physician visits per year is 2.5:
+
+$$X ∼ Poisson(2.5)$$
+Therefore, the population mean and variance of this variable is 2.5.
+
+
+
+According to @eq-poisson1 the resulting probability table is:
+
+|          |      |      |      |      |      |      |
+|----------|------|------|------|------|------|------|
+| **X**    | 0    | 1    | 2    | 3    | 5    | 6    |
+| **P(X)** | 0.08 | 0.21 | 0.26 | 0.21 | 0.07 | 0.03 |
+
+
+
+The resulting plot of the pmf shows the probability of each possible value, which is any integer from 0 to infinity [@fig-poisson1]. In this case, the probability of values above 8 becomes almost 0.
+
+```{r}
+#| echo: false
+#| label: fig-poisson1
+#| out-width: "100%"
+#| fig-align: "center"
+#| fig-cap: Plot of the pmf for Poisson(2.5) distribution.
+
+pois_q <- 0:12
+pois_pmf <- dpois(pois_q, lambda = 2.5)
+
+plot(pois_q , pois_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nPoisson(2.5)", ylim = c(0, 0.30),  lwd = 1, frame.plot = FALSE)
+ points(pois_q , pois_pmf,  pch = 20, cex = 1)
+
+```
+
+
+For this example, the probability that a person does not visit her/his physician within a year is P(X = 0) = 0.08, while the probability of one visit per year increases to P(X = 1) = 0.21.
+
+Now suppose that we want to know the probability of up to three visits per year: P(X ≤ 3). This is the probability that a person visit her/his physician 0, or 1, or 2, or 3 times within one year. As before, we add the individual probabilities for the corresponding outcomes:
+P(X ≤ 3) = 0.08 + 0.21 + 0.26 + 0.21 = 0.76.
+
+
+The population mean and variance of this variable is 2.5 visits per year.
 
 :::
+
 
 
 ## Probability distributions for Continuous Outcomes
