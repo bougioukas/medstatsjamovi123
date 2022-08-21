@@ -128,7 +128,7 @@ flipsim <- flipsim %>%
 
 
 flipsim %>% ggplot(aes(x = N, y = Pct_Heads)) + 
-  geom_point(color = 'red', size = 4) +
+  geom_point(color="deeppink", size = 4) +
   geom_hline(yintercept = 0.5) +
   ylim(0, 1) + 
   transition_time(N) +
@@ -392,7 +392,7 @@ ber_q <- c(0, 1)
 ber_pmf <- dbinom(ber_q, 1, 0.8)
 
 plot(ber_q , ber_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nBernoulli(0.8)", ylim = c(0, 1), xaxt='n', lwd = 2,frame.plot = FALSE)
- points(ber_q , ber_pmf,  pch = 20, cex = 2)
+ points(ber_q , ber_pmf, col="deeppink", pch = 20, cex = 2)
  axis(1, at = c(0, 1), lab=expression(0, 1))
 
 ```
@@ -465,7 +465,7 @@ binom_q <- 0:50
 binom_pmf <- dbinom(binom_q, size = 50, prob = 0.8)
 
 plot(binom_q , binom_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nBinomial(50, 0.8)", ylim = c(0, 0.15),  lwd = 1, frame.plot = FALSE)
- points(binom_q , binom_pmf,  pch = 20, cex = 1)
+ points(binom_q , binom_pmf,  col="deeppink", pch = 20, cex = 1)
 
 ```
 
@@ -533,7 +533,7 @@ pois_q <- 0:12
 pois_pmf <- dpois(pois_q, lambda = 2.5)
 
 plot(pois_q , pois_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf \nPoisson(2.5)", ylim = c(0, 0.30),  lwd = 1, frame.plot = FALSE)
- points(pois_q , pois_pmf,  pch = 20, cex = 1)
+ points(pois_q , pois_pmf,  col="deeppink", pch = 20, cex = 1)
 
 ```
 
@@ -552,13 +552,39 @@ The population mean and variance of this variable is 2.5 visits per year.
 
 ## Probability distributions for Continuous Outcomes
 
+For discrete random variables, the pmf provides the probability of each possible value. For continuous random variables, the number of possible values is uncountable, and the probability of any specific value is zero.
+
+
+Therefore, instead of talking about the probability of any specific value x
+for continuous random variable X, we talk about the probability that the value of the random variable is within a specific interval from x1 to x2; we show this probability as P(x1 ≤ X ≤ x2).
+
+$$ P(x_1\leq X \leq x_2)=\int_{x_1}^{x_2}f(x)dx $$ {#eq-continuous1}
+
+where f(x) is the probability density functions (pdf) of X .
+
+Clearly, in @eq-continuous1, the probability of a certain point value in X is zero, and the area under the probability density curve of the interval (−∞, +∞) should be 1.
+
+ 
+
 ### **Normal Distribution**
 
-We have mentioned the normal distribution several times in this textbook with the promise we would provide more detail later. In this section, we will explore the normal distribution, why it matters, and how we can tell if our distribution is normal or not.
+There are several important probability distributions in statistics. However, the normal distribution might be the most important.
+The normal distribution provides an adequate model for the relative frequency distributions of data collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.
 
-#### Historical background and main properties
 
-There are several important probability distributions in statistics. However, the normal distribution might be the most important. A normal distribution is the familiar "bell curve" and it's a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
+::: {.callout-caution collapse="true"}
+## Historical background
+
+First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
+
+:::
+
+ 
+
+::: {.callout-tip icon="false"}
+## Definition and Properties of Normal Distribution
+
+A normal distribution is the familiar "bell curve" and it's a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently.
 
 ```{r}
 #| echo: false
@@ -576,27 +602,7 @@ axis(1, at = -3:3, lab=expression(-3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*si
 
 ```
 
- 
 
-The Normal distribution has the properties summarized as follows:
-
-::: {.callout-note icon="false"}
-## Properties of Normal Distribution
-
--   Bell shaped and symmetrical around the mean. Shape statistics, skewness and excess kurtosis are zero.
-
--   The peak of the curve lies above the mean
-
--   Any position along the horizontal axis (x-axis) can be expressed as a number of standard deviations from the mean
-
--   All three measures of central tendency, the mode (most frequently occurring value), the median (the middlemost value), and the mean (the statistical average), will be the same.
-
--   The total area under the curve equals to 1 (or 100%)
-:::
-
- 
-
-### The mathimatical type
 
 Gauss' normal distribution, technically a density function, is a distribution defined by two parameters, mean $\mu$ and variance $\sigma^2$. The mean, $\mu$, represents the population mean and is a "location parameter", which defines the central tendency. The variance, $\sigma^2$ is the "scale parameter", which defines the width of the distribution and how short the distribution is. It's formally given as @eq-gauss:
 
@@ -631,7 +637,37 @@ text(2.9, 0.10, expression(sigma[2]), col="deeppink")
 text(2.5, 0.20, expression(sigma[1] < sigma[2]), col="gray30")
 ```
 
-The ensuing distribution will look like this in a simple case where $\mu$ is 0 and $\sigma^2$ is 1 (Standard Normal distribution).
+
+
+The Normal distribution has the properties summarized as follows:
+
+-   Bell shaped and symmetrical around the mean. Shape statistics, skewness and excess kurtosis are zero.
+
+-   The peak of the curve lies above the mean.
+
+-   Any position along the horizontal axis (x-axis) can be expressed as a number of standard deviations from the mean.
+
+-   All three measures of central tendency mean, the median, and the mode will be the same.
+
+-   The total area under the curve equals to 1 (or 100%).
+:::
+
+ 
+
+
+::: {.callout-caution collapse="true"}
+## Individual components of a standard normal distribution
+
+A random normal variable with $\mu$ and $\sigma$ can be normalized via the following:
+
+$$ z= \frac{x-\mu}{\sigma} $$ {#eq-z}
+
+
+In this case, @eq-gauss is transformed to the standard normal distribution, also called the z-distribution, i.e. a special normal distribution where $\mu=0$ and $\sigma^2=1$ with pdf:
+
+$$ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2} $$ {#eq-zd}
+zd
+The standard normal distribution is centered at zero and the degree to which a given measurement deviates from the mean is given by the standard deviation. 
 
 ```{r}
 #| echo: false
@@ -653,11 +689,10 @@ ggplot(data.frame(x = c(-4, 4)), aes(x)) +
         plot.subtitle = element_text(size= 8))
 ```
 
-### Individual components of a normal distribution
 
-We can break down individual components of a normal distribution and explain them until they seem more accessible.
+We can break down individual components of a z-distribution (@eq-z) and explain them until they seem more accessible.
 
-**First**, the "kernel" is the part inside the exponent of the above equation (i.e. $\ {-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}$). Observe, for a simple case where $\mu$ = 0 and $\sigma^2$ = 1 that this part becomes $\ -{\frac {1}{2}}x^{2}$ that is a negative parabola (notice the square term). The minus sign just flips the basic parabola $\ {\frac {1}{2}}x^{2}$ downward.
+**First**, we know from algebra that the formula $\ {\frac {1}{2}}z^{2}$ is a basic parabola (notice the square term). Adding a minus sign just flips the basic parabola $\ {\frac {1}{2}}z^{2}$ downward and we take a negative parabola $\ -{\frac {1}{2}}z^{2}$.
 
 ```{r}
 #| echo: false
@@ -694,7 +729,7 @@ theme(plot.title.position = "plot",
 p_parab + p_parab2
 ```
 
-**Second**, exponentiating the negative parabola ($\  e^{-{\frac {1}{2}}x^{2}}$) makes it asymptote to 0.
+**Second**, exponentiating the negative parabola ($\  e^{-{\frac {1}{2}}z^{2}}$) makes it asymptote to 0.
 
 ```{r}
 #| echo: false
@@ -722,17 +757,12 @@ theme(plot.title.position = "plot",
 p_expparab
 ```
 
-Notice the tails in the above graph are asymptote to 0. "Asymptote" is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly "unlikely".
+Notice the tails in the @fig-neg_parabola are asymptote to 0. "Asymptote" is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly "unlikely".
 
-**Third**, and with the above point in mind, it should be clear that $\ {\frac {1}{\sigma {\sqrt {2\pi }}}}$ will scale the height of the distribution. Observe that in our simple case where $\mu$ is 0 and $\sigma^2$ is 1, the height of the exponentiated parabola is at 1. That gets multiplied by $\ {\frac {1}{\sqrt {2\pi }}}$ to equal about 0.398.
+**Third**, and with the above point in mind, it should be clear that $\ {\frac {1}{{\sqrt {2\pi }}}}$ will scale the height of the distribution. Observe that the height of the exponentiated parabola is at 1. That gets multiplied by $\ {\frac {1}{\sqrt {2\pi }}}$ to equal about 0.398.
 
-**Fourth**, the normal distribution is perfectly symmetrical. The mean, $\mu$ determines the location of the distribution as well as its central tendency. All three measures of central tendency, the mode (most frequently occurring value), the median (the middlemost value), and the mean (the statistical average), will be the same. It also means a given observation of x will be as far from $\mu$ as -x. Additionally, the statistical moments of skewness and excess kurtosis are zero.
+**Fourth**, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z. Importantly, much of the area (68%) of the distribution is between -sd and sd, the large majority (95%) between -2 sd and +2 sd, and almost all (99%) between -3 sd and + 3 sd. So, the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.
 
-**Fifth**, we noted the normal distribution as a function and not a probability because the probability of any one value is effectively zero.
-
-### Normal Density Plot with Shaded Regions
-
-Importantly, much of the area (68%) of the distribution is between -sd and sd, the large majority (95%) between -2 sd and +2 sd, and almost all (99%) between -3 sd and + 3 sd. So, the probability that x is between 1 on either side of the $\mu$ of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation (i.e. the scale parameter) is 1.
 
 ```{r}
 #| echo: false
@@ -740,20 +770,22 @@ Importantly, much of the area (68%) of the distribution is between -sd and sd, t
 #| fig-height: 7.2
 #| fig-width: 12.0
 #| fig-align: "center"
-#| fig-cap: The area underneath a normal distribution
+#| fig-cap: The area underneath a Standard Normal Distribution
 
 
 normal_dist("#522d80","#F66733") + 
   theme_steve() + post_bg() +
-    labs(title = "The Area Underneath a Normal Distribution",
+    labs(title = "The Area Underneath a Standard Normal Distribution",
        subtitle = "The tails extend to infinity and are asymptote to zero, but the full domain sums to 1. The 95% of all possible values are within about 1.96 standard units from the mean.",
        y = "Density",
        x = "")
 ```
 
-The normal distribution appears as a foundation assumption for a lot of quantitative approaches to frequentist statistics.
 
-In summary, the normal density function is technically unbounded. It has just the two parameters that define its location and scale and the tails are asymptote to 0 no matter what the values of $\mu$ and $\sigma^2$ are. This makes the distribution continuous since x can range over the entire line from $\ -\infty$ to $\ +\infty$. Thus, the function does not reveal the probability of x (the probability of any one value is effectively 0). However, the area under the curve is the full domain of the probability space and sums to 1. The probability of selecting a number between two points on the x-axis equals the area under the curve between those two points.
+
+**Fifth**, if we want to find the area between $z_1$ = 1 and $z_2$ = 2, we must integrate the @eq-zd as following:
+
+$$ E={\frac {1}{{\sqrt {2\pi }}}}\int_{z_1}^{z_2}e^{-{\frac {1}{2}}z^2}dz $$ {#eq-integral}
 
 ```{r}
 #| echo: false
@@ -775,15 +807,15 @@ region.y <- c(0,region.y,0)
 
 
 plot(x, y, main="Standard Normal Distribution with a Shaded Region",
-type='l', ylab="Density", xlab="x",lwd=3,col="#522d80")
+type='l', ylab="Density", xlab="z",lwd=3,col="#522d80")
 abline(h=0) # adds the x-axis to the plot
 polygon(region.x, region.y, density=-1, col="#F66733")
 
 ```
 
-To find the area between x = 1 and x = 2, we must integrate the @eq-gauss as following:
 
-$$ E(x)=\int_{1}^{2}f(x)dx $$ {#eq-integral}
+:::
+
 
  
 
