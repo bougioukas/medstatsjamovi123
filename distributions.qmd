@@ -342,7 +342,7 @@ For discrete random variables, the probability distribution is fully defined by 
 
  
 
-### Bernoulli distribution
+### **Bernoulli distribution**
 
 Binary random variables are abundant in scientific studies. Bernoulli distribution applies to events that have one trial and two possible outcomes.
 
@@ -408,7 +408,7 @@ From @eq-bernouli2 the variance of the random variable is $σ^2 = 0.8 × 0.2 = 0
 
  
 
-### Binomial distribution
+### **Binomial distribution**
 
 The binomial distribution is an important theoretical distribution with wide applications in biomedicine. Many biological phenomena can be described using a binomial distribution.
 
@@ -480,7 +480,7 @@ $$P(33<X ≤ 36) = P(X = 34)+ P(X = 35)+P(X = 36) = 0.02 + 0.03 + 0.05 = 0.1$$
 For the breast cancer example and @eq-binom1, the mean of the random variable is 50×0.8 = 40. If we recruit 50 patients, we expect 40 people survive over five years. Of course, the actual number of survivals can change from one group to another (e.g., if we take another group of 50 patients). According to @eq-binom2, the variance of X in the above example is 50 × 0.8 × 0.2 = 8, which shows the extent of the variation of the random variable around its mean.
 :::
 
-### Poisson distribution
+### **Poisson distribution**
 
 So far, we have discussed the Bernoulli distribution for binary variables, and the binomial distribution for the number of times the outcome of interest (one of the two possible categories of the binary variable) occur within a set of n Bernoulli trials.
 
@@ -622,21 +622,157 @@ The Normal distribution has the properties summarized as follows:
 
 -   All three measures of central tendency mean, the median, and the mode will be the same.
 
--   The total area under the curve equals to 1 (or 100%).
+-   Much of the area (68%) of the distribution is between -1 $\sigma$ below the mean and +1 $\sigma$ above the mean, the large majority (95%) between -1.96 $\sigma$ below the mean and +1.96 $\sigma$ above the mean (often used as a reference range), and almost all (99%) between -2.58 $\sigma$ below the mean and +2.58 $\sigma$ above the mean. The total area under the curve equals to 1 (or 100%).
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-normal_auc
+#| fig-height: 7.2
+#| fig-width: 12.5
+#| fig-align: "center"
+#| fig-cap: The area underneath a Normal Distribution
+
+
+normal_dist("#522d80","deeppink") + 
+  theme_steve() + 
+  post_bg() +
+    labs(title = "The Area Underneath a Normal Distribution",
+       subtitle = "The tails extend to infinity and are asymptote to zero, but the full domain sums to 1. The 95% of all possible values are within about 1.96 standard units from the mean.",
+       y = "Probability density",
+       x = "") +
+scale_x_continuous(breaks = c(-4, -2.58, -1.96, -1.65, -1, 0,
+                              1, 1.65, 1.96, 2.58, 4),
+                   labels = expression(-4*sigma, -2.58*sigma, -1.96*sigma,-1.65*sigma, 
+                                       -1*sigma, mu, 1*sigma, 1.65*sigma, 1.96*sigma, 2.58*sigma, 4*sigma)) +
+  theme(axis.text = element_text(size=10))
+
+```
+
+:::
+
+ 
+
+::: {.callout-note icon="false"}
+## Example-Normal distribution:  systolic blood pressure 
+
+Suppose we know that the population mean and standard deviation
+for systolic blood pressure (sbp) are μ = 125 mmHg and σ = 15 mmHg, respectively. 
+
+(a) About what percentage of population has sbp in the range μ±σ ?
+
+The X random variable of sbp follows the normal distribution:
+
+$$ X ∼ N(125, 15^2)$$
+
+Thus, the percentage of the distribution between -1 $\sigma$ below the mean and +1 $\sigma$ above the mean is:
+
+$$ P(125 −15≤X≤ 125+15) = P(110≤X≤ 140) = 0.68\ or\ 68\% $$
+
+(b) Calculate a 95% reference range for the sbp:
+
+$$ (125 - 1.96\times 15,\ 125 + 1.96\times 15) = (95.6, 154.4) $$
+
+:::
+
+ 
+
+::: {.callout-tip icon=false}
+
+## Statistical moments (or shape statistics) and normality
+
+There are two shape statistics that can indicate deviation from normality: **skew** and **kurtosis**.
+
+**Skewness**
+
+Skewness is usually described as a measure of a dataset's symmetry -- or lack of symmetry.
+
+Skewness values that are **negative** indicate a tail to the **left** (@fig-skew2 a), **zero** value indicate a **symmetric** distribution (@fig-skew2 b), while values that are **positive** indicate a tail to the **right** (@fig-skew2 c).
+
+Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with \>1 indicating moderate skewness and \>2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.
+
+```{r}
+#| echo: false
+#| label: fig-skew2
+#| out-width: "105%"
+#| fig-align: "center"
+#| fig-cap: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.
+
+
+knitr::include_graphics(here("images", "skew2.png"))
+```
+
+ 
+
+**Kurtosis**
+
+The other way that distributions can deviate from normality is **kurtosis**. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).
+
+Distributions with **negative** excess kurtosis are called ***platykurtic*** (@fig-kurtosis a). If the measure of excess kurtosis is **0** the distribution is **mesokurtic** (@fig-kurtosis b). Finally, distributions with **positive** excess kurtosis are called ***leptokurtic*** (@fig-kurtosis c).
+
+A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.
+
+```{r}
+#| echo: false
+#| label: fig-kurtosis
+#| out-width: "105%"
+#| fig-align: "center"
+#| fig-cap: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.
+
+
+knitr::include_graphics(here("images", "kurtosis.png"))
+```
 :::
 
 
+ 
 
-::: {.callout-caution collapse="true"}
-## Understanding the (standard) normal distribution
+The normal distribution provides an adequate model for the relative frequency distributions of data (empirical distributions) collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Moreover, many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.
 
-A random normal variable with $\mu$ and $\sigma$ can be normalized via the following:
+If the shape of empirical distributions of random variables approximates the Gaussian distribution then the variables are considered to be distributed normally.
+
+
+::: {.callout-tip icon=false}
+## Properties of an approximately bell-shaped empirical distribution
+
+In an approximately **bell-shaped** distribution:
+
+-   the mean, the median and the mode have very close values
+
+-   the histogram is symmetric about the mean
+
+-   "nearly all" values (99.7%) are within -3 and +3 standard deviations of the mean
+
+-   the measure of skewness takes values close to zero (symmetric distribution) (@fig-skew2 b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.
+
+-   the measure of excess kurtosis is close to 0 (mesokurtic) (@fig-kurtosis b). A kurtosis value between −1 and +1 indicates normality.
+
+:::
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+### **Standard Normal distribution**
+
+If the random variable X has a normal distribution  with $\mu$ and standard deviation $\sigma$, then the standardized Normal deviate is:
 
 $$ z= \frac{x-\mu}{\sigma} $$ {#eq-z}
 
-In this case, @eq-gauss is transformed to the standard normal distribution, also called the z-distribution, i.e. a special normal distribution where $\mu=0$ and $\sigma^2=1$ with pdf:
+The z is a random variable that has a Standard Normal distribution, also called a z-distribution, i.e. a special normal distribution where $\mu=0$ and $\sigma^2=1$. In this case, @eq-gauss is transformed as follows:
 
-$$ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2} $$ {#eq-zd} The standard normal distribution is centered at zero and the degree to which a given measurement deviates from the mean is given by the standard deviation.
+$$ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2} $$ {#eq-zd} 
+
+
 
 ```{r}
 #| echo: false
@@ -652,11 +788,21 @@ ggplot(data.frame(x = c(-4, 4)), aes(x)) +
   stat_function(fun = dnorm, color="#522D80", size=1.5) +
   labs(title = "Standard Normal Distribution",
        subtitle = "The mu=0 parameter determines the central tendency and sigma-squared=1 parameter determines the width.",
-       x = "", y="") +
+       x = "Z", y="Probability density") +
   theme(plot.title.position = "plot",
         plot.title = element_text(size= 10),
-        plot.subtitle = element_text(size= 8))
+        plot.subtitle = element_text(size= 8)) +
+  scale_x_continuous(breaks = c(-4, -3, -2, -1, 0,
+                              1, 2, 3, 4))
 ```
+
+
+The standard normal distribution is centered at zero and the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.
+
+ 
+
+::: {.callout-caution collapse="true"}
+## Understanding the Standard Normal distribution
 
 We can break down individual components of a z-distribution (@eq-z) and explain them until they seem more accessible.
 
@@ -729,28 +875,11 @@ Notice the tails in the @fig-neg_parabola are asymptote to 0. "Asymptote" is a f
 
 **Third**, and with the above point in mind, it should be clear that $\ {\frac {1}{{\sqrt {2\pi }}}}$ will scale the height of the distribution. Observe that the height of the exponentiated parabola is at 1. That gets multiplied by $\ {\frac {1}{\sqrt {2\pi }}}$ to equal about 0.398.
 
-**Fourth**, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z. Importantly, much of the area (68%) of the distribution is between -sd and sd, the large majority (95%) between -2 sd and +2 sd, and almost all (99%) between -3 sd and + 3 sd. So, the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.
+**Fourth**, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z. 
 
-```{r}
-#| echo: false
-#| label: fig-auc
-#| fig-height: 7.2
-#| fig-width: 12.0
-#| fig-align: "center"
-#| fig-cap: The area underneath a Standard Normal Distribution
+**Fifth**, if we want to find the area E between $z_1$ = 1 and $z_2$ = 2, we must integrate the @eq-zd as following:
 
-
-normal_dist("#522d80","#F66733") + 
-  theme_steve() + post_bg() +
-    labs(title = "The Area Underneath a Standard Normal Distribution",
-       subtitle = "The tails extend to infinity and are asymptote to zero, but the full domain sums to 1. The 95% of all possible values are within about 1.96 standard units from the mean.",
-       y = "Density",
-       x = "")
-```
-
-**Fifth**, if we want to find the area between $z_1$ = 1 and $z_2$ = 2, we must integrate the @eq-zd as following:
-
-$$ E={\frac {1}{{\sqrt {2\pi }}}}\int_{z_1}^{z_2}e^{-{\frac {1}{2}}z^2}dz $$ {#eq-integral}
+$$ E=P(z_1\leq Z\leq z_2)={\frac {1}{{\sqrt {2\pi }}}}\int_{z_1}^{z_2}e^{-{\frac {1}{2}}z^2}dz $$ {#eq-integral}
 
 ```{r}
 #| echo: false
@@ -781,80 +910,6 @@ polygon(region.x, region.y, density=-1, col="#F66733")
 
  
 
-
-The normal distribution provides an adequate model for the relative frequency distributions of data (empirical distributions) collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Moreover, many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.
-
-If the shape of empirical distributions of random variables approximates the Gaussian distribution then the variables are considered to be distributed normally.
-
-::: {.callout-tip icon=false}
-## Properties of an approximately bell-shaped empirical distribution
-
-In an approximately **bell-shaped** distribution:
-
--   the mean, the median and the mode have very close values
-
--   the histogram is symmetric about the mean
-
--   "nearly all" values (99.7%) are within -3 and +3 standard deviations of the mean
-
--   the measure of skewness takes values close to zero (symmetric distribution) (@fig-skew2 b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.
-
--   the measure of excess kurtosis is close to 0 (mesokurtic) (@fig-kurtosis b). A kurtosis value between −1 and +1 indicates normality.
-
-
- 
-
-
-::: {.callout-caution collapse="true"}
-## Statistical moments (or shape statistics) and normality
-
-There are two shape statistics that can indicate deviation from normality: **skew** and **kurtosis**.
-
-**Skewness**
-
-Skewness is usually described as a measure of a dataset's symmetry -- or lack of symmetry.
-
-Skewness values that are **negative** indicate a tail to the **left** (@fig-skew2 a), **zero** value indicate a **symmetric** distribution (@fig-skew2 b), while values that are **positive** indicate a tail to the **right** (@fig-skew2 c).
-
-Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with \>1 indicating moderate skewness and \>2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.
-
-```{r}
-#| echo: false
-#| label: fig-skew2
-#| out-width: "105%"
-#| fig-align: "center"
-#| fig-cap: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.
-
-
-knitr::include_graphics(here("images", "skew2.png"))
-```
-
- 
-
-**Kurtosis**
-
-The other way that distributions can deviate from normality is **kurtosis**. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).
-
-Distributions with **negative** excess kurtosis are called ***platykurtic*** (@fig-kurtosis a). If the measure of excess kurtosis is **0** the distribution is **mesokurtic** (@fig-kurtosis b). Finally, distributions with **positive** excess kurtosis are called ***leptokurtic*** (@fig-kurtosis c).
-
-A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.
-
-```{r}
-#| echo: false
-#| label: fig-kurtosis
-#| out-width: "105%"
-#| fig-align: "center"
-#| fig-cap: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.
-
-
-knitr::include_graphics(here("images", "kurtosis.png"))
-```
-:::
-
-:::
-
-
- 
 
 #### **t-distribution**
 

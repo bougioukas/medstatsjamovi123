@@ -243,15 +243,16 @@ ul.task-list{list-style: none;}
   <li>
 <a href="#probability-distributions-for-discrete-outcomes" id="toc-probability-distributions-for-discrete-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-discrete-outcomes"> <span class="header-section-number">3.4</span> Probability distributions for Discrete Outcomes</a>
   <ul class="collapse">
-<li><a href="#bernoulli-distribution" id="toc-bernoulli-distribution" class="nav-link" data-scroll-target="#bernoulli-distribution">Bernoulli distribution</a></li>
-  <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution">Binomial distribution</a></li>
-  <li><a href="#poisson-distribution" id="toc-poisson-distribution" class="nav-link" data-scroll-target="#poisson-distribution">Poisson distribution</a></li>
+<li><a href="#bernoulli-distribution" id="toc-bernoulli-distribution" class="nav-link" data-scroll-target="#bernoulli-distribution"><strong>Bernoulli distribution</strong></a></li>
+  <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution"><strong>Binomial distribution</strong></a></li>
+  <li><a href="#poisson-distribution" id="toc-poisson-distribution" class="nav-link" data-scroll-target="#poisson-distribution"><strong>Poisson distribution</strong></a></li>
   </ul>
 </li>
   <li>
 <a href="#probability-distributions-for-continuous-outcomes" id="toc-probability-distributions-for-continuous-outcomes" class="nav-link" data-scroll-target="#probability-distributions-for-continuous-outcomes"> <span class="header-section-number">3.5</span> Probability distributions for Continuous Outcomes</a>
   <ul class="collapse">
 <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution"><strong>Normal Distribution</strong></a></li>
+  <li><a href="#standard-normal-distribution" id="toc-standard-normal-distribution" class="nav-link" data-scroll-target="#standard-normal-distribution"><strong>Standard Normal distribution</strong></a></li>
   </ul>
 </li>
   </ul></nav>
@@ -621,7 +622,7 @@ What do we need to know for a random variable?
 <span class="header-section-number">3.4</span> Probability distributions for Discrete Outcomes</h2>
 <p>For discrete random variables, the probability distribution is fully defined by the <strong>probability mass function</strong> (pmf). This is a function that specifies the probability of each possible value within range of random variable.</p>
 <p>&nbsp;</p>
-<section id="bernoulli-distribution" class="level3"><h3 class="anchored" data-anchor-id="bernoulli-distribution">Bernoulli distribution</h3>
+<section id="bernoulli-distribution" class="level3"><h3 class="anchored" data-anchor-id="bernoulli-distribution"><strong>Bernoulli distribution</strong></h3>
 <p>Binary random variables are abundant in scientific studies. Bernoulli distribution applies to events that have one trial and two possible outcomes.</p>
 <p>A <strong>Bernoulli event</strong> is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p.&nbsp;As before, the probability for all possible values is one: P(X = 0) + P(X = 1) = 1.</p>
 <p>A <strong>Bernoulli trial</strong> is an instantiation of a Bernoulli event. So long as the probability of success or failure remains the same from trial to trial (i.e., each trial is independent of the others), a sequence of Bernoulli trials is called a <strong>Bernoulli process</strong>.</p>
@@ -675,7 +676,7 @@ What do we need to know for a random variable?
 </div>
 </div>
 <p>&nbsp;</p>
-</section><section id="binomial-distribution" class="level3"><h3 class="anchored" data-anchor-id="binomial-distribution">Binomial distribution</h3>
+</section><section id="binomial-distribution" class="level3"><h3 class="anchored" data-anchor-id="binomial-distribution"><strong>Binomial distribution</strong></h3>
 <p>The binomial distribution is an important theoretical distribution with wide applications in biomedicine. Many biological phenomena can be described using a binomial distribution.</p>
 <p>The Bernoulli distribution represents the success or failure of a single Bernoulli trial. The Binomial Distribution represents the number of successes and failures in <span class="math inline">\(n\)</span> <strong>independent</strong> Bernoulli trials for some given value of n.</p>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
@@ -756,7 +757,7 @@ What do we need to know for a random variable?
 <p>For the breast cancer example and <a href="#eq-binom1">Equation&nbsp;<span>3.13</span></a>, the mean of the random variable is 50×0.8 = 40. If we recruit 50 patients, we expect 40 people survive over five years. Of course, the actual number of survivals can change from one group to another (e.g., if we take another group of 50 patients). According to <a href="#eq-binom2">Equation&nbsp;<span>3.14</span></a>, the variance of X in the above example is 50 × 0.8 × 0.2 = 8, which shows the extent of the variation of the random variable around its mean.</p>
 </div>
 </div>
-</section><section id="poisson-distribution" class="level3"><h3 class="anchored" data-anchor-id="poisson-distribution">Poisson distribution</h3>
+</section><section id="poisson-distribution" class="level3"><h3 class="anchored" data-anchor-id="poisson-distribution"><strong>Poisson distribution</strong></h3>
 <p>So far, we have discussed the Bernoulli distribution for binary variables, and the binomial distribution for the number of times the outcome of interest (one of the two possible categories of the binary variable) occur within a set of n Bernoulli trials.</p>
 <p>While a random variable with a Binomial distribution is a count variable (e.g., number of people survived), its range is restricted to include integers from 0 through n only. For example, the number of survivals in a group of n = 50 cancer patients cannot exceed 50.</p>
 <p>Now, suppose that we are investigating the <strong>number of physician visits for each person in one year</strong>. Although very large numbers such as 100 are quite unlikely, there is no theoretical and prespecified upper limit to this random variable. Theoretically, its range is the set of all nonnegative integers.</p>
@@ -883,77 +884,80 @@ Definition and Properties of Normal Distribution
 <li><p>The peak of the curve lies above the mean.</p></li>
 <li><p>Any position along the horizontal axis (x-axis) can be expressed as a number of standard deviations from the mean.</p></li>
 <li><p>All three measures of central tendency mean, the median, and the mode will be the same.</p></li>
-<li><p>The total area under the curve equals to 1 (or 100%).</p></li>
+<li><p>Much of the area (68%) of the distribution is between -1 <span class="math inline">\(\sigma\)</span> below the mean and +1 <span class="math inline">\(\sigma\)</span> above the mean, the large majority (95%) between -1.96 <span class="math inline">\(\sigma\)</span> below the mean and +1.96 <span class="math inline">\(\sigma\)</span> above the mean (often used as a reference range), and almost all (99%) between -2.58 <span class="math inline">\(\sigma\)</span> below the mean and +2.58 <span class="math inline">\(\sigma\)</span> above the mean. The total area under the curve equals to 1 (or 100%).</p></li>
 </ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-normal_auc" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-normal_auc-1.png" class="img-fluid figure-img" width="1200"></p>
+<p></p><figcaption class="figure-caption">Figure 3.7: The area underneath a Normal Distribution</figcaption><p></p>
+</figure>
 </div>
 </div>
-<div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Understanding the (standard) normal distribution
+Example-Normal distribution: systolic blood pressure
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A random normal variable with <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> can be normalized via the following:</p>
-<p><span id="eq-z"><span class="math display">\[ z= \frac{x-\mu}{\sigma}  \tag{3.20}\]</span></span></p>
-<p>In this case, <a href="#eq-gauss">Equation&nbsp;<span>3.19</span></a> is transformed to the standard normal distribution, also called the z-distribution, i.e.&nbsp;a special normal distribution where <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span> with pdf:</p>
-<p><span id="eq-zd"><span class="math display">\[ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2}  \tag{3.21}\]</span></span> The standard normal distribution is centered at zero and the degree to which a given measurement deviates from the mean is given by the standard deviation.</p>
+<p>Suppose we know that the population mean and standard deviation for systolic blood pressure (sbp) are μ = 125 mmHg and σ = 15 mmHg, respectively.</p>
+<ol type="a">
+<li>About what percentage of population has sbp in the range μ±σ ?</li>
+</ol>
+<p>The X random variable of sbp follows the normal distribution:</p>
+<p><span class="math display">\[ X ∼ N(125, 15^2)\]</span></p>
+<p>Thus, the percentage of the distribution between -1 <span class="math inline">\(\sigma\)</span> below the mean and +1 <span class="math inline">\(\sigma\)</span> above the mean is:</p>
+<p><span class="math display">\[ P(125 −15≤X≤ 125+15) = P(110≤X≤ 140) = 0.68\ or\ 68\% \]</span></p>
+<ol start="2" type="a">
+<li>Calculate a 95% reference range for the sbp:</li>
+</ol>
+<p><span class="math display">\[ (125 - 1.96\times 15,\ 125 + 1.96\times 15) = (95.6, 154.4) \]</span></p>
+</div>
+</div>
+<p>&nbsp;</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Statistical moments (or shape statistics) and normality
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are two shape statistics that can indicate deviation from normality: <strong>skew</strong> and <strong>kurtosis</strong>.</p>
+<p><strong>Skewness</strong></p>
+<p>Skewness is usually described as a measure of a dataset’s symmetry – or lack of symmetry.</p>
+<p>Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.8</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2">Figure&nbsp;<span>3.8</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.8</span></a> c).</p>
+<p>Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with &gt;1 indicating moderate skewness and &gt;2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-simple_normal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="distributions_files/figure-html/fig-simple_normal-1.png" class="img-fluid figure-img" width="576"></p>
-<p></p><figcaption class="figure-caption">Figure 3.7: A simple normal density function.</figcaption><p></p>
+<div id="fig-skew2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="images/skew2.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 3.8: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>We can break down individual components of a z-distribution (<a href="#eq-z">Equation&nbsp;<span>3.20</span></a>) and explain them until they seem more accessible.</p>
-<p><strong>First</strong>, we know from algebra that the formula <span class="math inline">\(\ {\frac {1}{2}}z^{2}\)</span> is a basic parabola (notice the square term). Adding a minus sign just flips the basic parabola <span class="math inline">\(\ {\frac {1}{2}}z^{2}\)</span> downward and we take a negative parabola <span class="math inline">\(\ -{\frac {1}{2}}z^{2}\)</span>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-basic_parabola" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="distributions_files/figure-html/fig-basic_parabola-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 3.8: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Second</strong>, exponentiating the negative parabola (<span class="math inline">\(\  e^{-{\frac {1}{2}}z^{2}}\)</span>) makes it asymptote to 0.</p>
+<p>&nbsp;</p>
+<p><strong>Kurtosis</strong></p>
+<p>The other way that distributions can deviate from normality is <strong>kurtosis</strong>. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).</p>
+<p>Distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.9</span></a> a). If the measure of excess kurtosis is <strong>0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.9</span></a> b). Finally, distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.9</span></a> c).</p>
+<p>A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-neg_parabola" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="distributions_files/figure-html/fig-neg_parabola-1.png" class="img-fluid figure-img" width="576"></p>
-<p></p><figcaption class="figure-caption">Figure 3.9: An exponentiated negative parabola.</figcaption><p></p>
+<div id="fig-kurtosis" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="images/kurtosis.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 3.9: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.</figcaption><p></p>
 </figure>
-</div>
-</div>
-</div>
-<p>Notice the tails in the <a href="#fig-neg_parabola">Figure&nbsp;<span>3.9</span></a> are asymptote to 0. “Asymptote” is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly “unlikely”.</p>
-<p><strong>Third</strong>, and with the above point in mind, it should be clear that <span class="math inline">\(\ {\frac {1}{{\sqrt {2\pi }}}}\)</span> will scale the height of the distribution. Observe that the height of the exponentiated parabola is at 1. That gets multiplied by <span class="math inline">\(\ {\frac {1}{\sqrt {2\pi }}}\)</span> to equal about 0.398.</p>
-<p><strong>Fourth</strong>, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z. Importantly, much of the area (68%) of the distribution is between -sd and sd, the large majority (95%) between -2 sd and +2 sd, and almost all (99%) between -3 sd and + 3 sd. So, the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-auc" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="distributions_files/figure-html/fig-auc-1.png" class="img-fluid figure-img" width="1152"></p>
-<p></p><figcaption class="figure-caption">Figure 3.10: The area underneath a Standard Normal Distribution</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Fifth</strong>, if we want to find the area between <span class="math inline">\(z_1\)</span> = 1 and <span class="math inline">\(z_2\)</span> = 2, we must integrate the <a href="#eq-zd">Equation&nbsp;<span>3.21</span></a> as following:</p>
-<p><span id="eq-integral"><span class="math display">\[ E={\frac {1}{{\sqrt {2\pi }}}}\int_{z_1}^{z_2}e^{-{\frac {1}{2}}z^2}dz  \tag{3.22}\]</span></span></p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-standard_normal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="distributions_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 3.11: Standard normal distribution with a shaded region</figcaption><p></p>
-</figure>
-</div>
 </div>
 </div>
 </div>
@@ -977,49 +981,73 @@ Properties of an approximately bell-shaped empirical distribution
 <li><p>the mean, the median and the mode have very close values</p></li>
 <li><p>the histogram is symmetric about the mean</p></li>
 <li><p>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean</p></li>
-<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.12</span></a> b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.</p></li>
-<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.13</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
+<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.8</span></a> b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.</p></li>
+<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.9</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
 </ul>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</section><section id="standard-normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="standard-normal-distribution"><strong>Standard Normal distribution</strong></h3>
+<p>If the random variable X has a normal distribution with <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>, then the standardized Normal deviate is:</p>
+<p><span id="eq-z"><span class="math display">\[ z= \frac{x-\mu}{\sigma}  \tag{3.20}\]</span></span></p>
+<p>The z is a random variable that has a Standard Normal distribution, also called a z-distribution, i.e.&nbsp;a special normal distribution where <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span>. In this case, <a href="#eq-gauss">Equation&nbsp;<span>3.19</span></a> is transformed as follows:</p>
+<p><span id="eq-zd"><span class="math display">\[ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2}  \tag{3.21}\]</span></span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-simple_normal" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-simple_normal-1.png" class="img-fluid figure-img" width="576"></p>
+<p></p><figcaption class="figure-caption">Figure 3.10: A simple normal density function.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The standard normal distribution is centered at zero and the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.</p>
 <p>&nbsp;</p>
 <div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Statistical moments (or shape statistics) and normality
+Understanding the Standard Normal distribution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>There are two shape statistics that can indicate deviation from normality: <strong>skew</strong> and <strong>kurtosis</strong>.</p>
-<p><strong>Skewness</strong></p>
-<p>Skewness is usually described as a measure of a dataset’s symmetry – or lack of symmetry.</p>
-<p>Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.12</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2">Figure&nbsp;<span>3.12</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.12</span></a> c).</p>
-<p>Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with &gt;1 indicating moderate skewness and &gt;2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.</p>
-<div class="cell" data-layout-align="center">
+<p>We can break down individual components of a z-distribution (<a href="#eq-z">Equation&nbsp;<span>3.20</span></a>) and explain them until they seem more accessible.</p>
+<p><strong>First</strong>, we know from algebra that the formula <span class="math inline">\(\ {\frac {1}{2}}z^{2}\)</span> is a basic parabola (notice the square term). Adding a minus sign just flips the basic parabola <span class="math inline">\(\ {\frac {1}{2}}z^{2}\)</span> downward and we take a negative parabola <span class="math inline">\(\ -{\frac {1}{2}}z^{2}\)</span>.</p>
+<div class="cell">
 <div class="cell-output-display">
-<div id="fig-skew2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/skew2.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.12: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.</figcaption><p></p>
+<div id="fig-basic_parabola" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-basic_parabola-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figure 3.11: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>&nbsp;</p>
-<p><strong>Kurtosis</strong></p>
-<p>The other way that distributions can deviate from normality is <strong>kurtosis</strong>. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).</p>
-<p>Distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.13</span></a> a). If the measure of excess kurtosis is <strong>0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.13</span></a> b). Finally, distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.13</span></a> c).</p>
-<p>A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.</p>
+<p><strong>Second</strong>, exponentiating the negative parabola (<span class="math inline">\(\  e^{-{\frac {1}{2}}z^{2}}\)</span>) makes it asymptote to 0.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-kurtosis" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/kurtosis.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.13: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.</figcaption><p></p>
+<div id="fig-neg_parabola" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-neg_parabola-1.png" class="img-fluid figure-img" width="576"></p>
+<p></p><figcaption class="figure-caption">Figure 3.12: An exponentiated negative parabola.</figcaption><p></p>
 </figure>
 </div>
 </div>
+</div>
+<p>Notice the tails in the <a href="#fig-neg_parabola">Figure&nbsp;<span>3.12</span></a> are asymptote to 0. “Asymptote” is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly “unlikely”.</p>
+<p><strong>Third</strong>, and with the above point in mind, it should be clear that <span class="math inline">\(\ {\frac {1}{{\sqrt {2\pi }}}}\)</span> will scale the height of the distribution. Observe that the height of the exponentiated parabola is at 1. That gets multiplied by <span class="math inline">\(\ {\frac {1}{\sqrt {2\pi }}}\)</span> to equal about 0.398.</p>
+<p><strong>Fourth</strong>, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z.</p>
+<p><strong>Fifth</strong>, if we want to find the area E between <span class="math inline">\(z_1\)</span> = 1 and <span class="math inline">\(z_2\)</span> = 2, we must integrate the <a href="#eq-zd">Equation&nbsp;<span>3.21</span></a> as following:</p>
+<p><span id="eq-integral"><span class="math display">\[ E=P(z_1\leq Z\leq z_2)={\frac {1}{{\sqrt {2\pi }}}}\int_{z_1}^{z_2}e^{-{\frac {1}{2}}z^2}dz  \tag{3.22}\]</span></span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-standard_normal" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" width="768"></p>
+<p></p><figcaption class="figure-caption">Figure 3.13: Standard normal distribution with a shaded region</figcaption><p></p>
+</figure>
 </div>
 </div>
 </div>
