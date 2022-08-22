@@ -287,7 +287,7 @@ ul.task-list{list-style: none;}
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Note
+Two events always exist
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -565,7 +565,7 @@ Probabilities involved in Bayes’ theorem (Advanced)
 </ol>
 <p>This interpretation of Bayes’ theorem is the foundation of Bayesian statistics, and it can be summarized as:</p>
 <p><strong>Posterior probability ∝ Likelihood × Prior probability</strong></p>
-<p>Bayes’ theorem provides a way to <strong>update</strong> the prior knowledge of model parameters given the measurements, leading to posterior estimates of parameters. One key feature of Bayesian statistics is that the calculation of probabilities is based on a <strong>prior probability</strong>, which may rely on a subjective interpretation of what is known about the experiment before any measurements are made. Therefore, great attention must be paid to the assignment of prior probabilities and the effect of priors on the final results of the analysis.</p>
+<p>Bayes’ theorem provides a way to <strong>update</strong> the prior knowledge of model parameters given the measurements, leading to posterior estimates of parameters. One key feature of Bayesian statistics is that the calculation of probability is based on a <strong>prior probability</strong>, which may rely on a subjective interpretation of what is known about the experiment before any measurements are made. Therefore, great attention must be paid to the assignment of prior probabilities and the effect of priors on the final results of the analysis.</p>
 </div>
 </div>
 </div>
@@ -592,8 +592,8 @@ Example - Probability of developing lung cancer for smokers
 <p><span class="math display">\[X={\begin{cases}0,&amp;for\ genotype\ AA\\1,&amp;for\ genotype\ Aa\\2,&amp;for\ genotype\ aa\end{cases}}\]</span></p>
 <p>In this case, the random variable assigns 0 to the outcome AA, 1 to the outcome Aa, and 2 to the outcome aa.</p>
 <p>The set of values that a random variable can assume is called its range. For the above example, the range of X is {0, 1, 2}.</p>
-<p>After we define a random variable, we can find the probabilities for its possible values based on the probabilities for its underlying random phenomenon. This way, instead of talking about the probabilities for different outcomes and events, we can talk about <strong>the probability of different values for a random variable</strong>.</p>
-<p>Assume that the probabilities for different genotypes are P(AA) = 0.49, P(Aa) = 0.42, and P(aa) = 0.09. Then, instead of saying P(AA) = 0.49, i.e., the genotype is AA with probability 0.49, we can say that P(X = 0) = 0.49, i.e., X is equal to 0 with probability of 0.49. Likewise, P(X = 1) = 0.42 and P(X = 2) = 0.09.</p>
+<p>After we define a random variable, we can find the probability for its possible value based on the underlying random phenomenon. This way, instead of talking about the probability for different outcomes and events, we can talk about <strong>the probability of different values for a random variable</strong>.</p>
+<p>Assume that the individual probabilities for different genotypes are P(AA) = 0.49, P(Aa) = 0.42, and P(aa) = 0.09. Then, instead of saying P(AA) = 0.49, i.e., the genotype is AA with probability 0.49, we can say that P(X = 0) = 0.49, i.e., X is equal to 0 with probability of 0.49. Likewise, P(X = 1) = 0.42 and P(X = 2) = 0.09.</p>
 <p>Note that the total probability for the random variable is still 1. In what follows, we write P(X) to denote the probability of a random variable X in general without specifying any value or range of values. <strong>The probability rules we discussed earlier also apply to random variables</strong>. Specifically, concepts such as independence and conditional probability are defined similarly for random variables as they are defined for random events. For example, when two random variables do not affect each other’s probabilities, we say that they are independent.</p>
 <p>A random variable is also expected to have a theoretical distribution, e.g., Normal, Poisson, etc., according to the nature of the variable itself and the method of measurement.</p>
 <p>Each distribution is entirely defined by several specific parameters. The parameter values determine the location and shape of the curve on the plot of distribution, and each unique combination of parameter values produces a unique distribution curve.</p>
@@ -603,15 +603,15 @@ Example - Probability of developing lung cancer for smokers
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Tip
+What we need to know for a random variable?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Therefore, to fully understand a random variable, we need to know:</p>
+<p>To fully understand a random variable, we need to know:</p>
 <ol type="1">
 <li>
 <strong>every possible value</strong>, or the interval of values of the random variable.</li>
-<li>the <strong>probabilities</strong> corresponding to the values or value ranges (<strong>probability distribution</strong>).</li>
+<li>the <strong>probability</strong> corresponding to each possible value or value ranges (<strong>probability distribution</strong>).</li>
 </ol>
 </div>
 </div>
@@ -623,7 +623,7 @@ Tip
 <p>&nbsp;</p>
 <section id="bernoulli-distribution" class="level3"><h3 class="anchored" data-anchor-id="bernoulli-distribution">Bernoulli distribution</h3>
 <p>Binary random variables are abundant in scientific studies. Bernoulli distribution applies to events that have one trial and two possible outcomes.</p>
-<p>A <strong>Bernoulli event</strong> is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p.&nbsp;As before, the probabilities for all possible values sum to one: P(X = 0) + P(X = 1) = 1.</p>
+<p>A <strong>Bernoulli event</strong> is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p.&nbsp;As before, the probability for all possible values sum to one: P(X = 0) + P(X = 1) = 1.</p>
 <p>A <strong>Bernoulli trial</strong> is an instantiation of a Bernoulli event. So long as the probability of success or failure remains the same from trial to trial (i.e., each trial is independent of the others), a sequence of Bernoulli trials is called a <strong>Bernoulli process</strong>.</p>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -669,7 +669,7 @@ Tip
 </div>
 </div>
 </div>
-<p>The height of each bar is the probability of the corresponding value on the horizontal axis. The height of the bar is 0.2 at X = 0 and 0.8 at X = 1. Since the probabilities for all possible values of the random variable add to 1, the bar heights also add up to 1.</p>
+<p>The height of each bar is the probability of the corresponding value on the horizontal axis. The height of the bar is 0.2 at X = 0 and 0.8 at X = 1. Since the probability for all possible values of the random variable is 1, the bar heights also add up to 1.</p>
 <p>In the above example, from <a href="#eq-bernouli1">Equation&nbsp;<span>3.9</span></a> we take μ = 0.8. Therefore, we expect 80% of patients survive.</p>
 <p>From <a href="#eq-bernouli2">Equation&nbsp;<span>3.10</span></a> the variance of the random variable is <span class="math inline">\(σ^2 = 0.8 × 0.2 = 0.16\)</span>, and its standard deviation is <span class="math inline">\(σ = 0.4\)</span>. This reflects the extent of variability in survival status from one person to another. For this example, the amount of variation is rather small. Therefore, we expect to see many survivals (X = 1) with occasional death (X = 0). For comparison, suppose that the probability of survival for bladder cancer is θ = 0.6. Then, the variance becomes <span class="math inline">\(σ^2 = 0.6×(1−0.6) = 0.24\)</span>. This reflects a higher variability in the survival status for bladder cancer patients compared to that of breast cancer patients.</p>
 </div>
@@ -750,7 +750,7 @@ Tip
 </div>
 </div>
 </div>
-<p>As before, the height of each bar is the probability of the corresponding value on the x-axis. For example, the probability of 40 survivals (out of 50) is P(X=40)=0.14. Also, since the probabilities for all possible values of the random variable add to 1, the bar heights add up to 1. Note that for numbers below 30 and above 48, the probability is almost zero.</p>
+<p>As before, the height of each bar is the probability of the corresponding value on the x-axis. For example, the probability of 40 survivals (out of 50) is P(X=40)=0.14. Also, since the probability for all possible values of the random variable is 1, the bar heights add up to 1. Note that for numbers below 30 and above 48, the probability is almost zero.</p>
 <p>Now suppose that we are interested in the probability that either 34 or 35 or 36 patients survive. Since the underlying event include three possible outcomes, 34, 35, and 36, we obtain the probability by adding the individual probabilities for these outcomes:</p>
 <p><span class="math display">\[P(33&lt;X ≤ 36) = P(X = 34)+ P(X = 35)+P(X = 36) = 0.02 + 0.03 + 0.05 = 0.1\]</span></p>
 <p>For the breast cancer example and <a href="#eq-binom1">Equation&nbsp;<span>3.13</span></a>, the mean of the random variable is 50×0.8 = 40. If we recruit 50 patients, we expect 40 people survive over five years. Of course, the actual number of survivals can change from one group to another (e.g., if we take another group of 50 patients). According to <a href="#eq-binom2">Equation&nbsp;<span>3.14</span></a>, the variance of X in the above example is 50 × 0.8 × 0.2 = 8, which shows the extent of the variation of the random variable around its mean.</p>
@@ -787,8 +787,7 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p>As an example, assume that the rate of physician visits per year is 2.5:</p>
-<p><span class="math display">\[X ∼ Poisson(2.5)\]</span></p>
-<p>Therefore, the population mean and variance of this variable is 2.5.</p>
+<p><span class="math display">\[X ∼ Poisson(2.5)\]</span> Therefore, the population mean and variance of this variable is 2.5.</p>
 <p>According to <a href="#eq-poisson1">Equation&nbsp;<span>3.17</span></a> the resulting probability table is:</p>
 <table class="table"><tbody>
 <tr class="odd">
@@ -912,7 +911,7 @@ Definition and Properties of Normal Distribution
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Individual components of a standard normal distribution
+Understanding the (standard) normal distribution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -979,13 +978,13 @@ Individual components of a standard normal distribution
 </div>
 </div>
 <p>&nbsp;</p>
-<section id="properties-of-an-approximately-bell-shaped-histogram" class="level4"><h4 class="anchored" data-anchor-id="properties-of-an-approximately-bell-shaped-histogram">Properties of an approximately bell-shaped histogram</h4>
-<p>In an approximately <strong>bell-shaped (normal)</strong> distribution:</p>
+<section id="properties-of-an-approximately-bell-shaped-empirical-distribution" class="level4"><h4 class="anchored" data-anchor-id="properties-of-an-approximately-bell-shaped-empirical-distribution">Properties of an approximately bell-shaped empirical distribution</h4>
+<p>The general method for gaining information on normality of a random variable X is to obtain the frequency distribution (i.e.&nbsp;a histogram), which describes the empirical distribution of values collected in the experiment. If the empirical distribution has a shape that approximates the Gaussian distribution then the variable is consider as a normal random variable. Thus, in an approximately <strong>bell-shaped</strong> distribution:</p>
 <ul>
 <li><p>the mean, the median and the mode have very close values</p></li>
 <li><p>the histogram is symmetric about the mean</p></li>
 <li><p>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean</p></li>
-<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.12</span></a> b). Particularly, values between −1 and +1 indicate an approximate bell-shaped curve.</p></li>
+<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.12</span></a> b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.</p></li>
 <li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.13</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
 </ul></section><section id="t-distribution" class="level4"><h4 class="anchored" data-anchor-id="t-distribution"><strong>t-distribution</strong></h4>
 </section><section id="chi-squared-distribution" class="level4"><h4 class="anchored" data-anchor-id="chi-squared-distribution"><strong>Chi-squared distribution</strong></h4>

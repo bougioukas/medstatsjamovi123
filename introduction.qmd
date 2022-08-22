@@ -150,8 +150,8 @@ knitr::include_graphics(here::here("images", "types_data.png"))
 
 **Nominal categorical data** are data that one can name and put into categories. They are not measured but simply **counted**. They often consist of **unordered** 'either--or' type observations which have two categories and are often know as **binary**. For example: dead or alive; cured or not cured; pregnant or not pregnant. However, nominal categorical data often can have **more than two categories**, for example, blood group A, B, AB, 0; country of origin; ethnic group; eye color. In @farndon2013 study **gender** is a binary variable (male or female), and the **center** where the the participants were treated is a nominal variable with seven level (Central, Manor, Jordanthorpe, Limbrick, Firth Park, Huddersfield, Darnall).
 
-::: callout-warning
-**Numerical representation of categories are just codes**
+::: callout-important
+## Numerical representation of categories are just codes
 
 We can denote a male and female as 1 and 2 for gender and denote A, B, AB and 0, as 1, 2, 3, and 4 for blood type. Unlike numerical data, the numbers representing different categories do not have mathematical meanings (they are just codes).
 :::
@@ -162,8 +162,8 @@ We can denote a male and female as 1 and 2 for gender and denote A, B, AB and 0,
 
 If there are more than two categories of classification it may be possible to **order** them in some way. For example, after treatment a patient may be either improved, the same or worse. Another example of an ordinal variable is the variable **pain** where a subject is asked to describe their pain verbally as minimal, moderate, severe, or unbearable. In @farndon2013 study, the **smoking history** variable has three categories coded as non-smoker=0, previous smoker=1, and current smoker=2. We know that someone who is a current smoker has more recent exposure to tobacco than someone who is an ex-smoker and someone who has never smoked. However, **without further knowledge** (of the current and past levels of tobacco consumption) it would be wrong to treat the codes of the categories as numerical quantities, as one cannot say that someone who is current smoker has twice the levels of tobacco consumption as someone who is a previous smoker.
 
-::: callout-warning
-**Collapsion of categories leads to a loss of information**
+::: callout-important
+## Collapsion of categories leads to a loss of information
 
 Ordinal data are often reduced to two categories to simplify analysis and presentation, which may result in a considerable loss of information.
 :::
@@ -179,7 +179,7 @@ Ordinal data are often reduced to two categories to simplify analysis and presen
 The difference between discrete data and the ordinal data described earlier can be seen by considering an example of each:
 
 ::: {.callout-note icon="false"}
-## **Illustrative Example: Ordinal Vs Discrete data**
+## **Example: Ordinal Vs Discrete data**
 
 ***Ordinal categorical:*** Stage of breast cancer: I II III IV
 
@@ -198,8 +198,8 @@ Such data are measurements that can, in theory at least, **take any value within
 
 Sometimes it is reasonable to treat discrete data as if they were continuous, at least as far as statistical analysis goes. While age is a continuous measurement, **age at last birthday is discrete**. In studies of adults with ages ranging from, say, 16 to 80, no harm is done in considering age in years as a continuous measurement (and this is standard practice), but for studies of pre-school children it would be better to use age in months. **Heart rate** (in beats per minute) is another discrete measurement that is usually regarded as continuous. Although the essential requirement for this change of status is that there should be a large number of different possible values, in practice we do not worry too much about analysing discrete measurements as if they were continuous.
 
-::: callout-warning
-**Categorization of numerical data leads to a loss of information**
+::: callout-important
+## Categorization of numerical data leads to a loss of information
 
 For simplicity, it is often the case in medicine that continuous data are dichotomized to make nominal data. For example, the diastolic blood pressure (DBP), which is continuous, is converted into hypertension (\>90 mmHg) and normotension (≤90 mmHg). There are **two main reasons** for doing this. It is easier to describe a population by the proportion of people affected, for example, the proportion of people in the population with hypertension is 10%. Further, one often has to make a decision: if a person has hypertension, then they will get treatment, and this is easier if high blood pressure has been categorized. However, this dichotomization clearly leads to a loss of information.
 
@@ -210,8 +210,8 @@ Some statisticians have termed the habit of categorizing continuous variables as
 
  
 
-::: callout-tip
-**Record the actual values**
+:::{.callout-tip icon=false}
+## Record the actual values
 
 It is best to record the actual value of blood pressure, haemoglobin, etc. It is easy to convert to categories in the analysis, but the raw data cannot be retrieved later if only categories are recorded. Information is lost with no compensatory gain. Indeed, the statistical analysis of continuous data is more powerful, and often simpler.
 
@@ -219,3 +219,19 @@ When some calculation is necessary to derive the observation of interest this sh
 :::
 
 The degree of measurement accuracy and the type of data are both important in relation to carrying out a proper statistical analysis.
+
+
+
+
+## Exercises
+
+
+:::{.callout appearance="simple" icon=false}
+::: {#exr-1}
+
+ddpsldf
+
+:::
+:::
+
+@exr-1

@@ -34,7 +34,7 @@ Different experiments will have different sample spaces that can be written in a
 A **random event A**, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it represents **a number** of possible outcomes for the experiment. In the case of the roll of a die, the event "even number" may be represented by A = {2, 4, 6}, and the event "odd number" as B = {1, 3, 5}. In the case of flipping two coins, an event could be that exactly one of the coins lands Heads, A = {HT, TH}.
 
 ::: {.callout-tip icon="false"}
-## Note
+## Two events always exist
 
 For each experiment, two events always exist: the **sample space** itself which comprises all possible outcomes and the **empty set** that contains no outcomes represented as **A = ∅** and called the impossible event.
 :::
@@ -286,7 +286,7 @@ This interpretation of Bayes' theorem is the foundation of Bayesian statistics, 
 
 **Posterior probability ∝ Likelihood × Prior probability**
 
-Bayes' theorem provides a way to **update** the prior knowledge of model parameters given the measurements, leading to posterior estimates of parameters. One key feature of Bayesian statistics is that the calculation of probabilities is based on a **prior probability**, which may rely on a subjective interpretation of what is known about the experiment before any measurements are made. Therefore, great attention must be paid to the assignment of prior probabilities and the effect of priors on the final results of the analysis.
+Bayes' theorem provides a way to **update** the prior knowledge of model parameters given the measurements, leading to posterior estimates of parameters. One key feature of Bayesian statistics is that the calculation of probability is based on a **prior probability**, which may rely on a subjective interpretation of what is known about the experiment before any measurements are made. Therefore, great attention must be paid to the assignment of prior probabilities and the effect of priors on the final results of the analysis.
 :::
 
 ::: {.callout-note icon="false"}
@@ -313,9 +313,9 @@ In this case, the random variable assigns 0 to the outcome AA, 1 to the outcome 
 
 The set of values that a random variable can assume is called its range. For the above example, the range of X is {0, 1, 2}.
 
-After we define a random variable, we can find the probabilities for its possible values based on the probabilities for its underlying random phenomenon. This way, instead of talking about the probabilities for different outcomes and events, we can talk about **the probability of different values for a random variable**.
+After we define a random variable, we can find the probability for its possible value based on the underlying random phenomenon. This way, instead of talking about the probability for different outcomes and events, we can talk about **the probability of different values for a random variable**.
 
-Assume that the probabilities for different genotypes are P(AA) = 0.49, P(Aa) = 0.42, and P(aa) = 0.09. Then, instead of saying P(AA) = 0.49, i.e., the genotype is AA with probability 0.49, we can say that P(X = 0) = 0.49, i.e., X is equal to 0 with probability of 0.49. Likewise, P(X = 1) = 0.42 and P(X = 2) = 0.09.
+Assume that the individual probabilities for different genotypes are P(AA) = 0.49, P(Aa) = 0.42, and P(aa) = 0.09. Then, instead of saying P(AA) = 0.49, i.e., the genotype is AA with probability 0.49, we can say that P(X = 0) = 0.49, i.e., X is equal to 0 with probability of 0.49. Likewise, P(X = 1) = 0.42 and P(X = 2) = 0.09.
 
 Note that the total probability for the random variable is still 1. In what follows, we write P(X) to denote the probability of a random variable X in general without specifying any value or range of values. **The probability rules we discussed earlier also apply to random variables**. Specifically, concepts such as independence and conditional probability are defined similarly for random variables as they are defined for random events. For example, when two random variables do not affect each other's probabilities, we say that they are independent.
 
@@ -324,10 +324,12 @@ A random variable is also expected to have a theoretical distribution, e.g., Nor
 Each distribution is entirely defined by several specific parameters. The parameter values determine the location and shape of the curve on the plot of distribution, and each unique combination of parameter values produces a unique distribution curve.
 
 ::: {.callout-tip icon="false"}
-Therefore, to fully understand a random variable, we need to know:
+## What we need to know for a random variable?
+
+To fully understand a random variable, we need to know:
 
 (1) **every possible value**, or the interval of values of the random variable.
-(2) the **probabilities** corresponding to the values or value ranges (**probability distribution**).
+(2) the **probability** corresponding to each possible value or value ranges (**probability distribution**).
 :::
 
 For the random variable X defined based on genotypes, the **probability distribution** can be simply specified as follows:
@@ -344,7 +346,7 @@ For discrete random variables, the probability distribution is fully defined by 
 
 Binary random variables are abundant in scientific studies. Bernoulli distribution applies to events that have one trial and two possible outcomes.
 
-A **Bernoulli event** is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p. As before, the probabilities for all possible values sum to one: P(X = 0) + P(X = 1) = 1.
+A **Bernoulli event** is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p. As before, the probability for all possible values sum to one: P(X = 0) + P(X = 1) = 1.
 
 A **Bernoulli trial** is an instantiation of a Bernoulli event. So long as the probability of success or failure remains the same from trial to trial (i.e., each trial is independent of the others), a sequence of Bernoulli trials is called a **Bernoulli process**.
 
@@ -397,7 +399,7 @@ plot(ber_q , ber_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf 
 
 ```
 
-The height of each bar is the probability of the corresponding value on the horizontal axis. The height of the bar is 0.2 at X = 0 and 0.8 at X = 1. Since the probabilities for all possible values of the random variable add to 1, the bar heights also add up to 1.
+The height of each bar is the probability of the corresponding value on the horizontal axis. The height of the bar is 0.2 at X = 0 and 0.8 at X = 1. Since the probability for all possible values of the random variable is 1, the bar heights also add up to 1.
 
 In the above example, from @eq-bernouli1 we take μ = 0.8. Therefore, we expect 80% of patients survive.
 
@@ -469,7 +471,7 @@ plot(binom_q , binom_pmf, type = "h", xlab = "X", ylab = "Probability", main = "
 
 ```
 
-As before, the height of each bar is the probability of the corresponding value on the x-axis. For example, the probability of 40 survivals (out of 50) is P(X=40)=0.14. Also, since the probabilities for all possible values of the random variable add to 1, the bar heights add up to 1. Note that for numbers below 30 and above 48, the probability is almost zero.
+As before, the height of each bar is the probability of the corresponding value on the x-axis. For example, the probability of 40 survivals (out of 50) is P(X=40)=0.14. Also, since the probability for all possible values of the random variable is 1, the bar heights add up to 1. Note that for numbers below 30 and above 48, the probability is almost zero.
 
 Now suppose that we are interested in the probability that either 34 or 35 or 36 patients survive. Since the underlying event include three possible outcomes, 34, 35, and 36, we obtain the probability by adding the individual probabilities for these outcomes:
 
@@ -498,18 +500,12 @@ where x = 0, 1, ... +∞, λ \> 0.
 The mean and variance of a random variable with Poisson(λ) distribution are the same and equal to λ. That is, μ = λ and $σ^2 = λ$.
 :::
 
-
-
-
 ::: {.callout-note icon="false"}
 ## **Example-Poisson distribution: physician visits**
 
 As an example, assume that the rate of physician visits per year is 2.5:
 
-$$X ∼ Poisson(2.5)$$
-Therefore, the population mean and variance of this variable is 2.5.
-
-
+$$X ∼ Poisson(2.5)$$ Therefore, the population mean and variance of this variable is 2.5.
 
 According to @eq-poisson1 the resulting probability table is:
 
@@ -517,8 +513,6 @@ According to @eq-poisson1 the resulting probability table is:
 |----------|------|------|------|------|------|------|
 | **X**    | 0    | 1    | 2    | 3    | 5    | 6    |
 | **P(X)** | 0.08 | 0.21 | 0.26 | 0.21 | 0.07 | 0.03 |
-
-
 
 The resulting plot of the pmf shows the probability of each possible value, which is any integer from 0 to infinity [@fig-poisson1]. In this case, the probability of values above 8 becomes almost 0.
 
@@ -537,26 +531,18 @@ plot(pois_q , pois_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pm
 
 ```
 
-
 For this example, the probability that a person does not visit her/his physician within a year is P(X = 0) = 0.08, while the probability of one visit per year increases to P(X = 1) = 0.21.
 
-Now suppose that we want to know the probability of up to three visits per year: P(X ≤ 3). This is the probability that a person visit her/his physician 0, or 1, or 2, or 3 times within one year. As before, we add the individual probabilities for the corresponding outcomes:
-P(X ≤ 3) = 0.08 + 0.21 + 0.26 + 0.21 = 0.76.
-
+Now suppose that we want to know the probability of up to three visits per year: P(X ≤ 3). This is the probability that a person visit her/his physician 0, or 1, or 2, or 3 times within one year. As before, we add the individual probabilities for the corresponding outcomes: P(X ≤ 3) = 0.08 + 0.21 + 0.26 + 0.21 = 0.76.
 
 The population mean and variance of this variable is 2.5 visits per year.
-
 :::
-
-
 
 ## Probability distributions for Continuous Outcomes
 
 For discrete random variables, the pmf provides the probability of each possible value. For continuous random variables, the number of possible values is uncountable, and the probability of any specific value is zero.
 
-
-Therefore, instead of talking about the probability of any specific value x
-for continuous random variable X, we talk about the probability that the value of the random variable is within a specific interval from x1 to x2; we show this probability as P(x1 ≤ X ≤ x2).
+Therefore, instead of talking about the probability of any specific value x for continuous random variable X, we talk about the probability that the value of the random variable is within a specific interval from x1 to x2; we show this probability as P(x1 ≤ X ≤ x2).
 
 $$ P(x_1\leq X \leq x_2)=\int_{x_1}^{x_2}f(x)dx $$ {#eq-continuous1}
 
@@ -568,15 +554,12 @@ Clearly, in @eq-continuous1, the probability of a certain point value in X is ze
 
 ### **Normal Distribution**
 
-There are several important probability distributions in statistics. However, the normal distribution might be the most important.
-The normal distribution provides an adequate model for the relative frequency distributions of data collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.
-
+There are several important probability distributions in statistics. However, the normal distribution might be the most important. The normal distribution provides an adequate model for the relative frequency distributions of data collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.
 
 ::: {.callout-caution collapse="true"}
 ## Historical background
 
 First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
-
 :::
 
  
@@ -601,8 +584,6 @@ plot(x,y, main="Normal Distribution", type = "l", lwd = 2,  xlab = "", ylab = "P
 axis(1, at = -3:3, lab=expression(-3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma))
 
 ```
-
-
 
 Gauss' normal distribution, technically a density function, is a distribution defined by two parameters, mean $\mu$ and variance $\sigma^2$. The mean, $\mu$, represents the population mean and is a "location parameter", which defines the central tendency. The variance, $\sigma^2$ is the "scale parameter", which defines the width of the distribution and how short the distribution is. It's formally given as @eq-gauss:
 
@@ -637,8 +618,6 @@ text(2.9, 0.10, expression(sigma[2]), col="deeppink")
 text(2.5, 0.20, expression(sigma[1] < sigma[2]), col="gray30")
 ```
 
-
-
 The Normal distribution has the properties summarized as follows:
 
 -   Bell shaped and symmetrical around the mean. Shape statistics, skewness and excess kurtosis are zero.
@@ -654,20 +633,16 @@ The Normal distribution has the properties summarized as follows:
 
  
 
-
 ::: {.callout-caution collapse="true"}
-## Individual components of a standard normal distribution
+## Understanding the (standard) normal distribution
 
 A random normal variable with $\mu$ and $\sigma$ can be normalized via the following:
 
 $$ z= \frac{x-\mu}{\sigma} $$ {#eq-z}
 
-
 In this case, @eq-gauss is transformed to the standard normal distribution, also called the z-distribution, i.e. a special normal distribution where $\mu=0$ and $\sigma^2=1$ with pdf:
 
-$$ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2} $$ {#eq-zd}
-zd
-The standard normal distribution is centered at zero and the degree to which a given measurement deviates from the mean is given by the standard deviation. 
+$$ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2} $$ {#eq-zd} zd The standard normal distribution is centered at zero and the degree to which a given measurement deviates from the mean is given by the standard deviation.
 
 ```{r}
 #| echo: false
@@ -688,7 +663,6 @@ ggplot(data.frame(x = c(-4, 4)), aes(x)) +
         plot.title = element_text(size= 10),
         plot.subtitle = element_text(size= 8))
 ```
-
 
 We can break down individual components of a z-distribution (@eq-z) and explain them until they seem more accessible.
 
@@ -763,7 +737,6 @@ Notice the tails in the @fig-neg_parabola are asymptote to 0. "Asymptote" is a f
 
 **Fourth**, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z. Importantly, much of the area (68%) of the distribution is between -sd and sd, the large majority (95%) between -2 sd and +2 sd, and almost all (99%) between -3 sd and + 3 sd. So, the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.
 
-
 ```{r}
 #| echo: false
 #| label: fig-auc
@@ -780,8 +753,6 @@ normal_dist("#522d80","#F66733") +
        y = "Density",
        x = "")
 ```
-
-
 
 **Fifth**, if we want to find the area between $z_1$ = 1 and $z_2$ = 2, we must integrate the @eq-zd as following:
 
@@ -812,16 +783,13 @@ abline(h=0) # adds the x-axis to the plot
 polygon(region.x, region.y, density=-1, col="#F66733")
 
 ```
-
-
 :::
-
 
  
 
-#### Properties of an approximately bell-shaped histogram
+#### Properties of an approximately bell-shaped empirical distribution
 
-In an approximately **bell-shaped (normal)** distribution:
+The general method for gaining information on normality of a random variable X is to obtain the frequency distribution (i.e. a histogram), which describes the empirical distribution of values collected in the experiment. If the empirical distribution has a shape that approximates the Gaussian distribution then the variable is consider as a normal random variable. Thus, in an approximately **bell-shaped** distribution:
 
 -   the mean, the median and the mode have very close values
 
@@ -829,7 +797,7 @@ In an approximately **bell-shaped (normal)** distribution:
 
 -   "nearly all" values (99.7%) are within -3 and +3 standard deviations of the mean
 
--   the measure of skewness takes values close to zero (symmetric distribution) (@fig-skew2 b). Particularly, values between −1 and +1 indicate an approximate bell-shaped curve.
+-   the measure of skewness takes values close to zero (symmetric distribution) (@fig-skew2 b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.
 
 -   the measure of excess kurtosis is close to 0 (mesokurtic) (@fig-kurtosis b). A kurtosis value between −1 and +1 indicates normality.
 

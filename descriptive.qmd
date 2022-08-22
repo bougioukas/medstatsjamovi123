@@ -141,8 +141,8 @@ In addition to tabulating each variable separately, we might be interested in wh
 
  
 
-::: callout-tip
-**Recommendations for reporting numbers and percentages**
+:::{.callout-tip icon=false}
+## Recommendations for reporting numbers and percentages
 
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | Recommendation                                                                      | Correct expression                                                                           |
@@ -291,8 +291,8 @@ labs(x = "Treatment center", y = "Percent",
 
 ```
 
-::: callout-tip
-**Report the actual total sample sizes for each group**
+:::{.callout-tip icon=false}
+## Report the actual total sample sizes for each group
 
 If we do use the relative frequency scale as we have, then it is recommended to report the actual total sample sizes for each group (e.g., in the legend or caption). In this way, given the total sample size and relative frequency (from the height of the bars) we can work out the actual numbers treated in each center.
 :::
@@ -369,8 +369,8 @@ ggplot(data_stacked2, aes(x = group, y = pct, fill = center))+
 
 ```
 
-::: callout-warning
-**Stacked bar plots tend to become confusing when the variable has many levels**
+::: callout-important
+## Stacked bar plots tend to become confusing when the variable has many levels
 
 One issue to consider when using stacked bar plots is the number of variable levels: when dealing with many categories, stacked bar plots tend to become rather confusing.
 :::
@@ -382,7 +382,7 @@ One issue to consider when using stacked bar plots is the number of variable lev
 A quantitative measurement contains more information than a categorical one, and so summarizing these data is more complex. One chooses summary statistics to condense a large amount of information into a few intelligible numbers, the sort that could be communicated verbally. The two most important pieces of information about a quantitative measurement are **'where is it?'** and **'how variable is it?'** These are categorized as **measures of location** (or sometimes 'central tendency') and **measures of spread** or variability.
 
 ::: {.callout-tip icon="false"}
-## **Two summary measures should be reported for a numerical variable**
+## Two summary measures should be reported for a numerical variable
 
 A measure of **location** (where the center of the distribution of the values is located) and **variability** (how widely the values are spread above and below the central value) provides an informative but brief summary of a set of observations.
 :::
@@ -419,7 +419,7 @@ x2 <- c(2, 2, 6, 3, 4, 2, 2, 5, 3, 4, 1, 2, 6, 3, 100, 3)
  
 
 ::: {.callout-note icon="false"}
-## **Example: Calculation of the Mean - Corn size data (mm)**
+## Example: Calculation of the Mean - Corn size data (mm)
 
 In the RCT by @farndon2013, the baseline size of the corn (as its widest diameter in mm) was measured by a podiatrist (foot specialist). Consider the following 16 baseline corn sizes selected from the patients:
 
@@ -443,7 +443,7 @@ The major advantage of the mean is that it uses all the data values, while the m
 If the data are binary and are coded 0 or 1, then $\bar{x}$ is the proportion of individuals with value 1, and this can also be expressed as a percentage. In @farndon2013 data, the cases in which the corn was healed are coded as '1s' and the cases in which the corn was not healed as '0s'. The corn had healed in 52 out of 189 patients (0.28 or 28%), which is equal to the "mean" of this variable `r round(mean(data_corn$complete_healed, na.rm=T), digits = 2)`.
 
 ::: {.callout-tip icon="false"}
-## **Advantages and Disadvantages of arithmetic mean**
+## Advantages and Disadvantages of arithmetic mean
 
 **Advantages of mean**
 
@@ -475,7 +475,7 @@ Therefore, the sample median, *md*, of *n* observations is:
 -   the average of the $\frac{n}{2}$th and $\frac{n+1}{2}$th ordered values, $md=\frac{1}{2}(x_{\frac{n}{2}}+x_{\frac{n+1}{2}})$, if *n* is even.
 
 ::: {.callout-note icon="false"}
-## **Example: Calculation of the Median - Corn size data (mm)**
+## Example: Calculation of the Median - Corn size data (mm)
 
 **1st case: Even observations**
 
@@ -642,8 +642,8 @@ Note that the majority of this sum is contributed by one observation, the value 
 
  
 
-::: callout-tip
-**How to report summary statistics for numerical data?**
+:::{.callout-tip icon=false}
+## How to report summary statistics for numerical data?
 
 Mean and median convey different impressions of the location of data in presence of skewness (or outliers).
 
@@ -848,8 +848,8 @@ data_corn |>
 
  
 
-::: callout-tip
-**Histograms must be plotted with a zero-valued baseline**
+::: {.callout-important}
+## Histograms must be plotted with a zero-valued baseline
 
 An important aspect of histograms is that they must be plotted with a zero-valued baseline. Since the frequency of data in each bin is implied by the height of each bar, changing the baseline or introducing a gap in the scale will skew the perception of the distribution of data.
 :::
