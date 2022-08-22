@@ -287,7 +287,7 @@ ul.task-list{list-style: none;}
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Two events always exist
+Two events always exist for an experiment
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -603,7 +603,7 @@ Example - Probability of developing lung cancer for smokers
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-What we need to know for a random variable?
+What do we need to know for a random variable?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -623,7 +623,7 @@ What we need to know for a random variable?
 <p>&nbsp;</p>
 <section id="bernoulli-distribution" class="level3"><h3 class="anchored" data-anchor-id="bernoulli-distribution">Bernoulli distribution</h3>
 <p>Binary random variables are abundant in scientific studies. Bernoulli distribution applies to events that have one trial and two possible outcomes.</p>
-<p>A <strong>Bernoulli event</strong> is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p.&nbsp;As before, the probability for all possible values sum to one: P(X = 0) + P(X = 1) = 1.</p>
+<p>A <strong>Bernoulli event</strong> is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p.&nbsp;As before, the probability for all possible values is one: P(X = 0) + P(X = 1) = 1.</p>
 <p>A <strong>Bernoulli trial</strong> is an instantiation of a Bernoulli event. So long as the probability of success or failure remains the same from trial to trial (i.e., each trial is independent of the others), a sequence of Bernoulli trials is called a <strong>Bernoulli process</strong>.</p>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -669,7 +669,7 @@ What we need to know for a random variable?
 </div>
 </div>
 </div>
-<p>The height of each bar is the probability of the corresponding value on the horizontal axis. The height of the bar is 0.2 at X = 0 and 0.8 at X = 1. Since the probability for all possible values of the random variable is 1, the bar heights also add up to 1.</p>
+<p>The height of each bar is the probability of the corresponding value on the horizontal axis. The height of the bar is 0.2 at X = 0 and 0.8 at X = 1. Since the probability for all possible values of the random variable is 1, the bar heights add up to 1.</p>
 <p>In the above example, from <a href="#eq-bernouli1">Equation&nbsp;<span>3.9</span></a> we take μ = 0.8. Therefore, we expect 80% of patients survive.</p>
 <p>From <a href="#eq-bernouli2">Equation&nbsp;<span>3.10</span></a> the variance of the random variable is <span class="math inline">\(σ^2 = 0.8 × 0.2 = 0.16\)</span>, and its standard deviation is <span class="math inline">\(σ = 0.4\)</span>. This reflects the extent of variability in survival status from one person to another. For this example, the amount of variation is rather small. Therefore, we expect to see many survivals (X = 1) with occasional death (X = 0). For comparison, suppose that the probability of survival for bladder cancer is θ = 0.6. Then, the variance becomes <span class="math inline">\(σ^2 = 0.6×(1−0.6) = 0.24\)</span>. This reflects a higher variability in the survival status for bladder cancer patients compared to that of breast cancer patients.</p>
 </div>
@@ -771,7 +771,7 @@ What we need to know for a random variable?
 </div>
 <div class="callout-body-container callout-body">
 <p>Random variables representing counts within temporal and/or spacial limits but without prespecified upper limits are often assumed to have Poisson distributions. The range of these variables is the set of all non negative integers (i.e., the lower limit is zero, but there is no upper limit). A Poisson distribution is specified by a parameter λ, which is interpreted as the <strong>rate of occurrence within a time period or space limit</strong>. We show this as X ∼ Poisson(λ), where λ is a positive real number (λ&gt;0).</p>
-<p><span id="eq-poisson1"><span class="math display">\[ Pr(X=x)={\frac {\lambda ^{x}e^{-\lambda }}{x!}}  \tag{3.17}\]</span></span></p>
+<p><span id="eq-poisson1"><span class="math display">\[ P(X=x)={\frac {\lambda ^{x}e^{-\lambda }}{x!}}  \tag{3.17}\]</span></span></p>
 <p>where x = 0, 1, … +∞, λ &gt; 0.</p>
 <p>The mean and variance of a random variable with Poisson(λ) distribution are the same and equal to λ. That is, μ = λ and <span class="math inline">\(σ^2 = λ\)</span>.</p>
 </div>
@@ -833,24 +833,7 @@ What we need to know for a random variable?
 <p>Clearly, in <a href="#eq-continuous1">Equation&nbsp;<span>3.18</span></a>, the probability of a certain point value in X is zero, and the area under the probability density curve of the interval (−∞, +∞) should be 1.</p>
 <p>&nbsp;</p>
 <section id="normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="normal-distribution"><strong>Normal Distribution</strong></h3>
-<p>There are several important probability distributions in statistics. However, the normal distribution might be the most important. The normal distribution provides an adequate model for the relative frequency distributions of data collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.</p>
-<div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Historical background
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.</p>
-</div>
-</div>
-</div>
-<p>&nbsp;</p>
+<p>There are several important probability distributions in statistics. However, the normal distribution might be the most important. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.</p>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -904,9 +887,8 @@ Definition and Properties of Normal Distribution
 </ul>
 </div>
 </div>
-<p>&nbsp;</p>
 <div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -915,12 +897,12 @@ Understanding the (standard) normal distribution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A random normal variable with <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> can be normalized via the following:</p>
 <p><span id="eq-z"><span class="math display">\[ z= \frac{x-\mu}{\sigma}  \tag{3.20}\]</span></span></p>
 <p>In this case, <a href="#eq-gauss">Equation&nbsp;<span>3.19</span></a> is transformed to the standard normal distribution, also called the z-distribution, i.e.&nbsp;a special normal distribution where <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span> with pdf:</p>
-<p><span id="eq-zd"><span class="math display">\[ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2}  \tag{3.21}\]</span></span> zd The standard normal distribution is centered at zero and the degree to which a given measurement deviates from the mean is given by the standard deviation.</p>
+<p><span id="eq-zd"><span class="math display">\[ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2}  \tag{3.21}\]</span></span> The standard normal distribution is centered at zero and the degree to which a given measurement deviates from the mean is given by the standard deviation.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-simple_normal" class="quarto-figure quarto-figure-center anchored">
@@ -978,28 +960,39 @@ Understanding the (standard) normal distribution
 </div>
 </div>
 <p>&nbsp;</p>
-<section id="properties-of-an-approximately-bell-shaped-empirical-distribution" class="level4"><h4 class="anchored" data-anchor-id="properties-of-an-approximately-bell-shaped-empirical-distribution">Properties of an approximately bell-shaped empirical distribution</h4>
-<p>The general method for gaining information on normality of a random variable X is to obtain the frequency distribution (i.e.&nbsp;a histogram), which describes the empirical distribution of values collected in the experiment. If the empirical distribution has a shape that approximates the Gaussian distribution then the variable is consider as a normal random variable. Thus, in an approximately <strong>bell-shaped</strong> distribution:</p>
+<p>The normal distribution provides an adequate model for the relative frequency distributions of data (empirical distributions) collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Moreover, many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.</p>
+<p>If the shape of empirical distributions of random variables approximates the Gaussian distribution then the variables are considered to be distributed normally.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Properties of an approximately bell-shaped empirical distribution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In an approximately <strong>bell-shaped</strong> distribution:</p>
 <ul>
 <li><p>the mean, the median and the mode have very close values</p></li>
 <li><p>the histogram is symmetric about the mean</p></li>
 <li><p>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean</p></li>
 <li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.12</span></a> b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.</p></li>
 <li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.13</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
-</ul></section><section id="t-distribution" class="level4"><h4 class="anchored" data-anchor-id="t-distribution"><strong>t-distribution</strong></h4>
-</section><section id="chi-squared-distribution" class="level4"><h4 class="anchored" data-anchor-id="chi-squared-distribution"><strong>Chi-squared distribution</strong></h4>
-</section><section id="f-distribution" class="level4"><h4 class="anchored" data-anchor-id="f-distribution"><strong>F-distribution</strong></h4>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
+</ul>
+<p>&nbsp;</p>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Tip
+Statistical moments (or shape statistics) and normality
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>Statistical moments (or shape statistics) and normality</strong></p>
 <p>There are two shape statistics that can indicate deviation from normality: <strong>skew</strong> and <strong>kurtosis</strong>.</p>
 <p><strong>Skewness</strong></p>
 <p>Skewness is usually described as a measure of a dataset’s symmetry – or lack of symmetry.</p>
@@ -1030,6 +1023,13 @@ Tip
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<section id="t-distribution" class="level4"><h4 class="anchored" data-anchor-id="t-distribution"><strong>t-distribution</strong></h4>
+</section><section id="chi-squared-distribution" class="level4"><h4 class="anchored" data-anchor-id="chi-squared-distribution"><strong>Chi-squared distribution</strong></h4>
+</section><section id="f-distribution" class="level4"><h4 class="anchored" data-anchor-id="f-distribution"><strong>F-distribution</strong></h4>
 
 
 </section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">

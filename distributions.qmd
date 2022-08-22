@@ -34,7 +34,7 @@ Different experiments will have different sample spaces that can be written in a
 A **random event A**, or event A for short, is a sub-set of Ω, A ⊂ Ω, and it represents **a number** of possible outcomes for the experiment. In the case of the roll of a die, the event "even number" may be represented by A = {2, 4, 6}, and the event "odd number" as B = {1, 3, 5}. In the case of flipping two coins, an event could be that exactly one of the coins lands Heads, A = {HT, TH}.
 
 ::: {.callout-tip icon="false"}
-## Two events always exist
+## Two events always exist for an experiment
 
 For each experiment, two events always exist: the **sample space** itself which comprises all possible outcomes and the **empty set** that contains no outcomes represented as **A = ∅** and called the impossible event.
 :::
@@ -324,7 +324,7 @@ A random variable is also expected to have a theoretical distribution, e.g., Nor
 Each distribution is entirely defined by several specific parameters. The parameter values determine the location and shape of the curve on the plot of distribution, and each unique combination of parameter values produces a unique distribution curve.
 
 ::: {.callout-tip icon="false"}
-## What we need to know for a random variable?
+## What do we need to know for a random variable?
 
 To fully understand a random variable, we need to know:
 
@@ -346,7 +346,7 @@ For discrete random variables, the probability distribution is fully defined by 
 
 Binary random variables are abundant in scientific studies. Bernoulli distribution applies to events that have one trial and two possible outcomes.
 
-A **Bernoulli event** is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p. As before, the probability for all possible values sum to one: P(X = 0) + P(X = 1) = 1.
+A **Bernoulli event** is one for which the probability the event occurs (success; X=1) is p and the probability the event does not occur (failure; X=0) is 1-p. As before, the probability for all possible values is one: P(X = 0) + P(X = 1) = 1.
 
 A **Bernoulli trial** is an instantiation of a Bernoulli event. So long as the probability of success or failure remains the same from trial to trial (i.e., each trial is independent of the others), a sequence of Bernoulli trials is called a **Bernoulli process**.
 
@@ -399,7 +399,7 @@ plot(ber_q , ber_pmf, type = "h", xlab = "X", ylab = "Probability", main = "pmf 
 
 ```
 
-The height of each bar is the probability of the corresponding value on the horizontal axis. The height of the bar is 0.2 at X = 0 and 0.8 at X = 1. Since the probability for all possible values of the random variable is 1, the bar heights also add up to 1.
+The height of each bar is the probability of the corresponding value on the horizontal axis. The height of the bar is 0.2 at X = 0 and 0.8 at X = 1. Since the probability for all possible values of the random variable is 1, the bar heights add up to 1.
 
 In the above example, from @eq-bernouli1 we take μ = 0.8. Therefore, we expect 80% of patients survive.
 
@@ -493,7 +493,7 @@ Now, suppose that we are investigating the **number of physician visits for each
 
 Random variables representing counts within temporal and/or spacial limits but without prespecified upper limits are often assumed to have Poisson distributions. The range of these variables is the set of all non negative integers (i.e., the lower limit is zero, but there is no upper limit). A Poisson distribution is specified by a parameter λ, which is interpreted as the **rate of occurrence within a time period or space limit**. We show this as X ∼ Poisson(λ), where λ is a positive real number (λ\>0).
 
-$$ Pr(X=x)={\frac {\lambda ^{x}e^{-\lambda }}{x!}} $$ {#eq-poisson1}
+$$ P(X=x)={\frac {\lambda ^{x}e^{-\lambda }}{x!}} $$ {#eq-poisson1}
 
 where x = 0, 1, ... +∞, λ \> 0.
 
@@ -554,15 +554,9 @@ Clearly, in @eq-continuous1, the probability of a certain point value in X is ze
 
 ### **Normal Distribution**
 
-There are several important probability distributions in statistics. However, the normal distribution might be the most important. The normal distribution provides an adequate model for the relative frequency distributions of data collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.
-
-::: {.callout-caution collapse="true"}
-## Historical background
-
+There are several important probability distributions in statistics. However, the normal distribution might be the most important. 
 First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
-:::
 
- 
 
 ::: {.callout-tip icon="false"}
 ## Definition and Properties of Normal Distribution
@@ -631,7 +625,7 @@ The Normal distribution has the properties summarized as follows:
 -   The total area under the curve equals to 1 (or 100%).
 :::
 
- 
+
 
 ::: {.callout-caution collapse="true"}
 ## Understanding the (standard) normal distribution
@@ -642,7 +636,7 @@ $$ z= \frac{x-\mu}{\sigma} $$ {#eq-z}
 
 In this case, @eq-gauss is transformed to the standard normal distribution, also called the z-distribution, i.e. a special normal distribution where $\mu=0$ and $\sigma^2=1$ with pdf:
 
-$$ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2} $$ {#eq-zd} zd The standard normal distribution is centered at zero and the degree to which a given measurement deviates from the mean is given by the standard deviation.
+$$ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2} $$ {#eq-zd} The standard normal distribution is centered at zero and the degree to which a given measurement deviates from the mean is given by the standard deviation.
 
 ```{r}
 #| echo: false
@@ -787,9 +781,15 @@ polygon(region.x, region.y, density=-1, col="#F66733")
 
  
 
-#### Properties of an approximately bell-shaped empirical distribution
 
-The general method for gaining information on normality of a random variable X is to obtain the frequency distribution (i.e. a histogram), which describes the empirical distribution of values collected in the experiment. If the empirical distribution has a shape that approximates the Gaussian distribution then the variable is consider as a normal random variable. Thus, in an approximately **bell-shaped** distribution:
+The normal distribution provides an adequate model for the relative frequency distributions of data (empirical distributions) collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Moreover, many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.
+
+If the shape of empirical distributions of random variables approximates the Gaussian distribution then the variables are considered to be distributed normally.
+
+::: {.callout-tip icon=false}
+## Properties of an approximately bell-shaped empirical distribution
+
+In an approximately **bell-shaped** distribution:
 
 -   the mean, the median and the mode have very close values
 
@@ -801,14 +801,12 @@ The general method for gaining information on normality of a random variable X i
 
 -   the measure of excess kurtosis is close to 0 (mesokurtic) (@fig-kurtosis b). A kurtosis value between −1 and +1 indicates normality.
 
-#### **t-distribution**
 
-#### **Chi-squared distribution**
+ 
 
-#### **F-distribution**
 
-::: callout-tip
-**Statistical moments (or shape statistics) and normality**
+::: {.callout-caution collapse="true"}
+## Statistical moments (or shape statistics) and normality
 
 There are two shape statistics that can indicate deviation from normality: **skew** and **kurtosis**.
 
@@ -852,3 +850,15 @@ A kurtosis value between −1 and +1 indicates normality and a value between −
 knitr::include_graphics(here("images", "kurtosis.png"))
 ```
 :::
+
+:::
+
+
+ 
+
+#### **t-distribution**
+
+#### **Chi-squared distribution**
+
+#### **F-distribution**
+
