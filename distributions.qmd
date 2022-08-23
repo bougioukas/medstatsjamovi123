@@ -83,8 +83,8 @@ The first step towards determining the probability of an event is to establish a
 3.  If A and B are two mutually exclusive events, then **P(A ∪ B) = P(A) + P(B)** and **P(A ∩ B) = 0**.
 :::
 
-::: {.callout-caution collapse="true"}
-## Example - Mutually exclusive with dice
+::: {.callout-note collapse="true"}
+## Example - Dice: Mutually exclusive events
 
 Suppose we throw a six-die what is the probability of rolling either 5 or 6?
 
@@ -554,14 +554,9 @@ Clearly, in @eq-continuous1, the probability of a certain point value in X is ze
 
 ### **Normal Distribution**
 
-There are several important probability distributions in statistics. However, the normal distribution might be the most important. 
-First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
+There are several important probability distributions in statistics. However, the normal distribution might be the most important. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
 
-
-::: {.callout-tip icon="false"}
-## Definition and Properties of Normal Distribution
-
-A normal distribution is the familiar "bell curve" and it's a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently.
+A normal distribution is the familiar "bell curve" and it's a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently (@fig-dnormal).
 
 ```{r}
 #| echo: false
@@ -578,6 +573,9 @@ plot(x,y, main="Normal Distribution", type = "l", lwd = 2,  xlab = "", ylab = "P
 axis(1, at = -3:3, lab=expression(-3*sigma, -2*sigma,-1*sigma, mu, 1*sigma, 2*sigma, 3*sigma))
 
 ```
+
+::: {.callout-tip icon="false"}
+## Definition and Properties of Normal Distribution
 
 Gauss' normal distribution, technically a density function, is a distribution defined by two parameters, mean $\mu$ and variance $\sigma^2$. The mean, $\mu$, represents the population mean and is a "location parameter", which defines the central tendency. The variance, $\sigma^2$ is the "scale parameter", which defines the width of the distribution and how short the distribution is. It's formally given as @eq-gauss:
 
@@ -648,16 +646,14 @@ scale_x_continuous(breaks = c(-4, -2.58, -1.96, -1.65, -1, 0,
   theme(axis.text = element_text(size=10))
 
 ```
-
 :::
 
  
 
 ::: {.callout-note icon="false"}
-## Example-Normal distribution:  systolic blood pressure 
+## Example-Normal distribution: systolic blood pressure
 
-Suppose we know that the population mean and standard deviation
-for systolic blood pressure (sbp) are μ = 125 mmHg and σ = 15 mmHg, respectively. 
+Suppose we know that the population mean and standard deviation for systolic blood pressure (sbp) are μ = 125 mmHg and σ = 15 mmHg, respectively.
 
 (a) About what percentage of population has sbp in the range μ±σ ?
 
@@ -672,13 +668,11 @@ $$ P(125 −15≤X≤ 125+15) = P(110≤X≤ 140) = 0.68\ or\ 68\% $$
 (b) Calculate a 95% reference range for the sbp:
 
 $$ (125 - 1.96\times 15,\ 125 + 1.96\times 15) = (95.6, 154.4) $$
-
 :::
 
  
 
-::: {.callout-tip icon=false}
-
+::: {.callout-tip icon="false"}
 ## Statistical moments (or shape statistics) and normality
 
 There are two shape statistics that can indicate deviation from normality: **skew** and **kurtosis**.
@@ -724,15 +718,13 @@ knitr::include_graphics(here("images", "kurtosis.png"))
 ```
 :::
 
-
  
 
 The normal distribution provides an adequate model for the relative frequency distributions of data (empirical distributions) collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Moreover, many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.
 
 If the shape of empirical distributions of random variables approximates the Gaussian distribution then the variables are considered to be distributed normally.
 
-
-::: {.callout-tip icon=false}
+::: {.callout-tip icon="false"}
 ## Properties of an approximately bell-shaped empirical distribution
 
 In an approximately **bell-shaped** distribution:
@@ -746,33 +738,21 @@ In an approximately **bell-shaped** distribution:
 -   the measure of skewness takes values close to zero (symmetric distribution) (@fig-skew2 b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.
 
 -   the measure of excess kurtosis is close to 0 (mesokurtic) (@fig-kurtosis b). A kurtosis value between −1 and +1 indicates normality.
-
 :::
 
  
 
-
  
-
-
-
-
-
-
-
-
 
 ### **Standard Normal distribution**
 
-If the random variable X has a normal distribution  with $\mu$ and standard deviation $\sigma$, then the standardized Normal deviate is:
+If the random variable X has a normal distribution with $\mu$ and standard deviation $\sigma$, then the standardized Normal deviate is:
 
 $$ z= \frac{x-\mu}{\sigma} $$ {#eq-z}
 
 The z is a random variable that has a Standard Normal distribution, also called a z-distribution, i.e. a special normal distribution where $\mu=0$ and $\sigma^2=1$. In this case, @eq-gauss is transformed as follows:
 
-$$ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2} $$ {#eq-zd} 
-
-
+$$ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2} $$ {#eq-zd}
 
 ```{r}
 #| echo: false
@@ -795,7 +775,6 @@ ggplot(data.frame(x = c(-4, 4)), aes(x)) +
   scale_x_continuous(breaks = c(-4, -3, -2, -1, 0,
                               1, 2, 3, 4))
 ```
-
 
 The standard normal distribution is centered at zero and the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.
 
@@ -875,7 +854,7 @@ Notice the tails in the @fig-neg_parabola are asymptote to 0. "Asymptote" is a f
 
 **Third**, and with the above point in mind, it should be clear that $\ {\frac {1}{{\sqrt {2\pi }}}}$ will scale the height of the distribution. Observe that the height of the exponentiated parabola is at 1. That gets multiplied by $\ {\frac {1}{\sqrt {2\pi }}}$ to equal about 0.398.
 
-**Fourth**, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z. 
+**Fourth**, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z.
 
 **Fifth**, if we want to find the area E between $z_1$ = 1 and $z_2$ = 2, we must integrate the @eq-zd as following:
 
@@ -910,10 +889,133 @@ polygon(region.x, region.y, density=-1, col="#F66733")
 
  
 
-
 #### **t-distribution**
+
+The t-distribution (Student's t-distribution) is a continuous probability distribution that is used in place of the Standard Normal distribution for small samples when the population variance, $σ^2$, is unknown. William Sealy Gosset derived the t-distribution whilst working at the Guinness brewery, but was not permitted by his employer to publish under his own name so he decided to use the pseudonym "Student" for his published work.
+
+::: {.callout-tip icon="false"}
+## Definitionnd properties of t-distribution
+
+A t-distribution is specified by only one parameter called the degrees of freedom df. The t-distribution with df degrees of freedom is usually denoted as t(df), where df is a positive real number (df \> 0) and equals to the sample size minus one.
+
+The mean of this distribution is μ = 0, and the variance is determined by the degrees of freedom parameter, $σ^2 = df/(df −2)$, which is of course defined when df \> 2.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-t
+#| fig-height: 6.0
+#| fig-width: 8.0
+#| fig-align: "center"
+#| fig-cap: t-distribution with df=3 Vs Standard Normal distribution
+
+
+curve(dnorm(x), -4, 4, xlab = "t", ylab = "Probability Density", frame.plot = FALSE)
+curve(dt(x, df = 3), col = "red", add = TRUE)
+axis(1, at = -4:4)
+text(0, 0.41, expression("st. normal"))
+text(0, 0.34, expression(t(3)))
+
+```
+
+Similar to the standard normal distribution, the probability density curve for a t-distribution is unimodal and symmetric around its mean of μ = 0. However, the variance of a t-distribution is greater than the variance of the standard normal distribution: df/(df − 2) \> 1. As a result, the probability density curve for a t -distribution approaches zero more slowly than that of the standard normal. We say that t-distributions have heavier tails than the standard normal distribution.
+
+**Basic Properties of t-distribution:**
+
+-   A t-distribution is symmetric about 0.
+
+-   A t-distribution extends indefinitely in both directions, approaching, but never touching, the horizontal axis as it does so.
+
+-   The total area under a t-curve equals 1.
+
+-   As the sample size (and degrees of freedom) becomes larger (>30), t-distributions look increasingly like the Standard Normal distribution.
+:::
 
 #### **Chi-squared distribution**
 
+Chi-square ($\chi^2$-distribution) distributions are a family of continuous probability distributions. They’re widely used in hypothesis tests, including the chi-square goodness of fit test and the chi-square test of independence.
+
+
+::: {.callout-tip icon="false"}
+## Definition and properties of chi-squared distribution
+
+The chi-squared distribution (or $\chi^2$-distribution) with n degrees of freedom is the distribution of a sum of the squares of n independent Standard Normal random variables.
+
+$$\chi^2 =\sum _{i=1}^{n}Z_{i}^{2}$$ {#eq-chi}
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-chi
+#| fig-height: 6.0
+#| fig-width: 8.0
+#| fig-align: "center"
+#| fig-cap: chi-squared distribution with df=10, 15, and 20
+
+curve(dchisq(x, df = 10), from = 0, to = 50, xlab = "chi-squared", ylab = "Probability Density", frame.plot = FALSE)
+
+curve(dchisq(x, df = 15), from = 0, to = 50, col = "red", add = TRUE)
+curve(dchisq(x, df = 20), from = 0, to = 50, col = "green", add = TRUE)
+axis(2, at = seq(0, 01, by= 0.02))
+text(10, 0.1, expression("df=10"))
+text(15, 0.08, expression("df= 15"))
+text(24, 0.06, expression("df=20"))
+
+```
+
+The mean of this distribution is μ = df, and the variance is determined by the degrees of freedom parameter, $σ^2 = 2df$
+
+
+**Basic Properties of chi-squared distribution:**
+The chi-squared distribution is always positive and its shape is uniquely determined by the degrees of freedom. The distribution becomes more symmetrical as the degrees of freedom increase and when df>50, the chi-squared distribution is very similar to the Normal distribution.
+
+:::
+
+
 #### **F-distribution**
+
+The F-distribution is the ratio of two chi-squared distributions and is used in hypothesis testing of whether two observed samples have the same variance.
+
+
+::: {.callout-tip icon="false"}
+## Definition and properties of chi-squared distribution
+
+Let $\chi_n^2$ and $\chi_m^2$ be independent variates distributed as chi-squared with n and m degrees of freedom.
+$$F_{n,m}=\dfrac{X_n/n}{X_m/m}$$
+
+
+The mean of this distribution is:
+
+$$\frac {m} {(m - 2)} \;,\;\;\;\ with\;\ m > 2$$
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-f
+#| fig-height: 6.0
+#| fig-width: 8.0
+#| fig-align: "center"
+#| fig-cap: F-distribution with different df1 and df2
+
+
+curve(df(x, df1 = 2, df2 = 1), from = 0, to = 5, col= 'black', lwd=2, xlab = "F", ylab = "Probability Density")
+curve(df(x, df1 = 4, df2 = 6), from = 0, to = 5, col= 'red', lwd=2,
+      add = TRUE)
+curve(df(x, df1 = 12, df2 = 12), from = 0, to = 5, col= 'green', lwd=2,
+      add = TRUE)
+
+axis(2, at = seq(0, 1, by= 0.2))
+text(0.5, 0.9, expression("df1=2, df2=1"))
+text(1.1, 0.6, expression("df1=4, df2=6"))
+text(1.3, 0.8, expression("df1=12, df2=12"))
+
+```
+
+
+**Basic Properties of chi-squared distribution:**
+
+The F-distribution is always positive, but the exact shape depends on the degrees of freedom for the two chi-squared distributions that determine it.
+
+:::
 

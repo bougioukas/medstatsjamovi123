@@ -1,6 +1,5 @@
 # Correlation {#sec-correlation}
 
-
 ```{r}
 #| include: false
 
@@ -14,30 +13,34 @@ library(readr)
 data_bp <- read_csv(here("data", "data_bp.csv"))
 ```
 
-**Correlation** is a statistical method used to assess a possible **association** between two continuous variables. There are several statistics that we can use to quantify correlation depending on the underlying relation of the data. In this tutorial, you’ll learn about two correlation coefficients:
+**Correlation** is a statistical method used to assess a possible **association** between two continuous variables. There are several statistics that we can use to quantify correlation depending on the underlying relation of the data. In this tutorial, you'll learn about two correlation coefficients:
 
-- Pearson’s r
+-   Pearson's r
 
-- Spearman’s rho
+-   Spearman's rho
 
-Pearson’s coefficient measures **linear** correlation, while the Spearman's coefficient compare the **ranks** of data and measures **monotonic** associations.
+Pearson's coefficient measures **linear** correlation, while the Spearman's coefficient compare the **ranks** of data and measures **monotonic** associations.
+
+ 
+
+## Linear correlation (Pearson's coefficient r)
+
+The **Pearson's correlation coefficient,** ${r}$, can be calculated for any data set with two continuous variables. However, before we calculate the correlation coefficient ${r}$ we should make sure that the following **assumptions** are met:
+
+::: {.callout-warning icon="false"}
+## **Assumptions for Pearson's coefficient** $r_{xy}$
+
+1.  There is a linear association between the two variables
+2.  The variables are observed on a random sample of individuals (each individual should have a pair of values).\
+3.  For a valid hypothesis testing and calculation of confidence intervals both variables should have an approximately normal distribution.
+4.  Absence of outliers in the data set.
+:::
 
 
  
 
-## Linear correlation (Pearson’s coefficient r)
-
-The **Pearson’s correlation coefficient, ${r}$**, can be calculated for any data set with two continuous variables. However, before we calculate the correlation coefficient ${r}$ we should make sure that the following **assumptions** are met:
-
-
-::: {.callout-warning icon="false"}
-## **Assumptions for Pearson’s coefficient $r_{xy}$**
-
-1.  There is a linear association between the two variables
-1.  The variables are observed on a random sample of individuals (each individual should have a pair of values).  
-1.  For a valid hypothesis testing and calculation of confidence intervals both variables should have an approximately normal distribution.
-1. Absence of outliers in the data set.
-:::
+::: {.callout-tip icon="false"}
+## Characteristics of Pearson's coefficient $r_{xy}$
 
 
 **Formula**
@@ -46,14 +49,9 @@ Given a set of ${n}$ pairs of observations $(x_{1},y_{1}),\ldots ,(x_{n},y_{n})$
 
 $$r_{x, y} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n(y_i - \bar{y})^2}}$$ {#eq-r1}
 
-
 The $r_{xy}$ statistic shows the **direction** and measures the **strength** of the linear association between the variables.
 
- 
 
-
-::: {.callout-note icon="false"}
-## Characteristics of Pearson’s coefficient $r_{xy}$
 
 **Range of values**
 
@@ -63,9 +61,7 @@ Correlation coefficient is a **dimensionless** quantity that takes a value in th
 
 **Direction of association**
 
-A **negative** correlation coefficient indicates that one variable decreases in value as the other variable increases (and vice versa),
-a **zero** value indicates that no association exists between the two variables, and a **positive** coefficient indicates that both variables increase (or decrease) in value together.
-
+A **negative** correlation coefficient indicates that one variable decreases in value as the other variable increases (and vice versa), a **zero** value indicates that no association exists between the two variables, and a **positive** coefficient indicates that both variables increase (or decrease) in value together.
 
 ```{r}
 #| echo: false
@@ -127,14 +123,11 @@ pcor3 <- dat3|>
 pcor1 + pcor2 + pcor3 + plot_annotation(tag_levels = 'a')
 ```
 
-
  
 
 **Strength of association**
 
-The **strength** of association can be anywhere between -1 and +1. The **stronger** the correlation, the **closer** the correlation coefficient comes to ±1 (@fig-correlation2). A correlation coefficient of **-1** or **+1** indicates a **perfect** negative or positive association, respectively (@fig-correlation2 c and f). 
-
-
+The **strength** of association can be anywhere between -1 and +1. The **stronger** the correlation, the **closer** the correlation coefficient comes to ±1 (@fig-correlation2). A correlation coefficient of **-1** or **+1** indicates a **perfect** negative or positive association, respectively (@fig-correlation2 c and f).
 
 ```{r}
 #| echo: false
@@ -242,11 +235,15 @@ pcor9 <- dat9|>
 
 (pcor9 + pcor8 + pcor7) / (pcor6 + pcor5 + pcor4)   + plot_annotation(tag_levels = 'a')
 ```
-
 :::
 
  
 
+
+
+
+::: {.callout-note icon="false"}
+## Example
 
 
 ```{r}
@@ -267,16 +264,7 @@ data_bp|>
 ```
 
 
+:::
 
 
-
-
-
-
-
-
-
-## Rank correlation (Spearman’s coefficient rho )
-
-
-
+## Rank correlation (Spearman's coefficient rho )

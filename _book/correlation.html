@@ -255,14 +255,14 @@ ul.task-list{list-style: none;}
 <p>&nbsp;</p>
 <section id="linear-correlation-pearsons-coefficient-r" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="linear-correlation-pearsons-coefficient-r">
 <span class="header-section-number">9.1</span> Linear correlation (Pearson’s coefficient r)</h2>
-<p>The <strong>Pearson’s correlation coefficient, <span class="math inline">\({r}\)</span></strong>, can be calculated for any data set with two continuous variables. However, before we calculate the correlation coefficient <span class="math inline">\({r}\)</span> we should make sure that the following <strong>assumptions</strong> are met:</p>
+<p>The <strong>Pearson’s correlation coefficient,</strong> <span class="math inline">\({r}\)</span>, can be calculated for any data set with two continuous variables. However, before we calculate the correlation coefficient <span class="math inline">\({r}\)</span> we should make sure that the following <strong>assumptions</strong> are met:</p>
 <div class="callout-warning callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-<strong>Assumptions for Pearson’s coefficient <span class="math inline">\(r_{xy}\)</span></strong>
+<strong>Assumptions for Pearson’s coefficient</strong> <span class="math inline">\(r_{xy}\)</span>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -275,12 +275,8 @@ ul.task-list{list-style: none;}
 </ol>
 </div>
 </div>
-<p><strong>Formula</strong></p>
-<p>Given a set of <span class="math inline">\({n}\)</span> pairs of observations <span class="math inline">\((x_{1},y_{1}),\ldots ,(x_{n},y_{n})\)</span> with means <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> respectively, <span class="math inline">\(r_{xy}\)</span> is defined as:</p>
-<p><span id="eq-r1"><span class="math display">\[r_{x, y} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n(y_i - \bar{y})^2}} \tag{9.1}\]</span></span></p>
-<p>The <span class="math inline">\(r_{xy}\)</span> statistic shows the <strong>direction</strong> and measures the <strong>strength</strong> of the linear association between the variables.</p>
 <p>&nbsp;</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -290,6 +286,10 @@ Characteristics of Pearson’s coefficient <span class="math inline">\(r_{xy}\)<
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p><strong>Formula</strong></p>
+<p>Given a set of <span class="math inline">\({n}\)</span> pairs of observations <span class="math inline">\((x_{1},y_{1}),\ldots ,(x_{n},y_{n})\)</span> with means <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> respectively, <span class="math inline">\(r_{xy}\)</span> is defined as:</p>
+<p><span id="eq-r1"><span class="math display">\[r_{x, y} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n(y_i - \bar{y})^2}} \tag{9.1}\]</span></span></p>
+<p>The <span class="math inline">\(r_{xy}\)</span> statistic shows the <strong>direction</strong> and measures the <strong>strength</strong> of the linear association between the variables.</p>
 <p><strong>Range of values</strong></p>
 <p>Correlation coefficient is a <strong>dimensionless</strong> quantity that takes a value in the range <strong>-1</strong> to <strong>+1</strong>.</p>
 <p>&nbsp;</p>
@@ -319,12 +319,24 @@ Characteristics of Pearson’s coefficient <span class="math inline">\(r_{xy}\)<
 </div>
 </div>
 <p>&nbsp;</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-correlation0" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="correlation_files/figure-html/fig-correlation0-1.png" class="img-fluid figure-img" width="864"></p>
 <p></p><figcaption class="figure-caption">Figure 9.3: The direction of association can be (a) negative, (b) no association, or (c) positive.</figcaption><p></p>
 </figure>
+</div>
+</div>
 </div>
 </div>
 </div>
