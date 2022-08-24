@@ -9,9 +9,7 @@ book:
     - "Anna-Bettina Haidich, Associate Professor"
   date: "August 7, 2022"
   cover-image: images/cover.png
-  site-url: https://github.com/bougioukas/medstatsjamovi
   repo-url: https://github.com/bougioukas/medstatsjamovi
-  sharing: [twitter, facebook, linkedin]
   chapters:
     - index.qmd
     - part: "Medical Statistics"
