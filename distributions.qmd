@@ -196,7 +196,7 @@ or
 $$ P(A|B)=  \frac{P(A ∩ B)}{P(B)}$$ {#eq-conditional2}
 
 ::: {.callout-caution collapse="true"}
-## Example - Dice: Conditional probability 
+## Example - Dice: Conditional probability
 
 Calculate the probability of obtaining **8 as the sum of two rolls** of a die, **given that the first roll was a 3**.
 
@@ -889,7 +889,7 @@ polygon(region.x, region.y, density=-1, col="#F66733")
 
  
 
-#### **t-distribution**
+### **t-distribution**
 
 The t-distribution (Student's t-distribution) is a continuous probability distribution that is used in place of the Standard Normal distribution for small samples when the population variance, $σ^2$, is unknown. William Sealy Gosset derived the t-distribution whilst working at the Guinness brewery, but was not permitted by his employer to publish under his own name so he decided to use the pseudonym "Student" for his published work.
 
@@ -933,7 +933,7 @@ Similar to the standard normal distribution, the probability density curve for a
 
  
 
-#### **Chi-squared distribution**
+### **Chi-squared distribution**
 
 Chi-square ($\chi^2$-distribution) distributions are a family of continuous probability distributions. They're widely used in hypothesis tests, including the chi-square goodness of fit test and the chi-square test of independence.
 
@@ -971,16 +971,14 @@ The mean of this distribution is μ = df, and the variance is determined by the 
 
  
 
-#### **F-distribution**
+### **F-distribution**
 
 The F-distribution is the ratio of two chi-squared distributions and is used in hypothesis testing of whether two observed samples have the same variance.
 
 ::: {.callout-tip icon="false"}
 ## Definition and properties of chi-squared distribution
 
-Let $\chi_n^2$ and $\chi_m^2$ be independent variates distributed as chi-squared with n and m degrees of freedom.
-$$F_{n,m}=\dfrac{X_{n}^{2}/n}{X_{m}^{2}/m}$$
-
+Let $\chi_n^2$ and $\chi_m^2$ be independent variates distributed as chi-squared with n and m degrees of freedom. $$F_{n,m}=\dfrac{X_{n}^{2}/n}{X_{m}^{2}/m}$$
 
 The mean of this distribution is:
 

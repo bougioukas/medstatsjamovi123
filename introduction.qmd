@@ -210,7 +210,7 @@ Some statisticians have termed the habit of categorizing continuous variables as
 
  
 
-:::{.callout-tip icon=false}
+::: {.callout-tip icon="false"}
 ## Record the actual values
 
 It is best to record the actual value of blood pressure, haemoglobin, etc. It is easy to convert to categories in the analysis, but the raw data cannot be retrieved later if only categories are recorded. Information is lost with no compensatory gain. Indeed, the statistical analysis of continuous data is more powerful, and often simpler.
@@ -220,17 +220,11 @@ When some calculation is necessary to derive the observation of interest this sh
 
 The degree of measurement accuracy and the type of data are both important in relation to carrying out a proper statistical analysis.
 
-
-
-
 ## Exercises
 
-
-:::{.callout appearance="simple" icon=false}
+::: {.callout appearance="simple" icon="false"}
 ::: {#exr-1}
-
-ddpsldf
-
+This is the first exercise.
 :::
 :::
 
