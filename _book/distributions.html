@@ -66,7 +66,7 @@ ul.task-list{list-style: none;}
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Medical Statistics with Jamovi</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/bougioukas/MedStatsJamovi5" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/bougioukas/medstatsjamovi" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
 <li>
@@ -79,6 +79,12 @@ ul.task-list{list-style: none;}
           <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
             <i class="bi bi-bi-facebook pe-1"></i>
           Facebook
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
+            <i class="bi bi-bi-linkedin pe-1"></i>
+          LinkedIn
           </a>
         </li>
     </ul>
@@ -356,22 +362,19 @@ Basic types and operations of events using set theory
 </ol>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
 Example - Dice: Mutually exclusive events
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Suppose we throw a six-die what is the probability of rolling either 5 or 6?</p>
 <p>The probability of rolling a 6 is 1/6 and the probability of a 5 is also 1/6. We cannot take a 5 and 6 at the same time (these events are mutually exclusive) so:</p>
 <p>P(rolling a 5 or 6) = P(rolling a 5) + P(rolling a 6) = 1/6 + 1/6 = 1/3</p>
-</div>
 </div>
 </div>
 <p>These axioms should be regarded as the basic “ground rules” of the theory of probability, but they provide no guidance on how event probabilities should be assigned. For this purpose, there are <strong>two</strong> major avenues available. One is based on the repetition of the experiments a large number of times under the same conditions, and goes under the name of the <strong>frequentist approach</strong>. The other is based on a more theoretical knowledge of the experiment, but without the experimental requirement of a large number of repetitions, and is referred to as the <strong>Bayesian approach</strong>.</p>
@@ -461,7 +464,7 @@ Fundamental Properties of Probability
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Example - Conditional probability with dice
+Example - Dice: Conditional probability
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1088,6 +1091,7 @@ Definitionnd properties of t-distribution
 </ul>
 </div>
 </div>
+<p>&nbsp;</p>
 </section><section id="chi-squared-distribution" class="level4"><h4 class="anchored" data-anchor-id="chi-squared-distribution"><strong>Chi-squared distribution</strong></h4>
 <p>Chi-square (<span class="math inline">\(\chi^2\)</span>-distribution) distributions are a family of continuous probability distributions. They’re widely used in hypothesis tests, including the chi-square goodness of fit test and the chi-square test of independence.</p>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
@@ -1115,6 +1119,7 @@ Definition and properties of chi-squared distribution
 <p><strong>Basic Properties of chi-squared distribution:</strong> The chi-squared distribution is always positive and its shape is uniquely determined by the degrees of freedom. The distribution becomes more symmetrical as the degrees of freedom increase and when df&gt;50, the chi-squared distribution is very similar to the Normal distribution.</p>
 </div>
 </div>
+<p>&nbsp;</p>
 </section><section id="f-distribution" class="level4"><h4 class="anchored" data-anchor-id="f-distribution"><strong>F-distribution</strong></h4>
 <p>The F-distribution is the ratio of two chi-squared distributions and is used in hypothesis testing of whether two observed samples have the same variance.</p>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
@@ -1128,7 +1133,7 @@ Definition and properties of chi-squared distribution
 </div>
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(\chi_n^2\)</span> and <span class="math inline">\(\chi_m^2\)</span> be independent variates distributed as chi-squared with n and m degrees of freedom.</p>
-<p><span class="math display">\[F_{n,m}=\dfrac{X_n/n}{X_m/m}\]</span></p>
+<p><span class="math display">\[F_{n,m}=\dfrac{X_{n}^{2}/n}{X_{m}^{2}/m}\]</span></p>
 <p>The mean of this distribution is:</p>
 <p><span class="math display">\[\frac {m} {(m - 2)} \;,\;\;\;\ with\;\ m &gt; 2\]</span></p>
 <div class="cell" data-layout-align="center">
@@ -1140,7 +1145,7 @@ Definition and properties of chi-squared distribution
 </div>
 </div>
 </div>
-<p><strong>Basic Properties of chi-squared distribution:</strong></p>
+<p><strong>Basic Properties of F-distribution:</strong></p>
 <p>The F-distribution is always positive, but the exact shape depends on the degrees of freedom for the two chi-squared distributions that determine it.</p>
 </div>
 </div>
@@ -1242,7 +1247,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp(/https:\/\/github\.com\/bougioukas\/medstatsjamovi/);
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
