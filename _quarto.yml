@@ -46,6 +46,8 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    fontsize: 1.2em
+    linestretch: 1.8
     link-external-newwindow: true
     code-link: true
     number-depth: 2

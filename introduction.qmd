@@ -25,11 +25,11 @@ data_corn <- data_corn %>%
  )
 ```
 
-## How to use this textbook
+## How to use this online textbook
 
-This textbook includes **two** Parts, **"Medical Statistics"** and **"Jamovi LAB"**. For each theoretical chapter (e.g., "Descriptive Statistics") in first part there is a practical lab with Jamovi in the second part ("Lab II:Descriptive Statistics").
+This online textbook includes **two** Parts, **"Medical Statistics"** and **"Jamovi LAB"**. For each theoretical chapter (e.g., "Descriptive Statistics") in first part there is a practical lab with Jamovi in the second part (e.g., "Lab II:Descriptive Statistics").
 
-Additionally, throughout this textbook there are some inserts or callouts (colored "boxes") that are designed to bring out some of the important information and help our learning. These inserts are distinguished by different colors:
+Additionally, throughout this online textbook there are some inserts or callouts (colored "boxes") that are designed to bring out some of the important information and help our learning. These inserts are distinguished by different colors:
 
 $\color{green}{Green\ color}$: Tips and notes that provide important information for a topic.
 
@@ -41,7 +41,7 @@ Some **tip** or **important information**.
 
  
 
-$\color{orange}{Orange\ color\ with\ a\ traffic\ cone }$: Additional information that can be expanded by the user (click on it).
+$\color{orange}{Orange\ color\ with\ a\ traffic\ cone\ icon}$: Additional information that can be expanded by the user (**click on it**).
 
 ::: {.callout-caution collapse="true"}
 ## **A title**
@@ -62,12 +62,12 @@ Some **assumptions**.
 
  
 
-$\color{red}{Red\ color\ with\ an\ exclamation\ mark}$: Important point we should pay attention to.
+$\color{red}{Red\ color\ with\ an\ exclamation\ mark\ icon}$: Point caution that we should pay attention to.
 
 ::: {.callout-important}
 ## **A title**
 
-Some **warning** message.
+Some **point of caution**.
 :::
 
  
@@ -81,6 +81,25 @@ Some **example**.
 :::
 
  
+
+
+$\color{grey}{Grey\ color}$: Exercises with embedded solution.
+
+::: {.callout appearance="simple" icon="false"}
+## **Exercise 1.1**
+
+This is the first exercise.
+
+::: {.callout-note collapse="true" icon="false"}
+## **Example of a possible solution**
+
+This is a possible solution to the exercise.
+:::
+
+:::
+
+ 
+
 
 
 ## Statistics and Medicine
@@ -281,7 +300,26 @@ When some calculation is necessary to derive the observation of interest this sh
 
 The degree of measurement accuracy and the type of data are both important in relation to carrying out a proper statistical analysis.
 
+
+
 ## Exercises
+
+::: {.callout appearance="simple" icon="false"}
+## **Exercise 1.1**
+
+This is the first exercise.
+
+::: {.callout-note collapse="true" icon="false"}
+## **Example of a possible solution**
+
+This is a possible solution to the exercise.
+:::
+
+:::
+
+
+
+
 
 ::: {.callout appearance="simple" icon="false"}
 ::: {#exr-1}
