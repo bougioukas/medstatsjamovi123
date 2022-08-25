@@ -676,7 +676,8 @@ What do we need to know for a random variable?
 <div class="callout-body-container callout-body">
 <p>The random variable X representing the <strong>number of times</strong> the outcome of interest occurs in <span class="math inline">\(n\)</span> Bernoulli trials has a <span class="math inline">\(Binomial(n, p)\)</span> distribution, where p is the probability of the outcome of interest (success). A binomial distribution is defined by the number of Bernoulli trials <span class="math inline">\(n\)</span> and the probability of the outcome of interest p for the underlying Bernoulli trials.</p>
 <p><span id="eq-binom0"><span class="math display">\[ P(X=x) = {{n}\choose{x}} \cdot p^xq^{n-x} \tag{3.12}\]</span></span></p>
-<p>where x = 0, 1, … , n, <span class="math inline">\({0\leq p\leq 1}\)</span>, q = 1 − p</p>
+<p>where x = 0, 1, … , n, <span class="math inline">\({0\leq p\leq 1}\)</span>, q = 1 − p and <span class="math inline">\(\binom{n}{x} = \frac{n!}{x!(n-x)!}\)</span></p>
+<p>Note that: <span class="math inline">\(n! = 1\cdot 2 \cdot 3\cdot \ldots \cdot (n-2)\cdot (n-1)\cdot n\)</span></p>
 <p>If is a binomial random variable with parameters and n and p, then</p>
 <p><span id="eq-binom1"><span class="math display">\[μ = np \tag{3.13}\]</span></span></p>
 <p><span id="eq-binom2"><span class="math display">\[σ^2 = npq \tag{3.14}\]</span></span></p>
@@ -820,11 +821,11 @@ What do we need to know for a random variable?
 <p>&nbsp;</p>
 <section id="normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="normal-distribution"><strong>Normal Distribution</strong></h3>
 <p>There are several important probability distributions in statistics. However, the normal distribution might be the most important. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.</p>
-<p>A normal distribution is the familiar “bell curve” and it’s a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently (<a href="#fig-dnormal">Figure&nbsp;<span>3.5</span></a>).</p>
+<p>A normal distribution is the familiar “bell curve” and it’s a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently (<a href="#fig-normal">Figure&nbsp;<span>3.5</span></a>).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-dnormal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="distributions_files/figure-html/fig-dnormal-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<div id="fig-normal" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-normal-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure 3.5: The Normal probability distribution (often called Gaussian or bell-shaped distribution).</figcaption><p></p>
 </figure>
 </div>
@@ -961,7 +962,7 @@ Properties of an approximately bell-shaped empirical distribution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In an approximately <strong>bell-shaped</strong> distribution:</p>
+<p>In an approximately <strong>bell-shaped</strong> empirical distribution:</p>
 <ul>
 <li><p>the mean, the median and the mode have very close values</p></li>
 <li><p>the histogram is symmetric about the mean</p></li>
@@ -972,30 +973,27 @@ Properties of an approximately bell-shaped empirical distribution
 </div>
 </div>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
 </section><section id="standard-normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="standard-normal-distribution"><strong>Standard Normal distribution</strong></h3>
 <p>If the random variable X has a normal distribution with <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>, then the standardized Normal deviate is:</p>
 <p><span id="eq-z"><span class="math display">\[ z= \frac{x-\mu}{\sigma}  \tag{3.20}\]</span></span></p>
-<p>The z is a random variable that has a Standard Normal distribution, also called a z-distribution, i.e.&nbsp;a special normal distribution where <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span>. In this case, <a href="#eq-gauss">Equation&nbsp;<span>3.19</span></a> is transformed as follows:</p>
+<p>The z (often called z-score) is a random variable that has a Standard Normal distribution, also called a z-distribution, i.e.&nbsp;a special normal distribution where <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span>. In this case, <a href="#eq-gauss">Equation&nbsp;<span>3.19</span></a> is transformed as follows:</p>
 <p><span id="eq-zd"><span class="math display">\[ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2}  \tag{3.21}\]</span></span></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-simple_normal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="distributions_files/figure-html/fig-simple_normal-1.png" class="img-fluid figure-img" width="576"></p>
-<p></p><figcaption class="figure-caption">Figure 3.10: A simple normal density function.</figcaption><p></p>
+<div id="fig-standard_normal" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 3.10: Standard Normal Distribution</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>The standard normal distribution is centered at zero and the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.</p>
-<p>&nbsp;</p>
 <div class="callout-caution callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Understanding the Standard Normal distribution
+Understanding the formula of Standard Normal distribution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1025,18 +1023,38 @@ Understanding the Standard Normal distribution
 <p>Notice the tails in the <a href="#fig-neg_parabola">Figure&nbsp;<span>3.12</span></a> are asymptote to 0. “Asymptote” is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly “unlikely”.</p>
 <p><strong>Third</strong>, and with the above point in mind, it should be clear that <span class="math inline">\(\ {\frac {1}{{\sqrt {2\pi }}}}\)</span> will scale the height of the distribution. Observe that the height of the exponentiated parabola is at 1. That gets multiplied by <span class="math inline">\(\ {\frac {1}{\sqrt {2\pi }}}\)</span> to equal about 0.398.</p>
 <p><strong>Fourth</strong>, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z.</p>
-<p><strong>Fifth</strong>, if we want to find the area E between <span class="math inline">\(z_1\)</span> = 1 and <span class="math inline">\(z_2\)</span> = 2, we must integrate the <a href="#eq-zd">Equation&nbsp;<span>3.21</span></a> as following:</p>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>The standard normal distribution is centered at zero and the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.</p>
+<p>To find the area under the curve between two z-scores, <span class="math inline">\(z_1\)</span> and <span class="math inline">\(z_2\)</span>, we have to integrate the pdf <a href="#eq-zd">Equation&nbsp;<span>3.21</span></a> as following:</p>
 <p><span id="eq-integral"><span class="math display">\[ E=P(z_1\leq Z\leq z_2)={\frac {1}{{\sqrt {2\pi }}}}\int_{z_1}^{z_2}e^{-{\frac {1}{2}}z^2}dz  \tag{3.22}\]</span></span></p>
+<p>&nbsp;</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example-Area under the curve
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Calculate the area under the curve:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-standard_normal" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="distributions_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" width="768"></p>
+<div id="fig-area" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-area-1.png" class="img-fluid figure-img" width="768"></p>
 <p></p><figcaption class="figure-caption">Figure 3.13: Standard normal distribution with a shaded region</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-</div>
+<p>One solution is to use the {#eq-integral} with <span class="math inline">\(z_1\)</span> = 1 and <span class="math inline">\(z_2\)</span> = 2:</p>
+<p><span class="math display">\[ E=P(1\leq Z\leq 2)={\frac {1}{{\sqrt {2\pi }}}}\int_{1}^{2}e^{-{\frac {1}{2}}z^2}dz \]</span></p>
+<p>In this case, however, we can easily calculate the area using the properties of the normal distribution:</p>
+<p><span class="math inline">\(E = P(0\leq Z\leq 2) - P(0\leq Z\leq 1) \approx 0.475 - 0.34 \approx 0.135\)</span></p>
 </div>
 </div>
 <p>&nbsp;</p>
@@ -1048,7 +1066,7 @@ Understanding the Standard Normal distribution
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Definitionnd properties of t-distribution
+Definition and properties of t-distribution
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1087,7 +1105,7 @@ Definition and properties of chi-squared distribution
 </div>
 <div class="callout-body-container callout-body">
 <p>The chi-squared distribution (or <span class="math inline">\(\chi^2\)</span>-distribution) with n degrees of freedom is the distribution of a sum of the squares of n independent Standard Normal random variables.</p>
-<p><span id="eq-chi"><span class="math display">\[\chi^2 =\sum _{i=1}^{n}Z_{i}^{2} \tag{3.23}\]</span></span></p>
+<p><span id="eq-chi"><span class="math display">\[X^2 =\sum _{i=1}^{n}Z_{i}^{2} \tag{3.23}\]</span></span></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-chi" class="quarto-figure quarto-figure-center anchored">
@@ -1114,7 +1132,7 @@ Definition and properties of chi-squared distribution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(\chi_n^2\)</span> and <span class="math inline">\(\chi_m^2\)</span> be independent variates distributed as chi-squared with n and m degrees of freedom. <span class="math display">\[F_{n,m}=\dfrac{X_{n}^{2}/n}{X_{m}^{2}/m}\]</span></p>
+<p>Let <span class="math inline">\(X_n^2\)</span> and <span class="math inline">\(X_m^2\)</span> be independent variates distributed as chi-squared with n and m degrees of freedom. <span class="math display">\[F_{n,m}=\dfrac{X_{n}^{2}/n}{X_{m}^{2}/m}\]</span></p>
 <p>The mean of this distribution is:</p>
 <p><span class="math display">\[\frac {m} {(m - 2)} \;,\;\;\;\ with\;\ m &gt; 2\]</span></p>
 <div class="cell" data-layout-align="center">

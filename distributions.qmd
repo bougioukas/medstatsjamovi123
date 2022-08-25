@@ -421,7 +421,9 @@ The random variable X representing the **number of times** the outcome of intere
 
 $$ P(X=x) = {{n}\choose{x}} \cdot p^xq^{n-x}$$ {#eq-binom0}
 
-where x = 0, 1, ... , n, ${0\leq p\leq 1}$, q = 1 − p
+where x = 0, 1, ... , n, ${0\leq p\leq 1}$, q = 1 − p and $\binom{n}{x} = \frac{n!}{x!(n-x)!}$
+
+Note that: $n! = 1\cdot 2 \cdot 3\cdot \ldots \cdot (n-2)\cdot (n-1)\cdot n$
 
 If is a binomial random variable with parameters and n and p, then
 
@@ -556,11 +558,11 @@ Clearly, in @eq-continuous1, the probability of a certain point value in X is ze
 
 There are several important probability distributions in statistics. However, the normal distribution might be the most important. First, Galileo informally described a normal distribution in 1632 when discussing the random errors from observations of celestial phenomena. However, Galileo existed before the time of differential equations and derivatives. We owe its formalization to Carl Friedrich Gauss, which is why the normal distribution is often called a Gaussian distribution. A very familiar example is the height for adult people that approximates a normal distribution very well.
 
-A normal distribution is the familiar "bell curve" and it's a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently (@fig-dnormal).
+A normal distribution is the familiar "bell curve" and it's a way of formalizing a distribution where observations cluster around some central tendency. Observations farther from the central tendency occur less frequently (@fig-normal).
 
 ```{r}
 #| echo: false
-#| label: fig-dnormal
+#| label: fig-normal
 #| out-width: "100%"
 #| fig-align: "center"
 #| fig-cap: The Normal probability distribution (often called Gaussian or bell-shaped distribution).
@@ -727,7 +729,7 @@ If the shape of empirical distributions of random variables approximates the Gau
 ::: {.callout-tip icon="false"}
 ## Properties of an approximately bell-shaped empirical distribution
 
-In an approximately **bell-shaped** distribution:
+In an approximately **bell-shaped** empirical distribution:
 
 -   the mean, the median and the mode have very close values
 
@@ -742,46 +744,34 @@ In an approximately **bell-shaped** distribution:
 
  
 
- 
-
 ### **Standard Normal distribution**
 
 If the random variable X has a normal distribution with $\mu$ and standard deviation $\sigma$, then the standardized Normal deviate is:
 
 $$ z= \frac{x-\mu}{\sigma} $$ {#eq-z}
 
-The z is a random variable that has a Standard Normal distribution, also called a z-distribution, i.e. a special normal distribution where $\mu=0$ and $\sigma^2=1$. In this case, @eq-gauss is transformed as follows:
+The z (often called z-score) is a random variable that has a Standard Normal distribution, also called a z-distribution, i.e. a special normal distribution where $\mu=0$ and $\sigma^2=1$. In this case, @eq-gauss is transformed as follows:
 
 $$ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2} $$ {#eq-zd}
 
 ```{r}
 #| echo: false
-#| label: fig-simple_normal
-#| fig-height: 4.2
-#| fig-width: 6.0
+#| label: fig-standard_normal
+#| out-width: "100%"
 #| fig-align: "center"
-#| fig-cap: A simple normal density function.
+#| fig-cap: Standard Normal Distribution
 
-ggplot(data.frame(x = c(-4, 4)), aes(x)) + 
-  theme_steve() + 
-  post_bg() +
-  stat_function(fun = dnorm, color="#522D80", size=1.5) +
-  labs(title = "Standard Normal Distribution",
-       subtitle = "The mu=0 parameter determines the central tendency and sigma-squared=1 parameter determines the width.",
-       x = "Z", y="Probability density") +
-  theme(plot.title.position = "plot",
-        plot.title = element_text(size= 10),
-        plot.subtitle = element_text(size= 8)) +
-  scale_x_continuous(breaks = c(-4, -3, -2, -1, 0,
-                              1, 2, 3, 4))
+
+x <- seq(-4, 4, length=100)
+y <- dnorm(x)
+
+plot(x,y, main="Standard Normal Distribution", type = "l", lwd = 2,  xlab = "Z", ylab = "Probability Density", frame.plot = FALSE)
+axis(1, at = -4:4)
+
 ```
 
-The standard normal distribution is centered at zero and the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.
-
- 
-
 ::: {.callout-caution collapse="true"}
-## Understanding the Standard Normal distribution
+## Understanding the formula of Standard Normal distribution
 
 We can break down individual components of a z-distribution (@eq-z) and explain them until they seem more accessible.
 
@@ -855,14 +845,26 @@ Notice the tails in the @fig-neg_parabola are asymptote to 0. "Asymptote" is a f
 **Third**, and with the above point in mind, it should be clear that $\ {\frac {1}{{\sqrt {2\pi }}}}$ will scale the height of the distribution. Observe that the height of the exponentiated parabola is at 1. That gets multiplied by $\ {\frac {1}{\sqrt {2\pi }}}$ to equal about 0.398.
 
 **Fourth**, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z.
+:::
 
-**Fifth**, if we want to find the area E between $z_1$ = 1 and $z_2$ = 2, we must integrate the @eq-zd as following:
+ 
+
+The standard normal distribution is centered at zero and the probability that z is between 1 on either side of 0 is effectively 0.68. The ease of this interpretation is why researchers like to standardize their variables so that the mean is 0 and the standard deviation is 1.
+
+To find the area under the curve between two z-scores, $z_1$ and $z_2$, we have to integrate the pdf @eq-zd as following:
 
 $$ E=P(z_1\leq Z\leq z_2)={\frac {1}{{\sqrt {2\pi }}}}\int_{z_1}^{z_2}e^{-{\frac {1}{2}}z^2}dz $$ {#eq-integral}
 
+ 
+
+::: {.callout-note icon="false"}
+## Example-Area under the curve
+
+Calculate the area under the curve:
+
 ```{r}
 #| echo: false
-#| label: fig-standard_normal
+#| label: fig-area
 #| fig-height: 6.0
 #| fig-width: 8.0
 #| fig-align: "center"
@@ -885,6 +887,14 @@ abline(h=0) # adds the x-axis to the plot
 polygon(region.x, region.y, density=-1, col="#F66733")
 
 ```
+
+One solution is to use the {#eq-integral} with $z_1$ = 1 and $z_2$ = 2:
+
+$$ E=P(1\leq Z\leq 2)={\frac {1}{{\sqrt {2\pi }}}}\int_{1}^{2}e^{-{\frac {1}{2}}z^2}dz $$
+
+In this case, however, we can easily calculate the area using the properties of the normal distribution:
+
+$E = P(0\leq Z\leq 2) - P(0\leq Z\leq 1) \approx 0.475 - 0.34 \approx 0.135$
 :::
 
  
@@ -894,7 +904,7 @@ polygon(region.x, region.y, density=-1, col="#F66733")
 The t-distribution (Student's t-distribution) is a continuous probability distribution that is used in place of the Standard Normal distribution for small samples when the population variance, $σ^2$, is unknown. William Sealy Gosset derived the t-distribution whilst working at the Guinness brewery, but was not permitted by his employer to publish under his own name so he decided to use the pseudonym "Student" for his published work.
 
 ::: {.callout-tip icon="false"}
-## Definitionnd properties of t-distribution
+## Definition and properties of t-distribution
 
 A t-distribution is specified by only one parameter called the degrees of freedom df. The t-distribution with df degrees of freedom is usually denoted as t(df), where df is a positive real number (df \> 0) and equals to the sample size minus one.
 
@@ -942,7 +952,7 @@ Chi-square ($\chi^2$-distribution) distributions are a family of continuous prob
 
 The chi-squared distribution (or $\chi^2$-distribution) with n degrees of freedom is the distribution of a sum of the squares of n independent Standard Normal random variables.
 
-$$\chi^2 =\sum _{i=1}^{n}Z_{i}^{2}$$ {#eq-chi}
+$$X^2 =\sum _{i=1}^{n}Z_{i}^{2}$$ {#eq-chi}
 
 ```{r}
 #| echo: false
@@ -978,7 +988,7 @@ The F-distribution is the ratio of two chi-squared distributions and is used in 
 ::: {.callout-tip icon="false"}
 ## Definition and properties of chi-squared distribution
 
-Let $\chi_n^2$ and $\chi_m^2$ be independent variates distributed as chi-squared with n and m degrees of freedom. $$F_{n,m}=\dfrac{X_{n}^{2}/n}{X_{m}^{2}/m}$$
+Let $X_n^2$ and $X_m^2$ be independent variates distributed as chi-squared with n and m degrees of freedom. $$F_{n,m}=\dfrac{X_{n}^{2}/n}{X_{m}^{2}/m}$$
 
 The mean of this distribution is:
 

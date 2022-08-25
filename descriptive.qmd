@@ -141,7 +141,7 @@ In addition to tabulating each variable separately, we might be interested in wh
 
  
 
-:::{.callout-tip icon=false}
+::: {.callout-tip icon="false"}
 ## Recommendations for reporting numbers and percentages
 
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
@@ -291,7 +291,7 @@ labs(x = "Treatment center", y = "Percent",
 
 ```
 
-:::{.callout-tip icon=false}
+::: {.callout-tip icon="false"}
 ## Report the actual total sample sizes for each group
 
 If we do use the relative frequency scale as we have, then it is recommended to report the actual total sample sizes for each group (e.g., in the legend or caption). In this way, given the total sample size and relative frequency (from the height of the bars) we can work out the actual numbers treated in each center.
@@ -563,7 +563,7 @@ So, the IQR for the corn size data is 2.0 to 4.5 mm or described by a single num
 
 |                            |                  |                  |                  |                           |                            |                   |                   |                            |                             |                    |                    |                             |                              |                     |                     |                      |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| **Ordered corn size (mm)** | $\color{red}{1}$ | $\color{red}{2}$ | $\color{red}{2}$ | $\color{red}{\textbf{2}}$ | $\color{blue}{\textbf{2}}$ | $\color{blue}{2}$ | $\color{blue}{3}$ | $\color{blue}{\textbf{3}}$ | $\color{green}{\textbf{3}}$ | $\color{green}{3}$ | $\color{green}{4}$ | $\color{green}{\textbf{4}}$ | $\color{orange}{\textbf{5}}$ | $\color{orange}{6}$ | $\color{orange}{6}$ | $\color{orange}{10}$ |
+| **Ordered data** | $\color{red}{1}$ | $\color{red}{2}$ | $\color{red}{2}$ | $\color{red}{\textbf{2}}$ | $\color{blue}{\textbf{2}}$ | $\color{blue}{2}$ | $\color{blue}{3}$ | $\color{blue}{\textbf{3}}$ | $\color{green}{\textbf{3}}$ | $\color{green}{3}$ | $\color{green}{4}$ | $\color{green}{\textbf{4}}$ | $\color{orange}{\textbf{5}}$ | $\color{orange}{6}$ | $\color{orange}{6}$ | $\color{orange}{10}$ |
 
 : Calculating quartiles for the corn size data {#tbl-quartiles}
 :::
@@ -642,7 +642,7 @@ Note that the majority of this sum is contributed by one observation, the value 
 
  
 
-:::{.callout-tip icon=false}
+::: {.callout-tip icon="false"}
 ## How to report summary statistics for numerical data?
 
 Mean and median convey different impressions of the location of data in presence of skewness (or outliers).
@@ -848,7 +848,7 @@ data_corn |>
 
  
 
-::: {.callout-important}
+::: callout-important
 ## Histograms must be plotted with a zero-valued baseline
 
 An important aspect of histograms is that they must be plotted with a zero-valued baseline. Since the frequency of data in each bin is implied by the height of each bar, changing the baseline or introducing a gap in the scale will skew the perception of the distribution of data.

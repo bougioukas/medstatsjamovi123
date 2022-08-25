@@ -104,11 +104,17 @@ This is a possible solution to the exercise.
 
 ## Statistics and Medicine
 
+
+### Importance of Statistics in Medical field
+
 Although some healthcare professionals may not carry out medical research, they will definitely be consumers of medical research. Thus, it is incumbent on them to be able to discern high quality research studies from low quality, to be able to verify whether the conclusions of a study are valid and to understand the limitations in methods of a study. The current emphasis on evidence-based medicine (EBM) requires that healthcare professionals consider **critically** all evidence about whether a specific treatment works and this requires basic statistical knowledge.
 
 Statistics is not only a discipline in its own right but it is also a **fundamental tool** for investigation in all biological and medical sciences. As such, any serious investigator in these fields must have a grasp of the basic principles. With modern computer facilities there is little need for familiarity with the technical details of statistical calculations. However, a healthcare professional should understand when such calculations are valid, when they are not and how they should be interpreted.
 
 The use of statistical methods pervades the medical literature. In a survey of 350 original articles published in three UK journals of general practice: *British Medical Journal (General Practice Section)*, *British Journal of General Practice* and *Family Practice*, over a one-year period, @Rigby2004 found that **66% used some form of statistical analysis**. Another review by @strasak2007 of 91 original research articles published in *The New England Journal of Medicine* (one of the prestigious peer-reviewed medical journals) found an even higher percentage (95%) of using **inferential statistics**, for example, hypothesis testing and deriving estimates. It appears, therefore, that the majority of papers published in these journals require some statistical knowledge for a complete understanding.
+
+
+### Why use Statistics?
 
 To students schooled in the 'hard' sciences of physics and chemistry it may be difficult to appreciate the variability of biological data. If one repeatedly puts blue litmus paper into acid solutions it turns red 100% of the time, not most (say 95%) of the time. In contrast, if one gives aspirin to a group of people with headaches, not all of them will experience relief. Penicillin was perhaps one of the few 'miracle' cures where the results were so dramatic that little evaluation was required. Absolute certainty in medicine is rare.
 
@@ -281,11 +287,15 @@ Sometimes it is reasonable to treat discrete data as if they were continuous, at
 ::: callout-important
 ## Categorization of numerical data leads to a loss of information
 
-For simplicity, it is often the case in medicine that continuous data are dichotomized to make nominal data. For example, the diastolic blood pressure (DBP), which is continuous, is converted into hypertension (\>90 mmHg) and normotension (≤90 mmHg). There are **two main reasons** for doing this. It is easier to describe a population by the proportion of people affected, for example, the proportion of people in the population with hypertension is 10%. Further, one often has to make a decision: if a person has hypertension, then they will get treatment, and this is easier if high blood pressure has been categorized. However, this dichotomization clearly leads to a loss of information.
+For simplicity, it is often the case in medicine that continuous data are dichotomized to make nominal data. For example, the diastolic blood pressure (DBP), which is continuous, is converted into hypertension (\>90 mmHg) and normotension (≤90 mmHg). There are **two main reasons** for doing this:
 
-One can also divide a continuous variable into more than two groups. For example, we could divide age into age bands of equal lengths of, say 10 years such as: 0-9, 10-19, 20-29, etc. When categorizing continuous data authors should give an indication as to **why they chose these cut-off points**, and a reader has to be very wary to guard against the fact that the cuts may be chosen to make a particular point.
+(a) It is easier to describe a population by the **proportion** of people affected, for example, the proportion of people in the population with hypertension is 10%. 
 
-Some statisticians have termed the habit of categorizing continuous variables as **"dichotomania"**, which they regard as poor practice since it loses information and assumes a discontinuous relationship that is unlikely in nature.
+(b) It helps to **make a decision**: if a person has hypertension, then they will get treatment, and this is easier if high blood pressure has been categorized. However, this dichotomization clearly leads to a loss of information.
+
+One can also divide a continuous variable into **more than two** groups. For example, we could divide age into age bands of equal lengths of, say 10 years such as: 0-9, 10-19, 20-29, etc. When categorizing continuous data authors should give an indication as to **why they chose these cut-off points**, and a reader has to be very wary to guard against the fact that the cuts may be chosen to make a particular point.
+
+Some statisticians have termed the habit of categorizing continuous variables as **"dichotomania"**, which they regard as poor practice since it **loses information** and assumes a discontinuous relationship that is unlikely in nature.
 :::
 
  
@@ -293,7 +303,7 @@ Some statisticians have termed the habit of categorizing continuous variables as
 ::: {.callout-tip icon="false"}
 ## Record the actual values
 
-It is best to record the actual value of blood pressure, haemoglobin, etc. It is easy to convert to categories in the analysis, but the raw data cannot be retrieved later if only categories are recorded. Information is lost with no compensatory gain. Indeed, the statistical analysis of continuous data is more powerful, and often simpler.
+It is best to **record the actual value** of blood pressure, haemoglobin, etc. It is easy to convert to categories in the analysis, but the raw data cannot be retrieved later if only categories are recorded. Information is lost with no compensatory gain. Indeed, the statistical analysis of continuous data is more powerful, and often simpler.
 
 When some calculation is necessary to derive the observation of interest this should be done by the computer. Thus it is much better to record date of birth and date of examination for subsequent calculation of age rather than to rely on mental arithmetic.
 :::
