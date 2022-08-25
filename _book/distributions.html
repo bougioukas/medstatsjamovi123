@@ -243,6 +243,14 @@ ul.task-list{list-style: none;}
   <li><a href="#f-distribution" id="toc-f-distribution" class="nav-link" data-scroll-target="#f-distribution"><strong>F-distribution</strong></a></li>
   </ul>
 </li>
+  <li>
+<a href="#more-on-normality" id="toc-more-on-normality" class="nav-link" data-scroll-target="#more-on-normality"> <span class="header-section-number">3.6</span> More on Normality</a>
+  <ul class="collapse">
+<li><a href="#statistical-moments-or-shape-statistics-and-normal-distribution" id="toc-statistical-moments-or-shape-statistics-and-normal-distribution" class="nav-link" data-scroll-target="#statistical-moments-or-shape-statistics-and-normal-distribution"><strong>Statistical moments (or shape statistics) and Normal distribution</strong></a></li>
+  <li><a href="#bell-shaped-empirical-distribution" id="toc-bell-shaped-empirical-distribution" class="nav-link" data-scroll-target="#bell-shaped-empirical-distribution"><strong>Bell-shaped Empirical Distribution</strong></a></li>
+  <li><a href="#q-q-plots" id="toc-q-q-plots" class="nav-link" data-scroll-target="#q-q-plots">Q-Q plots</a></li>
+  </ul>
+</li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -843,6 +851,7 @@ Definition and Properties of Normal Distribution
 <div class="callout-body-container callout-body">
 <p>Gauss’ normal distribution, technically a density function, is a distribution defined by two parameters, mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. The mean, <span class="math inline">\(\mu\)</span>, represents the population mean and is a “location parameter”, which defines the central tendency. The variance, <span class="math inline">\(\sigma^2\)</span> is the “scale parameter”, which defines the width of the distribution and how short the distribution is. It’s formally given as <a href="#eq-gauss">Equation&nbsp;<span>3.19</span></a>:</p>
 <p><span id="eq-gauss"><span class="math display">\[ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}  \tag{3.19}\]</span></span></p>
+<p>where <span class="math inline">\(e \approx 2.718\)</span> and <span class="math inline">\(\pi \approx 3.14\)</span></p>
 <p>Populations with small values of the standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution concentrated close to the centre, <span class="math inline">\(\mu\)</span>; those with large standard deviation, <span class="math inline">\(\sigma\)</span>, have a distribution widely spread along the measurement axis <a href="#fig-compare_normal">Figure&nbsp;<span>3.6</span></a>.</p>
 <div id="fig-compare_normal" class="cell quarto-layout-panel">
 <figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
@@ -896,12 +905,13 @@ Example-Normal distribution: systolic blood pressure
 <div class="callout-body-container callout-body">
 <p>Suppose we know that the population mean and standard deviation for systolic blood pressure (sbp) are μ = 125 mmHg and σ = 15 mmHg, respectively.</p>
 <ol type="a">
-<li>About what percentage of population has sbp in the range μ±σ ?</li>
+<li>Between what values of x do 68% of the values lie?</li>
 </ol>
 <p>The X random variable of sbp follows the normal distribution:</p>
 <p><span class="math display">\[ X ∼ N(125, 15^2)\]</span></p>
-<p>Thus, the percentage of the distribution between -1 <span class="math inline">\(\sigma\)</span> below the mean and +1 <span class="math inline">\(\sigma\)</span> above the mean is:</p>
+<p>We know that 68% of the distribution is between -1 <span class="math inline">\(\sigma\)</span> below the mean and +1 <span class="math inline">\(\sigma\)</span> above the mean:</p>
 <p><span class="math display">\[ P(125 −15≤X≤ 125+15) = P(110≤X≤ 140) = 0.68\ or\ 68\% \]</span></p>
+<p>Thus, 110 ≤ X ≤ 140.</p>
 <ol start="2" type="a">
 <li>Calculate a 95% reference range for the sbp:</li>
 </ol>
@@ -909,86 +919,37 @@ Example-Normal distribution: systolic blood pressure
 </div>
 </div>
 <p>&nbsp;</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Statistical moments (or shape statistics) and normality
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There are two shape statistics that can indicate deviation from normality: <strong>skew</strong> and <strong>kurtosis</strong>.</p>
-<p><strong>Skewness</strong></p>
-<p>Skewness is usually described as a measure of a dataset’s symmetry – or lack of symmetry.</p>
-<p>Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.8</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2">Figure&nbsp;<span>3.8</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.8</span></a> c).</p>
-<p>Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with &gt;1 indicating moderate skewness and &gt;2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-skew2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/skew2.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.8: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-<p>&nbsp;</p>
-<p><strong>Kurtosis</strong></p>
-<p>The other way that distributions can deviate from normality is <strong>kurtosis</strong>. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).</p>
-<p>Distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.9</span></a> a). If the measure of excess kurtosis is <strong>0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.9</span></a> b). Finally, distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.9</span></a> c).</p>
-<p>A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-kurtosis" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/kurtosis.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.9: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.</figcaption><p></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>&nbsp;</p>
-<p>The normal distribution provides an adequate model for the relative frequency distributions of data (empirical distributions) collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Moreover, many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.</p>
-<p>If the shape of empirical distributions of random variables approximates the Gaussian distribution then the variables are considered to be distributed normally.</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Properties of an approximately bell-shaped empirical distribution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In an approximately <strong>bell-shaped</strong> empirical distribution:</p>
-<ul>
-<li><p>the mean, the median and the mode have very close values</p></li>
-<li><p>the histogram is symmetric about the mean</p></li>
-<li><p>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean</p></li>
-<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.8</span></a> b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.</p></li>
-<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.9</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
-</ul>
-</div>
-</div>
-<p>&nbsp;</p>
 </section><section id="standard-normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="standard-normal-distribution"><strong>Standard Normal distribution</strong></h3>
+<p>The <strong>Standard Normal distribution</strong> is a normal distribution of standardized values called z-scores. A z-score is measured in units of the standard deviation.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<strong>Definition-Standard Normal distribution</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>If the random variable X has a normal distribution with <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>, then the standardized Normal deviate is:</p>
 <p><span id="eq-z"><span class="math display">\[ z= \frac{x-\mu}{\sigma}  \tag{3.20}\]</span></span></p>
-<p>The z (often called z-score) is a random variable that has a Standard Normal distribution, also called a z-distribution, i.e.&nbsp;a special normal distribution where <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span>. In this case, <a href="#eq-gauss">Equation&nbsp;<span>3.19</span></a> is transformed as follows:</p>
+<p>The Z is a random variable that has a Standard Normal distribution, also called a z-distribution, i.e.&nbsp;a special normal distribution where <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span>.</p>
+<p><span class="math display">\[ Z ∼ N(0, 1)\]</span></p>
+<p>In this case, <a href="#eq-gauss">Equation&nbsp;<span>3.19</span></a> is transformed as follows:</p>
 <p><span id="eq-zd"><span class="math display">\[ f(z)={\frac {1}{{\sqrt {2\pi }}}}e^{-{\frac {1}{2}}z^2}  \tag{3.21}\]</span></span></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-standard_normal" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-standard_normal-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure 3.10: Standard Normal Distribution</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.8: Standard Normal Distribution</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
+</div>
+</div>
 <div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -997,7 +958,7 @@ Understanding the formula of Standard Normal distribution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>We can break down individual components of a z-distribution (<a href="#eq-z">Equation&nbsp;<span>3.20</span></a>) and explain them until they seem more accessible.</p>
 <p><strong>First</strong>, we know from algebra that the formula <span class="math inline">\(\ {\frac {1}{2}}z^{2}\)</span> is a basic parabola (notice the square term). Adding a minus sign just flips the basic parabola <span class="math inline">\(\ {\frac {1}{2}}z^{2}\)</span> downward and we take a negative parabola <span class="math inline">\(\ -{\frac {1}{2}}z^{2}\)</span>.</p>
@@ -1005,7 +966,7 @@ Understanding the formula of Standard Normal distribution
 <div class="cell-output-display">
 <div id="fig-basic_parabola" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-basic_parabola-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 3.11: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.9: (a) A basic parabola and (b) a negative parabola.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1015,12 +976,12 @@ Understanding the formula of Standard Normal distribution
 <div class="cell-output-display">
 <div id="fig-neg_parabola" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-neg_parabola-1.png" class="img-fluid figure-img" width="576"></p>
-<p></p><figcaption class="figure-caption">Figure 3.12: An exponentiated negative parabola.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.10: An exponentiated negative parabola.</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Notice the tails in the <a href="#fig-neg_parabola">Figure&nbsp;<span>3.12</span></a> are asymptote to 0. “Asymptote” is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly “unlikely”.</p>
+<p>Notice the tails in the <a href="#fig-neg_parabola">Figure&nbsp;<span>3.10</span></a> are asymptote to 0. “Asymptote” is a fancier way of saying the tails approximate 0 but never touch or surpass 0. One way of thinking about this as we build toward its inferential implications is that deviations farther from the central tendency are increasingly “unlikely”.</p>
 <p><strong>Third</strong>, and with the above point in mind, it should be clear that <span class="math inline">\(\ {\frac {1}{{\sqrt {2\pi }}}}\)</span> will scale the height of the distribution. Observe that the height of the exponentiated parabola is at 1. That gets multiplied by <span class="math inline">\(\ {\frac {1}{\sqrt {2\pi }}}\)</span> to equal about 0.398.</p>
 <p><strong>Fourth</strong>, the z-distribution is perfectly symmetrical around the zero. A given value of z will be as far from zero as -z.</p>
 </div>
@@ -1041,12 +1002,12 @@ Example-Area under the curve
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Calculate the area under the curve:</p>
+<p>Calculate the orange area under the curve:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-area" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-area-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 3.13: Standard normal distribution with a shaded region</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.11: Area under the curve</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1057,6 +1018,7 @@ Example-Area under the curve
 <p><span class="math inline">\(E = P(0\leq Z\leq 2) - P(0\leq Z\leq 1) \approx 0.475 - 0.34 \approx 0.135\)</span></p>
 </div>
 </div>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 </section><section id="t-distribution" class="level3"><h3 class="anchored" data-anchor-id="t-distribution"><strong>t-distribution</strong></h3>
 <p>The t-distribution (Student’s t-distribution) is a continuous probability distribution that is used in place of the Standard Normal distribution for small samples when the population variance, <span class="math inline">\(σ^2\)</span>, is unknown. William Sealy Gosset derived the t-distribution whilst working at the Guinness brewery, but was not permitted by his employer to publish under his own name so he decided to use the pseudonym “Student” for his published work.</p>
@@ -1076,7 +1038,7 @@ Definition and properties of t-distribution
 <div class="cell-output-display">
 <div id="fig-t" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-t-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 3.14: t-distribution with df=3 Vs Standard Normal distribution</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.12: t-distribution with df=3 Vs Standard Normal distribution</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1110,7 +1072,7 @@ Definition and properties of chi-squared distribution
 <div class="cell-output-display">
 <div id="fig-chi" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-chi-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 3.15: chi-squared distribution with df=10, 15, and 20</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.13: chi-squared distribution with df=10, 15, and 20</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1139,13 +1101,102 @@ Definition and properties of chi-squared distribution
 <div class="cell-output-display">
 <div id="fig-f" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><img src="distributions_files/figure-html/fig-f-1.png" class="img-fluid figure-img" width="768"></p>
-<p></p><figcaption class="figure-caption">Figure 3.16: F-distribution with different df1 and df2</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3.14: F-distribution with different df1 and df2</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 <p><strong>Basic Properties of F-distribution:</strong></p>
 <p>The F-distribution is always positive, but the exact shape depends on the degrees of freedom for the two chi-squared distributions that determine it.</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</section></section><section id="more-on-normality" class="level2" data-number="3.6"><h2 data-number="3.6" class="anchored" data-anchor-id="more-on-normality">
+<span class="header-section-number">3.6</span> More on Normality</h2>
+<section id="statistical-moments-or-shape-statistics-and-normal-distribution" class="level3"><h3 class="anchored" data-anchor-id="statistical-moments-or-shape-statistics-and-normal-distribution"><strong>Statistical moments (or shape statistics) and Normal distribution</strong></h3>
+<p>There are two shape statistics that can indicate deviation from normality: <strong>skew</strong> and <strong>kurtosis</strong>.</p>
+<p><strong>A.Skewness</strong></p>
+<p>Skewness is usually described as a measure of a dataset’s symmetry – or lack of symmetry.</p>
+<p>Skewness values that are <strong>negative</strong> indicate a tail to the <strong>left</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.15</span></a> a), <strong>zero</strong> value indicate a <strong>symmetric</strong> distribution (<a href="#fig-skew2">Figure&nbsp;<span>3.15</span></a> b), while values that are <strong>positive</strong> indicate a tail to the <strong>right</strong> (<a href="#fig-skew2">Figure&nbsp;<span>3.15</span></a> c).</p>
+<p>Skewness values between −1 and +1 indicate an approximate bell-shaped curve. Values from −1 to −3 or from +1 to +3 indicate that the distribution is tending away from a bell shape with &gt;1 indicating moderate skewness and &gt;2 indicating severe skewness. Any values above +3 or below−3 are a good indication that the variable is not normally distributed.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-skew2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="images/skew2.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 3.15: A distribution can be (a) skewed to the left, (b) symmetric, or (c) skewed to the right.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p><strong>B. Kurtosis</strong></p>
+<p>The other way that distributions can deviate from normality is <strong>kurtosis</strong>. The kurtosis parameter is a measure of the combined weight of the tails relative to the rest of the distribution. Kurtosis is associated indirect with the peak of the distribution (if the peak of the distribution is too high or too low).</p>
+<p>Distributions with <strong>negative</strong> excess kurtosis are called <strong><em>platykurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.16</span></a> a). If the measure of excess kurtosis is <strong>0</strong> the distribution is <strong>mesokurtic</strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.16</span></a> b). Finally, distributions with <strong>positive</strong> excess kurtosis are called <strong><em>leptokurtic</em></strong> (<a href="#fig-kurtosis">Figure&nbsp;<span>3.16</span></a> c).</p>
+<p>A kurtosis value between −1 and +1 indicates normality and a value between −1 and −3 or between +1 and +3 indicates a tendency away from normality. Values below −3 or above +3 strongly indicate non-normality.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-kurtosis" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="images/kurtosis.PNG" class="img-fluid figure-img" style="width:105.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 3.16: A distribution can be (a) platykurtic, (b) mesokurtic, or (c) leptokurtic.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</section><section id="bell-shaped-empirical-distribution" class="level3"><h3 class="anchored" data-anchor-id="bell-shaped-empirical-distribution"><strong>Bell-shaped Empirical Distribution</strong></h3>
+<p>The normal distribution provides an adequate model for the relative frequency distributions of data (empirical distributions) collected from many different biomedical areas, such as adult height, weight, vital capacity, and red blood cell count. Moreover, many other distributions that are not normal themselves can be made approximately normal by transforming the data into a different scale.</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example: <strong>Bell-shaped Empirical Distribution</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the shape of empirical distributions of random variables approximates the Gaussian distribution then the variables are considered to be distributed normally. One such example is the histogram of the birthweight (in kg) of 3226 new-born babies (reference).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-empirical" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-empirical-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 3.17: Empirical relative frequency distribution of the birthweight.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<strong>Properties of an approximately bell-shaped empirical distribution</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In an approximately <strong>bell-shaped</strong> empirical distribution:</p>
+<ul>
+<li><p>the mean, the median and the mode have very close values</p></li>
+<li><p>the histogram is symmetric about the mean</p></li>
+<li><p>“nearly all” values (99.7%) are within -3 and +3 standard deviations of the mean</p></li>
+<li><p>the measure of skewness takes values close to zero (symmetric distribution) (<a href="#fig-skew2">Figure&nbsp;<span>3.15</span></a> b). Particularly, values between −1 and +1 indicate an approximately bell-shaped curve.</p></li>
+<li><p>the measure of excess kurtosis is close to 0 (mesokurtic) (<a href="#fig-kurtosis">Figure&nbsp;<span>3.16</span></a> b). A kurtosis value between −1 and +1 indicates normality.</p></li>
+</ul>
+</div>
+</div>
+<p>&nbsp;</p>
+</section><section id="q-q-plots" class="level3"><h3 class="anchored" data-anchor-id="q-q-plots">Q-Q plots</h3>
+<p>The normal Q–Q plot shows each data value plotted against the value that would be expected if the data came from a normal distribution. The values in the plot are the quantiles of the variable distribution plotted against the quantiles that would be expected if the distribution was normal. If the variable was normally distributed, the, points would fall directly on the <strong>straight line</strong>. Any deviations from the straight line indicate some degree of non-normality.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-qq" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="distributions_files/figure-html/fig-qq-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure 3.18: Empirical relative frequency distribution of the birthweight.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 
