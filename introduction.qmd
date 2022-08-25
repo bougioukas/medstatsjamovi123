@@ -25,6 +25,64 @@ data_corn <- data_corn %>%
  )
 ```
 
+## How to use this textbook
+
+This textbook includes **two** Parts, **"Medical Statistics"** and **"Jamovi LAB"**. For each theoretical chapter (e.g., "Descriptive Statistics") in first part there is a practical lab with Jamovi in the second part ("Lab II:Descriptive Statistics").
+
+Additionally, throughout this textbook there are some inserts or callouts (colored "boxes") that are designed to bring out some of the important information and help our learning. These inserts are distinguished by different colors:
+
+$\color{green}{Green\ color}$: Tips and notes that provide important information for a topic.
+
+::: {.callout-tip icon="false"}
+## **A title**
+
+Some **tip** or **important information**.
+:::
+
+ 
+
+$\color{orange}{Orange\ color\ with\ a\ traffic\ cone }$: Additional information that can be expanded by the user (click on it).
+
+::: {.callout-caution collapse="true"}
+## **A title**
+
+Some **additional** information.
+:::
+
+ 
+
+
+$\color{#CC5500}{Deep\ Orange\ color}$: Assumptions for a statistical test.
+
+::: {.callout-warning icon="false"}
+## **A title**
+
+Some **assumptions**.
+:::
+
+ 
+
+$\color{red}{Red\ color\ with\ an\ exclamation\ mark}$: Important point we should pay attention to.
+
+::: {.callout-important}
+## **A title**
+
+Some **warning** message.
+:::
+
+ 
+
+$\color{blue}{Blue\ color}$: Examples provide step-by-step approaches to answering questions.
+
+::: {.callout-note icon="false"}
+## **Example: A title**
+
+Some **example**.
+:::
+
+ 
+
+
 ## Statistics and Medicine
 
 Although some healthcare professionals may not carry out medical research, they will definitely be consumers of medical research. Thus, it is incumbent on them to be able to discern high quality research studies from low quality, to be able to verify whether the conclusions of a study are valid and to understand the limitations in methods of a study. The current emphasis on evidence-based medicine (EBM) requires that healthcare professionals consider **critically** all evidence about whether a specific treatment works and this requires basic statistical knowledge.
@@ -57,24 +115,27 @@ The discipline of statistics includes two main branches:
 
 flowchart LR
   
-    A[Statistics]--> B[Descriptive statistics]
-    A --> C[Inferential statistics]
-    B --> D[Measures of location: <br/> e.g., mean, median, mode.]
-    B --> E[Measures of dispersion: <br/> e.g., standard deviation, quartiles]
-    B --> F[Measures of association: <br/> e.g., correlation coefficients]
-    C --> G[Estimation]
-    C --> H[Hypothesis Testing]
+    A[Statistics]--- B[Descriptive statistics]
+    A --- C[Inferential statistics]
+    B --- D[Measures of frequency: <br/> e.g., frequency, percentage.]
+    B --- E[Measures of location <br/> and dispersion: <br/> e.g., mean, standard deviation.]
+    B --- G[Measures of association: <br/> e.g., correlation coefficients]
+    C --- H[Estimation]
+    C --- I[Hypothesis Testing]
+    style A color:#980000, stroke:#333,stroke-width:4px
+    
+    
 ```
 
 ### Descriptive Statistics
 
 The methods and techniques of descriptive statistics aim at summarizing large quantities of data by a few numbers, in a way that highlights the most important numerical features of the data.
 
-Descriptive statistics include measures of central tendency, measures of dispersion, measures of position, and measures of association. They also include a description of the general shape of the distribution of the data. These terms will be explained in the corresponding chapters.
+Descriptive statistics include measures of frequency, measures of location and dispersion, and measures of association. They also include a description of the general shape of the distribution of the data. These terms will be explained in the corresponding chapters.
 
 ### Inferential Statistics
 
-Inferential statistics aim at generalizing a measure taken on a small number of cases that have been observed, to a larger set of cases that have not been observed. Using the terms explained above, we could reformulate this aim, and say that inferential statistics aim at generalizing observations made on a sample to a whole population.
+Inferential statistics include estimation and hypothesis testing. They aim at generalizing a measure taken on a small number of cases that have been observed, to a larger set of cases that have not been observed. Using the terms explained above, we could reformulate this aim, and say that inferential statistics aim at generalizing observations made on a sample to a whole population.
 
 ## Data and Variables
 
